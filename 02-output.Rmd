@@ -1,0 +1,25 @@
+# Creating output
+
+- Options for creating output
+  - Specify output type with YAML header and "knit"
+  - Render with R command
+- Processing flow: [Rmd > knitr > md > pandoc > output](https://ulyngs.github.io/rmarkdown-workshop-2019/slides/Day2.html#35)
+- [Deep dive on relations among different aspects of R Markdown documents](https://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown)
+
+## Output types
+
+- PDF: requires $\LaTeX$ to compile ([TinyTeX](https://yihui.org/tinytex/) distribution)
+- HTML
+- Microsoft Office (Word/Powerpoint)
+
+## YAML specification
+
+- Use **output** argument in YAML header
+- Pay attention to indentation and colons
+- Press `knit` button or command/CTRL + shift + K
+
+## Render
+
+Render files in the console with `rmarkdown::render(file, output_format)` (this is what `knit` is doing)
+
+Option to create PDF from HTML with `pagedown::chrome_print(file)`

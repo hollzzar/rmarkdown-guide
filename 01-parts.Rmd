@@ -1,0 +1,28 @@
+# Parts of a document {#intro}
+
+1. YAML header
+2. Markdown
+3. Code chunks
+
+## YAML header
+
+Global options for outputs/formatting
+
+```{r parts_example_yaml, echo=FALSE}
+knitr::include_graphics("images/example_yaml.png")
+```
+
+## Markdown
+
+Plain-text-formatting syntax allows for conversion to multiple document types
+
+```{r parts_example_markdown, echo=FALSE}
+knitr::include_graphics("images/example_markdown.png")
+```
+
+## Code chunks
+
+```{r parts_example_chunk}
+# This is a chunk of R code that adds an image
+knitr::include_graphics("images/example_chunk.png")
+```
