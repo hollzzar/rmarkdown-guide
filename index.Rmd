@@ -1,0 +1,38 @@
+--- 
+title: "R Markdown for Psychology Graduate Students"
+author: "Holly Zaharchuk"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: packages.bib
+biblio-style: apalike
+link-citations: yes
+github-repo: hollzzar/rmarkdown-guide
+description: "Guide to using R Markdown"
+---
+
+# Welcome
+
+I designed this guide to be a resource for psychology graduate students looking to streamline their research pipelines. With R Markdown, you can load, clean, manipulate, analyze, and present your data in one environment.
+
+## Background
+
+This guide assumes a basic level of familiarity with [R](https://www.r-project.org/) and [RStudio](https://rstudio.com/products/rstudio/download/). If you don't know how to use either of these, there are several [beginner tutorials](https://education.rstudio.com/learn/beginner/) you should check out first.
+
+## Getting started
+
+What is R Markdown?
+
+- [Markdown](https://en.wikipedia.org/wiki/Markdown) is a specific [markup language](https://en.wikipedia.org/wiki/Markup_language) with plain-text formatting syntax
+- [R Markdown](https://cran.r-project.org/web/packages/stationery/vignettes/Rmarkdown.pdf) is a kind of markdown document
+- R Markdown combines R code (and code from other programming languages) and markdown in the RStudio integrated development environment (IDE)
+- R Markdown and R are not the same thing
+
+You can install the **R Markdown** package from CRAN or Github:
+
+```{r eval=FALSE}
+install.packages("rmarkdown")
+# or the development version
+# devtools::install_github("rstudio/rmarkdown")
+```
