@@ -1,0 +1,3 @@
+[
+["intro.html", "Chapter 2 Parts of a document 2.1 YAML header 2.2 Markdown 2.3 Code chunks", " Chapter 2 Parts of a document YAML header Markdown Code chunks 2.1 YAML header Global options for outputs/formatting 2.2 Markdown Plain-text-formatting syntax allows for conversion to multiple document types 2.3 Code chunks # This is a chunk of R code that adds an image knitr::include_graphics(&quot;images/example_chunk.png&quot;) "]
+]
