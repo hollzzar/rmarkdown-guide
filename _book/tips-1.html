@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Parts of a document | R Markdown for Psychology Graduate Students</title>
+  <title>Chapter 8 Tips | R Markdown for Psychology Graduate Students</title>
   <meta name="description" content="Guide to using R Markdown" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Parts of a document | R Markdown for Psychology Graduate Students" />
+  <meta property="og:title" content="Chapter 8 Tips | R Markdown for Psychology Graduate Students" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="hollzzar/rmarkdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Parts of a document | R Markdown for Psychology Graduate Students" />
+  <meta name="twitter:title" content="Chapter 8 Tips | R Markdown for Psychology Graduate Students" />
   
   <meta name="twitter:description" content="Guide to using R Markdown" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="creating-output.html"/>
+<link rel="prev" href="trouble-shooting.html"/>
+<link rel="next" href="supplement.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -229,28 +229,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Parts of a document</h1>
-<ol style="list-style-type: decimal">
-<li>YAML header</li>
-<li>Markdown</li>
-<li>Code chunks</li>
-</ol>
-<div id="yaml-header" class="section level2">
-<h2><span class="header-section-number">2.1</span> YAML header</h2>
-<p>The first part of your document is called the YAML header. Here is where you set the global options for the output and formatting.</p>
-<p><img src="images/example_yaml.png" width="302" /></p>
+<div id="tips-1" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Tips</h1>
+<div id="keys-to-success" class="section level2">
+<h2><span class="header-section-number">8.1</span> Keys to success</h2>
+<ul>
+<li>Treat your data as read-only</li>
+<li>Comment code early and often</li>
+<li>Keep code chunks small</li>
+<li>Label chunks for diagnosing issues</li>
+<li>Nest all files under one directory (if possible)</li>
+</ul>
 </div>
-<div id="markdown" class="section level2">
-<h2><span class="header-section-number">2.2</span> Markdown</h2>
-<p>Plain-text-formatting syntax allows for conversion to multiple document types</p>
-<p><img src="images/example_markdown.png" width="296" /></p>
+<div id="general-information" class="section level2">
+<h2><span class="header-section-number">8.2</span> General information</h2>
+<ul>
+<li>Escape characters with a backslash \ (this also applies to any chunk output containing strings)</li>
+<li>Call R objects and functions in markdown/YAML by ~sandwiching~ with backticks ``</li>
+<li>Automatic bracket/quote/asterisk wrapping</li>
+<li>Dollar signs for <span class="math inline">\(\LaTeX\)</span> math mode (but also be careful with pandoc)</li>
+<li>Line spacing matters in markdown</li>
+</ul>
 </div>
-<div id="code-chunks" class="section level2">
-<h2><span class="header-section-number">2.3</span> Code chunks</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro.html#cb2-1"></a><span class="co"># This is a chunk of R code that adds an image</span></span>
-<span id="cb2-2"><a href="intro.html#cb2-2"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;images/example_chunk.png&quot;</span>)</span></code></pre></div>
-<p><img src="images/example_chunk.png" width="733" /></p>
+<div id="reference-documents" class="section level2">
+<h2><span class="header-section-number">8.3</span> Reference documents</h2>
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown Guide</a></li>
+<li><a href="https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf">R Markdown Cheat Sheet</a></li>
+<li><a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown Reference Guide</a></li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts">Keyboard shortcuts</a></li>
+<li><a href="https://yihui.org/knitr/"><code>knitr</code> documentation</a></li>
+</ul>
+</div>
+<div id="other-packagestools" class="section level2">
+<h2><span class="header-section-number">8.4</span> Other packages/tools</h2>
+<ul>
+<li><a href="https://www.sublimetext.com/3">Sublime Text</a> text editor</li>
+<li><a href="https://github.com/jkeirstead/scholar"><code>scholar</code> package</a> for automatically downloading citations from Google Scholar</li>
+<li><code>devtools</code> package for installing packages/plug-ins from GitHub (e.g., <code>papaja</code>)</li>
+<li><a href="https://github.com/benmarwick/wordcountaddin">wordcountaddin plug-in</a> for checking word count and readability</li>
+</ul>
+</div>
+<div id="updating-softwarepackages" class="section level2">
+<h2><span class="header-section-number">8.5</span> Updating software/packages</h2>
+<ul>
+<li><a href="https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution">Update your TeX distribution</a> from the command line</li>
+<li>Update all packages (including <code>rmarkdown</code>) in library with <code>update.packages(path)</code></li>
+<li>Update individual packages by reinstalling with <code>install.packages(package)</code></li>
+<li>Update R in the console with <code>updateR</code> package</li>
+<li>Redownload RStudio to update</li>
+</ul>
 
 </div>
 </div>
@@ -259,8 +287,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="creating-output.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="trouble-shooting.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="supplement.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -291,7 +319,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/01-parts.Rmd",
+"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/07-tips.Rmd",
 "text": "Edit"
 },
 "history": {

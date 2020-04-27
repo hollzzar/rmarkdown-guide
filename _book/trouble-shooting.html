@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Parts of a document | R Markdown for Psychology Graduate Students</title>
+  <title>Chapter 7 Trouble-shooting | R Markdown for Psychology Graduate Students</title>
   <meta name="description" content="Guide to using R Markdown" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Parts of a document | R Markdown for Psychology Graduate Students" />
+  <meta property="og:title" content="Chapter 7 Trouble-shooting | R Markdown for Psychology Graduate Students" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="hollzzar/rmarkdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Parts of a document | R Markdown for Psychology Graduate Students" />
+  <meta name="twitter:title" content="Chapter 7 Trouble-shooting | R Markdown for Psychology Graduate Students" />
   
   <meta name="twitter:description" content="Guide to using R Markdown" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="creating-output.html"/>
+<link rel="prev" href="markup.html"/>
+<link rel="next" href="tips-1.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -229,28 +229,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Parts of a document</h1>
-<ol style="list-style-type: decimal">
-<li>YAML header</li>
-<li>Markdown</li>
-<li>Code chunks</li>
-</ol>
-<div id="yaml-header" class="section level2">
-<h2><span class="header-section-number">2.1</span> YAML header</h2>
-<p>The first part of your document is called the YAML header. Here is where you set the global options for the output and formatting.</p>
-<p><img src="images/example_yaml.png" width="302" /></p>
+<div id="trouble-shooting" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Trouble-shooting</h1>
+<div id="identifying-issues" class="section level2">
+<h2><span class="header-section-number">7.1</span> Identifying issues</h2>
+<ul>
+<li>Warnings vs. errors</li>
+<li>Console vs. chunk</li>
+<li>Markdown environment vs. R environment</li>
+<li>Package specification <code>::</code> for unloaded packages and conflicting functions</li>
+</ul>
 </div>
-<div id="markdown" class="section level2">
-<h2><span class="header-section-number">2.2</span> Markdown</h2>
-<p>Plain-text-formatting syntax allows for conversion to multiple document types</p>
-<p><img src="images/example_markdown.png" width="296" /></p>
+<div id="warnings" class="section level2">
+<h2><span class="header-section-number">7.2</span> Warnings</h2>
+<p>Warnings won’t stop your document from compiling, but generally indicate that you should change something in your code</p>
+<p><img src="images/warning_example.png" width="537" /></p>
 </div>
-<div id="code-chunks" class="section level2">
-<h2><span class="header-section-number">2.3</span> Code chunks</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro.html#cb2-1"></a><span class="co"># This is a chunk of R code that adds an image</span></span>
-<span id="cb2-2"><a href="intro.html#cb2-2"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;images/example_chunk.png&quot;</span>)</span></code></pre></div>
-<p><img src="images/example_chunk.png" width="733" /></p>
+<div id="errors" class="section level2">
+<h2><span class="header-section-number">7.3</span> Errors</h2>
+<p>Chunk error</p>
+<p><img src="images/error_example.png" width="767" /></p>
+<p><img src="images/error_conversion.png" width="768" /></p>
+</div>
+<div id="r-code-and-environments" class="section level2">
+<h2><span class="header-section-number">7.4</span> R code and environments</h2>
+<p>Running a chunk executes the code in the console and adds the output to your R environment; however, your R environment is separate from the environment created when “knitting” a document</p>
+<p><img src="images/environment_console.png" width="232" /><img src="images/environment_var.png" width="508" /></p>
+</div>
+<div id="r-code-and-environments-1" class="section level2">
+<h2><span class="header-section-number">7.5</span> R code and environments</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="trouble-shooting.html#cb4-1"></a><span class="co"># Define new variable y</span></span>
+<span id="cb4-2"><a href="trouble-shooting.html#cb4-2"></a>y &lt;-<span class="st"> </span><span class="dv">100</span></span>
+<span id="cb4-3"><a href="trouble-shooting.html#cb4-3"></a></span>
+<span id="cb4-4"><a href="trouble-shooting.html#cb4-4"></a><span class="co"># When I run this chunk, I get the expected output (150),</span></span>
+<span id="cb4-5"><a href="trouble-shooting.html#cb4-5"></a><span class="co"># but it fails when I try to knit the document</span></span>
+<span id="cb4-6"><a href="trouble-shooting.html#cb4-6"></a><span class="kw">print</span>(x <span class="op">+</span><span class="st"> </span>y)</span></code></pre></div>
+</div>
+<div id="tips" class="section level2">
+<h2><span class="header-section-number">7.6</span> Tips</h2>
+<ul>
+<li>Clear all variables: <code>rm(ls = list())</code></li>
+<li>Restart R environment: control/CTRL + fn + shift + F10</li>
+<li>Run all chunks individually <strong>in order</strong> before compiling to test code</li>
+<li>Search for information
+<ul>
+<li>Use Help window</li>
+<li>Search for package in console with <code>?package</code></li>
+<li>Google package and error</li>
+</ul></li>
+</ul>
+<p>Stack Overflow is your friend!</p>
 
 </div>
 </div>
@@ -259,8 +287,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="creating-output.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="markup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tips-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -291,7 +319,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/01-parts.Rmd",
+"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/06-trouble-shooting.Rmd",
 "text": "Edit"
 },
 "history": {
