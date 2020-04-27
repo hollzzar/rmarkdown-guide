@@ -1,4 +1,4 @@
-# Creating output
+# Outputs {#output}
 
 - Options for creating output
   - Specify output type with YAML header and "knit"

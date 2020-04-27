@@ -6,7 +6,7 @@
 
 ## YAML header
 
-Global options for outputs/formatting
+The first part of your document is called the YAML header. Here is where you set the global options for the output and formatting. In the example below, I show the YAML header for a set of `revealjs` slides (see Chapter \@ref(template) for more on creating slides with this and other packages). I've included basic information, like the title and date, in addition to template-specific parameters, like whether there should be slide numbers or not. Section \@ref(yamlrefs) has more information on setting YAML formatting parameters.
 
 ```{r parts_example_yaml, echo=FALSE}
 knitr::include_graphics("images/example_yaml.png")
@@ -14,7 +14,7 @@ knitr::include_graphics("images/example_yaml.png")
 
 ## Markdown
 
-Plain-text-formatting syntax allows for conversion to multiple document types
+The plain text-formatting syntax of R Markdown allows for conversion to multiple document types. This [R Markdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) provides an overview of the plain text syntax. 
 
 ```{r parts_example_markdown, echo=FALSE}
 knitr::include_graphics("images/example_markdown.png")
