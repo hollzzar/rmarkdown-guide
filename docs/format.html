@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Markdown for Psychology Graduate Students</title>
+  <title>Chapter 5 Formatting | R Markdown for Psychology Graduate Students</title>
   <meta name="description" content="Guide to using R Markdown" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Markdown for Psychology Graduate Students" />
+  <meta property="og:title" content="Chapter 5 Formatting | R Markdown for Psychology Graduate Students" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="hollzzar/rmarkdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Markdown for Psychology Graduate Students" />
+  <meta name="twitter:title" content="Chapter 5 Formatting | R Markdown for Psychology Graduate Students" />
   
   <meta name="twitter:description" content="Guide to using R Markdown" />
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2020-04-28" />
+<meta name="date" content="2020-04-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="intro.html"/>
+<link rel="prev" href="template.html"/>
+<link rel="next" href="trouble.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -219,27 +220,139 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">R Markdown for Psychology Graduate Students</h1>
-<p class="author"><em>Holly Zaharchuk</em></p>
-<p class="date"><em>2020-04-28</em></p>
+<div id="format" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Formatting</h1>
+<ol style="list-style-type: decimal">
+<li>YAML parameters and references</li>
+<li>Inline <span class="math inline">\(\LaTeX\)</span> and CSS code</li>
+<li>Custom edits to templates</li>
+</ol>
+<div id="yaml-parameters" class="section level2">
+<h2><span class="header-section-number">5.1</span> YAML parameters</h2>
+<p>There are several <a href="https://ymlthis.r-lib.org/articles/yaml-fieldguide.html">general YAML parameters</a> that you can include in the YAML header to format your document. There are also template-specific parameters, but you’ll need to look at the specific package documentation to know what these are.</p>
 </div>
-<div id="welcome" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Welcome</h1>
-<p>I designed this guide to be a resource for psychology graduate students looking to streamline their research pipelines. With R Markdown, you can load, clean, manipulate, analyze, and present your data in one environment. This guide focuses on the presentation piece, with information on creating slides, posters, manuscripts, CVs, and reports in several formats, including HTML, PDF, and Microsoft Word.</p>
-<div id="background" class="section level2">
-<h2><span class="header-section-number">1.1</span> Background</h2>
-<p>This guide assumes a basic level of familiarity with <a href="https://www.r-project.org/">R</a> and <a href="https://rstudio.com/products/rstudio/download/">RStudio</a>. If you don’t know how to use either of these, there are several <a href="https://education.rstudio.com/learn/beginner/">beginner tutorials</a> you should check out first. I have also created primers for Beginner and Intermediate R in Chapter <a href="supplement.html#supplement">8</a>.</p>
+<div id="yamlref" class="section level2">
+<h2><span class="header-section-number">5.2</span> YAML references</h2>
+<p>In your YAML header, you can also reference other documents for formatting and content. The most common ones I use are .bib and .csl files for citing and formatting references, respectively, in manuscripts and reports. These files all go in the same directory as your .Rmd file.</p>
+<ul>
+<li>Bibliography: <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html">.bib</a> (I use BibDesk for my reference manager)</li>
+<li>Citation style language files: <a href="https://github.com/citation-style-language/styles">.csl</a>
+<ul>
+<li>My <a href="https://github.com/hollzzar/zaharchuk-cv">CV</a> repo has a customized APA 6 .csl file for arranging references in descending order by date</li>
+<li>My <a href="https://github.com/hollzzar/psychonomics-poster">Psychonomics poster</a> repo also has a customized APA 6 .csl to fix some small bugs</li>
+</ul></li>
+<li><span class="math inline">\(\LaTeX\)</span> styling: .cls</li>
+<li>HTML styling: .css</li>
+<li>Interacting with pandoc: .lua
+<ul>
+<li>Download <a href="https://github.com/pandoc/lua-filters/tree/master/multiple-bibliographies">this .lua file</a> to use multiple bibliographies in one document, as I do in my <a href="https://github.com/hollzzar/zaharchuk-cv">CV</a> (one for publications, another for conference presentations)</li>
+<li>Follow <a href="https://cran.rstudio.com/web/packages/rmdfiltr/vignettes/replace_ampersands.html">these instructions</a> for accessing the .lua file for properly formatting in-text references (pandoc defaults to using ampersands where APA requires “and”)</li>
+<li>See the following example for including both of these .lua filters in one document</li>
+</ul></li>
+</ul>
+<p><img src="images/lua_example.png" width="790" /></p>
+<p>Below, I’ve included an example from <a href="https://github.com/hollzzar/zaharchuk-cv">my CV</a> with both template-specific YAML parameters and references.</p>
+<p><img src="images/references_example.png" width="458" /></p>
 </div>
-<div id="getting-started" class="section level2">
-<h2><span class="header-section-number">1.2</span> Getting started</h2>
-<p>What is R Markdown?</p>
-<p><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> is a specific <a href="https://en.wikipedia.org/wiki/Markup_language">markup language</a> with plain text-formatting syntax. <a href="https://cran.r-project.org/web/packages/stationery/vignettes/Rmarkdown.pdf">R Markdown</a> is a specific markdown variety.</p>
-<p>R Markdown and R are not the same thing! R Markdown combines R code (or code from other programming languages) and markdown in the RStudio integrated development environment (IDE). This allows you to embed code and text in the same document.</p>
-<p>You can install the <strong>R Markdown</strong> package from CRAN or GitHub:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span>
-<span id="cb1-2"><a href="index.html#cb1-2"></a><span class="co"># or the development version</span></span>
-<span id="cb1-3"><a href="index.html#cb1-3"></a><span class="co"># devtools::install_github(&quot;rstudio/rmarkdown&quot;)</span></span></code></pre></div>
+<div id="inline-code" class="section level2">
+<h2><span class="header-section-number">5.3</span> Inline code</h2>
+<ul>
+<li><span class="math inline">\(\LaTeX\)</span> with PDFs
+<ul>
+<li>Calling <span class="math inline">\(\LaTeX\)</span> packages</li>
+<li>Using symbols: useful lists <a href="https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf">here</a> and <a href="https://www.tug.org/tugboat/tb17-2/tb51rei.pdf">here</a></li>
+<li>Using type-setting commands (e.g., \vspace{12pt})</li>
+</ul></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> with HTML</li>
+</ul>
+</div>
+<div id="latex" class="section level2">
+<h2><span class="header-section-number">5.4</span> <span class="math inline">\(\LaTeX\)</span></h2>
+<p>Examples of calling packages in the YAML header and using inline functions from my stats homework (also see <a href="https://rosannavanhespenresearch.wordpress.com/2016/03/30/writing-your-thesis-with-r-markdown-5-the-thesis-layout/">Writing Your Thesis with R Markdown</a>)</p>
+<p><img src="images/latex_packages.png" width="299" /><img src="images/latex_calls.png" width="335" /></p>
+<p>Stats homework output</p>
+<p><img src="images/latex_example.png" width="683" /></p>
+</div>
+<div id="csshtml" class="section level2">
+<h2><span class="header-section-number">5.5</span> CSS/HTML</h2>
+<p>Examples from <a href="https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.Rmd">my Psychonomics poster</a></p>
+<p><img src="images/css_example.png" width="744" /></p>
+<p><img src="images/html_example.png" width="374" /></p>
+</div>
+<div id="editing-templates" class="section level2">
+<h2><span class="header-section-number">5.6</span> Editing templates</h2>
+<p>To make extremely custom edits to templates, sometimes you have to edit the template documents directly:</p>
+<ol style="list-style-type: decimal">
+<li>Find out where your computer stores your R packages and edit the template there</li>
+<li>If the template generates a style document (e.g., .cls) in the directory with your .Rmd file, you can usually edit that without going to the package</li>
+</ol>
+</div>
+<div id="package-documents" class="section level2">
+<h2><span class="header-section-number">5.7</span> Package documents</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="format.html#cb4-1"></a><span class="co"># Make dataframe with installed packages</span></span>
+<span id="cb4-2"><a href="format.html#cb4-2"></a>pkgs &lt;-<span class="st"> </span><span class="kw">installed.packages</span>() <span class="op">%&gt;%</span></span>
+<span id="cb4-3"><a href="format.html#cb4-3"></a><span class="st">  </span><span class="kw">as.data.frame</span>()</span>
+<span id="cb4-4"><a href="format.html#cb4-4"></a></span>
+<span id="cb4-5"><a href="format.html#cb4-5"></a><span class="co"># Pull posterdown package </span></span>
+<span id="cb4-6"><a href="format.html#cb4-6"></a>pstr &lt;-<span class="st"> </span>pkgs <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-7"><a href="format.html#cb4-7"></a><span class="st">  </span><span class="kw">select</span>(Package, LibPath, Version, Depends, Imports) <span class="op">%&gt;%</span></span>
+<span id="cb4-8"><a href="format.html#cb4-8"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">filter</span>(Package <span class="op">==</span><span class="st"> &quot;posterdown&quot;</span>)</span>
+<span id="cb4-9"><a href="format.html#cb4-9"></a></span>
+<span id="cb4-10"><a href="format.html#cb4-10"></a><span class="co"># Make table</span></span>
+<span id="cb4-11"><a href="format.html#cb4-11"></a><span class="kw">kable</span>(pstr) <span class="op">%&gt;%</span></span>
+<span id="cb4-12"><a href="format.html#cb4-12"></a><span class="st">  </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="st">&quot;condensed&quot;</span>, </span>
+<span id="cb4-13"><a href="format.html#cb4-13"></a>                <span class="dt">font_size =</span> <span class="dv">18</span>)</span></code></pre></div>
+<table class="table table-condensed" style="font-size: 18px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Package
+</th>
+<th style="text-align:left;">
+LibPath
+</th>
+<th style="text-align:left;">
+Version
+</th>
+<th style="text-align:left;">
+Depends
+</th>
+<th style="text-align:left;">
+Imports
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+posterdown
+</td>
+<td style="text-align:left;">
+/Library/Frameworks/R.framework/Versions/3.5/Resources/library
+</td>
+<td style="text-align:left;">
+1.0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+pagedown, rmarkdown, yaml
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Save the original template and move it to a different location</li>
+<li>Make one change at a time</li>
+<li>Name the updated template with the same name in the same place as the original</li>
+</ul>
+<p><img src="images/template_package.png" width="1039" /></p>
+</div>
+<div id="directory-documents" class="section level2">
+<h2><span class="header-section-number">5.8</span> Directory documents</h2>
+<p>Knitting the <code>vitae::awesomecv</code> template created a .cls file that I could edit to change font sizes/colors</p>
+<p><img src="images/template_dir.png" width="424" /></p>
 
 </div>
 </div>
@@ -248,8 +361,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="template.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="trouble.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -280,7 +393,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/index.Rmd",
+"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/04-formatting.Rmd",
 "text": "Edit"
 },
 "history": {

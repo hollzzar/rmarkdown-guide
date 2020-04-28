@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Markdown for Psychology Graduate Students</title>
+  <title>Chapter 6 Trouble-shooting | R Markdown for Psychology Graduate Students</title>
   <meta name="description" content="Guide to using R Markdown" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Markdown for Psychology Graduate Students" />
+  <meta property="og:title" content="Chapter 6 Trouble-shooting | R Markdown for Psychology Graduate Students" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="hollzzar/rmarkdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Markdown for Psychology Graduate Students" />
+  <meta name="twitter:title" content="Chapter 6 Trouble-shooting | R Markdown for Psychology Graduate Students" />
   
   <meta name="twitter:description" content="Guide to using R Markdown" />
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2020-04-28" />
+<meta name="date" content="2020-04-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="intro.html"/>
+<link rel="prev" href="format.html"/>
+<link rel="next" href="tips-1.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -219,27 +220,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">R Markdown for Psychology Graduate Students</h1>
-<p class="author"><em>Holly Zaharchuk</em></p>
-<p class="date"><em>2020-04-28</em></p>
+<div id="trouble" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Trouble-shooting</h1>
+<div id="identifying-issues" class="section level2">
+<h2><span class="header-section-number">6.1</span> Identifying issues</h2>
+<ul>
+<li>Warnings vs. errors</li>
+<li>Console vs. chunk</li>
+<li>Markdown environment vs. R environment</li>
+<li>Package specification <code>::</code> for unloaded packages and conflicting functions</li>
+</ul>
 </div>
-<div id="welcome" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Welcome</h1>
-<p>I designed this guide to be a resource for psychology graduate students looking to streamline their research pipelines. With R Markdown, you can load, clean, manipulate, analyze, and present your data in one environment. This guide focuses on the presentation piece, with information on creating slides, posters, manuscripts, CVs, and reports in several formats, including HTML, PDF, and Microsoft Word.</p>
-<div id="background" class="section level2">
-<h2><span class="header-section-number">1.1</span> Background</h2>
-<p>This guide assumes a basic level of familiarity with <a href="https://www.r-project.org/">R</a> and <a href="https://rstudio.com/products/rstudio/download/">RStudio</a>. If you don’t know how to use either of these, there are several <a href="https://education.rstudio.com/learn/beginner/">beginner tutorials</a> you should check out first. I have also created primers for Beginner and Intermediate R in Chapter <a href="supplement.html#supplement">8</a>.</p>
+<div id="warnings" class="section level2">
+<h2><span class="header-section-number">6.2</span> Warnings</h2>
+<p>Warnings won’t stop your document from compiling, but generally indicate that you should change something in your code</p>
+<p><img src="images/warning_example.png" width="537" /></p>
 </div>
-<div id="getting-started" class="section level2">
-<h2><span class="header-section-number">1.2</span> Getting started</h2>
-<p>What is R Markdown?</p>
-<p><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> is a specific <a href="https://en.wikipedia.org/wiki/Markup_language">markup language</a> with plain text-formatting syntax. <a href="https://cran.r-project.org/web/packages/stationery/vignettes/Rmarkdown.pdf">R Markdown</a> is a specific markdown variety.</p>
-<p>R Markdown and R are not the same thing! R Markdown combines R code (or code from other programming languages) and markdown in the RStudio integrated development environment (IDE). This allows you to embed code and text in the same document.</p>
-<p>You can install the <strong>R Markdown</strong> package from CRAN or GitHub:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span>
-<span id="cb1-2"><a href="index.html#cb1-2"></a><span class="co"># or the development version</span></span>
-<span id="cb1-3"><a href="index.html#cb1-3"></a><span class="co"># devtools::install_github(&quot;rstudio/rmarkdown&quot;)</span></span></code></pre></div>
+<div id="errors" class="section level2">
+<h2><span class="header-section-number">6.3</span> Errors</h2>
+<p>Chunk error</p>
+<p><img src="images/error_example.png" width="767" /></p>
+<p>R Markdown error</p>
+<p><img src="images/error_conversion.png" width="768" /></p>
+</div>
+<div id="r-code-and-environments" class="section level2">
+<h2><span class="header-section-number">6.4</span> R code and environments</h2>
+<p>Running a chunk executes the code in the console and adds the output to your R environment; however, your R environment is separate from the environment created when “knitting” a document</p>
+<p><img src="images/environment_console.png" width="232" /><img src="images/environment_var.png" width="508" /></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="trouble.html#cb5-1"></a><span class="co"># Define new variable y</span></span>
+<span id="cb5-2"><a href="trouble.html#cb5-2"></a>y &lt;-<span class="st"> </span><span class="dv">100</span></span>
+<span id="cb5-3"><a href="trouble.html#cb5-3"></a></span>
+<span id="cb5-4"><a href="trouble.html#cb5-4"></a><span class="co"># When I run this chunk, I get the expected output (150),</span></span>
+<span id="cb5-5"><a href="trouble.html#cb5-5"></a><span class="co"># but it fails when I try to knit the document</span></span>
+<span id="cb5-6"><a href="trouble.html#cb5-6"></a><span class="kw">print</span>(x <span class="op">+</span><span class="st"> </span>y)</span></code></pre></div>
+</div>
+<div id="tips" class="section level2">
+<h2><span class="header-section-number">6.5</span> Tips</h2>
+<ul>
+<li>Clear all variables: <code>rm(ls = list())</code></li>
+<li>Restart R environment: control/CTRL + fn + shift + F10</li>
+<li>Run all chunks individually <strong>in order</strong> before compiling to test code</li>
+<li>Search for information
+<ul>
+<li>Use Help window</li>
+<li>Search for package in console with <code>?package</code></li>
+<li>Google package and error</li>
+</ul></li>
+</ul>
+<p>Stack Overflow is your friend!</p>
 
 </div>
 </div>
@@ -248,8 +276,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="format.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tips-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -280,7 +308,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/index.Rmd",
+"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/05-trouble-shooting.Rmd",
 "text": "Edit"
 },
 "history": {
