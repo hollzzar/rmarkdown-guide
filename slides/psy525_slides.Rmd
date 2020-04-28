@@ -1,0 +1,81 @@
+---
+title: "R Markdown for Psychology Graduate Students"
+author: "Holly Zaharchuk"
+date: "`r Sys.Date()`"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+    center: true
+    transition: slide
+    self_contained: true
+    reveal_options:
+      slideNumber: true
+      progress: true
+---
+
+# The problem
+
+- R Markdown is a highly useful platform for combining data processing/analysis and presentation
+- There's a steep learning curve for really getting comfortable with R Markdown beyond the basics
+- Graduate students are short on time
+
+# The approach
+
+How can I make R Markdown approachable and efficient to use for graduate students like me?
+
+# The solution
+
+- Started with tutorial for Cognitive Area Brownbag meeting
+- Learned how to use `bookdown` to create a quick guide
+- Created an [online guide hosted on GitHub](https://hollzzar.github.io/rmarkdown-guide/)
+
+## Welcome
+
+What is R Markdown and why should you use it?
+
+## Parts of an R Markdown document
+
+1. YAML header
+2. Markdown
+3. Code chunks
+
+## Outputs
+
+What can I make with R Markdown, and how?
+
+## Templates
+
+1. Built-in templates
+2. Templates from R packages
+3. User-defined templates
+
+## Formatting
+
+The real benefit of this guide and reason why I wanted to make it... because customization is hard (and I've spent countless hours trying to find this information for myself)
+
+## Trouble-shooting
+
+Because we've all been there.
+
+## Tips
+
+How to succeed with R Markdown, as well as with R in general:
+
+- Treat your data as read-only
+- Comment code early and often
+- Keep code chunks small
+- Label chunks for diagnosing issues
+- Nest all files under one directory (if possible)
+
+## Supplementary materials
+
+- Beginner R
+- Intermediate R
+- Practice materials
+
+# Future directions
+
+- Dedicating a section to using GitHub
+- How to make a website with R Markdown
+- Build out the practice materials
+- Add more content on `ggplot`
