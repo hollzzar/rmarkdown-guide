@@ -14,7 +14,7 @@ knitr::include_graphics("images/example_yaml.png")
 
 ## Markdown
 
-The plain text-formatting syntax of R Markdown allows for conversion to multiple document types. This [R Markdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) provides an overview of the plain text syntax. 
+The plain text-formatting syntax of R Markdown allows for conversion to multiple document types. This [R Markdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) provides an overview of the plain text syntax.
 
 ```{r parts_example_markdown, echo=FALSE}
 knitr::include_graphics("images/example_markdown.png")

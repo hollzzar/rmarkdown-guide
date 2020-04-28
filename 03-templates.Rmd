@@ -1,4 +1,4 @@
-# Templates {@template}
+# Templates {#template}
 
 1. Built-in templates
 2. Templates from R packages
