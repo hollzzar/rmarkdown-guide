@@ -1,4 +1,4 @@
-# Trouble-shooting
+# Trouble-shooting {#trouble}
 
 ## Identifying issues
 
@@ -23,6 +23,8 @@ Chunk error
 knitr::include_graphics("images/error_example.png")
 ```
 
+R Markdown error
+
 ```{r trouble_example_mark, echo=FALSE}
 knitr::include_graphics("images/error_conversion.png")
 ```
@@ -35,8 +37,6 @@ Running a chunk executes the code in the console and adds the output to your R e
 knitr::include_graphics("images/environment_console.png")
 knitr::include_graphics("images/environment_var.png")
 ```
-
-## R code and environments
 
 ```{r environment, eval = FALSE}
 # Define new variable y

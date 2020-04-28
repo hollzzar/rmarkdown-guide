@@ -1,4 +1,4 @@
-# Formatting
+# Formatting {#format}
 
 1. YAML parameters and references
 2. Inline $\LaTeX$ and CSS code
@@ -6,26 +6,34 @@
 
 ## YAML parameters
 
-- [General YAML parameters](https://ymlthis.r-lib.org/articles/yaml-fieldguide.html)
-- Template-specific parameters (look at package documentation)
+There are several [general YAML parameters](https://ymlthis.r-lib.org/articles/yaml-fieldguide.html) that you can include in the YAML header to format your document. There are also template-specific parameters, but you'll need to look at the specific package documentation to know what these are.
 
 ## YAML references {#yamlref}
 
-These files go in the same place as your .Rmd
+In your YAML header, you can also reference other documents for formatting and content. The most common ones I use are .bib and .csl files for citing and formatting references, respectively, in manuscripts and reports. These files all go in the same directory as your .Rmd file.
 
 - Bibliography: [.bib](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) (I use BibDesk for my reference manager)
-- Citation style language files: [.csl](https://github.com/citation-style-language/styles) (see my [CV](https://github.com/hollzzar/zaharchuk-cv) and [Psychonomics poster](https://github.com/hollzzar/psychonomics-poster) repos for customized APA 6 files)
+- Citation style language files: [.csl](https://github.com/citation-style-language/styles)
+  - My [CV](https://github.com/hollzzar/zaharchuk-cv) repo has a customized APA 6 .csl file for arranging references in descending order by date
+  - My [Psychonomics poster](https://github.com/hollzzar/psychonomics-poster) repo also has a customized APA 6 .csl to fix some small bugs
 - $\LaTeX$ styling: .cls
 - HTML styling: .css
-- Interacting with pandoc: .lua ([multiple bibliographies](https://github.com/pandoc/lua-filters/tree/master/multiple-bibliographies))
+- Interacting with pandoc: .lua
+  - Download [this .lua file](https://github.com/pandoc/lua-filters/tree/master/multiple-bibliographies) to use multiple bibliographies in one document, as I do in my [CV](https://github.com/hollzzar/zaharchuk-cv) (one for publications, another for conference presentations)
+  - Follow [these instructions](https://cran.rstudio.com/web/packages/rmdfiltr/vignettes/replace_ampersands.html) for accessing the .lua file for properly formatting in-text references (pandoc defaults to using ampersands where APA requires "and")
+  - See the following example for including both of these .lua filters in one document
+  
+```{r format_lua, echo=FALSE}
+knitr::include_graphics("images/lua_example.png")
+```
 
-Example from [my CV](https://github.com/hollzzar/zaharchuk-cv) with both template-specific YAML parameters and YAML references
+Below, I've included an example from [my CV](https://github.com/hollzzar/zaharchuk-cv) with both template-specific YAML parameters and references.
 
 ```{r format_example_ref, echo=FALSE}
 knitr::include_graphics("images/references_example.png")
 ```
 
-## Inline $\LaTeX$&nbsp; and CSS code
+## Inline code
 
 - $\LaTeX$ with PDFs
   - Calling $\LaTeX$ packages
@@ -62,7 +70,7 @@ knitr::include_graphics("images/html_example.png")
 
 ## Editing templates
 
-To make extremely custom edits to templates, sometimes you have to edit the template documents
+To make extremely custom edits to templates, sometimes you have to edit the template documents directly:
 
 1. Find out where your computer stores your R packages and edit the template there
 2. If the template generates a style document (e.g., .cls) in the directory with your .Rmd file, you can usually edit that without going to the package
@@ -84,8 +92,6 @@ kable(pstr) %>%
   kable_styling(bootstrap_options = "condensed", 
                 font_size = 18)
 ```
-
-## Package documents
 
 - Save the original template and move it to a different location
 - Make one change at a time

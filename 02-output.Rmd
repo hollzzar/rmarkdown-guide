@@ -1,25 +1,33 @@
 # Outputs {#output}
 
-- Options for creating output
-  - Specify output type with YAML header and "knit"
-  - Render with R command
-- Processing flow: [Rmd > knitr > md > pandoc > output](https://ulyngs.github.io/rmarkdown-workshop-2019/slides/Day2.html#35)
-- [Deep dive on relations among different aspects of R Markdown documents](https://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown)
+R Markdown can transform plain text and code into several different document formats. 
 
-## Output types
+## Output options
 
-- PDF: requires $\LaTeX$ to compile ([TinyTeX](https://yihui.org/tinytex/) distribution)
-- HTML
-- Microsoft Office (Word/Powerpoint)
+HTML is overall the most flexible. It supports the types of content we're interested in creating as graduate students---tables, graphs, and the like---and you can easily transform your HTML output to a PDF with `pagedown::chrome_print(file)` if you have Google Chrome. The [poster template](https://github.com/brentthorne/posterdown) I use follows this process.
 
-## YAML specification
+If you're familiar with $\LaTeX$, you may be inclined to output directly to a PDF, since you can include inline $\LaTeX$ code in your documents (more on this in Chapter \@ref(format)). The [CV](https://github.com/mitchelloharawild/vitae) and [manuscript](https://github.com/rosannav/thesis_in_rmarkdown/tree/master/example_thesis) templates that I use rely on the fine-grained typsetting capabilities of $\LaTeX$. To create a PDF, you need to have $\LaTeX$ installed locally. If you don't already, you can install the lightweight [`tinytex`](https://yihui.org/tinytex/) distribution through the R console.
 
-- Use **output** argument in YAML header
-- Pay attention to indentation and colons
-- Press `knit` button or command/CTRL + shift + K
+```{r eval=FALSE}
+install.packages("tinytex")
+```
 
-## Render
+You can also output to Microsoft Word and Powerpoint. I often work with colleagues who prefer to edit in Word, so sometimes I need to do this. I prefer not to if I can help it though, because you lose several important functions. For example, chunk options for aligning and setting the size of graphs and other images don't work, and `kable` tables tend not to appear correctly.
 
-Render files in the console with `rmarkdown::render(file, output_format)` (this is what `knit` is doing)
+## Output templates
 
-Option to create PDF from HTML with `pagedown::chrome_print(file)`
+You can find information on output templates in Chapter \@ref(template).
+
+## Rendering options
+
+You can specify a particular output type in the YAML header with the **output** option. Then, you can press the **Knit** button or command/CTRL + shift + K to create or "knit" the document. 
+
+Be sure to pay attention to indentation and colon placement in your YAML header, especially as you start to specify options for particular output types. As a rule of thumb, if you have anything more than **output: output_type**, you need to indent every new line, and have a colon at the end of the previous line. See Section \@ref(use_def) for an example of this.
+
+Instead of knitting, you can also render files in console with `rmarkdown::render(file, output_format)`. This is essentially what **Knit** is doing. This approach allows you to create multiple output types quickly and easily. In my experience, I'm usually customizing my output very specifically for one output type by adding in-line CSS or $\LaTeX$ code, so I tend not to do this.
+
+## Knitting process
+
+When you **Knit** or `render` your document, there's a particular sequence of events that happens under the hood. Your R Markdown document is piped through to pandoc by the `knitr` package, which runs your code chunks and knits them together with the plain text you've included. Pandoc ultimately handles the conversion to a particular output format. Understanding this process can help you trouble-shoot when you run into issues. You can find more on trouble-shooting in Chapter \@ref(trouble).
+
+![Knitting process from [Writing Your Thesis with R Markdown](https://www.rosannavanhespen.nl/thesis_in_rmarkdown/)](https://rosannavanhespenresearch.files.wordpress.com/2016/03/pandoc1.png)

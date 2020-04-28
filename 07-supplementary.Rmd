@@ -42,8 +42,6 @@ Functions take a certain number and certain types of "arguments"
   - `install.packages(package)` once (or to update package)
   - `library(package)` every R session
 
-### Functions
-
 Use Help window or `?package` to check argument names, types, and defaults
 
 - Named arguments without values are required (and user-defined)
@@ -115,8 +113,6 @@ read.csv("file_name.csv",
 
 Avoid special characters (including spaces) in file names, directories, and column headers!
 
-### Reading in data
-
 - `readxl` package for Excel spreadsheets
 - APIs for direct access to online data
   - `qualtRics` package for Qualtrics data
@@ -179,8 +175,6 @@ Avoid special characters (including spaces) in file names, directories, and colu
   - Change a pattern: `sub()`, `gsub()`, `replace()`
   - Return position of pattern for all elements: `regexpr()`, `gregexpr()`, `regexec()`
 - Use `perl = TRUE` argument to handle especially complex patterns
-  
-### Free-response text
 
 ```{r text_1}
 # List of elements
@@ -192,8 +186,6 @@ grep(pattern = "le", x = fruit)
 # grep value
 grep(pattern = "le", x = fruit, value = TRUE)
 ```
-
-### Free-response text
 
 ```{r text_2}
 # agrep (can also specify value = TRUE)
@@ -218,8 +210,6 @@ assign(name, vals)
 # Use the variable as usual
 assign_example
 ```
-
-### Dynamic variables
 
 ```{r assign_2}
 # You can also get the new variable from the name
