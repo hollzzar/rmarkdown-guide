@@ -248,3 +248,12 @@ dat %>% dplyr::filter(Progress==100 & ID %notin% unusable)
 ### Other tips
 - Store `ggplot2` parameters in a `list()`
 - [`list()` vs. `c()`](https://stackoverflow.com/questions/8594814/what-are-the-differences-between-vector-and-list-data-types-in-r)
+
+## Practice materials
+
+You can find practice materials for R Markdown and R [here](https://github.com/hollzzar/markdown-tutorial). You'll want to clone this repository or download the following documents/folders:
+
+- brownbag_activity.Rmd
+- data_cleaning.R
+- apa.csl
+- /data

@@ -34,7 +34,7 @@ For PDFs, you can include $\LaTeX$ templates, but you need to pay attention to t
 knitr::include_graphics("images/template_latex.png")
 ```
 
-You can also set up Word document templates. To do this, you'll need to use the Styles Pane. Highlight the text you want to format, make the desired changes, then find the style that applies to that section, and find "Update to Match Selection" in the dropdown menu. In the example below, you can see that I'm editing the "Title" format, so I need to update that particular entry in the Styles Pane. You have to do this for every text element in the document, but once you've set it up once this way, you can simply include it the same way as the $\LaTeX$ template shown above.
+You can also set up Word document templates. To do this, you need to use the Styles Pane. Highlight the text you want to format, make the desired changes, then find the style that applies to that section, and find "Update to Match Selection" in the dropdown menu. In the example below, you can see that I'm editing the "Title" format, so I need to update that particular entry in the Styles Pane. You have to do this for every text element in the document, but once you've set it up once this way, you can simply include it the same way as the $\LaTeX$ template shown above.
 
 ```{r template_word, echo=FALSE}
 knitr::include_graphics("images/template_word.png")

@@ -33,32 +33,26 @@ Below, I've included an example from [my CV](https://github.com/hollzzar/zaharch
 knitr::include_graphics("images/references_example.png")
 ```
 
-## Inline code
+## In-line code
 
-- $\LaTeX$ with PDFs
-  - Calling $\LaTeX$ packages
-  - Using symbols: useful lists [here](https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf) and [here](https://www.tug.org/tugboat/tb17-2/tb51rei.pdf)
-  - Using type-setting commands (e.g., \\vspace{12pt})
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) with HTML
+R Markdown supports in-line code for custom formatting. In PDFs, you can use $\LaTeX$ code, type-setting commands (e.g., \\vspace{12pt}), and call specific packages. There are useful lists of symbols [here](https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf) and [here](https://www.tug.org/tugboat/tb17-2/tb51rei.pdf). In HTML documents, you can include [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) commands.
 
-## $\LaTeX$
+### $\LaTeX$
 
-Examples of calling packages in the YAML header and using inline functions from my stats homework (also see [Writing Your Thesis with R Markdown](https://rosannavanhespenresearch.wordpress.com/2016/03/30/writing-your-thesis-with-r-markdown-5-the-thesis-layout/))
+I've included examples of calling packages in the YAML header and using inline functions from my statistics homework below (also see [Writing Your Thesis with R Markdown](https://www.rosannavanhespen.nl/thesis_in_rmarkdown/)).
 
 ```{r format_latex, echo=FALSE}
 knitr::include_graphics("images/latex_packages.png")
 knitr::include_graphics("images/latex_calls.png")
 ```
 
-Stats homework output
-
 ```{r format_example_latex, echo=FALSE}
 knitr::include_graphics("images/latex_example.png")
 ```
 
-## CSS/HTML
+### CSS/HTML
 
-Examples from [my Psychonomics poster](https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.Rmd)
+Here are some examples of using CSS from [my Psychonomics poster](https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.Rmd).
 
 ```{r format_example_css, echo=FALSE}
 knitr::include_graphics("images/css_example.png")
@@ -75,7 +69,7 @@ To make extremely custom edits to templates, sometimes you have to edit the temp
 1. Find out where your computer stores your R packages and edit the template there
 2. If the template generates a style document (e.g., .cls) in the directory with your .Rmd file, you can usually edit that without going to the package
 
-## Package documents
+### Package documents
 
 ```{r template}
 # Make dataframe with installed packages
@@ -93,6 +87,8 @@ kable(pstr) %>%
                 font_size = 18)
 ```
 
+To edit package documents once you've located them, you should proceed with caution:
+
 - Save the original template and move it to a different location
 - Make one change at a time
 - Name the updated template with the same name in the same place as the original
@@ -101,9 +97,9 @@ kable(pstr) %>%
 knitr::include_graphics("images/template_package.png")
 ```
 
-## Directory documents
+### Directory documents
 
-Knitting the `vitae::awesomecv` template created a .cls file that I could edit to change font sizes/colors
+Some templates output formatting documents in your working directory. These are easier to access and edit. For example, knitting the `vitae::awesomecv` template created a .cls file that I could edit to change font sizes/colors.
 
 ```{r format_template_dir, echo=FALSE}
 knitr::include_graphics("images/template_dir.png")

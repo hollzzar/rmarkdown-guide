@@ -28,3 +28,5 @@ Code chunks are one of the core features of R Markdown. Code chunks are set apar
 # This is a chunk of R code that adds an image
 knitr::include_graphics("images/example_chunk.png")
 ```
+
+Tip: you can use the chunk option "cache = TRUE" for very time-consuming chunks, but there are some catches as described [here](https://bookdown.org/yihui/rmarkdown-cookbook/cache.html).
