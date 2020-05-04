@@ -39,7 +39,7 @@ What is R Markdown?
 
 R Markdown and R are not the same thing! R Markdown combines R code (or code from other programming languages) and markdown in the RStudio integrated development environment (IDE). This allows you to embed code and text in the same document.
 
-You can install the **R Markdown** package from CRAN or GitHub:
+You can install the `rmarkdown` package from CRAN or GitHub:
 
 ```{r eval=FALSE}
 install.packages("rmarkdown")
