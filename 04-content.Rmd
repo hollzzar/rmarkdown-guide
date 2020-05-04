@@ -12,7 +12,7 @@ Another note about R Markdown is that line spacing matters. For example, if I wa
 
 If you want any special characters in R Markdown, $\LaTeX$, or pandoc to appear as text, rather than having them perform some function, you need to "escape" them with a backslash. For example, pound signs/hashtags, backslashes, and dollar signs need to be preceded by a backslash. 
 
-This also applies to any chunk outputs that contain strings, as with `knitr::kable` tables with $\LaTeX$ functions or characters (e.g., Greek letters like $\eta$ to report partial eta-squared or functions like `\textit{p}` to italicize the text). Sometimes you even need multiple backslashes, so you may have to play around to troubleshoot if they're not rendering correctly.
+This also applies to any chunk outputs that contain strings with special characters, as with `knitr::kable` tables with $\LaTeX$ functions or characters (e.g., Greek letters like $\eta$ to report partial eta-squared or functions like `\textit{p}` to italicize the text). Sometimes you even need multiple backslashes, so you may have to play around to troubleshoot if they're not rendering correctly.
 
 Speaking of $\LaTeX$, you can engage "math-mode" by putting dollar signs around $\LaTeX$ math commands. This way, you can include equations, International Phonetic Alphabet (IPA) symbols, and the like in R Markdown (even if you're not outputting to a PDF). For example, I can write $e = mc^2$ in a sentence like this just by wrapping the equation in a single set of dollar signs, or I can use two sets to center the equation: $$e = mc^2$$
 

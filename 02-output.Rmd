@@ -1,6 +1,6 @@
 # Outputs {#output}
 
-R Markdown can transform plain text and code into several different document formats. 
+R Markdown can transform plain text and code into several different document formats. There are also multiple ways to **Knit** or `render` the output.
 
 ## Output options
 
@@ -22,7 +22,7 @@ Be sure to pay attention to indentation and colon placement in your YAML header,
 
 Instead of knitting, you can also render files in console with `rmarkdown::render(file, output_format)`. This is essentially what **Knit** is doing. This approach allows you to create multiple output types quickly and easily. In my experience, I'm usually customizing my output very specifically for one output type by adding inline CSS or $\LaTeX$ code, so I really only use the `render()` function when I'm making [parameterized reports](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F).
 
-## Knitting process
+## Rendering process
 
 When you **Knit** or `render` your document, there's a particular sequence of events that happens under the hood. Your R Markdown document is piped through to pandoc by the `knitr` package, which runs your code chunks and knits them together with the plain text you've included. Pandoc ultimately handles the conversion to a particular output format. Understanding this process can help you troubleshoot when you run into issues. You can find more on troubleshooting in Chapter \@ref(trouble).
 

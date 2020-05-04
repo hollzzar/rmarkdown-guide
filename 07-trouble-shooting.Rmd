@@ -31,7 +31,7 @@ R Markdown error:
 knitr::include_graphics("images/error_conversion.png")
 ```
 
-## RStudio vs. R Markdown environments
+## Environments
 
 Running a chunk executes the code in the console and adds the output to your R environment; however, your R environment is separate from the environment created when knitting a document. If you're getting an error message that says a particular variable or package doesn't exist when it's loaded in your R environment, it's usually because you haven't included it in a previous chunk.
 

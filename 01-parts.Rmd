@@ -6,7 +6,9 @@
 
 ## YAML header
 
-The first part of your document is called the YAML header. This is where you set the global options for the output and formatting. In the example below, I show the YAML header for a set of `revealjs` slides (see Chapter \@ref(template) for more on creating slides with this and other packages). I've included basic information, like the title and date, in addition to template-specific parameters, like whether there should be slide numbers or not. Section \@ref(yamlref) has more information on setting YAML formatting parameters.
+The first part of your document is called the YAML header. This is where you set the global options for the output and formatting. 
+
+In the example below, I show the YAML header for a set of `revealjs` slides. See Chapter \@ref(template) for more information on creating slides with this and other packages. I've included basic information, like the title and date, in addition to template-specific parameters, like whether there should be slide numbers or not. Section \@ref(yamlref) has more information on setting YAML formatting parameters.
 
 ```{r parts_example_yaml, echo=FALSE}
 knitr::include_graphics("images/example_yaml.png")
@@ -14,7 +16,7 @@ knitr::include_graphics("images/example_yaml.png")
 
 ## Markdown {#markintro}
 
-The plain text-formatting syntax of R Markdown allows for conversion to multiple document types. The image below shows an example of the basic syntax. \# denotes a header, with \## denoting a subheader and so on, while numbers will function like you would expect a numbered list to behave in Word. However, unlike Word, the actual numbers don't matter; I could've put all 1's here, and R Markdown would've formatted them for me. Go to Chapter \@ref(content) for more information on markdown syntax.
+The plain text-formatting syntax of R Markdown allows for conversion to multiple document types. The image below shows an example of the basic syntax. \# denotes a header, with \## denoting a subheader and so on. The numbered list will behave like you would expect one to in Word. However, unlike Word, the actual numbers don't matter; I could've put all 1's here, and R Markdown would've formatted them for me. Go to Chapter \@ref(content) for more information on markdown syntax.
 
 ```{r parts_example_markdown, echo=FALSE}
 knitr::include_graphics("images/example_markdown.png")

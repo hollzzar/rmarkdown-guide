@@ -1,5 +1,7 @@
 # Formatting {#format}
 
+There are many ways to customize the formatting of an R Markdown document. In the YAML header, you can specify different parameter options or reference external documents. You can also edit templates directly in certain cases. For local formatting, you can include inline code in the markdown sections.
+
 ## YAML parameters
 
 There are several [general YAML options](https://ymlthis.r-lib.org/articles/yaml-fieldguide.html) that you can include in the YAML header to format your documents. You can also add **params** to the YAML header that you can specify when you render your document and call in your code chunks to make [parameterized reports](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F). Some YAML options require quotation marks, while others don't. In general, if the YAML option is a string of text that you're specifying, like the title or your name, then it should be in quotes. If you're setting a programmatic option, like the output type, then it shouldn't be in quotes. 
@@ -62,6 +64,47 @@ Another very useful .lua file handles in-text APA citations. By default, pandoc 
   
 ```{r format_lua, echo=FALSE}
 knitr::include_graphics("images/lua_example.png")
+```
+
+## Editing templates
+
+To make extremely custom edits to templates, sometimes you have to edit the template documents directly. If the template generates a style document (e.g., .cls) in the directory with your .Rmd file, you can usually edit that without going to the package. Otherwise, you have to find out where your computer stores your R packages and edit the template there. 
+
+### Directory documents {#clsex}
+
+Some templates output formatting documents in your working directory. These are easier to access and edit. For example, knitting the `vitae::awesomecv` template created a .cls file that I could edit to change font sizes/colors.
+
+```{r format_template_dir, echo=FALSE}
+knitr::include_graphics("images/template_dir.png")
+```
+
+### Package documents
+
+To find out where your packages "live," you can call `installed.packages()`. When you leave the parentheses blank (i.e., if you don't provide any arguments), as I've done below, the function will return all of the packages you have installed. I've stored them as a dataframe, and then filtered for an example. Here, I'm looking at the `posterdown` package.
+
+```{r template, out.width='\\textwidth'}
+# Make dataframe with installed packages
+pkgs <- installed.packages() %>%
+  as.data.frame()
+
+# Pull posterdown package 
+pstr <- pkgs %>% 
+  select(Package, LibPath, Version, Depends, Imports) %>%
+  dplyr::filter(Package == "posterdown")
+
+# Make table
+kable(pstr) %>%
+  kable_styling(bootstrap_options = "condensed", full_width = FALSE, font_size = 12)
+```
+
+To edit package documents once you've located them, you should proceed with caution. Be sure to:
+
+- Save the original template and move it to a different location (in the example below, I made the "original" folder and put the original template there)
+- Make one change at a time, and then re-knit the document to see what changed
+- Name the updated template with the same name in the same place as the original (here, in the "resources" folder)
+
+```{r format_template, echo=FALSE}
+knitr::include_graphics("images/template_package.png")
 ```
 
 ## Inline code
@@ -173,45 +216,4 @@ Here is the original *p* value: `r p_value`. I can write *p* `r p_value_1` to re
 
 ```{r content_intext, echo=FALSE}
 knitr::include_graphics("images/content_intext.png")
-```
-
-## Editing templates
-
-To make extremely custom edits to templates, sometimes you have to edit the template documents directly. If the template generates a style document (e.g., .cls) in the directory with your .Rmd file, you can usually edit that without going to the package. Otherwise, you have to find out where your computer stores your R packages and edit the template there. 
-
-### Directory documents {#clsex}
-
-Some templates output formatting documents in your working directory. These are easier to access and edit. For example, knitting the `vitae::awesomecv` template created a .cls file that I could edit to change font sizes/colors.
-
-```{r format_template_dir, echo=FALSE}
-knitr::include_graphics("images/template_dir.png")
-```
-
-### Package documents
-
-To find out where your packages "live," you can call `installed.packages()`. When you leave the parentheses blank (i.e., if you don't provide any arguments), as I've done below, the function will return all of the packages you have installed. I've stored them as a dataframe, and then filtered for an example. Here, I'm looking at the `posterdown` package.
-
-```{r template, out.width='\\textwidth'}
-# Make dataframe with installed packages
-pkgs <- installed.packages() %>%
-  as.data.frame()
-
-# Pull posterdown package 
-pstr <- pkgs %>% 
-  select(Package, LibPath, Version, Depends, Imports) %>%
-  dplyr::filter(Package == "posterdown")
-
-# Make table
-kable(pstr) %>%
-  kable_styling(bootstrap_options = "condensed", full_width = FALSE, font_size = 12)
-```
-
-To edit package documents once you've located them, you should proceed with caution. Be sure to:
-
-- Save the original template and move it to a different location (in the example below, I made the "original" folder and put the original template there)
-- Make one change at a time, and then re-knit the document to see what changed
-- Name the updated template with the same name in the same place as the original (here, in the "resources" folder)
-
-```{r format_template, echo=FALSE}
-knitr::include_graphics("images/template_package.png")
 ```
