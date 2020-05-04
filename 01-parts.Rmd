@@ -26,7 +26,7 @@ knitr::include_graphics("images/example_markdown.png")
 
 Code chunks are one of the core features of R Markdown. Code chunks are set apart from the markdown sections by three backticks at the beginning and end. In curly brackets, you must specify the coding language you want to use (here, it's R, with a lowercase r). 
 
-You can also add other arguments, like a name for the chunk (here, it's `setup`), and specific chunk options. The example I've provided below is the first chunk in my R Markdown document and sets up the default chunk options with `knitr::opts_chunk$set`. You can see that I've set `echo = TRUE`, so that all of my code chunks appear in the document by default; however, I set `echo = FALSE` for this specific chunk so that it wouldn't appear. A full list of chunk options can be found [here](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf?_ga=2.148221175.1120335848.1588040224-1822605369.1586890951).
+You can also add other arguments, like a name for the chunk (here, it's `setup`), and specific chunk options. The example I've provided below is the first chunk in my R Markdown document and sets up the default chunk options with `knitr::opts_chunk$set`. You can see that I've set `echo = TRUE`, so that all of my code chunks appear in the document by default; however, I set `echo = FALSE` for this specific chunk so that it wouldn't appear. A full list of chunk options can be found [here](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
 
 ```{r parts_example_chunk}
 # This is a chunk of R code that adds an image

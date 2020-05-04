@@ -30,7 +30,7 @@ At the top level, I had the main R Markdown document and necessary reference doc
 knitr::include_graphics("images/content_organization.png")
 ```
 
-## Sourcing code
+## Sourcing code {#source}
 
 I also use a similar decentralized organizational structure for my actual R processing scripts. You can use `source(file)` to *source* all of the code from one script into another, similarly to using *child* documents in R Markdown. The *Load* document above actually *sources* R scripts in the code chunks to load those data into the thesis document.
 

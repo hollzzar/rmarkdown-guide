@@ -17,7 +17,7 @@ always_allow_html: true
 ## Load packages ##
 
 # Package list
-pkg_list <- c("plyr","tidyverse", "data.table", "ggplot2", "kableExtra")
+pkg_list <- c("plyr","tidyverse", "data.table", "ggplot2", "kableExtra", "psych")
 
 # Load packages
 pacman::p_load(pkg_list, character.only = TRUE)

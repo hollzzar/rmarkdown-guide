@@ -20,9 +20,109 @@ Speaking of $\LaTeX$, you can engage "math mode" by putting dollar signs around 
 
 ## Chunk output
 
-### Data
+Depending on the kind of content you're creating with R Markdown, whether it's a poster, manuscript, or internal lab document, there are several ways you can take code chunks and turn them into content.
 
-### Graphs
+### Data {#dat}
+
+When I'm working on a project and checking in with my advisor on my progress, I display my raw data and analyses in R Markdown. My usual work-flow includes data pre-processing in MATLAB for EEG data and R for the ERP analyses and behavioral data. I get everything clean and ready to go in these scripts.
+
+As I describe in Section \@ref(source), I keep separate scripts for each piece of the data analysis. I *source* them into one another, with a *global* script at the base with any general variables (like file names, HEX color codes for graphs, etc.) and custom functions. Once I've built out this processing pipeline with R scripts, that's when I'll *source* them into my R Markdown documents for statistical analysis and presentation. Once you've got your data loaded into R Markdown, you just use R code to run analyses and output them in your document as you would in a regular R script. 
+
+If I'm running regressions with `lm` from the `stats` package for example, I'll wrap the `summary` function around the output. I tend to save this as a variable, since I typically want to grab individual values from the variable later (e.g., *p* values). You can put the new variable name on its own line or `print` it if you prefer; otherwise, you can just have a line with `summary(model)`, and it'll output the table in your document. If I'm sending this document to someone who's not familiar with my data, I will also provide some basic information and summary statistics.
+
+```{r content_data_example, warning=FALSE, message=FALSE}
+# Show first five rows of mtcars dataset
+head(mtcars, 5)
+
+# Provide summary statistics for miles per gallon (mpg) and weight (wt)
+  # select is from dplyr
+  # describe is from the psych package
+mtcars %>% select(mpg, wt) %>% describe()
+
+# Are car weight and miles per gallon correlated?
+mpg_model <- lm(mpg ~ wt, mtcars)
+
+# Save summary of model
+mpg_summary <- summary(mpg_model)
+
+# Output results
+  # I could have put summary(mpg_model) or print(mpg_summary) instead if I preferred
+mpg_summary
+```
+
+### Graphs {#graph}
+
+I could've written an entire book on graphs with `ggplot`; in fact, [someone has](https://ggplot2-book.org/). I'm going to focus more on the R Markdown piece, but will provide some handy `ggplot` tips at the end.
+
+#### Graphs in R Markdown
+
+Let's start with a basic scatterplot of the miles per gallon and weight data from the `mtcars` dataset above. As with the regression output, there are few ways to get the graph from your code chunk into your document. I can just make the graph without saving it as a variable, so it automatically outputs from the chunk, or save it and put the variable name on a new line.
+
+```{r content_graph_1}
+# Save number of cylinders (cyl) as factor
+  # Otherwise, ggplot will treat it as a continuous variable
+mtcars <- mtcars %>%
+  mutate(cyl = as.factor(cyl))
+
+# Create scatter plot
+mtcars_plot <- ggplot(mtcars) +
+  geom_jitter(aes(mpg, wt, color = cyl)) +
+  geom_smooth(aes(mpg, wt), method = "lm", se = TRUE, level = 0.95, 
+              fill = "#d7d8db", color = "black", size = 0.5) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,6)) +
+  scale_x_continuous(expand = c(0,0), limits = c(10,35)) +
+  scale_color_brewer(type = "qual", palette = "Paired") +
+  theme_classic() +
+  labs(title = "Miles per gallon and vehicle weight are negatively correlated",
+       y = "Vehicle weight (1000 lbs)",
+       x = "Miles per gallon",
+       color = "Cylinders")
+
+# Output plot
+mtcars_plot
+```
+
+You can use the chunk options to control how this graph appears in the document. The ones I typically use for outputting graphs are dots per inch (`dpi`) to control the image quality, `out.width` and `out.height` with either specific units or a percentage, and `fig.align` to change the alignment of the output. In the graph below, I've set `dpi` equal to 300, the `out.width` at 50%, and `fig.align` to center. You can also add a figure caption in the chunk header if you'd like.
+
+```{r content_graph_2, dpi=300, out.width="50%", fig.align="center"}
+# Output plot with new chunk options
+mtcars_plot
+```
+
+As a note, the values for `out.width` and `fig.align` need to be in quotation marks, while the value for the `dpi` setting doesn't. Pay attention to which values have quotes around them in the column with the default values in the chunk options section of the [reference guide](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf). You'll get an error when you try to render the document if you don't have appropriate quotation marks.
+
+#### Graphing with `ggplot`
+
+Now for some general tips on `ggplot`.
+
+First, on formatting, you'll want to be familiar with the [color brewer palettes](https://colorbrewer2.org/). You can use the `scale_color/fill_brewer` functions with `ggplot` to apply these color palettes.
+
+Relatedly, there's a difference between setting `fill` and `color` options in `ggplot`. Generally, things like the points of scatter plots get `color` settings, while things like the bars in bar plots get `fill` settings. If I'd set `fill = cyl` in `geom_jitter`, I would get a legend with the three cylinder types, but the colors of the points wouldn't change. Similarly, if I used `scale_fill_brewer` rather than `scale_color_brewer`, the colors of the points would still be the R defaults. It's the same thing with the color legend title that I set in the `labs` function.
+
+Another aspect of `ggplot` you should be aware of is that the plots are built in sequence. I have `ggplot(mtcars)` first, which just sets up a blank graph, then `geom_jitter`, which adds the `wt` and `mpg` data and point colors based on the `cyl` variable, and so on. If I wanted the regression line from `geom_smooth` to appear beneath the points rather than on top of them, I can just change the order of the function calls. 
+
+This functionality also means that you can save several graph layers in a list to apply them easily to multiple graphs. This can save you lots of time and headaches when you want to have a consistent look across different graphs. You can just update a particular parameter in your list once, and then it'll apply across your graphs. Some functions, like `labs`, support this layering very well by allowing multiple calls to the same function. Others, like `scale_y_continuous`, will override previous calls in the same graph (you'll get a warning message when this happens). You'll notice that I have to put commas in between each function in the list rather than plus signs. I also have to save these in a `list`(rather than with `c()`).
+
+```{r content_graph_3}
+# Create list of specifications
+format_list <- list(scale_y_continuous(expand = c(0,0), limits = c(0,6)),
+                    scale_x_continuous(expand = c(0,0), limits = c(10,35)),
+                    scale_color_brewer(type = "qual", palette = "Paired"),
+                    theme_classic(),
+                    labs(y = "Vehicle weight (1000 lbs)",
+                         x = "Miles per gallon",
+                         color = "Cylinders"))
+
+# Create scatter plot
+mtcars_plot <- ggplot(mtcars) +
+  geom_jitter(aes(mpg, wt, color = cyl)) +
+  geom_smooth(aes(mpg, wt), method = "lm", se = TRUE, level = 0.95, 
+              fill = "#d7d8db", color = "black", size = 0.5) +
+  labs(title = "Miles per gallon and vehicle weight are negatively correlated") +
+  format_list
+```
+
+Lastly on formatting, you'll want to become familiar with the `theme` function as your graphs increase in complexity. The description for this function says it best: "Themes are a powerful way to customize the non-data components of your plots: i.e. titles, labels, fonts, background, gridlines, and legends." I typically layer `theme_classic` as I used above with several `theme` specifications, like setting the font size for the plot title (`plot.title=element_text(size=text_size)`, with `text_size` being a variable I set to 12 for 12 point font), removing the background from the labels on a facet-wrapped plot (`strip.background=element_blank()`), and setting the font I want to use (`text=element_text(family=font_fam)`, where `font_fam` is a variable I set to "Avenir" for [my CNS poster](https://github.com/hollzzar/CNS-2020-poster)). Search `?theme` in your R console or Help window for the full list of parameters.
 
 ### Tables
 
