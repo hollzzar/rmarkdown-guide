@@ -14,20 +14,16 @@ install.packages("tinytex")
 
 You can also output to Microsoft Word and Powerpoint. I often work with colleagues who prefer to edit in Word, so sometimes I need to do this. I prefer not to if I can help it though, because you lose several important functions. For example, chunk options for aligning and setting the size of graphs and other images don't work, and `kable` tables tend not to appear correctly.
 
-## Output templates
-
-You can find information on output templates in Chapter \@ref(template).
-
 ## Rendering options
 
-You can specify a particular output type in the YAML header with the **output** option. Then, you can press the **Knit** button or command/CTRL + shift + K to create or "knit" the document. 
+You can specify a particular output type in the YAML header with the **output** option. Then, you can press the **Knit** button or CTRL/command + shift + K to create or "knit" the document. 
 
-Be sure to pay attention to indentation and colon placement in your YAML header, especially as you start to specify options for particular output types. As a rule of thumb, if you have anything more than **output: output_type**, you need to indent every new line, and have a colon at the end of the previous line. See Section \@ref(use_def) for an example of this.
+Be sure to pay attention to indentation and colon placement in your YAML header, especially as you start to specify options for particular output types. As a rule of thumb, if you have anything more than **output: output_type**, you need to indent every new line, and have a colon at the end of the previous line. See Section \@ref(usedef) for an example of this.
 
-Instead of knitting, you can also render files in console with `rmarkdown::render(file, output_format)`. This is essentially what **Knit** is doing. This approach allows you to create multiple output types quickly and easily. In my experience, I'm usually customizing my output very specifically for one output type by adding in-line CSS or $\LaTeX$ code, so I tend not to do this.
+Instead of knitting, you can also render files in console with `rmarkdown::render(file, output_format)`. This is essentially what **Knit** is doing. This approach allows you to create multiple output types quickly and easily. In my experience, I'm usually customizing my output very specifically for one output type by adding inline CSS or $\LaTeX$ code, so I really only use the `render()` function when I'm making [parameterized reports](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F).
 
 ## Knitting process
 
-When you **Knit** or `render` your document, there's a particular sequence of events that happens under the hood. Your R Markdown document is piped through to pandoc by the `knitr` package, which runs your code chunks and knits them together with the plain text you've included. Pandoc ultimately handles the conversion to a particular output format. Understanding this process can help you trouble-shoot when you run into issues. You can find more on trouble-shooting in Chapter \@ref(trouble).
+When you **Knit** or `render` your document, there's a particular sequence of events that happens under the hood. Your R Markdown document is piped through to pandoc by the `knitr` package, which runs your code chunks and knits them together with the plain text you've included. Pandoc ultimately handles the conversion to a particular output format. Understanding this process can help you troubleshoot when you run into issues. You can find more on troubleshooting in Chapter \@ref(trouble).
 
 ![Knitting process from [Writing Your Thesis with R Markdown](https://www.rosannavanhespen.nl/thesis_in_rmarkdown/)](https://rosannavanhespenresearch.files.wordpress.com/2016/03/pandoc1.png)

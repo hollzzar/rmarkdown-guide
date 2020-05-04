@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Supplementary materials | R Markdown for Psychology Graduate Students</title>
+  <title>Chapter 9 Supplementary materials | R Markdown for Psychology Graduate Students</title>
   <meta name="description" content="Guide to using R Markdown" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Supplementary materials | R Markdown for Psychology Graduate Students" />
+  <meta property="og:title" content="Chapter 9 Supplementary materials | R Markdown for Psychology Graduate Students" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="hollzzar/rmarkdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Supplementary materials | R Markdown for Psychology Graduate Students" />
+  <meta name="twitter:title" content="Chapter 9 Supplementary materials | R Markdown for Psychology Graduate Students" />
   
   <meta name="twitter:description" content="Guide to using R Markdown" />
   
@@ -24,14 +24,14 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2020-04-28" />
+<meta name="date" content="2020-05-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="tips-1.html"/>
+<link rel="prev" href="trouble.html"/>
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -136,74 +136,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#tips"><i class="fa fa-check"></i><b>1.2.1</b> Tips</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#general-reference-documents"><i class="fa fa-check"></i><b>1.2.2</b> General reference documents</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Parts of a document</a><ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#yaml-header"><i class="fa fa-check"></i><b>2.1</b> YAML header</a></li>
-<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#markdown"><i class="fa fa-check"></i><b>2.2</b> Markdown</a></li>
-<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#code-chunks"><i class="fa fa-check"></i><b>2.3</b> Code chunks</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#markintro"><i class="fa fa-check"></i><b>2.2</b> Markdown</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#chunkex"><i class="fa fa-check"></i><b>2.3</b> Code chunks</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="output.html"><a href="output.html"><i class="fa fa-check"></i><b>3</b> Outputs</a><ul>
 <li class="chapter" data-level="3.1" data-path="output.html"><a href="output.html#output-options"><i class="fa fa-check"></i><b>3.1</b> Output options</a></li>
-<li class="chapter" data-level="3.2" data-path="output.html"><a href="output.html#output-templates"><i class="fa fa-check"></i><b>3.2</b> Output templates</a></li>
-<li class="chapter" data-level="3.3" data-path="output.html"><a href="output.html#rendering-options"><i class="fa fa-check"></i><b>3.3</b> Rendering options</a></li>
-<li class="chapter" data-level="3.4" data-path="output.html"><a href="output.html#knitting-process"><i class="fa fa-check"></i><b>3.4</b> Knitting process</a></li>
+<li class="chapter" data-level="3.2" data-path="output.html"><a href="output.html#rendering-options"><i class="fa fa-check"></i><b>3.2</b> Rendering options</a></li>
+<li class="chapter" data-level="3.3" data-path="output.html"><a href="output.html#knitting-process"><i class="fa fa-check"></i><b>3.3</b> Knitting process</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> Templates</a><ul>
 <li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#built-in-templates"><i class="fa fa-check"></i><b>4.1</b> Built-in templates</a></li>
 <li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#packages"><i class="fa fa-check"></i><b>4.2</b> Templates from R packages</a></li>
-<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#use_def"><i class="fa fa-check"></i><b>4.3</b> User-defined templates</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="format.html"><a href="format.html"><i class="fa fa-check"></i><b>5</b> Formatting</a><ul>
-<li class="chapter" data-level="5.1" data-path="format.html"><a href="format.html#yaml-parameters"><i class="fa fa-check"></i><b>5.1</b> YAML parameters</a></li>
-<li class="chapter" data-level="5.2" data-path="format.html"><a href="format.html#yamlref"><i class="fa fa-check"></i><b>5.2</b> YAML references</a></li>
-<li class="chapter" data-level="5.3" data-path="format.html"><a href="format.html#in-line-code"><i class="fa fa-check"></i><b>5.3</b> In-line code</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="format.html"><a href="format.html#latex"><i class="fa fa-check"></i><b>5.3.1</b> <span class="math inline">\(\LaTeX\)</span></a></li>
-<li class="chapter" data-level="5.3.2" data-path="format.html"><a href="format.html#csshtml"><i class="fa fa-check"></i><b>5.3.2</b> CSS/HTML</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="format.html"><a href="format.html#editing-templates"><i class="fa fa-check"></i><b>5.4</b> Editing templates</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>5.4.1</b> Package documents</a></li>
-<li class="chapter" data-level="5.4.2" data-path="format.html"><a href="format.html#directory-documents"><i class="fa fa-check"></i><b>5.4.2</b> Directory documents</a></li>
+<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#usedef"><i class="fa fa-check"></i><b>4.3</b> User-defined templates</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#pdf"><i class="fa fa-check"></i><b>4.3.1</b> PDF</a></li>
+<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#word"><i class="fa fa-check"></i><b>4.3.2</b> Word</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="trouble.html"><a href="trouble.html"><i class="fa fa-check"></i><b>6</b> Trouble-shooting</a><ul>
-<li class="chapter" data-level="6.1" data-path="trouble.html"><a href="trouble.html#identifying-issues"><i class="fa fa-check"></i><b>6.1</b> Identifying issues</a><ul>
-<li class="chapter" data-level="6.1.1" data-path="trouble.html"><a href="trouble.html#warnings"><i class="fa fa-check"></i><b>6.1.1</b> Warnings</a></li>
-<li class="chapter" data-level="6.1.2" data-path="trouble.html"><a href="trouble.html#errors"><i class="fa fa-check"></i><b>6.1.2</b> Errors</a></li>
-<li class="chapter" data-level="6.1.3" data-path="trouble.html"><a href="trouble.html#r-code-and-environments"><i class="fa fa-check"></i><b>6.1.3</b> R code and environments</a></li>
-<li class="chapter" data-level="6.1.4" data-path="trouble.html"><a href="trouble.html#packages-1"><i class="fa fa-check"></i><b>6.1.4</b> Packages</a></li>
+<li class="chapter" data-level="5" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i><b>5</b> Content</a><ul>
+<li class="chapter" data-level="5.1" data-path="content.html"><a href="content.html#markdown-overview"><i class="fa fa-check"></i><b>5.1</b> Markdown overview</a></li>
+<li class="chapter" data-level="5.2" data-path="content.html"><a href="content.html#special-characters"><i class="fa fa-check"></i><b>5.2</b> Special characters</a></li>
+<li class="chapter" data-level="5.3" data-path="content.html"><a href="content.html#rintext"><i class="fa fa-check"></i><b>5.3</b> Inline R</a></li>
+<li class="chapter" data-level="5.4" data-path="content.html"><a href="content.html#help"><i class="fa fa-check"></i><b>5.4</b> Custom functions</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="trouble.html"><a href="trouble.html#tips"><i class="fa fa-check"></i><b>6.2</b> Tips</a></li>
+<li class="chapter" data-level="6" data-path="format.html"><a href="format.html"><i class="fa fa-check"></i><b>6</b> Formatting</a><ul>
+<li class="chapter" data-level="6.1" data-path="format.html"><a href="format.html#yaml-parameters"><i class="fa fa-check"></i><b>6.1</b> YAML parameters</a></li>
+<li class="chapter" data-level="6.2" data-path="format.html"><a href="format.html#yamlref"><i class="fa fa-check"></i><b>6.2</b> YAML references</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="format.html"><a href="format.html#bib"><i class="fa fa-check"></i><b>6.2.1</b> .bib</a></li>
+<li class="chapter" data-level="6.2.2" data-path="format.html"><a href="format.html#csl"><i class="fa fa-check"></i><b>6.2.2</b> .csl</a></li>
+<li class="chapter" data-level="6.2.3" data-path="format.html"><a href="format.html#cls-and-.css"><i class="fa fa-check"></i><b>6.2.3</b> .cls and .css</a></li>
+<li class="chapter" data-level="6.2.4" data-path="format.html"><a href="format.html#luaex"><i class="fa fa-check"></i><b>6.2.4</b> .lua</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="tips-1.html"><a href="tips-1.html"><i class="fa fa-check"></i><b>7</b> Tips</a><ul>
-<li class="chapter" data-level="7.1" data-path="tips-1.html"><a href="tips-1.html#keys-to-success"><i class="fa fa-check"></i><b>7.1</b> Keys to success</a></li>
-<li class="chapter" data-level="7.2" data-path="tips-1.html"><a href="tips-1.html#general-information"><i class="fa fa-check"></i><b>7.2</b> General information</a></li>
-<li class="chapter" data-level="7.3" data-path="tips-1.html"><a href="tips-1.html#reference-documents"><i class="fa fa-check"></i><b>7.3</b> Reference documents</a></li>
-<li class="chapter" data-level="7.4" data-path="tips-1.html"><a href="tips-1.html#other-packagestools"><i class="fa fa-check"></i><b>7.4</b> Other packages/tools</a></li>
-<li class="chapter" data-level="7.5" data-path="tips-1.html"><a href="tips-1.html#updating-softwarepackages"><i class="fa fa-check"></i><b>7.5</b> Updating software/packages</a></li>
+<li class="chapter" data-level="6.3" data-path="format.html"><a href="format.html#inline-code"><i class="fa fa-check"></i><b>6.3</b> Inline code</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="format.html"><a href="format.html#latexpacks"><i class="fa fa-check"></i><b>6.3.1</b> <span class="math inline">\(\LaTeX\)</span></a></li>
+<li class="chapter" data-level="6.3.2" data-path="format.html"><a href="format.html#csshtml"><i class="fa fa-check"></i><b>6.3.2</b> CSS/HTML</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="supplement.html"><a href="supplement.html"><i class="fa fa-check"></i><b>8</b> Supplementary materials</a><ul>
-<li class="chapter" data-level="8.1" data-path="supplement.html"><a href="supplement.html#beginner-r"><i class="fa fa-check"></i><b>8.1</b> Beginner R</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="supplement.html"><a href="supplement.html#basic-r-functionality"><i class="fa fa-check"></i><b>8.1.1</b> Basic R functionality</a></li>
-<li class="chapter" data-level="8.1.2" data-path="supplement.html"><a href="supplement.html#variables"><i class="fa fa-check"></i><b>8.1.2</b> Variables</a></li>
-<li class="chapter" data-level="8.1.3" data-path="supplement.html"><a href="supplement.html#functions"><i class="fa fa-check"></i><b>8.1.3</b> Functions</a></li>
-<li class="chapter" data-level="8.1.4" data-path="supplement.html"><a href="supplement.html#base-r"><i class="fa fa-check"></i><b>8.1.4</b> <code>base</code> R</a></li>
-<li class="chapter" data-level="8.1.5" data-path="supplement.html"><a href="supplement.html#packages-2"><i class="fa fa-check"></i><b>8.1.5</b> Packages</a></li>
-<li class="chapter" data-level="8.1.6" data-path="supplement.html"><a href="supplement.html#operators"><i class="fa fa-check"></i><b>8.1.6</b> Operators</a></li>
-<li class="chapter" data-level="8.1.7" data-path="supplement.html"><a href="supplement.html#reading-in-data"><i class="fa fa-check"></i><b>8.1.7</b> Reading in data</a></li>
-<li class="chapter" data-level="8.1.8" data-path="supplement.html"><a href="supplement.html#tidy-r-philosophy"><i class="fa fa-check"></i><b>8.1.8</b> Tidy R philosophy</a></li>
-<li class="chapter" data-level="8.1.9" data-path="supplement.html"><a href="supplement.html#manipulating-data-with-tidyr"><i class="fa fa-check"></i><b>8.1.9</b> Manipulating data with <code>tidyr</code></a></li>
-<li class="chapter" data-level="8.1.10" data-path="supplement.html"><a href="supplement.html#other-helpful-tidyr-functions"><i class="fa fa-check"></i><b>8.1.10</b> Other helpful <code>tidyr</code> functions</a></li>
-<li class="chapter" data-level="8.1.11" data-path="supplement.html"><a href="supplement.html#helpful-base-r-functions"><i class="fa fa-check"></i><b>8.1.11</b> Helpful <code>base</code> R functions</a></li>
-<li class="chapter" data-level="8.1.12" data-path="supplement.html"><a href="supplement.html#other-packages-and-functions"><i class="fa fa-check"></i><b>8.1.12</b> Other packages and functions</a></li>
+<li class="chapter" data-level="6.4" data-path="format.html"><a href="format.html#editing-templates"><i class="fa fa-check"></i><b>6.4</b> Editing templates</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="format.html"><a href="format.html#clsex"><i class="fa fa-check"></i><b>6.4.1</b> Directory documents</a></li>
+<li class="chapter" data-level="6.4.2" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>6.4.2</b> Package documents</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="supplement.html"><a href="supplement.html#intermediate-r"><i class="fa fa-check"></i><b>8.2</b> Intermediate R</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="supplement.html"><a href="supplement.html#free-response-text"><i class="fa fa-check"></i><b>8.2.1</b> Free-response text</a></li>
-<li class="chapter" data-level="8.2.2" data-path="supplement.html"><a href="supplement.html#dynamic-variables"><i class="fa fa-check"></i><b>8.2.2</b> Dynamic variables</a></li>
-<li class="chapter" data-level="8.2.3" data-path="supplement.html"><a href="supplement.html#helpful-functions"><i class="fa fa-check"></i><b>8.2.3</b> Helpful functions</a></li>
-<li class="chapter" data-level="8.2.4" data-path="supplement.html"><a href="supplement.html#other-tips"><i class="fa fa-check"></i><b>8.2.4</b> Other tips</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="supplement.html"><a href="supplement.html#practice-materials"><i class="fa fa-check"></i><b>8.3</b> Practice materials</a></li>
+<li class="chapter" data-level="7" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>7</b> Organization</a><ul>
+<li class="chapter" data-level="7.1" data-path="organization.html"><a href="organization.html#child-documents"><i class="fa fa-check"></i><b>7.1</b> Child documents</a></li>
+<li class="chapter" data-level="7.2" data-path="organization.html"><a href="organization.html#sourcing-code"><i class="fa fa-check"></i><b>7.2</b> Sourcing code</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="trouble.html"><a href="trouble.html"><i class="fa fa-check"></i><b>8</b> Troubleshooting</a><ul>
+<li class="chapter" data-level="8.1" data-path="trouble.html"><a href="trouble.html#warnings-vs.-errors"><i class="fa fa-check"></i><b>8.1</b> Warnings vs. errors</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="trouble.html"><a href="trouble.html#warnings"><i class="fa fa-check"></i><b>8.1.1</b> Warnings</a></li>
+<li class="chapter" data-level="8.1.2" data-path="trouble.html"><a href="trouble.html#errors"><i class="fa fa-check"></i><b>8.1.2</b> Errors</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="trouble.html"><a href="trouble.html#rstudio-vs.-r-markdown-environments"><i class="fa fa-check"></i><b>8.2</b> RStudio vs. R Markdown environments</a></li>
+<li class="chapter" data-level="8.3" data-path="trouble.html"><a href="trouble.html#package-issues"><i class="fa fa-check"></i><b>8.3</b> Package issues</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="trouble.html"><a href="trouble.html#package-specification"><i class="fa fa-check"></i><b>8.3.1</b> Package specification</a></li>
+<li class="chapter" data-level="8.3.2" data-path="trouble.html"><a href="trouble.html#updates"><i class="fa fa-check"></i><b>8.3.2</b> Updates</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="trouble.html"><a href="trouble.html#strategies"><i class="fa fa-check"></i><b>8.4</b> Strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="supplement.html"><a href="supplement.html"><i class="fa fa-check"></i><b>9</b> Supplementary materials</a><ul>
+<li class="chapter" data-level="9.1" data-path="supplement.html"><a href="supplement.html#beginner-r"><i class="fa fa-check"></i><b>9.1</b> Beginner R</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="supplement.html"><a href="supplement.html#basic-r-functionality"><i class="fa fa-check"></i><b>9.1.1</b> Basic R functionality</a></li>
+<li class="chapter" data-level="9.1.2" data-path="supplement.html"><a href="supplement.html#variables"><i class="fa fa-check"></i><b>9.1.2</b> Variables</a></li>
+<li class="chapter" data-level="9.1.3" data-path="supplement.html"><a href="supplement.html#functions"><i class="fa fa-check"></i><b>9.1.3</b> Functions</a></li>
+<li class="chapter" data-level="9.1.4" data-path="supplement.html"><a href="supplement.html#base-r"><i class="fa fa-check"></i><b>9.1.4</b> <code>base</code> R</a></li>
+<li class="chapter" data-level="9.1.5" data-path="supplement.html"><a href="supplement.html#scholarex"><i class="fa fa-check"></i><b>9.1.5</b> Packages</a></li>
+<li class="chapter" data-level="9.1.6" data-path="supplement.html"><a href="supplement.html#operators"><i class="fa fa-check"></i><b>9.1.6</b> Operators</a></li>
+<li class="chapter" data-level="9.1.7" data-path="supplement.html"><a href="supplement.html#reading-in-data"><i class="fa fa-check"></i><b>9.1.7</b> Reading in data</a></li>
+<li class="chapter" data-level="9.1.8" data-path="supplement.html"><a href="supplement.html#tidy-r-philosophy"><i class="fa fa-check"></i><b>9.1.8</b> Tidy R philosophy</a></li>
+<li class="chapter" data-level="9.1.9" data-path="supplement.html"><a href="supplement.html#manipulating-data-with-tidyr"><i class="fa fa-check"></i><b>9.1.9</b> Manipulating data with <code>tidyr</code></a></li>
+<li class="chapter" data-level="9.1.10" data-path="supplement.html"><a href="supplement.html#other-helpful-tidyr-functions"><i class="fa fa-check"></i><b>9.1.10</b> Other helpful <code>tidyr</code> functions</a></li>
+<li class="chapter" data-level="9.1.11" data-path="supplement.html"><a href="supplement.html#helpful-base-r-functions"><i class="fa fa-check"></i><b>9.1.11</b> Helpful <code>base</code> R functions</a></li>
+<li class="chapter" data-level="9.1.12" data-path="supplement.html"><a href="supplement.html#other-packages-and-functions"><i class="fa fa-check"></i><b>9.1.12</b> Other packages and functions</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="supplement.html"><a href="supplement.html#intermediate-r"><i class="fa fa-check"></i><b>9.2</b> Intermediate R</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="supplement.html"><a href="supplement.html#free-response-text"><i class="fa fa-check"></i><b>9.2.1</b> Free-response text</a></li>
+<li class="chapter" data-level="9.2.2" data-path="supplement.html"><a href="supplement.html#dynamic-variables"><i class="fa fa-check"></i><b>9.2.2</b> Dynamic variables</a></li>
+<li class="chapter" data-level="9.2.3" data-path="supplement.html"><a href="supplement.html#helpful-functions"><i class="fa fa-check"></i><b>9.2.3</b> Helpful functions</a></li>
+<li class="chapter" data-level="9.2.4" data-path="supplement.html"><a href="supplement.html#other-tips"><i class="fa fa-check"></i><b>9.2.4</b> Other tips</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="supplement.html"><a href="supplement.html#practice-materials"><i class="fa fa-check"></i><b>9.3</b> Practice materials</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/hollzzar/rmarkdown-guide" target="blank">Published with bookdown</a></li>
@@ -226,9 +242,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="supplement" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> Supplementary materials</h1>
+<h1><span class="header-section-number">Chapter 9</span> Supplementary materials</h1>
 <div id="beginner-r" class="section level2">
-<h2><span class="header-section-number">8.1</span> Beginner R</h2>
+<h2><span class="header-section-number">9.1</span> Beginner R</h2>
 <ul>
 <li>Basic R functionality</li>
 <li>Reading in data</li>
@@ -236,7 +252,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Manipulating data with <a href="https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">core <code>tidyr</code> functions</a></li>
 </ul>
 <div id="basic-r-functionality" class="section level3">
-<h3><span class="header-section-number">8.1.1</span> Basic R functionality</h3>
+<h3><span class="header-section-number">9.1.1</span> Basic R functionality</h3>
 <ul>
 <li>Variables</li>
 <li>Functions</li>
@@ -244,25 +260,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="variables" class="section level3">
-<h3><span class="header-section-number">8.1.2</span> Variables</h3>
+<h3><span class="header-section-number">9.1.2</span> Variables</h3>
 <p>The way R stores your information will determine the kinds of functions/operators you can use</p>
 <ul>
 <li>Data: dataframes</li>
 <li>Values: lists, vectors, matrices, etc.</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="supplement.html#cb6-1"></a><span class="co"># Variables can be numbers, strings, etc.</span></span>
-<span id="cb6-2"><a href="supplement.html#cb6-2"></a>some_val &lt;-<span class="st"> </span><span class="dv">200</span></span>
-<span id="cb6-3"><a href="supplement.html#cb6-3"></a>other_val &lt;-<span class="st"> </span><span class="ot">TRUE</span></span>
-<span id="cb6-4"><a href="supplement.html#cb6-4"></a></span>
-<span id="cb6-5"><a href="supplement.html#cb6-5"></a><span class="co"># Variables can also be lists of numbers, strings, etc.</span></span>
-<span id="cb6-6"><a href="supplement.html#cb6-6"></a>a_list &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb6-7"><a href="supplement.html#cb6-7"></a></span>
-<span id="cb6-8"><a href="supplement.html#cb6-8"></a><span class="co"># We can also make dataframes (which are essentially special lists)</span></span>
-<span id="cb6-9"><a href="supplement.html#cb6-9"></a>a_dataframe &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">column_1 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,</span>
-<span id="cb6-10"><a href="supplement.html#cb6-10"></a>                      <span class="dt">column_2 =</span> a_list)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="supplement.html#cb14-1"></a><span class="co"># Variables can be numbers, strings, etc.</span></span>
+<span id="cb14-2"><a href="supplement.html#cb14-2"></a>some_val &lt;-<span class="st"> </span><span class="dv">200</span></span>
+<span id="cb14-3"><a href="supplement.html#cb14-3"></a>other_val &lt;-<span class="st"> </span><span class="ot">TRUE</span></span>
+<span id="cb14-4"><a href="supplement.html#cb14-4"></a></span>
+<span id="cb14-5"><a href="supplement.html#cb14-5"></a><span class="co"># Variables can also be lists of numbers, strings, etc.</span></span>
+<span id="cb14-6"><a href="supplement.html#cb14-6"></a>a_list &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb14-7"><a href="supplement.html#cb14-7"></a></span>
+<span id="cb14-8"><a href="supplement.html#cb14-8"></a><span class="co"># We can also make dataframes (which are essentially special lists)</span></span>
+<span id="cb14-9"><a href="supplement.html#cb14-9"></a>a_dataframe &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">column_1 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,</span>
+<span id="cb14-10"><a href="supplement.html#cb14-10"></a>                      <span class="dt">column_2 =</span> a_list)</span></code></pre></div>
 </div>
 <div id="functions" class="section level3">
-<h3><span class="header-section-number">8.1.3</span> Functions</h3>
+<h3><span class="header-section-number">9.1.3</span> Functions</h3>
 <p>Functions take a certain number and certain types of “arguments”</p>
 <ul>
 <li><code>base</code> R functions: part of downloading R</li>
@@ -278,38 +294,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Named arguments with values show defaults</li>
 <li>Elipses mean that you can add other optional arguments</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="supplement.html#cb7-1"></a><span class="co"># file: required</span></span>
-<span id="cb7-2"><a href="supplement.html#cb7-2"></a><span class="co"># header = TRUE: default</span></span>
-<span id="cb7-3"><a href="supplement.html#cb7-3"></a><span class="co"># ...: other potential arguments, like stringsAsFactors = FALSE</span></span>
-<span id="cb7-4"><a href="supplement.html#cb7-4"></a><span class="kw">read.csv</span>(file, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">quote =</span> <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">&quot;</span>,</span>
-<span id="cb7-5"><a href="supplement.html#cb7-5"></a>         <span class="dt">dec =</span> <span class="st">&quot;.&quot;</span>, <span class="dt">fill =</span> <span class="ot">TRUE</span>, <span class="dt">comment.char =</span> <span class="st">&quot;&quot;</span>, ...)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="supplement.html#cb15-1"></a><span class="co"># file: required</span></span>
+<span id="cb15-2"><a href="supplement.html#cb15-2"></a><span class="co"># header = TRUE: default</span></span>
+<span id="cb15-3"><a href="supplement.html#cb15-3"></a><span class="co"># ...: other potential arguments, like stringsAsFactors = FALSE</span></span>
+<span id="cb15-4"><a href="supplement.html#cb15-4"></a><span class="kw">read.csv</span>(file, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">quote =</span> <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">&quot;</span>,</span>
+<span id="cb15-5"><a href="supplement.html#cb15-5"></a>         <span class="dt">dec =</span> <span class="st">&quot;.&quot;</span>, <span class="dt">fill =</span> <span class="ot">TRUE</span>, <span class="dt">comment.char =</span> <span class="st">&quot;&quot;</span>, ...)</span></code></pre></div>
 </div>
 <div id="base-r" class="section level3">
-<h3><span class="header-section-number">8.1.4</span> <code>base</code> R</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="supplement.html#cb8-1"></a><span class="co"># base R function</span></span>
-<span id="cb8-2"><a href="supplement.html#cb8-2"></a><span class="co"># Count the number of rows in this dataframe</span></span>
-<span id="cb8-3"><a href="supplement.html#cb8-3"></a><span class="kw">nrow</span>(a_dataframe)</span></code></pre></div>
+<h3><span class="header-section-number">9.1.4</span> <code>base</code> R</h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="supplement.html#cb16-1"></a><span class="co"># base R function</span></span>
+<span id="cb16-2"><a href="supplement.html#cb16-2"></a><span class="co"># Count the number of rows in this dataframe</span></span>
+<span id="cb16-3"><a href="supplement.html#cb16-3"></a><span class="kw">nrow</span>(a_dataframe)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="supplement.html#cb10-1"></a><span class="co"># If I give nrow() too many arguments, it will throw an error</span></span>
-<span id="cb10-2"><a href="supplement.html#cb10-2"></a><span class="kw">nrow</span>(a_dataframe, a_list)</span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="supplement.html#cb11-1"></a><span class="co"># If I give it the wrong kind of argument, it will just return NULL</span></span>
-<span id="cb11-2"><a href="supplement.html#cb11-2"></a><span class="co"># Some functions won&#39;t run at all with wrong kind of argument</span></span>
-<span id="cb11-3"><a href="supplement.html#cb11-3"></a><span class="kw">nrow</span>(a_list)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="supplement.html#cb18-1"></a><span class="co"># If I give nrow() too many arguments, it will throw an error</span></span>
+<span id="cb18-2"><a href="supplement.html#cb18-2"></a><span class="kw">nrow</span>(a_dataframe, a_list)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="supplement.html#cb19-1"></a><span class="co"># If I give it the wrong kind of argument, it will just return NULL</span></span>
+<span id="cb19-2"><a href="supplement.html#cb19-2"></a><span class="co"># Some functions won&#39;t run at all with wrong kind of argument</span></span>
+<span id="cb19-3"><a href="supplement.html#cb19-3"></a><span class="kw">nrow</span>(a_list)</span></code></pre></div>
 <pre><code>## NULL</code></pre>
 </div>
-<div id="packages-2" class="section level3">
-<h3><span class="header-section-number">8.1.5</span> Packages</h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="supplement.html#cb13-1"></a><span class="co"># scholar package </span></span>
-<span id="cb13-2"><a href="supplement.html#cb13-2"></a><span class="kw">library</span>(scholar)</span>
-<span id="cb13-3"><a href="supplement.html#cb13-3"></a></span>
-<span id="cb13-4"><a href="supplement.html#cb13-4"></a><span class="co"># get_publications function</span></span>
-<span id="cb13-5"><a href="supplement.html#cb13-5"></a><span class="co"># Pull publications from Google Scholar for Marie Curie</span></span>
-<span id="cb13-6"><a href="supplement.html#cb13-6"></a><span class="kw">get_publications</span>(<span class="st">&quot;EmD_lTEAAAAJ&amp;EmD_lTEAAAAJ&amp;&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb13-7"><a href="supplement.html#cb13-7"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cites <span class="op">&gt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb13-8"><a href="supplement.html#cb13-8"></a><span class="st">  </span><span class="kw">distinct</span>(title, <span class="dt">.keep_all =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
-<span id="cb13-9"><a href="supplement.html#cb13-9"></a><span class="st">  </span><span class="kw">select</span>(author, title) <span class="op">%&gt;%</span></span>
-<span id="cb13-10"><a href="supplement.html#cb13-10"></a><span class="st">  </span><span class="kw">head</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
-<span id="cb13-11"><a href="supplement.html#cb13-11"></a><span class="st">  </span><span class="kw">kable</span>()</span></code></pre></div>
+<div id="scholarex" class="section level3">
+<h3><span class="header-section-number">9.1.5</span> Packages</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="supplement.html#cb21-1"></a><span class="co"># scholar package </span></span>
+<span id="cb21-2"><a href="supplement.html#cb21-2"></a><span class="kw">library</span>(scholar)</span>
+<span id="cb21-3"><a href="supplement.html#cb21-3"></a></span>
+<span id="cb21-4"><a href="supplement.html#cb21-4"></a><span class="co"># get_publications function</span></span>
+<span id="cb21-5"><a href="supplement.html#cb21-5"></a><span class="co"># Pull publications from Google Scholar for Marie Curie</span></span>
+<span id="cb21-6"><a href="supplement.html#cb21-6"></a><span class="kw">get_publications</span>(<span class="st">&quot;EmD_lTEAAAAJ&amp;EmD_lTEAAAAJ&amp;&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-7"><a href="supplement.html#cb21-7"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cites <span class="op">&gt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-8"><a href="supplement.html#cb21-8"></a><span class="st">  </span><span class="kw">distinct</span>(title, <span class="dt">.keep_all =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
+<span id="cb21-9"><a href="supplement.html#cb21-9"></a><span class="st">  </span><span class="kw">select</span>(author, title) <span class="op">%&gt;%</span></span>
+<span id="cb21-10"><a href="supplement.html#cb21-10"></a><span class="st">  </span><span class="kw">head</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb21-11"><a href="supplement.html#cb21-11"></a><span class="st">  </span><span class="kw">kable</span>()</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -342,7 +358,7 @@ Madame Curie: a biography
 </table>
 </div>
 <div id="operators" class="section level3">
-<h3><span class="header-section-number">8.1.6</span> Operators</h3>
+<h3><span class="header-section-number">9.1.6</span> Operators</h3>
 <ul>
 <li>Relational: &gt;, &lt;, ==, !=, &lt;=, &gt;=
 <ul>
@@ -354,13 +370,13 @@ Madame Curie: a biography
 </ul>
 </div>
 <div id="reading-in-data" class="section level3">
-<h3><span class="header-section-number">8.1.7</span> Reading in data</h3>
+<h3><span class="header-section-number">9.1.7</span> Reading in data</h3>
 <p>General parameters for csv files</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="supplement.html#cb14-1"></a><span class="kw">read.csv</span>(<span class="st">&quot;file_name.csv&quot;</span>, </span>
-<span id="cb14-2"><a href="supplement.html#cb14-2"></a>         <span class="dt">header =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb14-3"><a href="supplement.html#cb14-3"></a>         <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb14-4"><a href="supplement.html#cb14-4"></a>         <span class="dt">check.names =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb14-5"><a href="supplement.html#cb14-5"></a>         <span class="dt">na.strings =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="supplement.html#cb22-1"></a><span class="kw">read.csv</span>(<span class="st">&quot;file_name.csv&quot;</span>, </span>
+<span id="cb22-2"><a href="supplement.html#cb22-2"></a>         <span class="dt">header =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb22-3"><a href="supplement.html#cb22-3"></a>         <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb22-4"><a href="supplement.html#cb22-4"></a>         <span class="dt">check.names =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb22-5"><a href="supplement.html#cb22-5"></a>         <span class="dt">na.strings =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p>Avoid special characters (including spaces) in file names, directories, and column headers!</p>
 <ul>
 <li><code>readxl</code> package for Excel spreadsheets</li>
@@ -373,14 +389,14 @@ Madame Curie: a biography
 </ul>
 </div>
 <div id="tidy-r-philosophy" class="section level3">
-<h3><span class="header-section-number">8.1.8</span> Tidy R philosophy</h3>
+<h3><span class="header-section-number">9.1.8</span> Tidy R philosophy</h3>
 <ul>
 <li>One variable per column</li>
 <li>One observation per row</li>
 </ul>
 </div>
 <div id="manipulating-data-with-tidyr" class="section level3">
-<h3><span class="header-section-number">8.1.9</span> Manipulating data with <code>tidyr</code></h3>
+<h3><span class="header-section-number">9.1.9</span> Manipulating data with <code>tidyr</code></h3>
 <ul>
 <li><code>%&gt;%</code>: pass the results of one function on to another</li>
 <li><code>select()</code>: choose columns by name</li>
@@ -392,7 +408,7 @@ Madame Curie: a biography
 </ul>
 </div>
 <div id="other-helpful-tidyr-functions" class="section level3">
-<h3><span class="header-section-number">8.1.10</span> Other helpful <code>tidyr</code> functions</h3>
+<h3><span class="header-section-number">9.1.10</span> Other helpful <code>tidyr</code> functions</h3>
 <ul>
 <li><code>slice()</code>: choose a row</li>
 <li><code>pull()</code>: choose a column</li>
@@ -403,7 +419,7 @@ Madame Curie: a biography
 </ul>
 </div>
 <div id="helpful-base-r-functions" class="section level3">
-<h3><span class="header-section-number">8.1.11</span> Helpful <code>base</code> R functions</h3>
+<h3><span class="header-section-number">9.1.11</span> Helpful <code>base</code> R functions</h3>
 <ul>
 <li><code>rbind()</code> and <code>cbind()</code>: add rows/columns</li>
 <li><code>nrow()</code> and <code>ncol()</code>: count rows/columns</li>
@@ -413,7 +429,7 @@ Madame Curie: a biography
 </ul>
 </div>
 <div id="other-packages-and-functions" class="section level3">
-<h3><span class="header-section-number">8.1.12</span> Other packages and functions</h3>
+<h3><span class="header-section-number">9.1.12</span> Other packages and functions</h3>
 <ul>
 <li><code>tibble</code> package for dataframes with <code>tibble()</code></li>
 <li><code>kableExtra()</code> for <code>kable()</code> tables</li>
@@ -424,7 +440,7 @@ Madame Curie: a biography
 </div>
 </div>
 <div id="intermediate-r" class="section level2">
-<h2><span class="header-section-number">8.2</span> Intermediate R</h2>
+<h2><span class="header-section-number">9.2</span> Intermediate R</h2>
 <ul>
 <li>Dealing with free-response text</li>
 <li>Dynamic variable creation and reference</li>
@@ -432,7 +448,7 @@ Madame Curie: a biography
 <li>Other tips</li>
 </ul>
 <div id="free-response-text" class="section level3">
-<h3><span class="header-section-number">8.2.1</span> Free-response text</h3>
+<h3><span class="header-section-number">9.2.1</span> Free-response text</h3>
 <ul>
 <li>Regular expressions (cheat sheet <a href="https://rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf">here</a>)</li>
 <li>Pattern matching
@@ -444,22 +460,22 @@ Madame Curie: a biography
 </ul></li>
 <li>Use <code>perl = TRUE</code> argument to handle especially complex patterns</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="supplement.html#cb15-1"></a><span class="co"># List of elements</span></span>
-<span id="cb15-2"><a href="supplement.html#cb15-2"></a>fruit &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;pinapple&quot;</span>)</span>
-<span id="cb15-3"><a href="supplement.html#cb15-3"></a></span>
-<span id="cb15-4"><a href="supplement.html#cb15-4"></a><span class="co"># grep position</span></span>
-<span id="cb15-5"><a href="supplement.html#cb15-5"></a><span class="kw">grep</span>(<span class="dt">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="dt">x =</span> fruit)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="supplement.html#cb23-1"></a><span class="co"># List of elements</span></span>
+<span id="cb23-2"><a href="supplement.html#cb23-2"></a>fruit &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;pinapple&quot;</span>)</span>
+<span id="cb23-3"><a href="supplement.html#cb23-3"></a></span>
+<span id="cb23-4"><a href="supplement.html#cb23-4"></a><span class="co"># grep position</span></span>
+<span id="cb23-5"><a href="supplement.html#cb23-5"></a><span class="kw">grep</span>(<span class="dt">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="dt">x =</span> fruit)</span></code></pre></div>
 <pre><code>## [1] 1 4</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="supplement.html#cb17-1"></a><span class="co"># grep value</span></span>
-<span id="cb17-2"><a href="supplement.html#cb17-2"></a><span class="kw">grep</span>(<span class="dt">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="dt">x =</span> fruit, <span class="dt">value =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="supplement.html#cb25-1"></a><span class="co"># grep value</span></span>
+<span id="cb25-2"><a href="supplement.html#cb25-2"></a><span class="kw">grep</span>(<span class="dt">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="dt">x =</span> fruit, <span class="dt">value =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;apple&quot;    &quot;pinapple&quot;</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="supplement.html#cb19-1"></a><span class="co"># agrep (can also specify value = TRUE)</span></span>
-<span id="cb19-2"><a href="supplement.html#cb19-2"></a><span class="kw">agrep</span>(<span class="dt">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="dt">x =</span> fruit, <span class="dt">max.distance =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="supplement.html#cb27-1"></a><span class="co"># agrep (can also specify value = TRUE)</span></span>
+<span id="cb27-2"><a href="supplement.html#cb27-2"></a><span class="kw">agrep</span>(<span class="dt">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="dt">x =</span> fruit, <span class="dt">max.distance =</span> <span class="fl">0.1</span>)</span></code></pre></div>
 <pre><code>## [1] 1 3 4</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="supplement.html#cb21-1"></a><span class="co"># regexpr</span></span>
-<span id="cb21-2"><a href="supplement.html#cb21-2"></a><span class="co"># match.length attribute gives starting position of match</span></span>
-<span id="cb21-3"><a href="supplement.html#cb21-3"></a><span class="co"># index.type attribute gives length of matched text</span></span>
-<span id="cb21-4"><a href="supplement.html#cb21-4"></a><span class="kw">regexpr</span>(<span class="dt">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="dt">text =</span> fruit)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="supplement.html#cb29-1"></a><span class="co"># regexpr</span></span>
+<span id="cb29-2"><a href="supplement.html#cb29-2"></a><span class="co"># match.length attribute gives starting position of match</span></span>
+<span id="cb29-3"><a href="supplement.html#cb29-3"></a><span class="co"># index.type attribute gives length of matched text</span></span>
+<span id="cb29-4"><a href="supplement.html#cb29-4"></a><span class="kw">regexpr</span>(<span class="dt">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="dt">text =</span> fruit)</span></code></pre></div>
 <pre><code>## [1]  4 -1 -1  7
 ## attr(,&quot;match.length&quot;)
 ## [1]  2 -1 -1  2
@@ -469,51 +485,51 @@ Madame Curie: a biography
 ## [1] TRUE</code></pre>
 </div>
 <div id="dynamic-variables" class="section level3">
-<h3><span class="header-section-number">8.2.2</span> Dynamic variables</h3>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="supplement.html#cb23-1"></a><span class="co"># Variables</span></span>
-<span id="cb23-2"><a href="supplement.html#cb23-2"></a>vals &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">3</span>)</span>
-<span id="cb23-3"><a href="supplement.html#cb23-3"></a>name &lt;-<span class="st"> &quot;assign_example&quot;</span></span>
-<span id="cb23-4"><a href="supplement.html#cb23-4"></a></span>
-<span id="cb23-5"><a href="supplement.html#cb23-5"></a><span class="co"># Assign values to variable name</span></span>
-<span id="cb23-6"><a href="supplement.html#cb23-6"></a><span class="kw">assign</span>(name, vals)</span>
-<span id="cb23-7"><a href="supplement.html#cb23-7"></a></span>
-<span id="cb23-8"><a href="supplement.html#cb23-8"></a><span class="co"># Use the variable as usual</span></span>
-<span id="cb23-9"><a href="supplement.html#cb23-9"></a>assign_example</span></code></pre></div>
+<h3><span class="header-section-number">9.2.2</span> Dynamic variables</h3>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="supplement.html#cb31-1"></a><span class="co"># Variables</span></span>
+<span id="cb31-2"><a href="supplement.html#cb31-2"></a>vals &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb31-3"><a href="supplement.html#cb31-3"></a>name &lt;-<span class="st"> &quot;assign_example&quot;</span></span>
+<span id="cb31-4"><a href="supplement.html#cb31-4"></a></span>
+<span id="cb31-5"><a href="supplement.html#cb31-5"></a><span class="co"># Assign values to variable name</span></span>
+<span id="cb31-6"><a href="supplement.html#cb31-6"></a><span class="kw">assign</span>(name, vals)</span>
+<span id="cb31-7"><a href="supplement.html#cb31-7"></a></span>
+<span id="cb31-8"><a href="supplement.html#cb31-8"></a><span class="co"># Use the variable as usual</span></span>
+<span id="cb31-9"><a href="supplement.html#cb31-9"></a>assign_example</span></code></pre></div>
 <pre><code>## [1] 1 2 3 1 2 3 1 2 3</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="supplement.html#cb25-1"></a><span class="co"># You can also get the new variable from the name</span></span>
-<span id="cb25-2"><a href="supplement.html#cb25-2"></a><span class="kw">get</span>(name)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="supplement.html#cb33-1"></a><span class="co"># You can also get the new variable from the name</span></span>
+<span id="cb33-2"><a href="supplement.html#cb33-2"></a><span class="kw">get</span>(name)</span></code></pre></div>
 <pre><code>## [1] 1 2 3 1 2 3 1 2 3</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="supplement.html#cb27-1"></a><span class="co"># You can add to this variable dynamically as well</span></span>
-<span id="cb27-2"><a href="supplement.html#cb27-2"></a><span class="kw">assign</span>(name, <span class="kw">c</span>(<span class="kw">get</span>(name), <span class="dv">4</span><span class="op">:</span><span class="dv">6</span>))</span>
-<span id="cb27-3"><a href="supplement.html#cb27-3"></a></span>
-<span id="cb27-4"><a href="supplement.html#cb27-4"></a><span class="co"># New output</span></span>
-<span id="cb27-5"><a href="supplement.html#cb27-5"></a>assign_example</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="supplement.html#cb35-1"></a><span class="co"># You can add to this variable dynamically as well</span></span>
+<span id="cb35-2"><a href="supplement.html#cb35-2"></a><span class="kw">assign</span>(name, <span class="kw">c</span>(<span class="kw">get</span>(name), <span class="dv">4</span><span class="op">:</span><span class="dv">6</span>))</span>
+<span id="cb35-3"><a href="supplement.html#cb35-3"></a></span>
+<span id="cb35-4"><a href="supplement.html#cb35-4"></a><span class="co"># New output</span></span>
+<span id="cb35-5"><a href="supplement.html#cb35-5"></a>assign_example</span></code></pre></div>
 <pre><code>##  [1] 1 2 3 1 2 3 1 2 3 4 5 6</code></pre>
 </div>
 <div id="helpful-functions" class="section level3">
-<h3><span class="header-section-number">8.2.3</span> Helpful functions</h3>
+<h3><span class="header-section-number">9.2.3</span> Helpful functions</h3>
 <ul>
 <li><code>apply()</code>, <code>lapply()</code>, <code>sapply()</code>, <code>tapply()</code></li>
 <li><code>source()</code> variables from R scripts</li>
 <li><code>%notin%</code> and <code>%in%</code> (compared to != and ==)</li>
 </ul>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="supplement.html#cb29-1"></a><span class="co"># Example using apply(): go across columns of dataset </span></span>
-<span id="cb29-2"><a href="supplement.html#cb29-2"></a>  <span class="co"># and substitute characters</span></span>
-<span id="cb29-3"><a href="supplement.html#cb29-3"></a>language &lt;-<span class="st"> </span><span class="kw">apply</span>(language, <span class="dv">2</span>, </span>
-<span id="cb29-4"><a href="supplement.html#cb29-4"></a>                  <span class="cf">function</span>(x) <span class="kw">gsub</span>(<span class="st">&quot;</span><span class="ch">\\\\</span><span class="st">&quot;</span>, <span class="st">&quot;&quot;</span>, x, <span class="dt">fixed =</span> <span class="ot">TRUE</span>))</span>
-<span id="cb29-5"><a href="supplement.html#cb29-5"></a></span>
-<span id="cb29-6"><a href="supplement.html#cb29-6"></a><span class="co"># Source other sripts</span></span>
-<span id="cb29-7"><a href="supplement.html#cb29-7"></a><span class="kw">source</span>(<span class="st">&quot;data_cleaning.R&quot;</span>, <span class="dt">local =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb29-8"><a href="supplement.html#cb29-8"></a></span>
-<span id="cb29-9"><a href="supplement.html#cb29-9"></a><span class="co"># Helper function</span></span>
-<span id="cb29-10"><a href="supplement.html#cb29-10"></a><span class="st">&quot;%notin%&quot;</span> &lt;-<span class="st"> </span><span class="kw">Negate</span>(<span class="st">&quot;%in%&quot;</span>)</span>
-<span id="cb29-11"><a href="supplement.html#cb29-11"></a></span>
-<span id="cb29-12"><a href="supplement.html#cb29-12"></a><span class="co"># Example from processing pipeline for Qualtrics data</span></span>
-<span id="cb29-13"><a href="supplement.html#cb29-13"></a>unusable &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;00&quot;</span>,<span class="st">&quot;107&quot;</span>)</span>
-<span id="cb29-14"><a href="supplement.html#cb29-14"></a>dat <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(Progress<span class="op">==</span><span class="dv">100</span> <span class="op">&amp;</span><span class="st"> </span>ID <span class="op">%notin%</span><span class="st"> </span>unusable)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="supplement.html#cb37-1"></a><span class="co"># Example using apply(): go across columns of dataset </span></span>
+<span id="cb37-2"><a href="supplement.html#cb37-2"></a>  <span class="co"># and substitute characters</span></span>
+<span id="cb37-3"><a href="supplement.html#cb37-3"></a>language &lt;-<span class="st"> </span><span class="kw">apply</span>(language, <span class="dv">2</span>, </span>
+<span id="cb37-4"><a href="supplement.html#cb37-4"></a>                  <span class="cf">function</span>(x) <span class="kw">gsub</span>(<span class="st">&quot;</span><span class="ch">\\\\</span><span class="st">&quot;</span>, <span class="st">&quot;&quot;</span>, x, <span class="dt">fixed =</span> <span class="ot">TRUE</span>))</span>
+<span id="cb37-5"><a href="supplement.html#cb37-5"></a></span>
+<span id="cb37-6"><a href="supplement.html#cb37-6"></a><span class="co"># Source other sripts</span></span>
+<span id="cb37-7"><a href="supplement.html#cb37-7"></a><span class="kw">source</span>(<span class="st">&quot;data_cleaning.R&quot;</span>, <span class="dt">local =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb37-8"><a href="supplement.html#cb37-8"></a></span>
+<span id="cb37-9"><a href="supplement.html#cb37-9"></a><span class="co"># Helper function</span></span>
+<span id="cb37-10"><a href="supplement.html#cb37-10"></a><span class="st">&quot;%notin%&quot;</span> &lt;-<span class="st"> </span><span class="kw">Negate</span>(<span class="st">&quot;%in%&quot;</span>)</span>
+<span id="cb37-11"><a href="supplement.html#cb37-11"></a></span>
+<span id="cb37-12"><a href="supplement.html#cb37-12"></a><span class="co"># Example from processing pipeline for Qualtrics data</span></span>
+<span id="cb37-13"><a href="supplement.html#cb37-13"></a>unusable &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;00&quot;</span>,<span class="st">&quot;107&quot;</span>)</span>
+<span id="cb37-14"><a href="supplement.html#cb37-14"></a>dat <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(Progress<span class="op">==</span><span class="dv">100</span> <span class="op">&amp;</span><span class="st"> </span>ID <span class="op">%notin%</span><span class="st"> </span>unusable)</span></code></pre></div>
 </div>
 <div id="other-tips" class="section level3">
-<h3><span class="header-section-number">8.2.4</span> Other tips</h3>
+<h3><span class="header-section-number">9.2.4</span> Other tips</h3>
 <ul>
 <li>Store <code>ggplot2</code> parameters in a <code>list()</code></li>
 <li><a href="https://stackoverflow.com/questions/8594814/what-are-the-differences-between-vector-and-list-data-types-in-r"><code>list()</code> vs. <code>c()</code></a></li>
@@ -521,7 +537,7 @@ Madame Curie: a biography
 </div>
 </div>
 <div id="practice-materials" class="section level2">
-<h2><span class="header-section-number">8.3</span> Practice materials</h2>
+<h2><span class="header-section-number">9.3</span> Practice materials</h2>
 <p>You can find practice materials for R Markdown and R <a href="https://github.com/hollzzar/markdown-tutorial">here</a>. You’ll want to clone this repository or download the following documents/folders:</p>
 <ul>
 <li>brownbag_activity.Rmd</li>
@@ -537,7 +553,7 @@ Madame Curie: a biography
           </div>
         </div>
       </div>
-<a href="tips-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="trouble.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -569,7 +585,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/07-supplementary.Rmd",
+"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/08-supplementary.Rmd",
 "text": "Edit"
 },
 "history": {

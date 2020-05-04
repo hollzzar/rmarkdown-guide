@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Troubleshooting | R Markdown for Psychology Graduate Students</title>
+  <title>Chapter 5 Content | R Markdown for Psychology Graduate Students</title>
   <meta name="description" content="Guide to using R Markdown" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Troubleshooting | R Markdown for Psychology Graduate Students" />
+  <meta property="og:title" content="Chapter 5 Content | R Markdown for Psychology Graduate Students" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="hollzzar/rmarkdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Troubleshooting | R Markdown for Psychology Graduate Students" />
+  <meta name="twitter:title" content="Chapter 5 Content | R Markdown for Psychology Graduate Students" />
   
   <meta name="twitter:description" content="Guide to using R Markdown" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="organization.html"/>
-<link rel="next" href="supplement.html"/>
+<link rel="prev" href="template.html"/>
+<link rel="next" href="format.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -241,78 +241,111 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="trouble" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> Troubleshooting</h1>
+<div id="content" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Content</h1>
 <ol style="list-style-type: decimal">
-<li>Warnings vs. errors</li>
-<li>RStudio vs. R Markdown environments</li>
-<li>Package issues</li>
-<li>Strategies for troubleshooting issues</li>
+<li>Markdown overview</li>
+<li>Special characters</li>
+<li>Inline R</li>
 </ol>
-<div id="warnings-vs.-errors" class="section level2">
-<h2><span class="header-section-number">8.1</span> Warnings vs. errors</h2>
-<div id="warnings" class="section level3">
-<h3><span class="header-section-number">8.1.1</span> Warnings</h3>
-<p>Warnings won’t stop your document from compiling, but generally indicate that you should change something in your code.</p>
-<p><img src="images/warning_example.png" width="537" /></p>
+<div id="markdown-overview" class="section level2">
+<h2><span class="header-section-number">5.1</span> Markdown overview</h2>
+<p><a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">R Markdown: The Definitive Guide</a> and this <a href="https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R Markdown cheatsheet</a> provide information on the typesetting capabilities of R Markdown. In general, R Markdown typesetting options include <code>*italics*</code>, <code>**bold**</code>, and <code>~~strike-through~~</code>. These are achieved by wrapping text in a certain number of asterisks or tildes. There are also <code>(parentheses)</code>, <code>[square brackets]</code>, and <code>"quotation marks"</code> that can have special functions in markdown, like creating hyperlinks: <code>[text](link)</code>.</p>
+<p>With many of these typesetting characters, if you highlight the text you want to format (by clicking and dragging your cursor), you can just hit the character once to wrap the text automatically. This way, you don’t have to go to the beginning and end of the text and place the characters individually.</p>
+<p>Another note about R Markdown is that line spacing matters. For example, if I wanted to include bullet points after this sentence, they wouldn’t render properly if I didn’t hit enter twice before starting them. In other words, I need to have a full line of white space before bullet points and numbered lists. If you’re having issues with your document rendering correctly, make sure you have line breaks between lists, paragraphs, and headers.</p>
 </div>
-<div id="errors" class="section level3">
-<h3><span class="header-section-number">8.1.2</span> Errors</h3>
-<p>There are different kinds of errors that you can encounter. In general, you can distinguish chunk errors from R Markdown errors by their appearance. Errors will usually tell you which line of the document they’re in, but they can be misleading or inaccurate, so try to understand the error message first before going to look for the source. As always, Google and Stack Overflow are your friends!</p>
-<p>Chunk error:</p>
-<p><img src="images/error_example.png" width="767" /></p>
-<p>R Markdown error:</p>
-<p><img src="images/error_conversion.png" width="768" /></p>
+<div id="special-characters" class="section level2">
+<h2><span class="header-section-number">5.2</span> Special characters</h2>
+<p>If you want any special characters in R Markdown, <span class="math inline">\(\LaTeX\)</span>, or pandoc to appear as text, rather than having them perform some function, you need to “escape” them with a backslash. For example, pound signs/hashtags, backslashes, and dollar signs need to be preceded by a backslash.</p>
+<p>This also applies to any chunk outputs that contain strings, as with <code>knitr::kable</code> tables with <span class="math inline">\(\LaTeX\)</span> functions or characters (e.g., Greek letters like <span class="math inline">\(\eta\)</span> to report partial eta-squared or functions like <code>\textit{p}</code> to italicize the text). Sometimes you even need multiple backslashes, so you may have to play around to troubleshoot if they’re not rendering correctly.</p>
+<p>Speaking of <span class="math inline">\(\LaTeX\)</span>, you can engage “math-mode” by putting dollar signs around <span class="math inline">\(\LaTeX\)</span> math commands. This way, you can include equations, International Phonetic Alphabet (IPA) symbols, and the like in R Markdown (even if you’re not outputting to a PDF). For example, I can write <span class="math inline">\(e = mc^2\)</span> in a sentence like this just by wrapping the equation in a single set of dollar signs, or I can use two sets to center the equation: <span class="math display">\[e = mc^2\]</span></p>
 </div>
+<div id="rintext" class="section level2">
+<h2><span class="header-section-number">5.3</span> Inline R</h2>
+<p>A very useful aspect of R Markdown is that you can call R objects and functions in markdown or the YAML header by sandwiching them between backticks. For example, let’s say I want to report on the names of the flower species in the <a href="https://archive.ics.uci.edu/ml/datasets/iris"><code>iris</code> dataset</a>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="content.html#cb4-1"></a><span class="co"># Pull species column from iris and get unique values in column</span></span>
+<span id="cb4-2"><a href="content.html#cb4-2"></a>species &lt;-<span class="st"> </span>iris <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(Species) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unique</span>()</span>
+<span id="cb4-3"><a href="content.html#cb4-3"></a></span>
+<span id="cb4-4"><a href="content.html#cb4-4"></a><span class="co"># Print species variable</span></span>
+<span id="cb4-5"><a href="content.html#cb4-5"></a><span class="kw">print</span>(species)</span></code></pre></div>
+<pre><code>## [1] setosa     versicolor virginica 
+## Levels: setosa versicolor virginica</code></pre>
+<p>Maybe I also want to save a variable with the number of species in this list.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="content.html#cb6-1"></a><span class="co"># Get number of unique species</span></span>
+<span id="cb6-2"><a href="content.html#cb6-2"></a>species_count &lt;-<span class="st"> </span><span class="kw">length</span>(species)</span>
+<span id="cb6-3"><a href="content.html#cb6-3"></a></span>
+<span id="cb6-4"><a href="content.html#cb6-4"></a><span class="co"># Print number of species</span></span>
+<span id="cb6-5"><a href="content.html#cb6-5"></a><span class="kw">print</span>(species_count)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>I can call <code>species</code> and <code>species_count</code> in the markdown text to reference these variables dynamically. Just as in a code chunk, I have to specify that I’m working with R code by including a lower-case r in the backticks with the variable.</p>
+<p>So if I put “r species_count” between backticks, I can report that there are 3 species without typing out the number itself. Or I can reference the variable with the exact species names: setosa, versicolor, virginica. You can see what the markdown looks like in the screenshot below.</p>
+<p><img src="images/content_intext_iris.png" width="816" /></p>
 </div>
-<div id="rstudio-vs.-r-markdown-environments" class="section level2">
-<h2><span class="header-section-number">8.2</span> RStudio vs. R Markdown environments</h2>
-<p>Running a chunk executes the code in the console and adds the output to your R environment; however, your R environment is separate from the environment created when knitting a document. If you’re getting an error message that says a particular variable or package doesn’t exist when it’s loaded in your R environment, it’s usually because you haven’t included it in a previous chunk.</p>
-<p><img src="images/environment_console.png" width="232" /><img src="images/environment_var.png" width="508" /></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="trouble.html#cb13-1"></a><span class="co"># Define new variable y</span></span>
-<span id="cb13-2"><a href="trouble.html#cb13-2"></a>y &lt;-<span class="st"> </span><span class="dv">100</span></span>
-<span id="cb13-3"><a href="trouble.html#cb13-3"></a></span>
-<span id="cb13-4"><a href="trouble.html#cb13-4"></a><span class="co"># When I run this chunk, I get the expected output (150),</span></span>
-<span id="cb13-5"><a href="trouble.html#cb13-5"></a><span class="co"># but it fails when I try to knit the document</span></span>
-<span id="cb13-6"><a href="trouble.html#cb13-6"></a><span class="co"># I&#39;ve set eval=FALSE for this chunk, so it doesn&#39;t try to run and prevent my document from knitting</span></span>
-<span id="cb13-7"><a href="trouble.html#cb13-7"></a><span class="kw">print</span>(x <span class="op">+</span><span class="st"> </span>y)</span></code></pre></div>
-</div>
-<div id="package-issues" class="section level2">
-<h2><span class="header-section-number">8.3</span> Package issues</h2>
-<div id="package-specification" class="section level3">
-<h3><span class="header-section-number">8.3.1</span> Package specification</h3>
-<p>If a function you want to use isn’t included in <code>base</code> R, you need to load the package that it’s in. The most basic way to do this is to run <code>library(package)</code> for each individual package. As you saw in my “setup” chunk example in Section <a href="intro.html#chunkex">2.3</a>, my preferred way is to set a list of packages and then load them with the <code>p_load</code> function from the <code>pacman</code> package. This way, you can easily load multiple packages at once.</p>
-<p>If you don’t want to load a whole package, you can use this notation: <code>package::function</code>. This tells R which package to look in. You especially want to do this if there are what are called “namespace conflicts,” where multiple packages have the same function name. I often run into this issue with the <code>filter</code> function from <code>dplyr</code>, so I always specify <code>dplyr::filter</code> even if I’ve already loaded <code>dplyr</code>.</p>
-</div>
-<div id="updates" class="section level3">
-<h3><span class="header-section-number">8.3.2</span> Updates</h3>
-<p>You may get warnings or errors related to packages being out of date or certain functions being “deprecated.” You may need to update packages and software that interact with R and R Markdown to get your code to run and documents to knit. Depending on the feature that is out of date, there are different strategies for updating.</p>
-<ul>
-<li><a href="https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution">Update your TeX distribution</a> from the command line</li>
-<li>Update all packages (including <code>rmarkdown</code>) in library with <code>update.packages(path)</code></li>
-<li>Update individual packages by reinstalling with <code>install.packages(package)</code></li>
-<li>Update R in the console with <code>updateR</code> package</li>
-<li>Redownload RStudio to update</li>
-</ul>
-</div>
-</div>
-<div id="strategies" class="section level2">
-<h2><span class="header-section-number">8.4</span> Strategies</h2>
-<p>If you’re running into any issues with your code or knitting your document, here are some things you can try:</p>
-<ul>
-<li>Reset your R environment
-<ul>
-<li>Clear all variables by running <code>rm(ls = list())</code> in the console</li>
-<li>Restart your R environment with CTRL/(control + fn) + shift + F10</li>
-<li>Run all chunks individually <strong>in order</strong> before compiling to test code</li>
-</ul></li>
-<li>Search for information
-<ul>
-<li>Use Help window</li>
-<li>Search for package in console with <code>?package</code> or <code>??package</code></li>
-<li>Google the package and error you’re getting</li>
-</ul></li>
-</ul>
+<div id="help" class="section level2">
+<h2><span class="header-section-number">5.4</span> Custom functions</h2>
+<p>If you’re fairly comfortable with R, you can write formatting functions for yourself to make your life easier when you’re referencing variables in your text.</p>
+<p>When I was working on my Master’s thesis, I wrote some custom functions for statistical values that I had to report over and over. This was particularly useful when I had to switch from referring to any <em>p</em> values over .05 as <em>p</em> &gt; .05 to <em>p</em> = the exact value. I just had to change the one function by commenting out a couple lines and re-knit my document. The function is included below; this was the most complicated of the ones I wrote, which included degrees of freedom, <em>t</em> and <em>F</em> values, reaction times, and percentages.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="content.html#cb8-1"></a><span class="co"># Make number formatting function for p values</span></span>
+<span id="cb8-2"><a href="content.html#cb8-2"></a><span class="co"># val is the p value I want to format</span></span>
+<span id="cb8-3"><a href="content.html#cb8-3"></a><span class="co"># format_code specifies whether I want to include the symbol or not</span></span>
+<span id="cb8-4"><a href="content.html#cb8-4"></a>  <span class="co"># format_code defaults to including the symbol</span></span>
+<span id="cb8-5"><a href="content.html#cb8-5"></a>p_formatting &lt;-<span class="st"> </span><span class="cf">function</span>(val, <span class="dt">format_code =</span> <span class="dv">1</span>) {</span>
+<span id="cb8-6"><a href="content.html#cb8-6"></a>  </span>
+<span id="cb8-7"><a href="content.html#cb8-7"></a>  <span class="co"># If I want to include the symbol (when I&#39;m calling this variable in text)</span></span>
+<span id="cb8-8"><a href="content.html#cb8-8"></a>  <span class="cf">if</span> (format_code <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {</span>
+<span id="cb8-9"><a href="content.html#cb8-9"></a>    </span>
+<span id="cb8-10"><a href="content.html#cb8-10"></a>    <span class="co"># If the p value is less than .001, get the less than symbol</span></span>
+<span id="cb8-11"><a href="content.html#cb8-11"></a>      <span class="co"># Otherwise, get the equals symbol</span></span>
+<span id="cb8-12"><a href="content.html#cb8-12"></a>      <span class="co"># The next line, which I commented out for my thesis,</span></span>
+<span id="cb8-13"><a href="content.html#cb8-13"></a>      <span class="co"># looks to see if the value was greater than .05</span></span>
+<span id="cb8-14"><a href="content.html#cb8-14"></a>    sign_type &lt;-<span class="st"> </span><span class="kw">if_else</span>(val <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.001</span>, <span class="st">&quot;&lt;&quot;</span>, <span class="st">&quot;=&quot;</span>)</span>
+<span id="cb8-15"><a href="content.html#cb8-15"></a>    sign_type &lt;-<span class="st"> </span><span class="kw">if_else</span>(val <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.05</span>, <span class="st">&quot;&gt;&quot;</span>, sign_type)</span>
+<span id="cb8-16"><a href="content.html#cb8-16"></a>    </span>
+<span id="cb8-17"><a href="content.html#cb8-17"></a>    <span class="co"># If the p value is less than .001, set the value equal to .001</span></span>
+<span id="cb8-18"><a href="content.html#cb8-18"></a>    <span class="cf">if</span> (sign_type <span class="op">==</span><span class="st"> &quot;&lt;&quot;</span>) {</span>
+<span id="cb8-19"><a href="content.html#cb8-19"></a>      val &lt;-<span class="st"> &quot;.001&quot;</span></span>
+<span id="cb8-20"><a href="content.html#cb8-20"></a>      </span>
+<span id="cb8-21"><a href="content.html#cb8-21"></a>    <span class="co"># If the p value is greater than .05, set the value equal to .05 </span></span>
+<span id="cb8-22"><a href="content.html#cb8-22"></a>      <span class="co"># I commented out these next two lines for my thesis</span></span>
+<span id="cb8-23"><a href="content.html#cb8-23"></a>    } <span class="cf">else</span> <span class="cf">if</span> (sign_type <span class="op">==</span><span class="st"> &quot;&gt;&quot;</span>) {</span>
+<span id="cb8-24"><a href="content.html#cb8-24"></a>      val &lt;-<span class="st"> &quot;.05&quot;</span></span>
+<span id="cb8-25"><a href="content.html#cb8-25"></a>      </span>
+<span id="cb8-26"><a href="content.html#cb8-26"></a>    <span class="co"># Otherwise, get the actual p value,</span></span>
+<span id="cb8-27"><a href="content.html#cb8-27"></a>      <span class="co"># round it to three decimal places, and</span></span>
+<span id="cb8-28"><a href="content.html#cb8-28"></a>      <span class="co"># remove the leading zero</span></span>
+<span id="cb8-29"><a href="content.html#cb8-29"></a>    } <span class="cf">else</span> {</span>
+<span id="cb8-30"><a href="content.html#cb8-30"></a>      val &lt;-<span class="st"> </span><span class="kw">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
+<span id="cb8-31"><a href="content.html#cb8-31"></a>      val &lt;-<span class="st"> </span><span class="kw">substring</span>(val, <span class="dv">2</span>)</span>
+<span id="cb8-32"><a href="content.html#cb8-32"></a>    }</span>
+<span id="cb8-33"><a href="content.html#cb8-33"></a>    </span>
+<span id="cb8-34"><a href="content.html#cb8-34"></a>    <span class="co"># Combine the new/formatted p value with &gt;, &lt;, or =,</span></span>
+<span id="cb8-35"><a href="content.html#cb8-35"></a>      <span class="co"># depending on the p value</span></span>
+<span id="cb8-36"><a href="content.html#cb8-36"></a>    val_string &lt;-<span class="st"> </span><span class="kw">paste</span>(sign_type, val, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>)</span>
+<span id="cb8-37"><a href="content.html#cb8-37"></a>    val_string</span>
+<span id="cb8-38"><a href="content.html#cb8-38"></a>  </span>
+<span id="cb8-39"><a href="content.html#cb8-39"></a>  <span class="co"># If I don&#39;t want the symbol (as in a table),</span></span>
+<span id="cb8-40"><a href="content.html#cb8-40"></a>    <span class="co"># just round the value to three decimal places</span></span>
+<span id="cb8-41"><a href="content.html#cb8-41"></a>    <span class="co"># and remove the leading zero</span></span>
+<span id="cb8-42"><a href="content.html#cb8-42"></a>  } <span class="cf">else</span> <span class="cf">if</span> (format_code <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb8-43"><a href="content.html#cb8-43"></a>    </span>
+<span id="cb8-44"><a href="content.html#cb8-44"></a>    val &lt;-<span class="st"> </span><span class="kw">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
+<span id="cb8-45"><a href="content.html#cb8-45"></a>    val_string &lt;-<span class="st"> </span><span class="kw">substring</span>(val, <span class="dv">2</span>)</span>
+<span id="cb8-46"><a href="content.html#cb8-46"></a>    val_string</span>
+<span id="cb8-47"><a href="content.html#cb8-47"></a>    </span>
+<span id="cb8-48"><a href="content.html#cb8-48"></a>  }</span>
+<span id="cb8-49"><a href="content.html#cb8-49"></a>  </span>
+<span id="cb8-50"><a href="content.html#cb8-50"></a>}</span></code></pre></div>
+<p>I’ve included an example with this function below to demonstrate how you can really streamline your analysis-to-presentation pipeline with a simple function.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="content.html#cb9-1"></a><span class="co"># Create arbitrary p value</span></span>
+<span id="cb9-2"><a href="content.html#cb9-2"></a>p_value &lt;-<span class="st"> </span><span class="fl">0.0123</span></span>
+<span id="cb9-3"><a href="content.html#cb9-3"></a></span>
+<span id="cb9-4"><a href="content.html#cb9-4"></a><span class="co"># Format p value including symbol</span></span>
+<span id="cb9-5"><a href="content.html#cb9-5"></a>p_value_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">p_formatting</span>(p_value)</span>
+<span id="cb9-6"><a href="content.html#cb9-6"></a></span>
+<span id="cb9-7"><a href="content.html#cb9-7"></a><span class="co"># Format p value not including symbol</span></span>
+<span id="cb9-8"><a href="content.html#cb9-8"></a>p_value_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw">p_formatting</span>(p_value, <span class="dt">format_code =</span> <span class="dv">0</span>)</span></code></pre></div>
+<p>Here is the original <em>p</em> value: 0.0123. I can write <em>p</em> = .012 to reference the variable that already has the symbol, or I can reference the variable without the symbol: .012. I’ve included an image of these lines below to give you a sense of how this looks in markdown.</p>
+<p><img src="images/content_intext.png" width="830" /></p>
 
 </div>
 </div>
@@ -321,8 +354,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="organization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="supplement.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="template.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="format.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -353,7 +386,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/07-trouble-shooting.Rmd",
+"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/04-content.Rmd",
 "text": "Edit"
 },
 "history": {

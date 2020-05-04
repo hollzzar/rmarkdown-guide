@@ -46,3 +46,19 @@ install.packages("rmarkdown")
 # or the development version
 # devtools::install_github("rstudio/rmarkdown")
 ```
+
+### Tips
+
+- Treat your data as read-only
+- Comment code early and often
+- Keep code chunks small
+- Label chunks to help with diagnosing issues
+- Nest all files under one directory (if possible)
+
+### General reference documents
+
+- [R Markdown Guide](https://bookdown.org/yihui/rmarkdown/)
+- [R Markdown Cheat Sheet](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+- [R Markdown Reference Guide](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+- [Keyboard shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)
+- [`knitr` documentation](https://yihui.org/knitr/)

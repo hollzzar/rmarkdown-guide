@@ -75,7 +75,7 @@ nrow(a_dataframe, a_list)
 nrow(a_list)
 ```
 
-### Packages
+### Packages {#scholarex}
 
 ```{r pkg_functions}
 # scholar package 

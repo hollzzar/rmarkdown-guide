@@ -24,17 +24,21 @@ You can also download specific templates from CRAN and GitHub. A few that I've u
 - Journal templates: [`rticles`](https://bookdown.org/yihui/rmarkdown/rticles-templates.html)
 - HTML theme: [`prettydoc`](https://github.com/yixuan/prettydoc)
 
-## User-defined templates {#use_def}
+## User-defined templates {#usedef}
 
 There are also ways to include templates for particular outputs in the YAML header.
 
-For PDFs, you can include $\LaTeX$ templates, but you need to pay attention to the use of \$. The PLOS template shown in the image below failed to compile when I first downloaded it, because \$ are special characters for pandoc. After I added a second \$ throughout the document (you just use find and replace for this), it worked. If you're having issues, usually someone else on Google has also had that issue.
+### PDF
+
+For PDFs, you can include $\LaTeX$ templates, but you need to pay attention to the use of \$. The PLOS template shown in the image below failed to compile when I first downloaded it, because \$ are special characters for pandoc. After I added a second \$ throughout the document (you just use find and replace for this), it worked. See Section \@ref(latexpacks) for calling specific $\LaTeX$ packages in R Markdown.
 
 ```{r template_latex, echo=FALSE}
 knitr::include_graphics("images/template_latex.png")
 ```
 
-You can also set up Word document templates. To do this, you need to use the Styles Pane. Highlight the text you want to format, make the desired changes, then find the style that applies to that section, and find "Update to Match Selection" in the dropdown menu. In the example below, you can see that I'm editing the "Title" format, so I need to update that particular entry in the Styles Pane. You have to do this for every text element in the document, but once you've set it up once this way, you can simply include it the same way as the $\LaTeX$ template shown above.
+### Word
+
+You can also set up Word document templates. To do this, you need to use the Styles Pane in the Word Document you want to use as a template. Highlight the text you want to format, make the desired changes, then find the style that applies to that section, and find "Update to Match Selection" in the dropdown menu. In the example below, you can see that I'm editing the "Title" format, so I need to update that particular entry in the Styles Pane. You have to do this for every text element in the document, but once you've set it up once this way, you can simply include it the same way as the $\LaTeX$ template shown above.
 
 ```{r template_word, echo=FALSE}
 knitr::include_graphics("images/template_word.png")

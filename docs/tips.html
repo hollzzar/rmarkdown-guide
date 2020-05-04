@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Troubleshooting | R Markdown for Psychology Graduate Students</title>
+  <title>Chapter 8 Tips | R Markdown for Psychology Graduate Students</title>
   <meta name="description" content="Guide to using R Markdown" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Troubleshooting | R Markdown for Psychology Graduate Students" />
+  <meta property="og:title" content="Chapter 8 Tips | R Markdown for Psychology Graduate Students" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="hollzzar/rmarkdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Troubleshooting | R Markdown for Psychology Graduate Students" />
+  <meta name="twitter:title" content="Chapter 8 Tips | R Markdown for Psychology Graduate Students" />
   
   <meta name="twitter:description" content="Guide to using R Markdown" />
   
@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="organization.html"/>
+<link rel="prev" href="trouble.html"/>
 <link rel="next" href="supplement.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -136,34 +136,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#tips"><i class="fa fa-check"></i><b>1.2.1</b> Tips</a></li>
-<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#general-reference-documents"><i class="fa fa-check"></i><b>1.2.2</b> General reference documents</a></li>
-</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Parts of a document</a><ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#yaml-header"><i class="fa fa-check"></i><b>2.1</b> YAML header</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#markintro"><i class="fa fa-check"></i><b>2.2</b> Markdown</a></li>
 <li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#chunkex"><i class="fa fa-check"></i><b>2.3</b> Code chunks</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="output.html"><a href="output.html"><i class="fa fa-check"></i><b>3</b> Outputs</a><ul>
-<li class="chapter" data-level="3.1" data-path="output.html"><a href="output.html#output-options"><i class="fa fa-check"></i><b>3.1</b> Output options</a></li>
-<li class="chapter" data-level="3.2" data-path="output.html"><a href="output.html#rendering-options"><i class="fa fa-check"></i><b>3.2</b> Rendering options</a></li>
-<li class="chapter" data-level="3.3" data-path="output.html"><a href="output.html#knitting-process"><i class="fa fa-check"></i><b>3.3</b> Knitting process</a></li>
+<li class="chapter" data-level="3" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i><b>3</b> Content</a><ul>
+<li class="chapter" data-level="3.1" data-path="content.html"><a href="content.html#markdown-overview"><i class="fa fa-check"></i><b>3.1</b> Markdown overview</a></li>
+<li class="chapter" data-level="3.2" data-path="content.html"><a href="content.html#special-characters"><i class="fa fa-check"></i><b>3.2</b> Special characters</a></li>
+<li class="chapter" data-level="3.3" data-path="content.html"><a href="content.html#rintext"><i class="fa fa-check"></i><b>3.3</b> Calling R in text</a></li>
+<li class="chapter" data-level="3.4" data-path="content.html"><a href="content.html#help"><i class="fa fa-check"></i><b>3.4</b> Helper functions</a></li>
+<li class="chapter" data-level="3.5" data-path="content.html"><a href="content.html#organization"><i class="fa fa-check"></i><b>3.5</b> Organization</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> Templates</a><ul>
-<li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#built-in-templates"><i class="fa fa-check"></i><b>4.1</b> Built-in templates</a></li>
-<li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#packages"><i class="fa fa-check"></i><b>4.2</b> Templates from R packages</a></li>
-<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#usedef"><i class="fa fa-check"></i><b>4.3</b> User-defined templates</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#pdf"><i class="fa fa-check"></i><b>4.3.1</b> PDF</a></li>
-<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#word"><i class="fa fa-check"></i><b>4.3.2</b> Word</a></li>
+<li class="chapter" data-level="4" data-path="output.html"><a href="output.html"><i class="fa fa-check"></i><b>4</b> Outputs</a><ul>
+<li class="chapter" data-level="4.1" data-path="output.html"><a href="output.html#output-options"><i class="fa fa-check"></i><b>4.1</b> Output options</a></li>
+<li class="chapter" data-level="4.2" data-path="output.html"><a href="output.html#rendering-options"><i class="fa fa-check"></i><b>4.2</b> Rendering options</a></li>
+<li class="chapter" data-level="4.3" data-path="output.html"><a href="output.html#knitting-process"><i class="fa fa-check"></i><b>4.3</b> Knitting process</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>5</b> Templates</a><ul>
+<li class="chapter" data-level="5.1" data-path="template.html"><a href="template.html#built-in-templates"><i class="fa fa-check"></i><b>5.1</b> Built-in templates</a></li>
+<li class="chapter" data-level="5.2" data-path="template.html"><a href="template.html#packages"><i class="fa fa-check"></i><b>5.2</b> Templates from R packages</a></li>
+<li class="chapter" data-level="5.3" data-path="template.html"><a href="template.html#usedef"><i class="fa fa-check"></i><b>5.3</b> User-defined templates</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="template.html"><a href="template.html#pdf"><i class="fa fa-check"></i><b>5.3.1</b> PDF</a></li>
+<li class="chapter" data-level="5.3.2" data-path="template.html"><a href="template.html#word"><i class="fa fa-check"></i><b>5.3.2</b> Word</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i><b>5</b> Content</a><ul>
-<li class="chapter" data-level="5.1" data-path="content.html"><a href="content.html#markdown-overview"><i class="fa fa-check"></i><b>5.1</b> Markdown overview</a></li>
-<li class="chapter" data-level="5.2" data-path="content.html"><a href="content.html#special-characters"><i class="fa fa-check"></i><b>5.2</b> Special characters</a></li>
-<li class="chapter" data-level="5.3" data-path="content.html"><a href="content.html#rintext"><i class="fa fa-check"></i><b>5.3</b> Inline R</a></li>
-<li class="chapter" data-level="5.4" data-path="content.html"><a href="content.html#help"><i class="fa fa-check"></i><b>5.4</b> Custom functions</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="format.html"><a href="format.html"><i class="fa fa-check"></i><b>6</b> Formatting</a><ul>
 <li class="chapter" data-level="6.1" data-path="format.html"><a href="format.html#yaml-parameters"><i class="fa fa-check"></i><b>6.1</b> YAML parameters</a></li>
@@ -182,21 +180,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.4.2" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>6.4.2</b> Package documents</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>7</b> Organization</a><ul>
-<li class="chapter" data-level="7.1" data-path="organization.html"><a href="organization.html#child-documents"><i class="fa fa-check"></i><b>7.1</b> Child documents</a></li>
-<li class="chapter" data-level="7.2" data-path="organization.html"><a href="organization.html#sourcing-code"><i class="fa fa-check"></i><b>7.2</b> Sourcing code</a></li>
+<li class="chapter" data-level="7" data-path="trouble.html"><a href="trouble.html"><i class="fa fa-check"></i><b>7</b> Troubleshooting</a><ul>
+<li class="chapter" data-level="7.1" data-path="trouble.html"><a href="trouble.html#warnings-vs.-errors"><i class="fa fa-check"></i><b>7.1</b> Warnings vs. errors</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="trouble.html"><a href="trouble.html#warnings"><i class="fa fa-check"></i><b>7.1.1</b> Warnings</a></li>
+<li class="chapter" data-level="7.1.2" data-path="trouble.html"><a href="trouble.html#errors"><i class="fa fa-check"></i><b>7.1.2</b> Errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="trouble.html"><a href="trouble.html"><i class="fa fa-check"></i><b>8</b> Troubleshooting</a><ul>
-<li class="chapter" data-level="8.1" data-path="trouble.html"><a href="trouble.html#warnings-vs.-errors"><i class="fa fa-check"></i><b>8.1</b> Warnings vs. errors</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="trouble.html"><a href="trouble.html#warnings"><i class="fa fa-check"></i><b>8.1.1</b> Warnings</a></li>
-<li class="chapter" data-level="8.1.2" data-path="trouble.html"><a href="trouble.html#errors"><i class="fa fa-check"></i><b>8.1.2</b> Errors</a></li>
+<li class="chapter" data-level="7.2" data-path="trouble.html"><a href="trouble.html#rstudio-vs.-r-markdown-environments"><i class="fa fa-check"></i><b>7.2</b> RStudio vs. R Markdown environments</a></li>
+<li class="chapter" data-level="7.3" data-path="trouble.html"><a href="trouble.html#package-issues"><i class="fa fa-check"></i><b>7.3</b> Package issues</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="trouble.html"><a href="trouble.html#package-specification"><i class="fa fa-check"></i><b>7.3.1</b> Package specification</a></li>
+<li class="chapter" data-level="7.3.2" data-path="trouble.html"><a href="trouble.html#updates"><i class="fa fa-check"></i><b>7.3.2</b> Updates</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="trouble.html"><a href="trouble.html#rstudio-vs.-r-markdown-environments"><i class="fa fa-check"></i><b>8.2</b> RStudio vs. R Markdown environments</a></li>
-<li class="chapter" data-level="8.3" data-path="trouble.html"><a href="trouble.html#package-issues"><i class="fa fa-check"></i><b>8.3</b> Package issues</a><ul>
-<li class="chapter" data-level="8.3.1" data-path="trouble.html"><a href="trouble.html#package-specification"><i class="fa fa-check"></i><b>8.3.1</b> Package specification</a></li>
-<li class="chapter" data-level="8.3.2" data-path="trouble.html"><a href="trouble.html#updates"><i class="fa fa-check"></i><b>8.3.2</b> Updates</a></li>
+<li class="chapter" data-level="7.4" data-path="trouble.html"><a href="trouble.html#strategies"><i class="fa fa-check"></i><b>7.4</b> Strategies</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="trouble.html"><a href="trouble.html#strategies"><i class="fa fa-check"></i><b>8.4</b> Strategies</a></li>
+<li class="chapter" data-level="8" data-path="tips.html"><a href="tips.html"><i class="fa fa-check"></i><b>8</b> Tips</a><ul>
+<li class="chapter" data-level="8.1" data-path="tips.html"><a href="tips.html#reference-documents"><i class="fa fa-check"></i><b>8.1</b> Reference documents</a></li>
+<li class="chapter" data-level="8.2" data-path="tips.html"><a href="tips.html#other-packages-and-tools"><i class="fa fa-check"></i><b>8.2</b> Other packages and tools</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="supplement.html"><a href="supplement.html"><i class="fa fa-check"></i><b>9</b> Supplementary materials</a><ul>
 <li class="chapter" data-level="9.1" data-path="supplement.html"><a href="supplement.html#beginner-r"><i class="fa fa-check"></i><b>9.1</b> Beginner R</a><ul>
@@ -241,77 +239,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="trouble" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> Troubleshooting</h1>
-<ol style="list-style-type: decimal">
-<li>Warnings vs. errors</li>
-<li>RStudio vs. R Markdown environments</li>
-<li>Package issues</li>
-<li>Strategies for troubleshooting issues</li>
-</ol>
-<div id="warnings-vs.-errors" class="section level2">
-<h2><span class="header-section-number">8.1</span> Warnings vs. errors</h2>
-<div id="warnings" class="section level3">
-<h3><span class="header-section-number">8.1.1</span> Warnings</h3>
-<p>Warnings won’t stop your document from compiling, but generally indicate that you should change something in your code.</p>
-<p><img src="images/warning_example.png" width="537" /></p>
-</div>
-<div id="errors" class="section level3">
-<h3><span class="header-section-number">8.1.2</span> Errors</h3>
-<p>There are different kinds of errors that you can encounter. In general, you can distinguish chunk errors from R Markdown errors by their appearance. Errors will usually tell you which line of the document they’re in, but they can be misleading or inaccurate, so try to understand the error message first before going to look for the source. As always, Google and Stack Overflow are your friends!</p>
-<p>Chunk error:</p>
-<p><img src="images/error_example.png" width="767" /></p>
-<p>R Markdown error:</p>
-<p><img src="images/error_conversion.png" width="768" /></p>
-</div>
-</div>
-<div id="rstudio-vs.-r-markdown-environments" class="section level2">
-<h2><span class="header-section-number">8.2</span> RStudio vs. R Markdown environments</h2>
-<p>Running a chunk executes the code in the console and adds the output to your R environment; however, your R environment is separate from the environment created when knitting a document. If you’re getting an error message that says a particular variable or package doesn’t exist when it’s loaded in your R environment, it’s usually because you haven’t included it in a previous chunk.</p>
-<p><img src="images/environment_console.png" width="232" /><img src="images/environment_var.png" width="508" /></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="trouble.html#cb13-1"></a><span class="co"># Define new variable y</span></span>
-<span id="cb13-2"><a href="trouble.html#cb13-2"></a>y &lt;-<span class="st"> </span><span class="dv">100</span></span>
-<span id="cb13-3"><a href="trouble.html#cb13-3"></a></span>
-<span id="cb13-4"><a href="trouble.html#cb13-4"></a><span class="co"># When I run this chunk, I get the expected output (150),</span></span>
-<span id="cb13-5"><a href="trouble.html#cb13-5"></a><span class="co"># but it fails when I try to knit the document</span></span>
-<span id="cb13-6"><a href="trouble.html#cb13-6"></a><span class="co"># I&#39;ve set eval=FALSE for this chunk, so it doesn&#39;t try to run and prevent my document from knitting</span></span>
-<span id="cb13-7"><a href="trouble.html#cb13-7"></a><span class="kw">print</span>(x <span class="op">+</span><span class="st"> </span>y)</span></code></pre></div>
-</div>
-<div id="package-issues" class="section level2">
-<h2><span class="header-section-number">8.3</span> Package issues</h2>
-<div id="package-specification" class="section level3">
-<h3><span class="header-section-number">8.3.1</span> Package specification</h3>
-<p>If a function you want to use isn’t included in <code>base</code> R, you need to load the package that it’s in. The most basic way to do this is to run <code>library(package)</code> for each individual package. As you saw in my “setup” chunk example in Section <a href="intro.html#chunkex">2.3</a>, my preferred way is to set a list of packages and then load them with the <code>p_load</code> function from the <code>pacman</code> package. This way, you can easily load multiple packages at once.</p>
-<p>If you don’t want to load a whole package, you can use this notation: <code>package::function</code>. This tells R which package to look in. You especially want to do this if there are what are called “namespace conflicts,” where multiple packages have the same function name. I often run into this issue with the <code>filter</code> function from <code>dplyr</code>, so I always specify <code>dplyr::filter</code> even if I’ve already loaded <code>dplyr</code>.</p>
-</div>
-<div id="updates" class="section level3">
-<h3><span class="header-section-number">8.3.2</span> Updates</h3>
-<p>You may get warnings or errors related to packages being out of date or certain functions being “deprecated.” You may need to update packages and software that interact with R and R Markdown to get your code to run and documents to knit. Depending on the feature that is out of date, there are different strategies for updating.</p>
+<div id="tips" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Tips</h1>
+<p>This chapter contains some general tips and information to help you with R Markdown. These are some general keys to success with R Markdown (as well as with R itself):</p>
 <ul>
-<li><a href="https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution">Update your TeX distribution</a> from the command line</li>
-<li>Update all packages (including <code>rmarkdown</code>) in library with <code>update.packages(path)</code></li>
-<li>Update individual packages by reinstalling with <code>install.packages(package)</code></li>
-<li>Update R in the console with <code>updateR</code> package</li>
-<li>Redownload RStudio to update</li>
+<li>Treat your data as read-only</li>
+<li>Comment code early and often</li>
+<li>Keep code chunks small</li>
+<li>Label chunks for diagnosing issues</li>
+<li>Nest all files under one directory (if possible)</li>
+</ul>
+<div id="reference-documents" class="section level2">
+<h2><span class="header-section-number">8.1</span> Reference documents</h2>
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown Guide</a></li>
+<li><a href="https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf">R Markdown Cheat Sheet</a></li>
+<li><a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown Reference Guide</a></li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts">Keyboard shortcuts</a></li>
+<li><a href="https://yihui.org/knitr/"><code>knitr</code> documentation</a></li>
 </ul>
 </div>
-</div>
-<div id="strategies" class="section level2">
-<h2><span class="header-section-number">8.4</span> Strategies</h2>
-<p>If you’re running into any issues with your code or knitting your document, here are some things you can try:</p>
+<div id="other-packages-and-tools" class="section level2">
+<h2><span class="header-section-number">8.2</span> Other packages and tools</h2>
 <ul>
-<li>Reset your R environment
-<ul>
-<li>Clear all variables by running <code>rm(ls = list())</code> in the console</li>
-<li>Restart your R environment with CTRL/(control + fn) + shift + F10</li>
-<li>Run all chunks individually <strong>in order</strong> before compiling to test code</li>
-</ul></li>
-<li>Search for information
-<ul>
-<li>Use Help window</li>
-<li>Search for package in console with <code>?package</code> or <code>??package</code></li>
-<li>Google the package and error you’re getting</li>
-</ul></li>
+<li><a href="https://www.sublimetext.com/3">Sublime Text</a> text editor for editing .csl and other reference files</li>
+<li><a href="https://github.com/jkeirstead/scholar"><code>scholar</code> package</a> for automatically downloading citations from Google Scholar</li>
+<li><code>devtools</code> package for installing packages/plug-ins from GitHub (e.g., <code>papaja</code>)</li>
+<li><a href="https://github.com/benmarwick/wordcountaddin">wordcountaddin plug-in</a> for checking word count and readability</li>
 </ul>
 
 </div>
@@ -321,7 +275,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="organization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="trouble.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="supplement.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -353,7 +307,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/07-trouble-shooting.Rmd",
+"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/07-tips.Rmd",
 "text": "Edit"
 },
 "history": {
