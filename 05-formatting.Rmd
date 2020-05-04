@@ -15,8 +15,8 @@ knitr::include_graphics("images/formatting_date.png")
 
 ```{r formatting_yaml_example_2}
 # Show date formatting code
-# You can run ?Sys.time in the console for more information 
-# on the options you can pass to format
+  # You can run ?Sys.time in the console for more information 
+  # on the options you can pass to format
 format(Sys.time(), '%B %d, %Y')
 ```
 
