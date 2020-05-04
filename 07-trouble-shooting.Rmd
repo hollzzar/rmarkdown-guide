@@ -33,7 +33,9 @@ knitr::include_graphics("images/error_conversion.png")
 
 ## Environments
 
-Running a chunk executes the code in the console and adds the output to your R environment; however, your R environment is separate from the environment created when knitting a document. If you're getting an error message that says a particular variable or package doesn't exist when it's loaded in your R environment, it's usually because you haven't included it in a previous chunk.
+Running a chunk executes the code in the console and adds the output to your R environment; however, your R environment is separate from the environment created when knitting a document. When you render your document, it ignores your R environment. `knitr` runs all of the chunks in order and knits them into the markdown text.
+
+If you're getting an error message that says a particular variable or package doesn't exist when it's loaded in your R environment, it's usually because you haven't included it in a previous chunk.
 
 ```{r trouble_example_environ, echo=FALSE}
 knitr::include_graphics("images/environment_console.png")
