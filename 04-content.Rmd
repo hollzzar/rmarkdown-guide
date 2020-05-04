@@ -1,5 +1,7 @@
 # Content {#content}
 
+The content of an R Markdown document includes the markdown text itself, as well as output from code chunks. Code chunks can output data, graphs, tables, and images. You can also reference variables from code chunks in markdown text.
+
 ## Markdown overview
 
 [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) and this [R Markdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) provide information on the typesetting capabilities of R Markdown. In general, R Markdown typesetting options include `*italics*`, `**bold**`, and `~~strike-through~~`. These are achieved by wrapping text in a certain number of asterisks or tildes. There are also `(parentheses)`, `[square brackets]`, and `"quotation marks"` that can have special functions in markdown, like creating hyperlinks: `[text](link)`.
