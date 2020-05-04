@@ -24,7 +24,7 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2020-05-03" />
+<meta name="date" content="2020-05-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -163,7 +163,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="content.html"><a href="content.html#markdown-overview"><i class="fa fa-check"></i><b>5.1</b> Markdown overview</a></li>
 <li class="chapter" data-level="5.2" data-path="content.html"><a href="content.html#special-characters"><i class="fa fa-check"></i><b>5.2</b> Special characters</a></li>
 <li class="chapter" data-level="5.3" data-path="content.html"><a href="content.html#rintext"><i class="fa fa-check"></i><b>5.3</b> Inline R</a></li>
-<li class="chapter" data-level="5.4" data-path="content.html"><a href="content.html#help"><i class="fa fa-check"></i><b>5.4</b> Custom functions</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="format.html"><a href="format.html"><i class="fa fa-check"></i><b>6</b> Formatting</a><ul>
 <li class="chapter" data-level="6.1" data-path="format.html"><a href="format.html#yaml-parameters"><i class="fa fa-check"></i><b>6.1</b> YAML parameters</a></li>
@@ -177,9 +176,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3.1" data-path="format.html"><a href="format.html#latexpacks"><i class="fa fa-check"></i><b>6.3.1</b> <span class="math inline">\(\LaTeX\)</span></a></li>
 <li class="chapter" data-level="6.3.2" data-path="format.html"><a href="format.html#csshtml"><i class="fa fa-check"></i><b>6.3.2</b> CSS/HTML</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="format.html"><a href="format.html#editing-templates"><i class="fa fa-check"></i><b>6.4</b> Editing templates</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="format.html"><a href="format.html#clsex"><i class="fa fa-check"></i><b>6.4.1</b> Directory documents</a></li>
-<li class="chapter" data-level="6.4.2" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>6.4.2</b> Package documents</a></li>
+<li class="chapter" data-level="6.4" data-path="format.html"><a href="format.html#help"><i class="fa fa-check"></i><b>6.4</b> Custom functions</a></li>
+<li class="chapter" data-level="6.5" data-path="format.html"><a href="format.html#editing-templates"><i class="fa fa-check"></i><b>6.5</b> Editing templates</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="format.html"><a href="format.html#clsex"><i class="fa fa-check"></i><b>6.5.1</b> Directory documents</a></li>
+<li class="chapter" data-level="6.5.2" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>6.5.2</b> Package documents</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>7</b> Organization</a><ul>
@@ -243,21 +243,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="format" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Formatting</h1>
-<ol style="list-style-type: decimal">
-<li>YAML parameters and references</li>
-<li>Inline <span class="math inline">\(\LaTeX\)</span> and CSS code</li>
-<li>Custom edits to templates</li>
-</ol>
 <div id="yaml-parameters" class="section level2">
 <h2><span class="header-section-number">6.1</span> YAML parameters</h2>
 <p>There are several <a href="https://ymlthis.r-lib.org/articles/yaml-fieldguide.html">general YAML options</a> that you can include in the YAML header to format your documents. You can also add <strong>params</strong> to the YAML header that you can specify when you render your document and call in your code chunks to make <a href="https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F">parameterized reports</a>. Some YAML options require quotation marks, while others don’t. In general, if the YAML option is a string of text that you’re specifying, like the title or your name, then it should be in quotes. If you’re setting a programmatic option, like the output type, then it shouldn’t be in quotes.</p>
 <p>For the string options, there’s some custom formatting you can do. The first example below shows how you can center a title and force a line break. The second shows how you can automatically pull the date and time when you knit your document and format it in a particular way. This is actually R code that is embedded in a string by putting the function call between backticks with a lowercase r. You can use the same principle to put R code and functions in the text of an R Markdown document (see Section <a href="content.html#rintext">5.3</a> for more information).</p>
 <p><img src="images/formatting_title.png" width="625" /><img src="images/formatting_date.png" width="637" /></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="format.html#cb10-1"></a><span class="co"># Show date formatting code</span></span>
-<span id="cb10-2"><a href="format.html#cb10-2"></a><span class="co"># You can run ?Sys.time in the console for more information </span></span>
-<span id="cb10-3"><a href="format.html#cb10-3"></a><span class="co"># on the options you can pass to format</span></span>
-<span id="cb10-4"><a href="format.html#cb10-4"></a><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&#39;%B %d, %Y&#39;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;May 03, 2020&quot;</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="format.html#cb8-1"></a><span class="co"># Show date formatting code</span></span>
+<span id="cb8-2"><a href="format.html#cb8-2"></a><span class="co"># You can run ?Sys.time in the console for more information </span></span>
+<span id="cb8-3"><a href="format.html#cb8-3"></a><span class="co"># on the options you can pass to format</span></span>
+<span id="cb8-4"><a href="format.html#cb8-4"></a><span class="kw">format</span>(<span class="kw">Sys.time</span>(), <span class="st">&#39;%B %d, %Y&#39;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;May 04, 2020&quot;</code></pre>
 <p>There are also template-specific parameters, but you’ll need to look at the specific package documentation to know what these are.</p>
 </div>
 <div id="yamlref" class="section level2">
@@ -275,7 +270,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="cls-and-.css" class="section level3">
 <h3><span class="header-section-number">6.2.3</span> .cls and .css</h3>
-<p>You can include .cls files (not to be confused with the .csl files above) for <span class="math inline">\(\LaTeX\)</span> styling or .css files for HTML styling. You can see an example of the .cls file that formats my <a href="https://github.com/hollzzar/zaharchuk-cv">CV</a> in Section <a href="format.html#clsex">6.4.1</a>. This guide itself uses .css files that you can find <a href="https://github.com/hollzzar/rmarkdown-guide">here</a> to control the formatting.</p>
+<p>You can include .cls files (not to be confused with the .csl files above) for <span class="math inline">\(\LaTeX\)</span> styling or .css files for HTML styling. You can see an example of the .cls file that formats my <a href="https://github.com/hollzzar/zaharchuk-cv">CV</a> in Section <a href="format.html#clsex">6.5.1</a>. This guide itself uses .css files that you can find <a href="https://github.com/hollzzar/rmarkdown-guide">here</a> to control the formatting.</p>
 </div>
 <div id="luaex" class="section level3">
 <h3><span class="header-section-number">6.2.4</span> .lua</h3>
@@ -307,16 +302,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/html_example.png" width="374" /></p>
 </div>
 </div>
+<div id="help" class="section level2">
+<h2><span class="header-section-number">6.4</span> Custom functions</h2>
+<p>If you’re fairly comfortable with R, you can write formatting functions for yourself to make your life easier when you’re referencing variables in your text.</p>
+<p>When I was working on my Master’s thesis, I wrote some custom functions for statistical values that I had to report over and over. This was particularly useful when I had to switch from referring to any <em>p</em> values over .05 as <em>p</em> &gt; .05 to <em>p</em> = the exact value. I just had to change the one function by commenting out a couple lines and re-knit my document. The function is included below; this was the most complicated of the ones I wrote, which included degrees of freedom, <em>t</em> and <em>F</em> values, reaction times, and percentages.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="format.html#cb10-1"></a><span class="co"># Make number formatting function for p values</span></span>
+<span id="cb10-2"><a href="format.html#cb10-2"></a><span class="co"># val is the p value I want to format</span></span>
+<span id="cb10-3"><a href="format.html#cb10-3"></a><span class="co"># format_code specifies whether I want to include the symbol or not</span></span>
+<span id="cb10-4"><a href="format.html#cb10-4"></a>  <span class="co"># format_code defaults to including the symbol</span></span>
+<span id="cb10-5"><a href="format.html#cb10-5"></a>p_formatting &lt;-<span class="st"> </span><span class="cf">function</span>(val, <span class="dt">format_code =</span> <span class="dv">1</span>) {</span>
+<span id="cb10-6"><a href="format.html#cb10-6"></a>  </span>
+<span id="cb10-7"><a href="format.html#cb10-7"></a>  <span class="co"># If I want to include the symbol (when I&#39;m calling this variable in text)</span></span>
+<span id="cb10-8"><a href="format.html#cb10-8"></a>  <span class="cf">if</span> (format_code <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {</span>
+<span id="cb10-9"><a href="format.html#cb10-9"></a>    </span>
+<span id="cb10-10"><a href="format.html#cb10-10"></a>    <span class="co"># If the p value is less than .001, get the less than symbol</span></span>
+<span id="cb10-11"><a href="format.html#cb10-11"></a>      <span class="co"># Otherwise, get the equals symbol</span></span>
+<span id="cb10-12"><a href="format.html#cb10-12"></a>      <span class="co"># The next line, which I commented out for my thesis,</span></span>
+<span id="cb10-13"><a href="format.html#cb10-13"></a>      <span class="co"># looks to see if the value was greater than .05</span></span>
+<span id="cb10-14"><a href="format.html#cb10-14"></a>    sign_type &lt;-<span class="st"> </span><span class="kw">if_else</span>(val <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.001</span>, <span class="st">&quot;&lt;&quot;</span>, <span class="st">&quot;=&quot;</span>)</span>
+<span id="cb10-15"><a href="format.html#cb10-15"></a>    sign_type &lt;-<span class="st"> </span><span class="kw">if_else</span>(val <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.05</span>, <span class="st">&quot;&gt;&quot;</span>, sign_type)</span>
+<span id="cb10-16"><a href="format.html#cb10-16"></a>    </span>
+<span id="cb10-17"><a href="format.html#cb10-17"></a>    <span class="co"># If the p value is less than .001, set the value equal to .001</span></span>
+<span id="cb10-18"><a href="format.html#cb10-18"></a>    <span class="cf">if</span> (sign_type <span class="op">==</span><span class="st"> &quot;&lt;&quot;</span>) {</span>
+<span id="cb10-19"><a href="format.html#cb10-19"></a>      val &lt;-<span class="st"> &quot;.001&quot;</span></span>
+<span id="cb10-20"><a href="format.html#cb10-20"></a>      </span>
+<span id="cb10-21"><a href="format.html#cb10-21"></a>    <span class="co"># If the p value is greater than .05, set the value equal to .05 </span></span>
+<span id="cb10-22"><a href="format.html#cb10-22"></a>      <span class="co"># I commented out these next two lines for my thesis</span></span>
+<span id="cb10-23"><a href="format.html#cb10-23"></a>    } <span class="cf">else</span> <span class="cf">if</span> (sign_type <span class="op">==</span><span class="st"> &quot;&gt;&quot;</span>) {</span>
+<span id="cb10-24"><a href="format.html#cb10-24"></a>      val &lt;-<span class="st"> &quot;.05&quot;</span></span>
+<span id="cb10-25"><a href="format.html#cb10-25"></a>      </span>
+<span id="cb10-26"><a href="format.html#cb10-26"></a>    <span class="co"># Otherwise, get the actual p value,</span></span>
+<span id="cb10-27"><a href="format.html#cb10-27"></a>      <span class="co"># round it to three decimal places, and</span></span>
+<span id="cb10-28"><a href="format.html#cb10-28"></a>      <span class="co"># remove the leading zero</span></span>
+<span id="cb10-29"><a href="format.html#cb10-29"></a>    } <span class="cf">else</span> {</span>
+<span id="cb10-30"><a href="format.html#cb10-30"></a>      val &lt;-<span class="st"> </span><span class="kw">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
+<span id="cb10-31"><a href="format.html#cb10-31"></a>      val &lt;-<span class="st"> </span><span class="kw">substring</span>(val, <span class="dv">2</span>)</span>
+<span id="cb10-32"><a href="format.html#cb10-32"></a>    }</span>
+<span id="cb10-33"><a href="format.html#cb10-33"></a>    </span>
+<span id="cb10-34"><a href="format.html#cb10-34"></a>    <span class="co"># Combine the new/formatted p value with &gt;, &lt;, or =,</span></span>
+<span id="cb10-35"><a href="format.html#cb10-35"></a>      <span class="co"># depending on the p value</span></span>
+<span id="cb10-36"><a href="format.html#cb10-36"></a>    val_string &lt;-<span class="st"> </span><span class="kw">paste</span>(sign_type, val, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>)</span>
+<span id="cb10-37"><a href="format.html#cb10-37"></a>    val_string</span>
+<span id="cb10-38"><a href="format.html#cb10-38"></a>  </span>
+<span id="cb10-39"><a href="format.html#cb10-39"></a>  <span class="co"># If I don&#39;t want the symbol (as in a table),</span></span>
+<span id="cb10-40"><a href="format.html#cb10-40"></a>    <span class="co"># just round the value to three decimal places</span></span>
+<span id="cb10-41"><a href="format.html#cb10-41"></a>    <span class="co"># and remove the leading zero</span></span>
+<span id="cb10-42"><a href="format.html#cb10-42"></a>  } <span class="cf">else</span> <span class="cf">if</span> (format_code <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb10-43"><a href="format.html#cb10-43"></a>    </span>
+<span id="cb10-44"><a href="format.html#cb10-44"></a>    val &lt;-<span class="st"> </span><span class="kw">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
+<span id="cb10-45"><a href="format.html#cb10-45"></a>    val_string &lt;-<span class="st"> </span><span class="kw">substring</span>(val, <span class="dv">2</span>)</span>
+<span id="cb10-46"><a href="format.html#cb10-46"></a>    val_string</span>
+<span id="cb10-47"><a href="format.html#cb10-47"></a>    </span>
+<span id="cb10-48"><a href="format.html#cb10-48"></a>  }</span>
+<span id="cb10-49"><a href="format.html#cb10-49"></a>  </span>
+<span id="cb10-50"><a href="format.html#cb10-50"></a>}</span></code></pre></div>
+<p>I’ve included an example with this function below to demonstrate how you can really streamline your analysis-to-presentation pipeline with a simple function.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="format.html#cb11-1"></a><span class="co"># Create arbitrary p value</span></span>
+<span id="cb11-2"><a href="format.html#cb11-2"></a>p_value &lt;-<span class="st"> </span><span class="fl">0.0123</span></span>
+<span id="cb11-3"><a href="format.html#cb11-3"></a></span>
+<span id="cb11-4"><a href="format.html#cb11-4"></a><span class="co"># Format p value including symbol</span></span>
+<span id="cb11-5"><a href="format.html#cb11-5"></a>p_value_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">p_formatting</span>(p_value)</span>
+<span id="cb11-6"><a href="format.html#cb11-6"></a></span>
+<span id="cb11-7"><a href="format.html#cb11-7"></a><span class="co"># Format p value not including symbol</span></span>
+<span id="cb11-8"><a href="format.html#cb11-8"></a>p_value_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw">p_formatting</span>(p_value, <span class="dt">format_code =</span> <span class="dv">0</span>)</span></code></pre></div>
+<p>Here is the original <em>p</em> value: 0.0123. I can write <em>p</em> = .012 to reference the variable that already has the symbol, or I can reference the variable without the symbol: .012. I’ve included an image of these lines below to give you a sense of how this looks in markdown.</p>
+<p><img src="images/content_intext.png" width="830" /></p>
+</div>
 <div id="editing-templates" class="section level2">
-<h2><span class="header-section-number">6.4</span> Editing templates</h2>
+<h2><span class="header-section-number">6.5</span> Editing templates</h2>
 <p>To make extremely custom edits to templates, sometimes you have to edit the template documents directly. If the template generates a style document (e.g., .cls) in the directory with your .Rmd file, you can usually edit that without going to the package. Otherwise, you have to find out where your computer stores your R packages and edit the template there.</p>
 <div id="clsex" class="section level3">
-<h3><span class="header-section-number">6.4.1</span> Directory documents</h3>
+<h3><span class="header-section-number">6.5.1</span> Directory documents</h3>
 <p>Some templates output formatting documents in your working directory. These are easier to access and edit. For example, knitting the <code>vitae::awesomecv</code> template created a .cls file that I could edit to change font sizes/colors.</p>
 <p><img src="images/template_dir.png" width="424" /></p>
 </div>
 <div id="package-documents" class="section level3">
-<h3><span class="header-section-number">6.4.2</span> Package documents</h3>
+<h3><span class="header-section-number">6.5.2</span> Package documents</h3>
 <p>To find out where your packages “live,” you can call <code>installed.packages()</code>. When you leave the parentheses blank (i.e., if you don’t provide any arguments), as I’ve done below, the function will return all of the packages you have installed. I’ve stored them as a dataframe, and then filtered for an example. Here, I’m looking at the <code>posterdown</code> package.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="format.html#cb12-1"></a><span class="co"># Make dataframe with installed packages</span></span>
 <span id="cb12-2"><a href="format.html#cb12-2"></a>pkgs &lt;-<span class="st"> </span><span class="kw">installed.packages</span>() <span class="op">%&gt;%</span></span>

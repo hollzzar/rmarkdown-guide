@@ -24,7 +24,7 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2020-05-03" />
+<meta name="date" content="2020-05-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -163,7 +163,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="content.html"><a href="content.html#markdown-overview"><i class="fa fa-check"></i><b>5.1</b> Markdown overview</a></li>
 <li class="chapter" data-level="5.2" data-path="content.html"><a href="content.html#special-characters"><i class="fa fa-check"></i><b>5.2</b> Special characters</a></li>
 <li class="chapter" data-level="5.3" data-path="content.html"><a href="content.html#rintext"><i class="fa fa-check"></i><b>5.3</b> Inline R</a></li>
-<li class="chapter" data-level="5.4" data-path="content.html"><a href="content.html#help"><i class="fa fa-check"></i><b>5.4</b> Custom functions</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="format.html"><a href="format.html"><i class="fa fa-check"></i><b>6</b> Formatting</a><ul>
 <li class="chapter" data-level="6.1" data-path="format.html"><a href="format.html#yaml-parameters"><i class="fa fa-check"></i><b>6.1</b> YAML parameters</a></li>
@@ -177,9 +176,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3.1" data-path="format.html"><a href="format.html#latexpacks"><i class="fa fa-check"></i><b>6.3.1</b> <span class="math inline">\(\LaTeX\)</span></a></li>
 <li class="chapter" data-level="6.3.2" data-path="format.html"><a href="format.html#csshtml"><i class="fa fa-check"></i><b>6.3.2</b> CSS/HTML</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="format.html"><a href="format.html#editing-templates"><i class="fa fa-check"></i><b>6.4</b> Editing templates</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="format.html"><a href="format.html#clsex"><i class="fa fa-check"></i><b>6.4.1</b> Directory documents</a></li>
-<li class="chapter" data-level="6.4.2" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>6.4.2</b> Package documents</a></li>
+<li class="chapter" data-level="6.4" data-path="format.html"><a href="format.html#help"><i class="fa fa-check"></i><b>6.4</b> Custom functions</a></li>
+<li class="chapter" data-level="6.5" data-path="format.html"><a href="format.html#editing-templates"><i class="fa fa-check"></i><b>6.5</b> Editing templates</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="format.html"><a href="format.html#clsex"><i class="fa fa-check"></i><b>6.5.1</b> Directory documents</a></li>
+<li class="chapter" data-level="6.5.2" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>6.5.2</b> Package documents</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>7</b> Organization</a><ul>
@@ -243,11 +243,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="content" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Content</h1>
-<ol style="list-style-type: decimal">
-<li>Markdown overview</li>
-<li>Special characters</li>
-<li>Inline R</li>
-</ol>
 <div id="markdown-overview" class="section level2">
 <h2><span class="header-section-number">5.1</span> Markdown overview</h2>
 <p><a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">R Markdown: The Definitive Guide</a> and this <a href="https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R Markdown cheatsheet</a> provide information on the typesetting capabilities of R Markdown. In general, R Markdown typesetting options include <code>*italics*</code>, <code>**bold**</code>, and <code>~~strike-through~~</code>. These are achieved by wrapping text in a certain number of asterisks or tildes. There are also <code>(parentheses)</code>, <code>[square brackets]</code>, and <code>"quotation marks"</code> that can have special functions in markdown, like creating hyperlinks: <code>[text](link)</code>.</p>
@@ -280,72 +275,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>I can call <code>species</code> and <code>species_count</code> in the markdown text to reference these variables dynamically. Just as in a code chunk, I have to specify that I’m working with R code by including a lower-case r in the backticks with the variable.</p>
 <p>So if I put “r species_count” between backticks, I can report that there are 3 species without typing out the number itself. Or I can reference the variable with the exact species names: setosa, versicolor, virginica. You can see what the markdown looks like in the screenshot below.</p>
 <p><img src="images/content_intext_iris.png" width="816" /></p>
-</div>
-<div id="help" class="section level2">
-<h2><span class="header-section-number">5.4</span> Custom functions</h2>
-<p>If you’re fairly comfortable with R, you can write formatting functions for yourself to make your life easier when you’re referencing variables in your text.</p>
-<p>When I was working on my Master’s thesis, I wrote some custom functions for statistical values that I had to report over and over. This was particularly useful when I had to switch from referring to any <em>p</em> values over .05 as <em>p</em> &gt; .05 to <em>p</em> = the exact value. I just had to change the one function by commenting out a couple lines and re-knit my document. The function is included below; this was the most complicated of the ones I wrote, which included degrees of freedom, <em>t</em> and <em>F</em> values, reaction times, and percentages.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="content.html#cb8-1"></a><span class="co"># Make number formatting function for p values</span></span>
-<span id="cb8-2"><a href="content.html#cb8-2"></a><span class="co"># val is the p value I want to format</span></span>
-<span id="cb8-3"><a href="content.html#cb8-3"></a><span class="co"># format_code specifies whether I want to include the symbol or not</span></span>
-<span id="cb8-4"><a href="content.html#cb8-4"></a>  <span class="co"># format_code defaults to including the symbol</span></span>
-<span id="cb8-5"><a href="content.html#cb8-5"></a>p_formatting &lt;-<span class="st"> </span><span class="cf">function</span>(val, <span class="dt">format_code =</span> <span class="dv">1</span>) {</span>
-<span id="cb8-6"><a href="content.html#cb8-6"></a>  </span>
-<span id="cb8-7"><a href="content.html#cb8-7"></a>  <span class="co"># If I want to include the symbol (when I&#39;m calling this variable in text)</span></span>
-<span id="cb8-8"><a href="content.html#cb8-8"></a>  <span class="cf">if</span> (format_code <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) {</span>
-<span id="cb8-9"><a href="content.html#cb8-9"></a>    </span>
-<span id="cb8-10"><a href="content.html#cb8-10"></a>    <span class="co"># If the p value is less than .001, get the less than symbol</span></span>
-<span id="cb8-11"><a href="content.html#cb8-11"></a>      <span class="co"># Otherwise, get the equals symbol</span></span>
-<span id="cb8-12"><a href="content.html#cb8-12"></a>      <span class="co"># The next line, which I commented out for my thesis,</span></span>
-<span id="cb8-13"><a href="content.html#cb8-13"></a>      <span class="co"># looks to see if the value was greater than .05</span></span>
-<span id="cb8-14"><a href="content.html#cb8-14"></a>    sign_type &lt;-<span class="st"> </span><span class="kw">if_else</span>(val <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.001</span>, <span class="st">&quot;&lt;&quot;</span>, <span class="st">&quot;=&quot;</span>)</span>
-<span id="cb8-15"><a href="content.html#cb8-15"></a>    sign_type &lt;-<span class="st"> </span><span class="kw">if_else</span>(val <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.05</span>, <span class="st">&quot;&gt;&quot;</span>, sign_type)</span>
-<span id="cb8-16"><a href="content.html#cb8-16"></a>    </span>
-<span id="cb8-17"><a href="content.html#cb8-17"></a>    <span class="co"># If the p value is less than .001, set the value equal to .001</span></span>
-<span id="cb8-18"><a href="content.html#cb8-18"></a>    <span class="cf">if</span> (sign_type <span class="op">==</span><span class="st"> &quot;&lt;&quot;</span>) {</span>
-<span id="cb8-19"><a href="content.html#cb8-19"></a>      val &lt;-<span class="st"> &quot;.001&quot;</span></span>
-<span id="cb8-20"><a href="content.html#cb8-20"></a>      </span>
-<span id="cb8-21"><a href="content.html#cb8-21"></a>    <span class="co"># If the p value is greater than .05, set the value equal to .05 </span></span>
-<span id="cb8-22"><a href="content.html#cb8-22"></a>      <span class="co"># I commented out these next two lines for my thesis</span></span>
-<span id="cb8-23"><a href="content.html#cb8-23"></a>    } <span class="cf">else</span> <span class="cf">if</span> (sign_type <span class="op">==</span><span class="st"> &quot;&gt;&quot;</span>) {</span>
-<span id="cb8-24"><a href="content.html#cb8-24"></a>      val &lt;-<span class="st"> &quot;.05&quot;</span></span>
-<span id="cb8-25"><a href="content.html#cb8-25"></a>      </span>
-<span id="cb8-26"><a href="content.html#cb8-26"></a>    <span class="co"># Otherwise, get the actual p value,</span></span>
-<span id="cb8-27"><a href="content.html#cb8-27"></a>      <span class="co"># round it to three decimal places, and</span></span>
-<span id="cb8-28"><a href="content.html#cb8-28"></a>      <span class="co"># remove the leading zero</span></span>
-<span id="cb8-29"><a href="content.html#cb8-29"></a>    } <span class="cf">else</span> {</span>
-<span id="cb8-30"><a href="content.html#cb8-30"></a>      val &lt;-<span class="st"> </span><span class="kw">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
-<span id="cb8-31"><a href="content.html#cb8-31"></a>      val &lt;-<span class="st"> </span><span class="kw">substring</span>(val, <span class="dv">2</span>)</span>
-<span id="cb8-32"><a href="content.html#cb8-32"></a>    }</span>
-<span id="cb8-33"><a href="content.html#cb8-33"></a>    </span>
-<span id="cb8-34"><a href="content.html#cb8-34"></a>    <span class="co"># Combine the new/formatted p value with &gt;, &lt;, or =,</span></span>
-<span id="cb8-35"><a href="content.html#cb8-35"></a>      <span class="co"># depending on the p value</span></span>
-<span id="cb8-36"><a href="content.html#cb8-36"></a>    val_string &lt;-<span class="st"> </span><span class="kw">paste</span>(sign_type, val, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>)</span>
-<span id="cb8-37"><a href="content.html#cb8-37"></a>    val_string</span>
-<span id="cb8-38"><a href="content.html#cb8-38"></a>  </span>
-<span id="cb8-39"><a href="content.html#cb8-39"></a>  <span class="co"># If I don&#39;t want the symbol (as in a table),</span></span>
-<span id="cb8-40"><a href="content.html#cb8-40"></a>    <span class="co"># just round the value to three decimal places</span></span>
-<span id="cb8-41"><a href="content.html#cb8-41"></a>    <span class="co"># and remove the leading zero</span></span>
-<span id="cb8-42"><a href="content.html#cb8-42"></a>  } <span class="cf">else</span> <span class="cf">if</span> (format_code <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {</span>
-<span id="cb8-43"><a href="content.html#cb8-43"></a>    </span>
-<span id="cb8-44"><a href="content.html#cb8-44"></a>    val &lt;-<span class="st"> </span><span class="kw">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
-<span id="cb8-45"><a href="content.html#cb8-45"></a>    val_string &lt;-<span class="st"> </span><span class="kw">substring</span>(val, <span class="dv">2</span>)</span>
-<span id="cb8-46"><a href="content.html#cb8-46"></a>    val_string</span>
-<span id="cb8-47"><a href="content.html#cb8-47"></a>    </span>
-<span id="cb8-48"><a href="content.html#cb8-48"></a>  }</span>
-<span id="cb8-49"><a href="content.html#cb8-49"></a>  </span>
-<span id="cb8-50"><a href="content.html#cb8-50"></a>}</span></code></pre></div>
-<p>I’ve included an example with this function below to demonstrate how you can really streamline your analysis-to-presentation pipeline with a simple function.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="content.html#cb9-1"></a><span class="co"># Create arbitrary p value</span></span>
-<span id="cb9-2"><a href="content.html#cb9-2"></a>p_value &lt;-<span class="st"> </span><span class="fl">0.0123</span></span>
-<span id="cb9-3"><a href="content.html#cb9-3"></a></span>
-<span id="cb9-4"><a href="content.html#cb9-4"></a><span class="co"># Format p value including symbol</span></span>
-<span id="cb9-5"><a href="content.html#cb9-5"></a>p_value_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">p_formatting</span>(p_value)</span>
-<span id="cb9-6"><a href="content.html#cb9-6"></a></span>
-<span id="cb9-7"><a href="content.html#cb9-7"></a><span class="co"># Format p value not including symbol</span></span>
-<span id="cb9-8"><a href="content.html#cb9-8"></a>p_value_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw">p_formatting</span>(p_value, <span class="dt">format_code =</span> <span class="dv">0</span>)</span></code></pre></div>
-<p>Here is the original <em>p</em> value: 0.0123. I can write <em>p</em> = .012 to reference the variable that already has the symbol, or I can reference the variable without the symbol: .012. I’ve included an image of these lines below to give you a sense of how this looks in markdown.</p>
-<p><img src="images/content_intext.png" width="830" /></p>
 
 </div>
 </div>

@@ -24,7 +24,7 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2020-05-03" />
+<meta name="date" content="2020-05-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -163,7 +163,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="content.html"><a href="content.html#markdown-overview"><i class="fa fa-check"></i><b>5.1</b> Markdown overview</a></li>
 <li class="chapter" data-level="5.2" data-path="content.html"><a href="content.html#special-characters"><i class="fa fa-check"></i><b>5.2</b> Special characters</a></li>
 <li class="chapter" data-level="5.3" data-path="content.html"><a href="content.html#rintext"><i class="fa fa-check"></i><b>5.3</b> Inline R</a></li>
-<li class="chapter" data-level="5.4" data-path="content.html"><a href="content.html#help"><i class="fa fa-check"></i><b>5.4</b> Custom functions</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="format.html"><a href="format.html"><i class="fa fa-check"></i><b>6</b> Formatting</a><ul>
 <li class="chapter" data-level="6.1" data-path="format.html"><a href="format.html#yaml-parameters"><i class="fa fa-check"></i><b>6.1</b> YAML parameters</a></li>
@@ -177,9 +176,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3.1" data-path="format.html"><a href="format.html#latexpacks"><i class="fa fa-check"></i><b>6.3.1</b> <span class="math inline">\(\LaTeX\)</span></a></li>
 <li class="chapter" data-level="6.3.2" data-path="format.html"><a href="format.html#csshtml"><i class="fa fa-check"></i><b>6.3.2</b> CSS/HTML</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="format.html"><a href="format.html#editing-templates"><i class="fa fa-check"></i><b>6.4</b> Editing templates</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="format.html"><a href="format.html#clsex"><i class="fa fa-check"></i><b>6.4.1</b> Directory documents</a></li>
-<li class="chapter" data-level="6.4.2" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>6.4.2</b> Package documents</a></li>
+<li class="chapter" data-level="6.4" data-path="format.html"><a href="format.html#help"><i class="fa fa-check"></i><b>6.4</b> Custom functions</a></li>
+<li class="chapter" data-level="6.5" data-path="format.html"><a href="format.html#editing-templates"><i class="fa fa-check"></i><b>6.5</b> Editing templates</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="format.html"><a href="format.html#clsex"><i class="fa fa-check"></i><b>6.5.1</b> Directory documents</a></li>
+<li class="chapter" data-level="6.5.2" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>6.5.2</b> Package documents</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>7</b> Organization</a><ul>
@@ -260,7 +260,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="sourcing-code" class="section level2">
 <h2><span class="header-section-number">7.2</span> Sourcing code</h2>
 <p>I also use a similar decentralized organizational structure for my actual R processing scripts. You can use <code>source(file)</code> to <em>source</em> all of the code from one script into another, similarly to using <em>child</em> documents in R Markdown. The <em>Load</em> document above actually <em>sources</em> R scripts in the code chunks to load those data into the thesis document.</p>
-<p>I’ve included a screenshot of the folder with all of my R scripts for preparing my thesis data. The data themselves are in the <em>behavioral</em> and <em>erp</em> subfolders. The <em>DM_global_vars</em> file contains variables, like the custom formatting functions I described in Section <a href="content.html#help">5.4</a>, that I used across the scripts. I recommend having such a file that you <em>source</em> at the lowest level of the <em>sourcing</em>/<em>child</em> document hierarchy. That way, if you need to change something, you can make that change in just one place.</p>
+<p>I’ve included a screenshot of the folder with all of my R scripts for preparing my thesis data. The data themselves are in the <em>behavioral</em> and <em>erp</em> subfolders. The <em>DM_global_vars</em> file contains variables, like the custom formatting functions I described in Section <a href="format.html#help">6.4</a>, that I used across the scripts. I recommend having such a file that you <em>source</em> at the lowest level of the <em>sourcing</em>/<em>child</em> document hierarchy. That way, if you need to change something, you can make that change in just one place.</p>
 <p><img src="images/content_organization_scripts.png" width="518" /></p>
 
 </div>
