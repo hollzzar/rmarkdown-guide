@@ -2,7 +2,7 @@
 
 This guide started as a [tutorial](https://github.com/hollzzar/markdown-tutorial) that I developed for my fellow cognitive psychology graduate students at Penn State. R Markdown is a highly useful platform for combining data processing, analysis, and presentation, but there's a steep learning curve for developing proficiency beyond the basic skills. If we're all stressed and short on time, how can I make R Markdown approachable and efficient to use for graduate students like me?
 
-I hope this guide provides a solid jumping off point for other students who are curious about using R Markdown in graduate school. Here, you'll find the tips and tricks that I compiled from countless hours rifling through Stack Overflow and troubleshooting broken code. If you think this guide is missing anything or is unclear at any point, I encourage you to reach out and let me know.
+I hope this guide provides a solid jumping off point for other students who are curious about using R Markdown in graduate school. Here, you'll find the tips and tricks that I've compiled from countless hours of rifling through Stack Overflow and troubleshooting broken code. If you think this guide is missing anything or is unclear at any point, I encourage you to reach out and let me know.
 
 I've included an overview of each of the chapters below. The chapters are generally organized by complexity: they start with basic information on the parts of an R Markdown document, work through the important features, and end with information on troubleshooting. While the guide assumes a basic level of comfort or familiarity with R, I also included supplementary materials on R itself at the very end, as well as practice documents for exploring R Markdown and `tidyr`.
 
