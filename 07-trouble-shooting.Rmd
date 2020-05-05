@@ -17,7 +17,7 @@ knitr::include_graphics("images/warning_example.png")
 
 ### Errors
 
-There are different kinds of errors that you can encounter. In general, you can distinguish chunk errors from R Markdown errors by their appearance. Errors will usually tell you which line of the document they're in, but they can be misleading or inaccurate, so try to understand the error message first before going to look for the source. As always, Google and Stack Overflow are your friends!
+There are different kinds of errors that you can encounter. In general, you can distinguish chunk errors from R Markdown errors by their appearance. Errors will usually tell you which line of the document they're in, but the line numbers can be misleading or inaccurate, so try to understand the error message first before going to look for the source. As always, Google and Stack Overflow are your friends!
 
 Chunk error:
 
@@ -66,13 +66,13 @@ You may get warnings or errors related to packages being out of date or certain 
 
 - [Update your TeX distribution](https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution) from the command line
 - Update all packages (including `rmarkdown`) in library with `update.packages(path)` 
-- Update individual packages by reinstalling with `install.packages(package)`
-- Update R in the console with `updateR` package
+- Update individual packages by reinstalling with `install.packages("package")`
+- Update R in the console with the `updateR` package
 - Redownload RStudio to update
 
 ## Strategies
 
-If you're running into any issues with your code or knitting your document, here are some things you can try:
+If you're running into any issues with rendering your document, here are some things you can try:
 
 - Reset your R environment
   - Clear all variables by running `rm(ls = list())` in the console
@@ -81,4 +81,4 @@ If you're running into any issues with your code or knitting your document, here
 - Search for information
   - Use Help window
   - Search for package in console with `?package` or `??package`
-  - Google the package and error you're getting
+  - Google the error you're getting with the package or function you're trying to use
