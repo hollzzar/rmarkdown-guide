@@ -10,7 +10,7 @@ HTML is overall the most flexible. It supports the types of content we're intere
 
 ### pdf_document
 
-If you're familiar with $\LaTeX$, you may be inclined to output directly to a PDF, since you can include inline $\LaTeX$ code in your documents (more on this in Chapter \@ref(format)). The [CV](https://github.com/mitchelloharawild/vitae) and [manuscript](https://github.com/rosannav/thesis_in_rmarkdown/tree/master/example_thesis) templates that I use rely on the fine-grained typsetting capabilities of $\LaTeX$. To create a PDF, you need to have $\LaTeX$ installed locally. If you don't already, you can install the lightweight [`tinytex`](https://yihui.org/tinytex/) distribution through the R console.
+If you're familiar with LaTeX, you may be inclined to output directly to a PDF, since you can include inline LaTeX code in your documents (more on this in Chapter \@ref(format)). The [CV](https://github.com/mitchelloharawild/vitae) and [manuscript](https://github.com/rosannav/thesis_in_rmarkdown/tree/master/example_thesis) templates that I use rely on the fine-grained typsetting capabilities of LaTeX. To create a PDF, you need to have LaTeX installed locally. If you don't already, you can install a [`tinytex`](https://yihui.org/tinytex/) distribution through the R console.
 
 ```{r eval=FALSE}
 install.packages("tinytex")
@@ -28,9 +28,9 @@ You can specify a particular output type in the YAML header with the **output** 
 
 Be sure to pay attention to indentation and colon placement in your YAML header, especially as you start to specify options for particular output types. As a rule of thumb, if you have anything more than **output: output_format**, you need to indent every new line, and have a colon at the end of the previous line. See Section \@ref(usedef) for an example of this.
 
-### rmarkdown::render
+### `rmarkdown::render`
 
-Instead of knitting, you can also render files in console with `rmarkdown::render(file, output_format)`. This is essentially what **Knit** is doing. This approach allows you to create multiple output types quickly and easily. In my experience, I'm usually customizing my output very specifically for one output type by adding inline CSS or $\LaTeX$ code, so I really only use the `render()` function when I'm making [parameterized reports](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F).
+Instead of knitting, you can also render files in the console with `rmarkdown::render(file, output_format)`. This is essentially what **Knit** is doing. This approach allows you to create multiple output types quickly and easily. I'm usually customizing my output very specifically for one output type by adding inline CSS or LaTeX code, so I really only use `render` when I'm making [parameterized reports](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F).
 
 ## Rendering process
 
