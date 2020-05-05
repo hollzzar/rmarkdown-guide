@@ -6,7 +6,7 @@ There are many ways to customize the formatting of an R Markdown document. In th
 
 There are several [general YAML options](https://ymlthis.r-lib.org/articles/yaml-fieldguide.html) that you can include in the YAML header to format your documents. You can also add **params** to the YAML header that you can specify when you render your document and call in your code chunks to make [parameterized reports](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F). Some YAML options require quotation marks, while others don't. In general, if the YAML option is a string of text that you're specifying, like the title or your name, then it should be in quotes. If you're setting a programmatic option, like the output type, then it shouldn't be in quotes. 
 
-For the string options, there's some custom formatting you can do. The first example below shows how you can center a title and force a line break. The second shows how you can automatically pull the date and time when you knit your document and format it in a particular way. This is actually R code that is embedded in a string by putting the function call between backticks with a lowercase r. You can use the same principle to put R code and functions in the text of an R Markdown document (see Section \@ref(rintext) for more information).
+For the string options, there's some custom formatting you can do. The first example below shows how you can center a title and force a line break. The second shows how you can automatically pull the date and time when you knit your document and format it in a particular way. This is actually R code that is embedded in a string by putting the function call between backticks with a lowercase r. You can use the same principle to put R code and functions in the text of an R Markdown document, as described in Section \@ref(rintext).
 
 ```{r formatting_yaml_example_1, echo=FALSE}
 knitr::include_graphics("images/formatting_title.png")
@@ -28,7 +28,7 @@ In your YAML header, you can reference other documents for formatting and conten
 
 ### .bib
 
-To cite references, you need to set the *bibliography* option in the YAML header. I use BibDesk for my reference manager, which creates a .bib file, or you can create a .bib file directly in $\LaTeX$. You can also construct a [.bib file](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) through R. See Section \@ref(scholarex) or the [.Rmd file for my CV](https://github.com/hollzzar/zaharchuk-cv/blob/master/Zaharchuk_CV.Rmd) for examples with the `scholar` package.
+To cite references, you need to set the *bibliography* option in the YAML header. I use [BibDesk](https://bibdesk.sourceforge.io/) for my reference manager, which creates a .bib file, or you can create a .bib file directly in LaTeX. You can also construct a [.bib file](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) through R. See Section \@ref(scholarex) or the [.Rmd file for my CV](https://github.com/hollzzar/zaharchuk-cv/blob/master/Zaharchuk_CV.Rmd) for examples with the `scholar` package.
 
 By default, if you reference a .bib file, the references will appear at the very end of the document. This is usually fine, but sometimes you may want to control the placement of the references, as with a CV. In this case, you can use a .lua filter as described in Section \@ref(luaex) to place your references in a particular spot.
 
@@ -40,7 +40,7 @@ To determine the type of formatting for your references, you can include a citat
 
 ### .cls and .css
 
-You can include .cls files (not to be confused with the .csl files above) for $\LaTeX$ styling or .css files for HTML styling. You can see an example of the .cls file that formats my [CV](https://github.com/hollzzar/zaharchuk-cv) in Section \@ref(clsex). This guide itself uses .css files that you can find [here](https://github.com/hollzzar/rmarkdown-guide) to control the formatting.
+You can include .cls files (not to be confused with the .csl files above) for LaTeX styling or .css files for HTML styling. You can see an example of the .cls file that formats my [CV](https://github.com/hollzzar/zaharchuk-cv) in Section \@ref(clsex). This guide itself uses .css files that you can find [here](https://github.com/hollzzar/rmarkdown-guide) to control the formatting.
 
 ### .lua {#luaex}
 
@@ -54,13 +54,13 @@ The [.Rmd file for my CV](https://github.com/hollzzar/zaharchuk-cv/blob/master/Z
 knitr::include_graphics("images/references_example.png")
 ```
 
-Then, you can place the reference section for each bibliography in the appropriate place. This example also shows how you can alter the formatting locally for just the reference section with $\LaTeX$ commands.
+Then, you can place the reference section for each bibliography in the appropriate place. This example also shows how you can alter the formatting locally for just the reference section with LaTeX commands.
 
 ```{r format_placement_ref, echo=FALSE}
 knitr::include_graphics("images/references_placement.png")
 ```
 
-Another very useful .lua file handles in-text APA citations. By default, pandoc uses "\&" for in-text citations where APA would require "and," even if you're using a .csl file for APA formatting. Rather than downloading a file like with *multiple-bibliographies.lua*, this file is already stored with pandoc: you just need to reference it. Follow [these instructions](https://cran.rstudio.com/web/packages/rmdfiltr/vignettes/replace_ampersands.html) to access and reference this .lua filter The example below from my Master's thesis shows how you can reference multiple .lua filter in one document.
+Another very useful .lua file handles in-text APA citations. By default, pandoc uses "\&" for in-text citations where APA would require "and," even if you're using a .csl file for APA formatting. Rather than downloading a file like *multiple-bibliographies.lua*, this file is already stored with pandoc: you just need to reference it. Follow [these instructions](https://cran.rstudio.com/web/packages/rmdfiltr/vignettes/replace_ampersands.html) to access and reference this .lua filter The example below from my Master's thesis shows how you can reference multiple .lua filters in one document.
   
 ```{r format_lua, echo=FALSE}
 knitr::include_graphics("images/lua_example.png")
@@ -80,7 +80,7 @@ knitr::include_graphics("images/template_dir.png")
 
 ### Package documents
 
-To find out where your packages "live," you can call `installed.packages()`. When you leave the parentheses blank (i.e., if you don't provide any arguments), as I've done below, the function will return all of the packages you have installed. I've stored them as a dataframe, and then filtered for an example. Here, I'm looking at the `posterdown` package.
+To find out where your packages "live," you can call `installed.packages`. When you leave the parentheses blank (i.e., if you don't provide any arguments), as I've done below, the function will return all of the packages you have installed. I've stored them as a dataframe, and then filtered for an example. Here, I'm looking at the `posterdown` package.
 
 ```{r template, out.width='\\textwidth'}
 # Make dataframe with installed packages
@@ -111,11 +111,11 @@ knitr::include_graphics("images/template_package.png")
 
 R Markdown supports inline code for custom formatting. 
 
-### $\LaTeX$ {#latexpacks}
+### LaTeX {#latexpacks}
 
-In PDFs, you can use code, typesetting commands (e.g., \\vspace{12pt}), and specific packages from $\LaTeX$. There are useful lists of symbols [here](https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf) and [here](https://www.tug.org/tugboat/tb17-2/tb51rei.pdf). Check out [Writing Your Thesis with R Markdown](https://www.rosannavanhespen.nl/thesis_in_rmarkdown/) and Section \@ref(latexpacks) below for examples using $\LaTeX$ packages and typesetting commands.
+In PDFs, you can use code, typesetting commands (e.g., \\vspace{12pt}), and specific packages from LaTeX. There are useful lists of symbols [here](https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf) and [here](https://www.tug.org/tugboat/tb17-2/tb51rei.pdf). Check out [Writing Your Thesis with R Markdown](https://www.rosannavanhespen.nl/thesis_in_rmarkdown/) and Section \@ref(latexpacks) below for examples using LaTeX packages and typesetting commands.
 
-I've included examples of calling packages in the YAML header and using inline functions from my statistics homework below (also see [Writing Your Thesis with R Markdown](https://www.rosannavanhespen.nl/thesis_in_rmarkdown/)).
+I've included examples of calling packages in the YAML header and using inline functions from my statistics homework below.
 
 ```{r format_latex, echo=FALSE}
 knitr::include_graphics("images/latex_packages.png")
@@ -126,11 +126,11 @@ knitr::include_graphics("images/latex_calls.png")
 knitr::include_graphics("images/latex_example.png")
 ```
 
-### CSS/HTML
+### CSS/HTML {#csshtml}
 
 In HTML documents, you can include [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) commands. I have some examples in [these `revealjs` slides](https://github.com/hollzzar/markdown-tutorial/blob/master/brownbag_slides.Rmd), where I wanted to left-align slide text while keeping titles centered.
 
-Here are some examples of using CSS from [my Psychonomics poster](https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.Rmd). The first example includes custom CSS in a `knitr::kable` table to add borders of a particular color between some rows. The second example changes the font size of the references section at the end of the poster.
+Here are some examples of using CSS from my [Psychonomics poster](https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.Rmd). The first example includes custom CSS in a `knitr::kable` table to add borders of a particular color between some rows. The second example changes the font size of the references section at the end of the poster.
 
 ```{r format_example_css, echo=FALSE}
 knitr::include_graphics("images/css_example.png")
