@@ -29,53 +29,51 @@ How can I make R Markdown approachable and efficient to use for graduate student
 - Learned how to use `bookdown` to create a quick guide
 - Created an [online guide hosted on GitHub](https://hollzzar.github.io/rmarkdown-guide/)
 
-## Welcome
+## [Welcome](https://hollzzar.github.io/rmarkdown-guide/index.html)
 
 What is R Markdown and why should you use it?
 
-## Parts of an R Markdown document
+## [Parts of a document](https://hollzzar.github.io/rmarkdown-guide/intro.html)
 
 1. YAML header
 2. Markdown
 3. Code chunks
 
-## Outputs
+## [Outputs](https://hollzzar.github.io/rmarkdown-guide/output.html)
 
-What can I make with R Markdown, and how?
+R Markdown can transform plain text and code into several different document formats. There are also multiple ways to **Knit** or `render` the output.
 
-## Templates
+## [Templates](https://hollzzar.github.io/rmarkdown-guide/template.html)
 
 1. Built-in templates
 2. Templates from R packages
 3. User-defined templates
 
-## Formatting
+## [Content](https://hollzzar.github.io/rmarkdown-guide/content.html)
 
-The real benefit of this guide and reason why I wanted to make it... because customization is hard (and I've spent countless hours trying to find this information for myself)
+The content of an R Markdown document includes the markdown text itself, as well as output from code chunks. Code chunks can output data, graphs, tables, and images. You can also reference variables from code chunks in markdown text.
 
-## Trouble-shooting
+## [Formatting](https://hollzzar.github.io/rmarkdown-guide/format.html)
 
-Because we've all been there.
+There are many ways to customize the formatting of an R Markdown document. In the YAML header, you can specify different parameter options or reference external documents. You can also edit templates directly in certain cases. For local formatting, you can include inline code in the markdown sections.
 
-## Tips
+## [Organization](https://hollzzar.github.io/rmarkdown-guide/organization.html)
 
-How to succeed with R Markdown, as well as with R in general:
+Keeping documents and scripts organized is critical for reducing headaches (literal and figurative) when working on large R Markdown projects. This chapter covers `child` R Markdown documents and importing R scripts to keep your content organized.
 
-- Treat your data as read-only
-- Comment code early and often
-- Keep code chunks small
-- Label chunks for diagnosing issues
-- Nest all files under one directory (if possible)
+## [Troubleshooting](https://hollzzar.github.io/rmarkdown-guide/trouble.html)
+
+We've all been there. How can you avoid or handle warnings, errors, and other issues in R Markdown?
 
 ## Supplementary materials
 
 - Beginner R
 - Intermediate R
+- `ggplot` tips and tricks
 - Practice materials
 
 # Future directions
 
 - Dedicating a section to using GitHub
 - How to make a website with R Markdown
-- Build out the practice materials
-- Add more content on `ggplot`
+- Build out practice materials
