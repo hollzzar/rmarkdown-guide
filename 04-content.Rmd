@@ -12,11 +12,11 @@ Another note about R Markdown is that line spacing matters. For example, if I wa
 
 ## Special characters
 
-If you want any special characters in R Markdown, $\LaTeX$, or pandoc to appear as text, rather than having them perform some function, you need to "escape" them with a backslash. For example, pound signs/hashtags, backslashes, and dollar signs need to be preceded by a backslash. 
+If you want any special characters in R Markdown, LaTeX, or pandoc to appear as text, rather than having them perform some function, you need to "escape" them with a backslash. For example, pound signs/hashtags, backslashes, and dollar signs need to be preceded by a backslash. 
 
-This also applies to any chunk outputs that contain strings with special characters, as with `knitr::kable` tables with $\LaTeX$ functions or characters (e.g., Greek letters like $\eta$ to report partial eta-squared or functions like `\textit{p}` to italicize the text). Sometimes you even need multiple backslashes, so you may have to play around to troubleshoot if they're not rendering correctly. These kinds of rending issues won't generally throw errors, so you'll have to check the output in the knitted document to make sure it looks the way you want.
+This also applies to any chunk outputs that contain strings with special characters, as with `knitr::kable` tables with LaTeX functions or characters (e.g., Greek letters like $\eta$ to report partial eta-squared or functions like `\textit{p}` to italicize the text). Sometimes you even need multiple backslashes, so you may have to play around to troubleshoot if they're not rendering correctly. These kinds of rendering issues won't generally throw errors, so you'll have to check the output in the knitted document to make sure it looks the way you want.
 
-Speaking of $\LaTeX$, you can engage "math mode" by putting dollar signs around $\LaTeX$ math commands. This way, you can include [fractions and binomials](https://en.wikibooks.org/wiki/LaTeX/Mathematics#Fractions_and_Binomials), [math symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols), [International Phonetic Alphabet (IPA) symbols](https://www.tug.org/TUGboat/tb17-2/tb51rei.pdf), and the like in R Markdown (even if you're not outputting to a PDF). For example, I can write $e = mc^2$ in a sentence like this just by wrapping the equation in a single set of dollar signs, or I can use two sets to center the equation: $$e = mc^2$$
+Speaking of LaTeX, you can engage "math mode" by putting dollar signs around LaTeX math commands. This way, you can include [fractions and binomials](https://en.wikibooks.org/wiki/LaTeX/Mathematics#Fractions_and_Binomials), [math symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols), [International Phonetic Alphabet (IPA) symbols](https://www.tug.org/TUGboat/tb17-2/tb51rei.pdf), and the like in R Markdown (even if you're not outputting to a PDF). For example, I can write $e = mc^2$ in a sentence like this just by wrapping the equation in a single set of dollar signs, or I can use two sets to center the equation: $$e = mc^2$$
 
 ## Chunk output
 
@@ -26,9 +26,9 @@ Depending on the kind of content you're creating with R Markdown, whether it's a
 
 When I'm working on a project and checking in with my advisor on my progress, I display my raw data and analyses in R Markdown. My usual work-flow includes data pre-processing in MATLAB for EEG data and R for the ERP analyses and behavioral data. I get everything clean and ready to go in these scripts.
 
-As I describe in Section \@ref(source), I keep separate scripts for each piece of the data analysis. I *source* them into one another, with a *global* script at the base with any general variables (like file names, HEX color codes for graphs, etc.) and custom functions. Once I've built out this processing pipeline with R scripts, that's when I'll *source* them into my R Markdown documents for statistical analysis and presentation. Once you've got your data loaded into R Markdown, you just use R code to run analyses and output them in your document as you would in a regular R script. 
+As I describe in Section \@ref(source), I keep separate scripts for each piece of the data analysis. I `source` them into one another, with a *global* script at the base with any general variables (like file names, HEX color codes for graphs, etc.) and custom functions. Once I've built out this processing pipeline with R scripts, that's when I'll `source` them into my R Markdown documents for statistical analysis and presentation. Once you've got your data loaded into R Markdown, you just use R code to run analyses and output them in your document as you would in a regular R script.
 
-If I'm running regressions with `lm` from the `stats` package for example, I'll wrap the `summary` function around the output. I tend to save this as a variable, since I typically want to grab individual values from the variable later (e.g., *p* values). You can put the new variable name on its own line or `print` it if you prefer; otherwise, you can just have a line with `summary(model)`, and it'll output the table in your document. If I'm sending this document to someone who's not familiar with my data, I will also provide some basic information and summary statistics.
+If I'm running regressions with `lm` from the `stats` package for example, I'll wrap the `summary` function around the output. I tend to save this as a variable, since I typically want to grab individual values from the variable later (e.g., *p* values). You can put the new variable name on its own line or `print` it if you prefer; otherwise, you can just have a line with `summary(model)`, and it'll output the table in your document.
 
 ```{r content_data_example, warning=FALSE, message=FALSE}
 # Show first five rows of mtcars dataset
@@ -52,11 +52,9 @@ mpg_summary
 
 ### Graphs {#graph}
 
-I could've written an entire book on graphs with `ggplot`; in fact, [someone has](https://ggplot2-book.org/). I'm going to focus more on the R Markdown piece, but will provide some handy `ggplot` tips at the end.
+I could've written an entire book on `ggplot`; in fact, [someone already has](https://ggplot2-book.org/). I'm focusing on the R Markdown piece here, but I've included a lot of information on `ggplot` itself in Section \@ref(ggplotinfo).
 
-#### Graphs in R Markdown
-
-Let's start with a basic scatterplot of the miles per gallon and weight data from the `mtcars` dataset above. As with the regression output, there are few ways to get the graph from your code chunk into your document. I can just make the graph without saving it as a variable, so it automatically outputs from the chunk, or save it and put the variable name on a new line.
+Let's start with a basic scatterplot of the miles per gallon and weight data from the `mtcars` dataset. There are few ways to get the graph from your code chunk into your document. I can just make the graph without saving it as a variable, so it automatically outputs from the chunk, or save it and put the variable name on a new line. This is what I tend to do, as I usually create my graphs in an R script before importing them into my R Markdown document.
 
 ```{r content_graph_1}
 # Save number of cylinders (cyl) as factor
@@ -65,7 +63,7 @@ mtcars <- mtcars %>%
   mutate(cyl = as.factor(cyl))
 
 # Create scatter plot
-mtcars_plot <- ggplot(mtcars) +
+mtcars_scatter <- ggplot(mtcars) +
   geom_jitter(aes(mpg, wt, color = cyl)) +
   geom_smooth(aes(mpg, wt), method = "lm", se = TRUE, level = 0.95, 
               fill = "#d7d8db", color = "black", size = 0.5) +
@@ -79,54 +77,42 @@ mtcars_plot <- ggplot(mtcars) +
        color = "Cylinders")
 
 # Output plot
-mtcars_plot
+mtcars_scatter
 ```
 
-You can use the chunk options to control how this graph appears in the document. The ones I typically use for outputting graphs are dots per inch (`dpi`) to control the image quality, `out.width` and `out.height` with either specific units or a percentage, and `fig.align` to change the alignment of the output. In the graph below, I've set `dpi` equal to 300, the `out.width` at 50%, and `fig.align` to center. You can also add a figure caption in the chunk header if you'd like.
+You can use the chunk options to control how this graph appears in the document. The ones I typically use for outputting graphs are dots per inch (`dpi`) to control the image quality, `out.width` and `out.height` with either specific units or a percentage, and `fig.align` to change the alignment of the output. In the graph below, I've set `dpi` equal to 300, the `out.width` at 50%, and `fig.align` to center. You can also add a figure caption in the chunk header if you'd like. These all go in the curly brackets at the top of the chunk and are separated by commas.
 
 ```{r content_graph_2, dpi=300, out.width="50%", fig.align="center"}
 # Output plot with new chunk options
-mtcars_plot
+mtcars_scatter
 ```
 
 As a note, the values for `out.width` and `fig.align` need to be in quotation marks, while the value for the `dpi` setting doesn't. Pay attention to which values have quotes around them in the column with the default values in the chunk options section of the [reference guide](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf). You'll get an error when you try to render the document if you don't have appropriate quotation marks.
 
-#### Graphing with `ggplot`
-
-Now for some general tips on `ggplot`.
-
-First, on formatting, you'll want to be familiar with the [color brewer palettes](https://colorbrewer2.org/). You can use the `scale_color/fill_brewer` functions with `ggplot` to apply these color palettes.
-
-Relatedly, there's a difference between setting `fill` and `color` options in `ggplot`. Generally, things like the points of scatter plots get `color` settings, while things like the bars in bar plots get `fill` settings. If I'd set `fill = cyl` in `geom_jitter`, I would get a legend with the three cylinder types, but the colors of the points wouldn't change. Similarly, if I used `scale_fill_brewer` rather than `scale_color_brewer`, the colors of the points would still be the R defaults. It's the same thing with the color legend title that I set in the `labs` function.
-
-Another aspect of `ggplot` you should be aware of is that the plots are built in sequence. I have `ggplot(mtcars)` first, which just sets up a blank graph, then `geom_jitter`, which adds the `wt` and `mpg` data and point colors based on the `cyl` variable, and so on. If I wanted the regression line from `geom_smooth` to appear beneath the points rather than on top of them, I can just change the order of the function calls. 
-
-This functionality also means that you can save several graph layers in a list to apply them easily to multiple graphs. This can save you lots of time and headaches when you want to have a consistent look across different graphs. You can just update a particular parameter in your list once, and then it'll apply across your graphs. Some functions, like `labs`, support this layering very well by allowing multiple calls to the same function. Others, like `scale_y_continuous`, will override previous calls in the same graph (you'll get a warning message when this happens). You'll notice that I have to put commas in between each function in the list rather than plus signs. I also have to save these in a `list`(rather than with `c()`).
-
-```{r content_graph_3}
-# Create list of specifications
-format_list <- list(scale_y_continuous(expand = c(0,0), limits = c(0,6)),
-                    scale_x_continuous(expand = c(0,0), limits = c(10,35)),
-                    scale_color_brewer(type = "qual", palette = "Paired"),
-                    theme_classic(),
-                    labs(y = "Vehicle weight (1000 lbs)",
-                         x = "Miles per gallon",
-                         color = "Cylinders"))
-
-# Create scatter plot
-mtcars_plot <- ggplot(mtcars) +
-  geom_jitter(aes(mpg, wt, color = cyl)) +
-  geom_smooth(aes(mpg, wt), method = "lm", se = TRUE, level = 0.95, 
-              fill = "#d7d8db", color = "black", size = 0.5) +
-  labs(title = "Miles per gallon and vehicle weight are negatively correlated") +
-  format_list
-```
-
-Lastly on formatting, you'll want to become familiar with the `theme` function as your graphs increase in complexity. The description for this function says it best: "Themes are a powerful way to customize the non-data components of your plots: i.e. titles, labels, fonts, background, gridlines, and legends." I typically layer `theme_classic` as I used above with several `theme` specifications, like setting the font size for the plot title (`plot.title=element_text(size=text_size)`, with `text_size` being a variable I set to 12 for 12 point font), removing the background from the labels on a facet-wrapped plot (`strip.background=element_blank()`), and setting the font I want to use (`text=element_text(family=font_fam)`, where `font_fam` is a variable I set to "Avenir" for [my CNS poster](https://github.com/hollzzar/CNS-2020-poster)). Search `?theme` in your R console or Help window for the full list of parameters.
-
 ### Tables
 
+There are many ways to create tables in R. My preferred way is with `knitr::kable` and `kableExtra`. Together these allow you to create "complex tables and manipulate table styles" as the [documentation](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) says. You use the pipe operator `%>%` from `magrittr` the way you use the plus sign for `ggplot` to add layers of formatting. If you don't specify the output format, `knitr` will automatically create an HTML table for you unless you're rendering to a PDF when it will use LaTeX. You can override this locally in `kable` or globally with `knitr::options`.
+
+```{r content_table_ex}
+# Get coefficients table from mpg_summary
+mpg_coefs <- mpg_summary$coefficients
+
+# Create minimal table
+  # Pass table to kable, then format with kable_styling
+mpg_coefs %>%
+  kable() %>%
+  kable_styling()
+```
+
+This is obviously a very minimal table. The documentation for HTML and LaTeX tables is great, so if you're looking for something in particular it will be relatively easy for you to find. I have a more complex example in Section \@ref(csshtml), to which I added custom CSS code, among other things. You can see what the output of that code would look like in my [Psychonomics poster](https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.pdf).
+
 ### Images
+
+It's very easy to embed images. You've already seen this in Section \@ref(chunkex). Just use the `knitr::include_graphics` function, and you can control the output as you would for a graph by specifying the chunk options. You can also use CSS or `![caption](file/path)` notation, but I find the chunk approach to be more straight-forward.
+
+When I have very complex graphs that take a long time to render, or graphs that don't play very nicely with R Markdown (like those from `corrplot`), I'll save them as images and include them this way. 
+
+I also save graphs as images first when I need to crop them to maintain the correct aspect ratio. This is true of the participant maps I created for my [Psychonomics](https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.pdf) and [CNS](https://github.com/hollzzar/CNS-2020-poster/blob/master/CNS_2020.pdf) posters. Instead of using `knitr::include_graphics`, I use `image_read` from the `magick` package to load the image, followed by the `image_trim` function (you can't go straight from a `ggplot` graph to these functions).
 
 ## Inline R {#rintext}
 
@@ -157,3 +143,5 @@ So if I put "r species_count" between backticks, I can report that there are `r 
 ```{r content_intext_iris, echo=FALSE}
 knitr::include_graphics("images/content_intext_iris.png")
 ```
+
+You'll also note that `knitr` automatically put commas between the species names. To be honest, this is an aspect of R Markdown that I don't explore very much. I tend to format the variables exactly how I want them to appear in the text before referencing them with inline code. If I find a good explanation of this behavior, I'll link to it here.
