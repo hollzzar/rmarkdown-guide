@@ -72,8 +72,12 @@ We've all been there. How can you avoid or handle warnings, errors, and other is
 - `ggplot` tips and tricks
 - Practice materials
 
-# Future directions
+# The future
 
 - Dedicating a section to using GitHub
 - How to make a website with R Markdown
 - Build out practice materials
+
+# The impact
+
+This guide contributes to the enhancement of transparent, open, and reproducible scientific practices in the psychological sciences by equipping graduate students with the tools and knowledge to building effective research pipelines. R Markdown promotes clean and usable code that's easily shared and reproduced.
