@@ -36,7 +36,7 @@ There are many ways to customize the formatting of an R Markdown document. In th
 
 ## [Organization](https://hollzzar.github.io/rmarkdown-guide/organization.html)
 
-Keeping documents and scripts organized is critical for reducing headaches (literal and figurative) when working on large R Markdown projects. This chapter covers *child* R Markdown documents and *sourcing* R scripts to keep your content organized.
+Keeping documents and scripts organized is critical for reducing headaches (literal and figurative) when working on large R Markdown projects. This chapter covers `child` R Markdown documents and importing R scripts to keep your content organized.
 
 ## [Troubleshooting](https://hollzzar.github.io/rmarkdown-guide/trouble.html)
 
@@ -44,4 +44,4 @@ We've all been there. How can you avoid or handle warnings, errors, and other is
 
 ## [Supplementary materials](https://hollzzar.github.io/rmarkdown-guide/supplement.html)
 
-The supplementary materials are broken down into Beginner and Intermediate R. [Beginner R](https://hollzzar.github.io/rmarkdown-guide/supplement.html#beginner-r) covers basic R functionality, reading/loading in data, the `tidyr` philosophy, and using `tidyr` functions for transparent coding. [Intermediate R](https://hollzzar.github.io/rmarkdown-guide/supplement.html#intermediate-r) focuses on free-response text, dynamic variables, and other functions. The [practice materials for R Markdown and R](https://hollzzar.github.io/rmarkdown-guide/supplement.html#practice-materials) are also linked at the end.
+The supplementary materials are broken down into Beginner R, Intermediate R, and `ggplot`. [Beginner R](https://hollzzar.github.io/rmarkdown-guide/supplement.html#beginner-r) covers basic R functionality, reading/loading in data, the `tidyr` philosophy, and using `tidyr` functions for transparent coding. [Intermediate R](https://hollzzar.github.io/rmarkdown-guide/supplement.html#intermediate-r) focuses on free-response text, dynamic variables, and other functions. The [`ggplot` section](https://hollzzar.github.io/rmarkdown-guide/supplement.html#ggplotinfo) goes over some of features that I use most often or think will make graphing more transparent for others. The [practice materials for R Markdown and R](https://hollzzar.github.io/rmarkdown-guide/supplement.html#practice-materials) are also linked at the end.
