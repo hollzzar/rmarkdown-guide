@@ -37,3 +37,7 @@ Instead of knitting, you can also render files in the console with `rmarkdown::r
 When you **Knit** or `render` your document, there's a particular sequence of events that happens under the hood. Your R Markdown document is piped through to pandoc by the `knitr` package, which runs your code chunks and knits them together with the plain text you've included. Pandoc ultimately handles the conversion to a particular output format. Understanding this process can help you troubleshoot when you run into issues. You can find more on troubleshooting in Chapter \@ref(trouble).
 
 ![Knitting process from [Writing Your Thesis with R Markdown](https://www.rosannavanhespen.nl/thesis_in_rmarkdown/)](https://rosannavanhespenresearch.files.wordpress.com/2016/03/pandoc1.png)
+
+```{r rendering_process, echo=FALSE, eval=FALSE}
+knitr::include_graphics("images/rendering_process.png")
+```
