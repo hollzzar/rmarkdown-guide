@@ -154,7 +154,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="output.html"><a href="output.html#rendering-options"><i class="fa fa-check"></i><b>3.2</b> Rendering options</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="output.html"><a href="output.html#knit"><i class="fa fa-check"></i><b>3.2.1</b> Knit</a></li>
-<li class="chapter" data-level="3.2.2" data-path="output.html"><a href="output.html#rmarkdownrender"><i class="fa fa-check"></i><b>3.2.2</b> rmarkdown::render</a></li>
+<li class="chapter" data-level="3.2.2" data-path="output.html"><a href="output.html#rmarkdownrender"><i class="fa fa-check"></i><b>3.2.2</b> <code>rmarkdown::render</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="output.html"><a href="output.html#rendering-process"><i class="fa fa-check"></i><b>3.3</b> Rendering process</a></li>
 </ul></li>
@@ -170,8 +170,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="content.html"><a href="content.html#markdown-overview"><i class="fa fa-check"></i><b>5.1</b> Markdown overview</a></li>
 <li class="chapter" data-level="5.2" data-path="content.html"><a href="content.html#special-characters"><i class="fa fa-check"></i><b>5.2</b> Special characters</a></li>
 <li class="chapter" data-level="5.3" data-path="content.html"><a href="content.html#chunk-output"><i class="fa fa-check"></i><b>5.3</b> Chunk output</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="content.html"><a href="content.html#data"><i class="fa fa-check"></i><b>5.3.1</b> Data</a></li>
-<li class="chapter" data-level="5.3.2" data-path="content.html"><a href="content.html#graphs"><i class="fa fa-check"></i><b>5.3.2</b> Graphs</a></li>
+<li class="chapter" data-level="5.3.1" data-path="content.html"><a href="content.html#dat"><i class="fa fa-check"></i><b>5.3.1</b> Data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="content.html"><a href="content.html#graph"><i class="fa fa-check"></i><b>5.3.2</b> Graphs</a></li>
 <li class="chapter" data-level="5.3.3" data-path="content.html"><a href="content.html#tables"><i class="fa fa-check"></i><b>5.3.3</b> Tables</a></li>
 <li class="chapter" data-level="5.3.4" data-path="content.html"><a href="content.html#images"><i class="fa fa-check"></i><b>5.3.4</b> Images</a></li>
 </ul></li>
@@ -190,13 +190,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3.2" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>6.3.2</b> Package documents</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="format.html"><a href="format.html#inline-code"><i class="fa fa-check"></i><b>6.4</b> Inline code</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="format.html"><a href="format.html#latexpacks"><i class="fa fa-check"></i><b>6.4.1</b> <span class="math inline">\(\LaTeX\)</span></a></li>
+<li class="chapter" data-level="6.4.1" data-path="format.html"><a href="format.html#latexpacks"><i class="fa fa-check"></i><b>6.4.1</b> LaTeX</a></li>
 <li class="chapter" data-level="6.4.2" data-path="format.html"><a href="format.html#csshtml"><i class="fa fa-check"></i><b>6.4.2</b> CSS/HTML</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="format.html"><a href="format.html#help"><i class="fa fa-check"></i><b>6.5</b> Custom functions</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>7</b> Organization</a><ul>
-<li class="chapter" data-level="7.1" data-path="organization.html"><a href="organization.html#child-documents"><i class="fa fa-check"></i><b>7.1</b> Child documents</a></li>
+<li class="chapter" data-level="7.1" data-path="organization.html"><a href="organization.html#child-documents"><i class="fa fa-check"></i><b>7.1</b> <code>child</code> documents</a></li>
 <li class="chapter" data-level="7.2" data-path="organization.html"><a href="organization.html#source"><i class="fa fa-check"></i><b>7.2</b> Sourcing code</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="trouble.html"><a href="trouble.html"><i class="fa fa-check"></i><b>8</b> Troubleshooting</a><ul>
@@ -232,7 +232,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.3" data-path="supplement.html"><a href="supplement.html#helpful-functions"><i class="fa fa-check"></i><b>9.2.3</b> Helpful functions</a></li>
 <li class="chapter" data-level="9.2.4" data-path="supplement.html"><a href="supplement.html#other-tips"><i class="fa fa-check"></i><b>9.2.4</b> Other tips</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="supplement.html"><a href="supplement.html#practice-materials"><i class="fa fa-check"></i><b>9.3</b> Practice materials</a></li>
+<li class="chapter" data-level="9.3" data-path="supplement.html"><a href="supplement.html#ggplotinfo"><i class="fa fa-check"></i><b>9.3</b> Graphing with <code>ggplot</code></a><ul>
+<li class="chapter" data-level="9.3.1" data-path="supplement.html"><a href="supplement.html#formatting"><i class="fa fa-check"></i><b>9.3.1</b> Formatting</a></li>
+<li class="chapter" data-level="9.3.2" data-path="supplement.html"><a href="supplement.html#visualizing"><i class="fa fa-check"></i><b>9.3.2</b> Visualizing</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="supplement.html"><a href="supplement.html#practice-materials"><i class="fa fa-check"></i><b>9.4</b> Practice materials</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/hollzzar/rmarkdown-guide" target="blank">Published with bookdown</a></li>
@@ -271,7 +275,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="errors" class="section level3">
 <h3><span class="header-section-number">8.1.2</span> Errors</h3>
-<p>There are different kinds of errors that you can encounter. In general, you can distinguish chunk errors from R Markdown errors by their appearance. Errors will usually tell you which line of the document they’re in, but they can be misleading or inaccurate, so try to understand the error message first before going to look for the source. As always, Google and Stack Overflow are your friends!</p>
+<p>There are different kinds of errors that you can encounter. In general, you can distinguish chunk errors from R Markdown errors by their appearance. Errors will usually tell you which line of the document they’re in, but the line numbers can be misleading or inaccurate, so try to understand the error message first before going to look for the source. As always, Google and Stack Overflow are your friends!</p>
 <p>Chunk error:</p>
 <p><img src="images/error_example.png" width="767" /></p>
 <p>R Markdown error:</p>
@@ -283,13 +287,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Running a chunk executes the code in the console and adds the output to your R environment; however, your R environment is separate from the environment created when knitting a document. When you render your document, it ignores your R environment. <code>knitr</code> runs all of the chunks in order and knits them into the markdown text.</p>
 <p>If you’re getting an error message that says a particular variable or package doesn’t exist when it’s loaded in your R environment, it’s usually because you haven’t included it in a previous chunk.</p>
 <p><img src="images/environment_console.png" width="232" /><img src="images/environment_var.png" width="508" /></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="trouble.html#cb21-1"></a><span class="co"># Define new variable y</span></span>
-<span id="cb21-2"><a href="trouble.html#cb21-2"></a>y &lt;-<span class="st"> </span><span class="dv">100</span></span>
-<span id="cb21-3"><a href="trouble.html#cb21-3"></a></span>
-<span id="cb21-4"><a href="trouble.html#cb21-4"></a><span class="co"># When I run this chunk, I get the expected output (150),</span></span>
-<span id="cb21-5"><a href="trouble.html#cb21-5"></a><span class="co"># but it fails when I try to knit the document</span></span>
-<span id="cb21-6"><a href="trouble.html#cb21-6"></a><span class="co"># I&#39;ve set eval=FALSE for this chunk, so it doesn&#39;t try to run and prevent my document from knitting</span></span>
-<span id="cb21-7"><a href="trouble.html#cb21-7"></a><span class="kw">print</span>(x <span class="op">+</span><span class="st"> </span>y)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="trouble.html#cb22-1"></a><span class="co"># Define new variable y</span></span>
+<span id="cb22-2"><a href="trouble.html#cb22-2"></a>y &lt;-<span class="st"> </span><span class="dv">100</span></span>
+<span id="cb22-3"><a href="trouble.html#cb22-3"></a></span>
+<span id="cb22-4"><a href="trouble.html#cb22-4"></a><span class="co"># When I run this chunk, I get the expected output (150),</span></span>
+<span id="cb22-5"><a href="trouble.html#cb22-5"></a><span class="co"># but it fails when I try to knit the document</span></span>
+<span id="cb22-6"><a href="trouble.html#cb22-6"></a><span class="co"># I&#39;ve set eval=FALSE for this chunk, so it doesn&#39;t try to run and prevent my document from knitting</span></span>
+<span id="cb22-7"><a href="trouble.html#cb22-7"></a><span class="kw">print</span>(x <span class="op">+</span><span class="st"> </span>y)</span></code></pre></div>
 </div>
 <div id="package-issues" class="section level2">
 <h2><span class="header-section-number">8.3</span> Package issues</h2>
@@ -304,15 +308,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution">Update your TeX distribution</a> from the command line</li>
 <li>Update all packages (including <code>rmarkdown</code>) in library with <code>update.packages(path)</code></li>
-<li>Update individual packages by reinstalling with <code>install.packages(package)</code></li>
-<li>Update R in the console with <code>updateR</code> package</li>
+<li>Update individual packages by reinstalling with <code>install.packages("package")</code></li>
+<li>Update R in the console with the <code>updateR</code> package</li>
 <li>Redownload RStudio to update</li>
 </ul>
 </div>
 </div>
 <div id="strategies" class="section level2">
 <h2><span class="header-section-number">8.4</span> Strategies</h2>
-<p>If you’re running into any issues with your code or knitting your document, here are some things you can try:</p>
+<p>If you’re running into any issues with rendering your document, here are some things you can try:</p>
 <ul>
 <li>Reset your R environment
 <ul>
@@ -324,7 +328,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Use Help window</li>
 <li>Search for package in console with <code>?package</code> or <code>??package</code></li>
-<li>Google the package and error you’re getting</li>
+<li>Google the error you’re getting with the package or function you’re trying to use</li>
 </ul></li>
 </ul>
 

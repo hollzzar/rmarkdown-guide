@@ -154,7 +154,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="output.html"><a href="output.html#rendering-options"><i class="fa fa-check"></i><b>3.2</b> Rendering options</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="output.html"><a href="output.html#knit"><i class="fa fa-check"></i><b>3.2.1</b> Knit</a></li>
-<li class="chapter" data-level="3.2.2" data-path="output.html"><a href="output.html#rmarkdownrender"><i class="fa fa-check"></i><b>3.2.2</b> rmarkdown::render</a></li>
+<li class="chapter" data-level="3.2.2" data-path="output.html"><a href="output.html#rmarkdownrender"><i class="fa fa-check"></i><b>3.2.2</b> <code>rmarkdown::render</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="output.html"><a href="output.html#rendering-process"><i class="fa fa-check"></i><b>3.3</b> Rendering process</a></li>
 </ul></li>
@@ -170,8 +170,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="content.html"><a href="content.html#markdown-overview"><i class="fa fa-check"></i><b>5.1</b> Markdown overview</a></li>
 <li class="chapter" data-level="5.2" data-path="content.html"><a href="content.html#special-characters"><i class="fa fa-check"></i><b>5.2</b> Special characters</a></li>
 <li class="chapter" data-level="5.3" data-path="content.html"><a href="content.html#chunk-output"><i class="fa fa-check"></i><b>5.3</b> Chunk output</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="content.html"><a href="content.html#data"><i class="fa fa-check"></i><b>5.3.1</b> Data</a></li>
-<li class="chapter" data-level="5.3.2" data-path="content.html"><a href="content.html#graphs"><i class="fa fa-check"></i><b>5.3.2</b> Graphs</a></li>
+<li class="chapter" data-level="5.3.1" data-path="content.html"><a href="content.html#dat"><i class="fa fa-check"></i><b>5.3.1</b> Data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="content.html"><a href="content.html#graph"><i class="fa fa-check"></i><b>5.3.2</b> Graphs</a></li>
 <li class="chapter" data-level="5.3.3" data-path="content.html"><a href="content.html#tables"><i class="fa fa-check"></i><b>5.3.3</b> Tables</a></li>
 <li class="chapter" data-level="5.3.4" data-path="content.html"><a href="content.html#images"><i class="fa fa-check"></i><b>5.3.4</b> Images</a></li>
 </ul></li>
@@ -190,13 +190,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3.2" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>6.3.2</b> Package documents</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="format.html"><a href="format.html#inline-code"><i class="fa fa-check"></i><b>6.4</b> Inline code</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="format.html"><a href="format.html#latexpacks"><i class="fa fa-check"></i><b>6.4.1</b> <span class="math inline">\(\LaTeX\)</span></a></li>
+<li class="chapter" data-level="6.4.1" data-path="format.html"><a href="format.html#latexpacks"><i class="fa fa-check"></i><b>6.4.1</b> LaTeX</a></li>
 <li class="chapter" data-level="6.4.2" data-path="format.html"><a href="format.html#csshtml"><i class="fa fa-check"></i><b>6.4.2</b> CSS/HTML</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="format.html"><a href="format.html#help"><i class="fa fa-check"></i><b>6.5</b> Custom functions</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>7</b> Organization</a><ul>
-<li class="chapter" data-level="7.1" data-path="organization.html"><a href="organization.html#child-documents"><i class="fa fa-check"></i><b>7.1</b> Child documents</a></li>
+<li class="chapter" data-level="7.1" data-path="organization.html"><a href="organization.html#child-documents"><i class="fa fa-check"></i><b>7.1</b> <code>child</code> documents</a></li>
 <li class="chapter" data-level="7.2" data-path="organization.html"><a href="organization.html#source"><i class="fa fa-check"></i><b>7.2</b> Sourcing code</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="trouble.html"><a href="trouble.html"><i class="fa fa-check"></i><b>8</b> Troubleshooting</a><ul>
@@ -232,7 +232,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.3" data-path="supplement.html"><a href="supplement.html#helpful-functions"><i class="fa fa-check"></i><b>9.2.3</b> Helpful functions</a></li>
 <li class="chapter" data-level="9.2.4" data-path="supplement.html"><a href="supplement.html#other-tips"><i class="fa fa-check"></i><b>9.2.4</b> Other tips</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="supplement.html"><a href="supplement.html#practice-materials"><i class="fa fa-check"></i><b>9.3</b> Practice materials</a></li>
+<li class="chapter" data-level="9.3" data-path="supplement.html"><a href="supplement.html#ggplotinfo"><i class="fa fa-check"></i><b>9.3</b> Graphing with <code>ggplot</code></a><ul>
+<li class="chapter" data-level="9.3.1" data-path="supplement.html"><a href="supplement.html#formatting"><i class="fa fa-check"></i><b>9.3.1</b> Formatting</a></li>
+<li class="chapter" data-level="9.3.2" data-path="supplement.html"><a href="supplement.html#visualizing"><i class="fa fa-check"></i><b>9.3.2</b> Visualizing</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="supplement.html"><a href="supplement.html#practice-materials"><i class="fa fa-check"></i><b>9.4</b> Practice materials</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/hollzzar/rmarkdown-guide" target="blank">Published with bookdown</a></li>
@@ -265,7 +269,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="pdf_document" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> pdf_document</h3>
-<p>If you’re familiar with <span class="math inline">\(\LaTeX\)</span>, you may be inclined to output directly to a PDF, since you can include inline <span class="math inline">\(\LaTeX\)</span> code in your documents (more on this in Chapter <a href="format.html#format">6</a>). The <a href="https://github.com/mitchelloharawild/vitae">CV</a> and <a href="https://github.com/rosannav/thesis_in_rmarkdown/tree/master/example_thesis">manuscript</a> templates that I use rely on the fine-grained typsetting capabilities of <span class="math inline">\(\LaTeX\)</span>. To create a PDF, you need to have <span class="math inline">\(\LaTeX\)</span> installed locally. If you don’t already, you can install the lightweight <a href="https://yihui.org/tinytex/"><code>tinytex</code></a> distribution through the R console.</p>
+<p>If you’re familiar with LaTeX, you may be inclined to output directly to a PDF, since you can include inline LaTeX code in your documents (more on this in Chapter <a href="format.html#format">6</a>). The <a href="https://github.com/mitchelloharawild/vitae">CV</a> and <a href="https://github.com/rosannav/thesis_in_rmarkdown/tree/master/example_thesis">manuscript</a> templates that I use rely on the fine-grained typsetting capabilities of LaTeX. To create a PDF, you need to have LaTeX installed locally. If you don’t already, you can install a <a href="https://yihui.org/tinytex/"><code>tinytex</code></a> distribution through the R console.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="output.html#cb3-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tinytex&quot;</span>)</span></code></pre></div>
 </div>
 <div id="word_document" class="section level3">
@@ -281,8 +285,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Be sure to pay attention to indentation and colon placement in your YAML header, especially as you start to specify options for particular output types. As a rule of thumb, if you have anything more than <strong>output: output_format</strong>, you need to indent every new line, and have a colon at the end of the previous line. See Section <a href="template.html#usedef">4.3</a> for an example of this.</p>
 </div>
 <div id="rmarkdownrender" class="section level3">
-<h3><span class="header-section-number">3.2.2</span> rmarkdown::render</h3>
-<p>Instead of knitting, you can also render files in console with <code>rmarkdown::render(file, output_format)</code>. This is essentially what <strong>Knit</strong> is doing. This approach allows you to create multiple output types quickly and easily. In my experience, I’m usually customizing my output very specifically for one output type by adding inline CSS or <span class="math inline">\(\LaTeX\)</span> code, so I really only use the <code>render()</code> function when I’m making <a href="https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F">parameterized reports</a>.</p>
+<h3><span class="header-section-number">3.2.2</span> <code>rmarkdown::render</code></h3>
+<p>Instead of knitting, you can also render files in the console with <code>rmarkdown::render(file, output_format)</code>. This is essentially what <strong>Knit</strong> is doing. This approach allows you to create multiple output types quickly and easily. I’m usually customizing my output very specifically for one output type by adding inline CSS or LaTeX code, so I really only use <code>render</code> when I’m making <a href="https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F">parameterized reports</a>.</p>
 </div>
 </div>
 <div id="rendering-process" class="section level2">

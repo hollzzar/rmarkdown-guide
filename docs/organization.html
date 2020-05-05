@@ -154,7 +154,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="output.html"><a href="output.html#rendering-options"><i class="fa fa-check"></i><b>3.2</b> Rendering options</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="output.html"><a href="output.html#knit"><i class="fa fa-check"></i><b>3.2.1</b> Knit</a></li>
-<li class="chapter" data-level="3.2.2" data-path="output.html"><a href="output.html#rmarkdownrender"><i class="fa fa-check"></i><b>3.2.2</b> rmarkdown::render</a></li>
+<li class="chapter" data-level="3.2.2" data-path="output.html"><a href="output.html#rmarkdownrender"><i class="fa fa-check"></i><b>3.2.2</b> <code>rmarkdown::render</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="output.html"><a href="output.html#rendering-process"><i class="fa fa-check"></i><b>3.3</b> Rendering process</a></li>
 </ul></li>
@@ -170,8 +170,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="content.html"><a href="content.html#markdown-overview"><i class="fa fa-check"></i><b>5.1</b> Markdown overview</a></li>
 <li class="chapter" data-level="5.2" data-path="content.html"><a href="content.html#special-characters"><i class="fa fa-check"></i><b>5.2</b> Special characters</a></li>
 <li class="chapter" data-level="5.3" data-path="content.html"><a href="content.html#chunk-output"><i class="fa fa-check"></i><b>5.3</b> Chunk output</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="content.html"><a href="content.html#data"><i class="fa fa-check"></i><b>5.3.1</b> Data</a></li>
-<li class="chapter" data-level="5.3.2" data-path="content.html"><a href="content.html#graphs"><i class="fa fa-check"></i><b>5.3.2</b> Graphs</a></li>
+<li class="chapter" data-level="5.3.1" data-path="content.html"><a href="content.html#dat"><i class="fa fa-check"></i><b>5.3.1</b> Data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="content.html"><a href="content.html#graph"><i class="fa fa-check"></i><b>5.3.2</b> Graphs</a></li>
 <li class="chapter" data-level="5.3.3" data-path="content.html"><a href="content.html#tables"><i class="fa fa-check"></i><b>5.3.3</b> Tables</a></li>
 <li class="chapter" data-level="5.3.4" data-path="content.html"><a href="content.html#images"><i class="fa fa-check"></i><b>5.3.4</b> Images</a></li>
 </ul></li>
@@ -190,13 +190,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3.2" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>6.3.2</b> Package documents</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="format.html"><a href="format.html#inline-code"><i class="fa fa-check"></i><b>6.4</b> Inline code</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="format.html"><a href="format.html#latexpacks"><i class="fa fa-check"></i><b>6.4.1</b> <span class="math inline">\(\LaTeX\)</span></a></li>
+<li class="chapter" data-level="6.4.1" data-path="format.html"><a href="format.html#latexpacks"><i class="fa fa-check"></i><b>6.4.1</b> LaTeX</a></li>
 <li class="chapter" data-level="6.4.2" data-path="format.html"><a href="format.html#csshtml"><i class="fa fa-check"></i><b>6.4.2</b> CSS/HTML</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="format.html"><a href="format.html#help"><i class="fa fa-check"></i><b>6.5</b> Custom functions</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>7</b> Organization</a><ul>
-<li class="chapter" data-level="7.1" data-path="organization.html"><a href="organization.html#child-documents"><i class="fa fa-check"></i><b>7.1</b> Child documents</a></li>
+<li class="chapter" data-level="7.1" data-path="organization.html"><a href="organization.html#child-documents"><i class="fa fa-check"></i><b>7.1</b> <code>child</code> documents</a></li>
 <li class="chapter" data-level="7.2" data-path="organization.html"><a href="organization.html#source"><i class="fa fa-check"></i><b>7.2</b> Sourcing code</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="trouble.html"><a href="trouble.html"><i class="fa fa-check"></i><b>8</b> Troubleshooting</a><ul>
@@ -232,7 +232,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.3" data-path="supplement.html"><a href="supplement.html#helpful-functions"><i class="fa fa-check"></i><b>9.2.3</b> Helpful functions</a></li>
 <li class="chapter" data-level="9.2.4" data-path="supplement.html"><a href="supplement.html#other-tips"><i class="fa fa-check"></i><b>9.2.4</b> Other tips</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="supplement.html"><a href="supplement.html#practice-materials"><i class="fa fa-check"></i><b>9.3</b> Practice materials</a></li>
+<li class="chapter" data-level="9.3" data-path="supplement.html"><a href="supplement.html#ggplotinfo"><i class="fa fa-check"></i><b>9.3</b> Graphing with <code>ggplot</code></a><ul>
+<li class="chapter" data-level="9.3.1" data-path="supplement.html"><a href="supplement.html#formatting"><i class="fa fa-check"></i><b>9.3.1</b> Formatting</a></li>
+<li class="chapter" data-level="9.3.2" data-path="supplement.html"><a href="supplement.html#visualizing"><i class="fa fa-check"></i><b>9.3.2</b> Visualizing</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="supplement.html"><a href="supplement.html#practice-materials"><i class="fa fa-check"></i><b>9.4</b> Practice materials</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/hollzzar/rmarkdown-guide" target="blank">Published with bookdown</a></li>
@@ -260,20 +264,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>At a minimum, you want to keep your chunks small and name them for easy troubleshooting and use headers at multiple levels. One thing to note is that you cannot have the same chunk names anywhere in your document or sub-documents; this will throw an error. If you go to the bottom left-hand corner of your .Rmd file in RStudio, you’ll see a small drop-down menu. There, you can jump to specific headers and code chunks.</p>
 <p>As your documents grow, however, even these sections will become difficult to keep straight. This is when you want to use what are called <em>child</em> documents. This just means that you have separate R Markdown documents that you reference in your main R Markdown document. These are also great if you need to include the same code or text in multiple documents.</p>
 <div id="child-documents" class="section level2">
-<h2><span class="header-section-number">7.1</span> Child documents</h2>
-<p>The screenshot below shows some code from my main Master’s thesis R Markdown document. In this example, I referenced another R Markdown document called <em>Load</em>, as well as one called <em>chapter1</em>. All you have to do is make a code chunk in which you set the “child” parameter equal to the file that you want to reference (and file path if it’s in a subfolder, as I have here). The chunk itself must be empty.</p>
+<h2><span class="header-section-number">7.1</span> <code>child</code> documents</h2>
+<p>The screenshot below shows some code from my main Master’s thesis R Markdown document. In this example, I referenced another R Markdown document called <em>Load</em>, as well as one called <em>chapter1</em>. All you have to do is make a code chunk in which you set the <code>child</code> parameter equal to the file that you want to reference (and file path if it’s in a subfolder, as I have here). The chunk itself must be empty.</p>
 <p><img src="images/content_child_call.png" width="828" /></p>
 <p>The <em>Load</em> document contained several code chunks for loading and processing my data and analyses for presentation. I’ve included a screenshot of the top of this document below. You can see that I just gave it a <strong>pagetitle</strong> in the YAML header, and then included the code chunks that I wanted. This helped keep the main document uncluttered.</p>
-<p>One thing to note is that when you’re running your code chunks to work on your document, if you just run the code chunk referencing the <em>child</em> document, nothing will happen. You have to open that R Markdown document and run it to evaluate those chunks.</p>
+<p>One thing to note is that when you’re running your code chunks to work on your document, if you just run the code chunk referencing the <code>child</code> document, nothing will happen. You have to open that R Markdown document and run it to evaluate those chunks.</p>
 <p><img src="images/content_child_setup.png" width="805" /></p>
-<p>You also saw that I loaded the <em>chapter1</em> child document. This allowed me to separate out each of the sections of my thesis into different documents, in addition to separating out the analyses as with the <em>Load</em> document. I organized these documents into subfolders to keep everything clean. I’ve included a screenshot of the organizational structure below.</p>
+<p>You also saw that I loaded the <em>chapter1</em> <code>child</code> document. This allowed me to separate out each of the sections of my thesis into different documents, in addition to separating out the analyses as with the <em>Load</em> document. I organized these documents into subfolders to keep everything clean. I’ve included a screenshot of the organizational structure below.</p>
 <p>At the top level, I had the main R Markdown document and necessary reference documents (see Section <a href="format.html#yamlref">6.2</a> for more information on including reference documents in the YAML header). In the first subfolder, I had the documents for each section of the thesis (e.g., <em>chapter1</em> is the introduction). In the lower subfolder, I had documents that only contained code chunks (e.g., running statistical analyses and formatting the values for referencing).</p>
 <p><img src="images/content_organization.png" width="815" /></p>
 </div>
 <div id="source" class="section level2">
 <h2><span class="header-section-number">7.2</span> Sourcing code</h2>
-<p>I also use a similar decentralized organizational structure for my actual R processing scripts. You can use <code>source(file)</code> to <em>source</em> all of the code from one script into another, similarly to using <em>child</em> documents in R Markdown. The <em>Load</em> document above actually <em>sources</em> R scripts in the code chunks to load those data into the thesis document.</p>
-<p>I’ve included a screenshot of the folder with all of my R scripts for preparing my thesis data. The data themselves are in the <em>behavioral</em> and <em>erp</em> subfolders. The <em>DM_global_vars</em> file contains variables, like the custom formatting functions I described in Section <a href="format.html#help">6.5</a>, that I used across the scripts. I recommend having such a file that you <em>source</em> at the lowest level of the <em>sourcing</em>/<em>child</em> document hierarchy. That way, if you need to change something, you can make that change in just one place.</p>
+<p>I also use a similar decentralized organizational structure for my actual R processing scripts. You can use <code>source</code> to import all of the code from one script into another, similarly to using <code>child</code> documents in R Markdown. The <em>Load</em> document above actually uses code chunks to load data from external R scripts into the thesis document.</p>
+<p>I’ve included a screenshot of the folder with all of my R scripts for preparing my thesis data. The data themselves are in the <em>behavioral</em> and <em>erp</em> subfolders. The <em>DM_global_vars</em> file contains variables, like the custom formatting functions I described in Section <a href="format.html#help">6.5</a>, that I used across the scripts. I recommend having such a file that you <code>child</code> at the lowest level of the importing hierarchy. That way, if you need to change something, you can make that change in just one place.</p>
 <p><img src="images/content_organization_scripts.png" width="518" /></p>
 
 </div>
