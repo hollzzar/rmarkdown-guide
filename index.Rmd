@@ -5,6 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
+classoption: openany
 bibliography: packages.bib
 biblio-style: apalike
 link-citations: yes
@@ -14,6 +15,8 @@ always_allow_html: true
 ---
 
 ```{r setup, echo=FALSE}
+knitr::opts_chunk$set(out.width = "\\textwidth", warning = FALSE, message = FALSE)
+
 ## Load packages ##
 
 # Package list
