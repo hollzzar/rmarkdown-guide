@@ -6,13 +6,21 @@
 
 ## YAML header
 
-The first part of your document is called the YAML header. This is where you set the global options for the output and formatting. The YAML header appears at the top of your document, and is defined by three dashes/hyphens at the beginning and end.
+The first part of your document is called the YAML (which cheekily stands for *YAML Ain't Markup Language*) header. 
 
-In the example below, I show the YAML header for a set of `revealjs` slides. I've included basic information, like the title and date, in addition to template-specific parameters, like whether there should be slide numbers or not. Section \@ref(yamlref) has more information on setting YAML formatting parameters.
+The YAML header goes at the very top of your document, and is where you set the global options for the output and formatting. 
+
+This header is set apart from the rest of the document by three dashes/hyphens, as shown in the example below.
 
 ```
-test
+---
+title: "Why R Markdown Is the Best"
+author: "Me"
+output: html_document
+---
 ```
+
+Section \@ref(yamlref) has more information on setting YAML formatting parameters.
 
 ## Markdown {#markintro}
 
