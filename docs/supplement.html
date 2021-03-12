@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 9 Supplementary materials | R Markdown for Psychology Graduate Students</title>
   <meta name="description" content="Guide to using R Markdown" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 9 Supplementary materials | R Markdown for Psychology Graduate Students" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2020-05-04" />
+<meta name="date" content="2021-03-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="trouble.html"/>
 
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,21 +52,24 @@
 
 
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -85,7 +89,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,42 +138,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">R Markdown for Psychology Graduate Students</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a><ul>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#tips"><i class="fa fa-check"></i><b>1.2.1</b> Tips</a></li>
 <li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#general-reference-documents"><i class="fa fa-check"></i><b>1.2.2</b> General reference documents</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Parts of a document</a><ul>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Parts of a document</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#yaml-header"><i class="fa fa-check"></i><b>2.1</b> YAML header</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#markintro"><i class="fa fa-check"></i><b>2.2</b> Markdown</a></li>
 <li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#chunkex"><i class="fa fa-check"></i><b>2.3</b> Code chunks</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="output.html"><a href="output.html"><i class="fa fa-check"></i><b>3</b> Outputs</a><ul>
-<li class="chapter" data-level="3.1" data-path="output.html"><a href="output.html#output-options"><i class="fa fa-check"></i><b>3.1</b> Output options</a><ul>
+<li class="chapter" data-level="3" data-path="output.html"><a href="output.html"><i class="fa fa-check"></i><b>3</b> Outputs</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="output.html"><a href="output.html#output-options"><i class="fa fa-check"></i><b>3.1</b> Output options</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="output.html"><a href="output.html#html_document"><i class="fa fa-check"></i><b>3.1.1</b> html_document</a></li>
 <li class="chapter" data-level="3.1.2" data-path="output.html"><a href="output.html#pdf_document"><i class="fa fa-check"></i><b>3.1.2</b> pdf_document</a></li>
 <li class="chapter" data-level="3.1.3" data-path="output.html"><a href="output.html#word_document"><i class="fa fa-check"></i><b>3.1.3</b> word_document</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="output.html"><a href="output.html#rendering-options"><i class="fa fa-check"></i><b>3.2</b> Rendering options</a><ul>
+<li class="chapter" data-level="3.2" data-path="output.html"><a href="output.html#rendering-options"><i class="fa fa-check"></i><b>3.2</b> Rendering options</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="output.html"><a href="output.html#knit"><i class="fa fa-check"></i><b>3.2.1</b> Knit</a></li>
 <li class="chapter" data-level="3.2.2" data-path="output.html"><a href="output.html#rmarkdownrender"><i class="fa fa-check"></i><b>3.2.2</b> <code>rmarkdown::render</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="output.html"><a href="output.html#rendering-process"><i class="fa fa-check"></i><b>3.3</b> Rendering process</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> Templates</a><ul>
+<li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> Templates</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#built-in-templates"><i class="fa fa-check"></i><b>4.1</b> Built-in templates</a></li>
 <li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#packages"><i class="fa fa-check"></i><b>4.2</b> Templates from R packages</a></li>
-<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#usedef"><i class="fa fa-check"></i><b>4.3</b> User-defined templates</a><ul>
+<li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#usedef"><i class="fa fa-check"></i><b>4.3</b> User-defined templates</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#pdf"><i class="fa fa-check"></i><b>4.3.1</b> PDF</a></li>
 <li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#word"><i class="fa fa-check"></i><b>4.3.2</b> Word</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i><b>5</b> Content</a><ul>
+<li class="chapter" data-level="5" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i><b>5</b> Content</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="content.html"><a href="content.html#markdown-overview"><i class="fa fa-check"></i><b>5.1</b> Markdown overview</a></li>
 <li class="chapter" data-level="5.2" data-path="content.html"><a href="content.html#special-characters"><i class="fa fa-check"></i><b>5.2</b> Special characters</a></li>
-<li class="chapter" data-level="5.3" data-path="content.html"><a href="content.html#chunk-output"><i class="fa fa-check"></i><b>5.3</b> Chunk output</a><ul>
+<li class="chapter" data-level="5.3" data-path="content.html"><a href="content.html#chunk-output"><i class="fa fa-check"></i><b>5.3</b> Chunk output</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="content.html"><a href="content.html#dat"><i class="fa fa-check"></i><b>5.3.1</b> Data</a></li>
 <li class="chapter" data-level="5.3.2" data-path="content.html"><a href="content.html#graph"><i class="fa fa-check"></i><b>5.3.2</b> Graphs</a></li>
 <li class="chapter" data-level="5.3.3" data-path="content.html"><a href="content.html#tables"><i class="fa fa-check"></i><b>5.3.3</b> Tables</a></li>
@@ -177,42 +191,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="content.html"><a href="content.html#rintext"><i class="fa fa-check"></i><b>5.4</b> Inline R</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="format.html"><a href="format.html"><i class="fa fa-check"></i><b>6</b> Formatting</a><ul>
+<li class="chapter" data-level="6" data-path="format.html"><a href="format.html"><i class="fa fa-check"></i><b>6</b> Formatting</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="format.html"><a href="format.html#yaml-parameters"><i class="fa fa-check"></i><b>6.1</b> YAML parameters</a></li>
-<li class="chapter" data-level="6.2" data-path="format.html"><a href="format.html#yamlref"><i class="fa fa-check"></i><b>6.2</b> YAML references</a><ul>
+<li class="chapter" data-level="6.2" data-path="format.html"><a href="format.html#yamlref"><i class="fa fa-check"></i><b>6.2</b> YAML references</a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="format.html"><a href="format.html#bib"><i class="fa fa-check"></i><b>6.2.1</b> .bib</a></li>
 <li class="chapter" data-level="6.2.2" data-path="format.html"><a href="format.html#csl"><i class="fa fa-check"></i><b>6.2.2</b> .csl</a></li>
 <li class="chapter" data-level="6.2.3" data-path="format.html"><a href="format.html#cls-and-.css"><i class="fa fa-check"></i><b>6.2.3</b> .cls and .css</a></li>
 <li class="chapter" data-level="6.2.4" data-path="format.html"><a href="format.html#luaex"><i class="fa fa-check"></i><b>6.2.4</b> .lua</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="format.html"><a href="format.html#editing-templates"><i class="fa fa-check"></i><b>6.3</b> Editing templates</a><ul>
+<li class="chapter" data-level="6.3" data-path="format.html"><a href="format.html#editing-templates"><i class="fa fa-check"></i><b>6.3</b> Editing templates</a>
+<ul>
 <li class="chapter" data-level="6.3.1" data-path="format.html"><a href="format.html#clsex"><i class="fa fa-check"></i><b>6.3.1</b> Directory documents</a></li>
 <li class="chapter" data-level="6.3.2" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>6.3.2</b> Package documents</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="format.html"><a href="format.html#inline-code"><i class="fa fa-check"></i><b>6.4</b> Inline code</a><ul>
+<li class="chapter" data-level="6.4" data-path="format.html"><a href="format.html#inline-code"><i class="fa fa-check"></i><b>6.4</b> Inline code</a>
+<ul>
 <li class="chapter" data-level="6.4.1" data-path="format.html"><a href="format.html#latexpacks"><i class="fa fa-check"></i><b>6.4.1</b> LaTeX</a></li>
 <li class="chapter" data-level="6.4.2" data-path="format.html"><a href="format.html#csshtml"><i class="fa fa-check"></i><b>6.4.2</b> CSS/HTML</a></li>
 </ul></li>
 <li class="chapter" data-level="6.5" data-path="format.html"><a href="format.html#help"><i class="fa fa-check"></i><b>6.5</b> Custom functions</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>7</b> Organization</a><ul>
+<li class="chapter" data-level="7" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>7</b> Organization</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="organization.html"><a href="organization.html#child-documents"><i class="fa fa-check"></i><b>7.1</b> <code>child</code> documents</a></li>
 <li class="chapter" data-level="7.2" data-path="organization.html"><a href="organization.html#source"><i class="fa fa-check"></i><b>7.2</b> Sourcing code</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="trouble.html"><a href="trouble.html"><i class="fa fa-check"></i><b>8</b> Troubleshooting</a><ul>
-<li class="chapter" data-level="8.1" data-path="trouble.html"><a href="trouble.html#warnings-vs.-errors"><i class="fa fa-check"></i><b>8.1</b> Warnings vs. errors</a><ul>
+<li class="chapter" data-level="8" data-path="trouble.html"><a href="trouble.html"><i class="fa fa-check"></i><b>8</b> Troubleshooting</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="trouble.html"><a href="trouble.html#warnings-vs.-errors"><i class="fa fa-check"></i><b>8.1</b> Warnings vs. errors</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="trouble.html"><a href="trouble.html#warnings"><i class="fa fa-check"></i><b>8.1.1</b> Warnings</a></li>
 <li class="chapter" data-level="8.1.2" data-path="trouble.html"><a href="trouble.html#errors"><i class="fa fa-check"></i><b>8.1.2</b> Errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="trouble.html"><a href="trouble.html#environments"><i class="fa fa-check"></i><b>8.2</b> Environments</a></li>
-<li class="chapter" data-level="8.3" data-path="trouble.html"><a href="trouble.html#package-issues"><i class="fa fa-check"></i><b>8.3</b> Package issues</a><ul>
+<li class="chapter" data-level="8.3" data-path="trouble.html"><a href="trouble.html#package-issues"><i class="fa fa-check"></i><b>8.3</b> Package issues</a>
+<ul>
 <li class="chapter" data-level="8.3.1" data-path="trouble.html"><a href="trouble.html#package-specification"><i class="fa fa-check"></i><b>8.3.1</b> Package specification</a></li>
 <li class="chapter" data-level="8.3.2" data-path="trouble.html"><a href="trouble.html#updates"><i class="fa fa-check"></i><b>8.3.2</b> Updates</a></li>
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="trouble.html"><a href="trouble.html#strategies"><i class="fa fa-check"></i><b>8.4</b> Strategies</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="supplement.html"><a href="supplement.html"><i class="fa fa-check"></i><b>9</b> Supplementary materials</a><ul>
-<li class="chapter" data-level="9.1" data-path="supplement.html"><a href="supplement.html#beginner-r"><i class="fa fa-check"></i><b>9.1</b> Beginner R</a><ul>
+<li class="chapter" data-level="9" data-path="supplement.html"><a href="supplement.html"><i class="fa fa-check"></i><b>9</b> Supplementary materials</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="supplement.html"><a href="supplement.html#beginner-r"><i class="fa fa-check"></i><b>9.1</b> Beginner R</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path="supplement.html"><a href="supplement.html#basic-r-functionality"><i class="fa fa-check"></i><b>9.1.1</b> Basic R functionality</a></li>
 <li class="chapter" data-level="9.1.2" data-path="supplement.html"><a href="supplement.html#variables"><i class="fa fa-check"></i><b>9.1.2</b> Variables</a></li>
 <li class="chapter" data-level="9.1.3" data-path="supplement.html"><a href="supplement.html#functions"><i class="fa fa-check"></i><b>9.1.3</b> Functions</a></li>
@@ -226,13 +250,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1.11" data-path="supplement.html"><a href="supplement.html#helpful-base-r-functions"><i class="fa fa-check"></i><b>9.1.11</b> Helpful <code>base</code> R functions</a></li>
 <li class="chapter" data-level="9.1.12" data-path="supplement.html"><a href="supplement.html#other-packages-and-functions"><i class="fa fa-check"></i><b>9.1.12</b> Other packages and functions</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="supplement.html"><a href="supplement.html#intermediate-r"><i class="fa fa-check"></i><b>9.2</b> Intermediate R</a><ul>
+<li class="chapter" data-level="9.2" data-path="supplement.html"><a href="supplement.html#intermediate-r"><i class="fa fa-check"></i><b>9.2</b> Intermediate R</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="supplement.html"><a href="supplement.html#free-response-text"><i class="fa fa-check"></i><b>9.2.1</b> Free-response text</a></li>
 <li class="chapter" data-level="9.2.2" data-path="supplement.html"><a href="supplement.html#dynamic-variables"><i class="fa fa-check"></i><b>9.2.2</b> Dynamic variables</a></li>
 <li class="chapter" data-level="9.2.3" data-path="supplement.html"><a href="supplement.html#helpful-functions"><i class="fa fa-check"></i><b>9.2.3</b> Helpful functions</a></li>
 <li class="chapter" data-level="9.2.4" data-path="supplement.html"><a href="supplement.html#other-tips"><i class="fa fa-check"></i><b>9.2.4</b> Other tips</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="supplement.html"><a href="supplement.html#ggplotinfo"><i class="fa fa-check"></i><b>9.3</b> Graphing with <code>ggplot</code></a><ul>
+<li class="chapter" data-level="9.3" data-path="supplement.html"><a href="supplement.html#ggplotinfo"><i class="fa fa-check"></i><b>9.3</b> Graphing with <code>ggplot</code></a>
+<ul>
 <li class="chapter" data-level="9.3.1" data-path="supplement.html"><a href="supplement.html#formatting"><i class="fa fa-check"></i><b>9.3.1</b> Formatting</a></li>
 <li class="chapter" data-level="9.3.2" data-path="supplement.html"><a href="supplement.html#visualizing"><i class="fa fa-check"></i><b>9.3.2</b> Visualizing</a></li>
 </ul></li>
@@ -258,9 +284,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="supplement" class="section level1">
+<div id="supplement" class="section level1" number="9">
 <h1><span class="header-section-number">Chapter 9</span> Supplementary materials</h1>
-<div id="beginner-r" class="section level2">
+<div id="beginner-r" class="section level2" number="9.1">
 <h2><span class="header-section-number">9.1</span> Beginner R</h2>
 <ul>
 <li>Basic R functionality</li>
@@ -268,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Tidy R philosophy</li>
 <li>Manipulating data with <a href="https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">core <code>tidyr</code> functions</a></li>
 </ul>
-<div id="basic-r-functionality" class="section level3">
+<div id="basic-r-functionality" class="section level3" number="9.1.1">
 <h3><span class="header-section-number">9.1.1</span> Basic R functionality</h3>
 <ul>
 <li>Variables</li>
@@ -276,25 +302,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Operators</li>
 </ul>
 </div>
-<div id="variables" class="section level3">
+<div id="variables" class="section level3" number="9.1.2">
 <h3><span class="header-section-number">9.1.2</span> Variables</h3>
 <p>The way R stores your information will determine the kinds of functions/operators you can use</p>
 <ul>
 <li>Data: dataframes</li>
 <li>Values: lists, vectors, matrices, etc.</li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="supplement.html#cb23-1"></a><span class="co"># Variables can be numbers, strings, etc.</span></span>
-<span id="cb23-2"><a href="supplement.html#cb23-2"></a>some_val &lt;-<span class="st"> </span><span class="dv">200</span></span>
-<span id="cb23-3"><a href="supplement.html#cb23-3"></a>other_val &lt;-<span class="st"> </span><span class="ot">TRUE</span></span>
-<span id="cb23-4"><a href="supplement.html#cb23-4"></a></span>
-<span id="cb23-5"><a href="supplement.html#cb23-5"></a><span class="co"># Variables can also be lists of numbers, strings, etc.</span></span>
-<span id="cb23-6"><a href="supplement.html#cb23-6"></a>a_list &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb23-7"><a href="supplement.html#cb23-7"></a></span>
-<span id="cb23-8"><a href="supplement.html#cb23-8"></a><span class="co"># We can also make dataframes (which are essentially special lists)</span></span>
-<span id="cb23-9"><a href="supplement.html#cb23-9"></a>a_dataframe &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">column_1 =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,</span>
-<span id="cb23-10"><a href="supplement.html#cb23-10"></a>                      <span class="dt">column_2 =</span> a_list)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="supplement.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables can be numbers, strings, etc.</span></span>
+<span id="cb24-2"><a href="supplement.html#cb24-2" aria-hidden="true" tabindex="-1"></a>some_val <span class="ot">&lt;-</span> <span class="dv">200</span></span>
+<span id="cb24-3"><a href="supplement.html#cb24-3" aria-hidden="true" tabindex="-1"></a>other_val <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb24-4"><a href="supplement.html#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="supplement.html#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables can also be lists of numbers, strings, etc.</span></span>
+<span id="cb24-6"><a href="supplement.html#cb24-6" aria-hidden="true" tabindex="-1"></a>a_list <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb24-7"><a href="supplement.html#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="supplement.html#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co"># We can also make dataframes (which are essentially special lists)</span></span>
+<span id="cb24-9"><a href="supplement.html#cb24-9" aria-hidden="true" tabindex="-1"></a>a_dataframe <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">column_1 =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
+<span id="cb24-10"><a href="supplement.html#cb24-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">column_2 =</span> a_list)</span></code></pre></div>
 </div>
-<div id="functions" class="section level3">
+<div id="functions" class="section level3" number="9.1.3">
 <h3><span class="header-section-number">9.1.3</span> Functions</h3>
 <p>Functions take a certain number and certain types of “arguments”</p>
 <ul>
@@ -311,38 +337,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Named arguments with values show defaults</li>
 <li>Elipses mean that you can add other optional arguments</li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="supplement.html#cb24-1"></a><span class="co"># file: required</span></span>
-<span id="cb24-2"><a href="supplement.html#cb24-2"></a><span class="co"># header = TRUE: default</span></span>
-<span id="cb24-3"><a href="supplement.html#cb24-3"></a><span class="co"># ...: other potential arguments, like stringsAsFactors = FALSE</span></span>
-<span id="cb24-4"><a href="supplement.html#cb24-4"></a><span class="kw">read.csv</span>(file, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="dt">quote =</span> <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">&quot;</span>,</span>
-<span id="cb24-5"><a href="supplement.html#cb24-5"></a>         <span class="dt">dec =</span> <span class="st">&quot;.&quot;</span>, <span class="dt">fill =</span> <span class="ot">TRUE</span>, <span class="dt">comment.char =</span> <span class="st">&quot;&quot;</span>, ...)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="supplement.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># file: required</span></span>
+<span id="cb25-2"><a href="supplement.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># header = TRUE: default</span></span>
+<span id="cb25-3"><a href="supplement.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ...: other potential arguments, like stringsAsFactors = FALSE</span></span>
+<span id="cb25-4"><a href="supplement.html#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(file, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>, <span class="at">quote =</span> <span class="st">&quot;</span><span class="sc">\&quot;</span><span class="st">&quot;</span>,</span>
+<span id="cb25-5"><a href="supplement.html#cb25-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">dec =</span> <span class="st">&quot;.&quot;</span>, <span class="at">fill =</span> <span class="cn">TRUE</span>, <span class="at">comment.char =</span> <span class="st">&quot;&quot;</span>, ...)</span></code></pre></div>
 </div>
-<div id="base-r" class="section level3">
+<div id="base-r" class="section level3" number="9.1.4">
 <h3><span class="header-section-number">9.1.4</span> <code>base</code> R</h3>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="supplement.html#cb25-1"></a><span class="co"># base R function</span></span>
-<span id="cb25-2"><a href="supplement.html#cb25-2"></a><span class="co"># Count the number of rows in this dataframe</span></span>
-<span id="cb25-3"><a href="supplement.html#cb25-3"></a><span class="kw">nrow</span>(a_dataframe)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="supplement.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base R function</span></span>
+<span id="cb26-2"><a href="supplement.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of rows in this dataframe</span></span>
+<span id="cb26-3"><a href="supplement.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(a_dataframe)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="supplement.html#cb27-1"></a><span class="co"># If I give nrow() too many arguments, it will throw an error</span></span>
-<span id="cb27-2"><a href="supplement.html#cb27-2"></a><span class="kw">nrow</span>(a_dataframe, a_list)</span></code></pre></div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="supplement.html#cb28-1"></a><span class="co"># If I give it the wrong kind of argument, it will just return NULL</span></span>
-<span id="cb28-2"><a href="supplement.html#cb28-2"></a><span class="co"># Some functions won&#39;t run at all with wrong kind of argument</span></span>
-<span id="cb28-3"><a href="supplement.html#cb28-3"></a><span class="kw">nrow</span>(a_list)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="supplement.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If I give nrow() too many arguments, it will throw an error</span></span>
+<span id="cb28-2"><a href="supplement.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(a_dataframe, a_list)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="supplement.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If I give it the wrong kind of argument, it will just return NULL</span></span>
+<span id="cb29-2"><a href="supplement.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Some functions won&#39;t run at all with wrong kind of argument</span></span>
+<span id="cb29-3"><a href="supplement.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(a_list)</span></code></pre></div>
 <pre><code>## NULL</code></pre>
 </div>
-<div id="scholarex" class="section level3">
+<div id="scholarex" class="section level3" number="9.1.5">
 <h3><span class="header-section-number">9.1.5</span> Packages</h3>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="supplement.html#cb30-1"></a><span class="co"># scholar package </span></span>
-<span id="cb30-2"><a href="supplement.html#cb30-2"></a><span class="kw">library</span>(scholar)</span>
-<span id="cb30-3"><a href="supplement.html#cb30-3"></a></span>
-<span id="cb30-4"><a href="supplement.html#cb30-4"></a><span class="co"># get_publications function</span></span>
-<span id="cb30-5"><a href="supplement.html#cb30-5"></a><span class="co"># Pull publications from Google Scholar for Marie Curie</span></span>
-<span id="cb30-6"><a href="supplement.html#cb30-6"></a><span class="kw">get_publications</span>(<span class="st">&quot;EmD_lTEAAAAJ&amp;EmD_lTEAAAAJ&amp;&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb30-7"><a href="supplement.html#cb30-7"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">filter</span>(cites <span class="op">&gt;</span><span class="st"> </span><span class="dv">30</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb30-8"><a href="supplement.html#cb30-8"></a><span class="st">  </span><span class="kw">distinct</span>(title, <span class="dt">.keep_all =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
-<span id="cb30-9"><a href="supplement.html#cb30-9"></a><span class="st">  </span><span class="kw">select</span>(author, title) <span class="op">%&gt;%</span></span>
-<span id="cb30-10"><a href="supplement.html#cb30-10"></a><span class="st">  </span><span class="kw">head</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
-<span id="cb30-11"><a href="supplement.html#cb30-11"></a><span class="st">  </span><span class="kw">kable</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="supplement.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># scholar package </span></span>
+<span id="cb31-2"><a href="supplement.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scholar)</span>
+<span id="cb31-3"><a href="supplement.html#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="supplement.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># get_publications function</span></span>
+<span id="cb31-5"><a href="supplement.html#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull publications from Google Scholar for Marie Curie</span></span>
+<span id="cb31-6"><a href="supplement.html#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="fu">get_publications</span>(<span class="st">&quot;EmD_lTEAAAAJ&amp;EmD_lTEAAAAJ&amp;&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-7"><a href="supplement.html#cb31-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(cites <span class="sc">&gt;</span> <span class="dv">30</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-8"><a href="supplement.html#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(title, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-9"><a href="supplement.html#cb31-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(author, title) <span class="sc">%&gt;%</span></span>
+<span id="cb31-10"><a href="supplement.html#cb31-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-11"><a href="supplement.html#cb31-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -357,24 +383,24 @@ title
 <tbody>
 <tr>
 <td style="text-align:left;">
-P Curie, M Sklodowska-Curie
+E Curie
 </td>
 <td style="text-align:left;">
-Sur une substance nouvelle radio-active, contenue dans la pechblende
+Madame Curie
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-E Curie
+M Curie, S Mme
 </td>
 <td style="text-align:left;">
-Madame Curie: a biography
+Curie
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="operators" class="section level3">
+<div id="operators" class="section level3" number="9.1.6">
 <h3><span class="header-section-number">9.1.6</span> Operators</h3>
 <ul>
 <li>Relational: &gt;, &lt;, ==, !=, &lt;=, &gt;=
@@ -386,14 +412,14 @@ Madame Curie: a biography
 <li>Arithmetic</li>
 </ul>
 </div>
-<div id="reading-in-data" class="section level3">
+<div id="reading-in-data" class="section level3" number="9.1.7">
 <h3><span class="header-section-number">9.1.7</span> Reading in data</h3>
 <p>General parameters for csv files</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="supplement.html#cb31-1"></a><span class="kw">read.csv</span>(<span class="st">&quot;file_name.csv&quot;</span>, </span>
-<span id="cb31-2"><a href="supplement.html#cb31-2"></a>         <span class="dt">header =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb31-3"><a href="supplement.html#cb31-3"></a>         <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb31-4"><a href="supplement.html#cb31-4"></a>         <span class="dt">check.names =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb31-5"><a href="supplement.html#cb31-5"></a>         <span class="dt">na.strings =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="supplement.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">&quot;file_name.csv&quot;</span>, </span>
+<span id="cb32-2"><a href="supplement.html#cb32-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">header =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb32-3"><a href="supplement.html#cb32-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb32-4"><a href="supplement.html#cb32-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">check.names =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb32-5"><a href="supplement.html#cb32-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">na.strings =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p>Avoid special characters (including spaces) in file names, directories, and column headers!</p>
 <ul>
 <li><code>readxl</code> package for Excel spreadsheets</li>
@@ -405,14 +431,14 @@ Madame Curie: a biography
 <li><code>read_table</code> from <code>readr</code> package for text files</li>
 </ul>
 </div>
-<div id="tidy-r-philosophy" class="section level3">
+<div id="tidy-r-philosophy" class="section level3" number="9.1.8">
 <h3><span class="header-section-number">9.1.8</span> Tidy R philosophy</h3>
 <ul>
 <li>One variable per column</li>
 <li>One observation per row</li>
 </ul>
 </div>
-<div id="manipulating-data-with-tidyr" class="section level3">
+<div id="manipulating-data-with-tidyr" class="section level3" number="9.1.9">
 <h3><span class="header-section-number">9.1.9</span> Manipulating data with <code>tidyr</code></h3>
 <ul>
 <li><code>%&gt;%</code>: pass the results of one function on to another</li>
@@ -424,7 +450,7 @@ Madame Curie: a biography
 <li><code>separate</code> and <code>unite</code>: split a column into multiple or the inverse</li>
 </ul>
 </div>
-<div id="other-helpful-tidyr-functions" class="section level3">
+<div id="other-helpful-tidyr-functions" class="section level3" number="9.1.10">
 <h3><span class="header-section-number">9.1.10</span> Other helpful <code>tidyr</code> functions</h3>
 <ul>
 <li><code>slice</code>: choose a row</li>
@@ -435,7 +461,7 @@ Madame Curie: a biography
 <li><code>replace_na</code>/<code>drop_na</code>: alter/remove rows with NA values</li>
 </ul>
 </div>
-<div id="helpful-base-r-functions" class="section level3">
+<div id="helpful-base-r-functions" class="section level3" number="9.1.11">
 <h3><span class="header-section-number">9.1.11</span> Helpful <code>base</code> R functions</h3>
 <ul>
 <li><code>rbind</code> and <code>cbind</code>: add rows/columns</li>
@@ -445,7 +471,7 @@ Madame Curie: a biography
 <li><code>which</code> with column/row indexing</li>
 </ul>
 </div>
-<div id="other-packages-and-functions" class="section level3">
+<div id="other-packages-and-functions" class="section level3" number="9.1.12">
 <h3><span class="header-section-number">9.1.12</span> Other packages and functions</h3>
 <ul>
 <li><code>tibble</code> package for dataframes with <code>tibble</code></li>
@@ -456,7 +482,7 @@ Madame Curie: a biography
 </ul>
 </div>
 </div>
-<div id="intermediate-r" class="section level2">
+<div id="intermediate-r" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> Intermediate R</h2>
 <ul>
 <li>Dealing with free-response text</li>
@@ -464,7 +490,7 @@ Madame Curie: a biography
 <li>Helpful functions</li>
 <li>Other tips</li>
 </ul>
-<div id="free-response-text" class="section level3">
+<div id="free-response-text" class="section level3" number="9.2.1">
 <h3><span class="header-section-number">9.2.1</span> Free-response text</h3>
 <ul>
 <li>Regular expressions (cheat sheet <a href="https://rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf">here</a>)</li>
@@ -477,22 +503,22 @@ Madame Curie: a biography
 </ul></li>
 <li>Use <code>perl = TRUE</code> argument to handle especially complex patterns</li>
 </ul>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="supplement.html#cb32-1"></a><span class="co"># List of elements</span></span>
-<span id="cb32-2"><a href="supplement.html#cb32-2"></a>fruit &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;pinapple&quot;</span>)</span>
-<span id="cb32-3"><a href="supplement.html#cb32-3"></a></span>
-<span id="cb32-4"><a href="supplement.html#cb32-4"></a><span class="co"># grep position</span></span>
-<span id="cb32-5"><a href="supplement.html#cb32-5"></a><span class="kw">grep</span>(<span class="dt">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="dt">x =</span> fruit)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="supplement.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List of elements</span></span>
+<span id="cb33-2"><a href="supplement.html#cb33-2" aria-hidden="true" tabindex="-1"></a>fruit <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pear&quot;</span>, <span class="st">&quot;pinapple&quot;</span>)</span>
+<span id="cb33-3"><a href="supplement.html#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="supplement.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># grep position</span></span>
+<span id="cb33-5"><a href="supplement.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="at">x =</span> fruit)</span></code></pre></div>
 <pre><code>## [1] 1 4</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="supplement.html#cb34-1"></a><span class="co"># grep value</span></span>
-<span id="cb34-2"><a href="supplement.html#cb34-2"></a><span class="kw">grep</span>(<span class="dt">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="dt">x =</span> fruit, <span class="dt">value =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="supplement.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># grep value</span></span>
+<span id="cb35-2"><a href="supplement.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="at">x =</span> fruit, <span class="at">value =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;apple&quot;    &quot;pinapple&quot;</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="supplement.html#cb36-1"></a><span class="co"># agrep (can also specify value = TRUE)</span></span>
-<span id="cb36-2"><a href="supplement.html#cb36-2"></a><span class="kw">agrep</span>(<span class="dt">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="dt">x =</span> fruit, <span class="dt">max.distance =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="supplement.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># agrep (can also specify value = TRUE)</span></span>
+<span id="cb37-2"><a href="supplement.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">agrep</span>(<span class="at">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="at">x =</span> fruit, <span class="at">max.distance =</span> <span class="fl">0.1</span>)</span></code></pre></div>
 <pre><code>## [1] 1 3 4</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="supplement.html#cb38-1"></a><span class="co"># regexpr</span></span>
-<span id="cb38-2"><a href="supplement.html#cb38-2"></a><span class="co"># match.length attribute gives starting position of match</span></span>
-<span id="cb38-3"><a href="supplement.html#cb38-3"></a><span class="co"># index.type attribute gives length of matched text</span></span>
-<span id="cb38-4"><a href="supplement.html#cb38-4"></a><span class="kw">regexpr</span>(<span class="dt">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="dt">text =</span> fruit)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="supplement.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># regexpr</span></span>
+<span id="cb39-2"><a href="supplement.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># match.length attribute gives starting position of match</span></span>
+<span id="cb39-3"><a href="supplement.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># index.type attribute gives length of matched text</span></span>
+<span id="cb39-4"><a href="supplement.html#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">regexpr</span>(<span class="at">pattern =</span> <span class="st">&quot;le&quot;</span>, <span class="at">text =</span> fruit)</span></code></pre></div>
 <pre><code>## [1]  4 -1 -1  7
 ## attr(,&quot;match.length&quot;)
 ## [1]  2 -1 -1  2
@@ -501,51 +527,51 @@ Madame Curie: a biography
 ## attr(,&quot;useBytes&quot;)
 ## [1] TRUE</code></pre>
 </div>
-<div id="dynamic-variables" class="section level3">
+<div id="dynamic-variables" class="section level3" number="9.2.2">
 <h3><span class="header-section-number">9.2.2</span> Dynamic variables</h3>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="supplement.html#cb40-1"></a><span class="co"># Variables</span></span>
-<span id="cb40-2"><a href="supplement.html#cb40-2"></a>vals &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">3</span>)</span>
-<span id="cb40-3"><a href="supplement.html#cb40-3"></a>name &lt;-<span class="st"> &quot;assign_example&quot;</span></span>
-<span id="cb40-4"><a href="supplement.html#cb40-4"></a></span>
-<span id="cb40-5"><a href="supplement.html#cb40-5"></a><span class="co"># Assign values to variable name</span></span>
-<span id="cb40-6"><a href="supplement.html#cb40-6"></a><span class="kw">assign</span>(name, vals)</span>
-<span id="cb40-7"><a href="supplement.html#cb40-7"></a></span>
-<span id="cb40-8"><a href="supplement.html#cb40-8"></a><span class="co"># Use the variable as usual</span></span>
-<span id="cb40-9"><a href="supplement.html#cb40-9"></a>assign_example</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="supplement.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables</span></span>
+<span id="cb41-2"><a href="supplement.html#cb41-2" aria-hidden="true" tabindex="-1"></a>vals <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb41-3"><a href="supplement.html#cb41-3" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="st">&quot;assign_example&quot;</span></span>
+<span id="cb41-4"><a href="supplement.html#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="supplement.html#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign values to variable name</span></span>
+<span id="cb41-6"><a href="supplement.html#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="fu">assign</span>(name, vals)</span>
+<span id="cb41-7"><a href="supplement.html#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="supplement.html#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the variable as usual</span></span>
+<span id="cb41-9"><a href="supplement.html#cb41-9" aria-hidden="true" tabindex="-1"></a>assign_example</span></code></pre></div>
 <pre><code>## [1] 1 2 3 1 2 3 1 2 3</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="supplement.html#cb42-1"></a><span class="co"># You can also get the new variable from the name</span></span>
-<span id="cb42-2"><a href="supplement.html#cb42-2"></a><span class="kw">get</span>(name)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="supplement.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># You can also get the new variable from the name</span></span>
+<span id="cb43-2"><a href="supplement.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">get</span>(name)</span></code></pre></div>
 <pre><code>## [1] 1 2 3 1 2 3 1 2 3</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="supplement.html#cb44-1"></a><span class="co"># You can add to this variable dynamically as well</span></span>
-<span id="cb44-2"><a href="supplement.html#cb44-2"></a><span class="kw">assign</span>(name, <span class="kw">c</span>(<span class="kw">get</span>(name), <span class="dv">4</span><span class="op">:</span><span class="dv">6</span>))</span>
-<span id="cb44-3"><a href="supplement.html#cb44-3"></a></span>
-<span id="cb44-4"><a href="supplement.html#cb44-4"></a><span class="co"># New output</span></span>
-<span id="cb44-5"><a href="supplement.html#cb44-5"></a>assign_example</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="supplement.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># You can add to this variable dynamically as well</span></span>
+<span id="cb45-2"><a href="supplement.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">assign</span>(name, <span class="fu">c</span>(<span class="fu">get</span>(name), <span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>))</span>
+<span id="cb45-3"><a href="supplement.html#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-4"><a href="supplement.html#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co"># New output</span></span>
+<span id="cb45-5"><a href="supplement.html#cb45-5" aria-hidden="true" tabindex="-1"></a>assign_example</span></code></pre></div>
 <pre><code>##  [1] 1 2 3 1 2 3 1 2 3 4 5 6</code></pre>
 </div>
-<div id="helpful-functions" class="section level3">
+<div id="helpful-functions" class="section level3" number="9.2.3">
 <h3><span class="header-section-number">9.2.3</span> Helpful functions</h3>
 <ul>
 <li><code>apply</code>, <code>lapply</code>, <code>sapply</code>, <code>tapply</code></li>
 <li><code>source</code> variables from R scripts</li>
 <li><code>%notin%</code> and <code>%in%</code> (compared to != and ==)</li>
 </ul>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="supplement.html#cb46-1"></a><span class="co"># Example using apply: go across columns of dataset </span></span>
-<span id="cb46-2"><a href="supplement.html#cb46-2"></a>  <span class="co"># and substitute characters</span></span>
-<span id="cb46-3"><a href="supplement.html#cb46-3"></a>language &lt;-<span class="st"> </span><span class="kw">apply</span>(language, <span class="dv">2</span>, </span>
-<span id="cb46-4"><a href="supplement.html#cb46-4"></a>                  <span class="cf">function</span>(x) <span class="kw">gsub</span>(<span class="st">&quot;</span><span class="ch">\\\\</span><span class="st">&quot;</span>, <span class="st">&quot;&quot;</span>, x, <span class="dt">fixed =</span> <span class="ot">TRUE</span>))</span>
-<span id="cb46-5"><a href="supplement.html#cb46-5"></a></span>
-<span id="cb46-6"><a href="supplement.html#cb46-6"></a><span class="co"># Source other sripts</span></span>
-<span id="cb46-7"><a href="supplement.html#cb46-7"></a><span class="kw">source</span>(<span class="st">&quot;data_cleaning.R&quot;</span>, <span class="dt">local =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb46-8"><a href="supplement.html#cb46-8"></a></span>
-<span id="cb46-9"><a href="supplement.html#cb46-9"></a><span class="co"># Helper function</span></span>
-<span id="cb46-10"><a href="supplement.html#cb46-10"></a><span class="st">&quot;%notin%&quot;</span> &lt;-<span class="st"> </span><span class="kw">Negate</span>(<span class="st">&quot;%in%&quot;</span>)</span>
-<span id="cb46-11"><a href="supplement.html#cb46-11"></a></span>
-<span id="cb46-12"><a href="supplement.html#cb46-12"></a><span class="co"># Example from processing pipeline for Qualtrics data</span></span>
-<span id="cb46-13"><a href="supplement.html#cb46-13"></a>unusable &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;00&quot;</span>,<span class="st">&quot;107&quot;</span>)</span>
-<span id="cb46-14"><a href="supplement.html#cb46-14"></a>dat <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(Progress<span class="op">==</span><span class="dv">100</span> <span class="op">&amp;</span><span class="st"> </span>ID <span class="op">%notin%</span><span class="st"> </span>unusable)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="supplement.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example using apply: go across columns of dataset </span></span>
+<span id="cb47-2"><a href="supplement.html#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># and substitute characters</span></span>
+<span id="cb47-3"><a href="supplement.html#cb47-3" aria-hidden="true" tabindex="-1"></a>language <span class="ot">&lt;-</span> <span class="fu">apply</span>(language, <span class="dv">2</span>, </span>
+<span id="cb47-4"><a href="supplement.html#cb47-4" aria-hidden="true" tabindex="-1"></a>                  <span class="cf">function</span>(x) <span class="fu">gsub</span>(<span class="st">&quot;</span><span class="sc">\\\\</span><span class="st">&quot;</span>, <span class="st">&quot;&quot;</span>, x, <span class="at">fixed =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb47-5"><a href="supplement.html#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="supplement.html#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Source other sripts</span></span>
+<span id="cb47-7"><a href="supplement.html#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;data_cleaning.R&quot;</span>, <span class="at">local =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb47-8"><a href="supplement.html#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-9"><a href="supplement.html#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Helper function</span></span>
+<span id="cb47-10"><a href="supplement.html#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;%notin%&quot;</span> <span class="ot">&lt;-</span> <span class="fu">Negate</span>(<span class="st">&quot;%in%&quot;</span>)</span>
+<span id="cb47-11"><a href="supplement.html#cb47-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="supplement.html#cb47-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Example from processing pipeline for Qualtrics data</span></span>
+<span id="cb47-13"><a href="supplement.html#cb47-13" aria-hidden="true" tabindex="-1"></a>unusable <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;00&quot;</span>,<span class="st">&quot;107&quot;</span>)</span>
+<span id="cb47-14"><a href="supplement.html#cb47-14" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(Progress<span class="sc">==</span><span class="dv">100</span> <span class="sc">&amp;</span> ID <span class="sc">%notin%</span> unusable)</span></code></pre></div>
 </div>
-<div id="other-tips" class="section level3">
+<div id="other-tips" class="section level3" number="9.2.4">
 <h3><span class="header-section-number">9.2.4</span> Other tips</h3>
 <ul>
 <li>Store <code>ggplot2</code> parameters in a <code>list</code></li>
@@ -553,7 +579,7 @@ Madame Curie: a biography
 </ul>
 </div>
 </div>
-<div id="ggplotinfo" class="section level2">
+<div id="ggplotinfo" class="section level2" number="9.3">
 <h2><span class="header-section-number">9.3</span> Graphing with <code>ggplot</code></h2>
 <p>Now for some general tips on using <code>ggplot</code>. I’ll go over the following topics:</p>
 <ul>
@@ -571,101 +597,94 @@ Madame Curie: a biography
 <li>Using <code>patchwork</code> to combine multiple plots</li>
 </ul></li>
 </ul>
-<div id="formatting" class="section level3">
+<div id="formatting" class="section level3" number="9.3.1">
 <h3><span class="header-section-number">9.3.1</span> Formatting</h3>
 <p>Recall the scatter plot from Section <a href="content.html#graph">5.3.2</a>. If you’re playing around with this code yourself, remember that we had to convert <code>cyl</code> to a factor so that R would treat it as a discrete rather than a continuous variable.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="supplement.html#cb47-1"></a><span class="co"># Output scatter plot</span></span>
-<span id="cb47-2"><a href="supplement.html#cb47-2"></a>mtcars_scatter</span></code></pre></div>
-<p><img src="rmarkdown-guide_files/figure-html/content_graph_example-1.png" width="672" /></p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="supplement.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Output scatter plot</span></span>
+<span id="cb48-2"><a href="supplement.html#cb48-2" aria-hidden="true" tabindex="-1"></a>mtcars_scatter</span></code></pre></div>
+<p><img src="rmarkdown-guide_files/figure-html/content_graph_example-1.png" width="\textwidth" /></p>
 <p>A major aspect of <code>ggplot</code> that you should be aware of is that the plots are built in sequence. In the graph above (the code also appears below), <code>ggplot(mtcars)</code> came first, which just set up a blank graph, then there’s <code>geom_jitter</code>, which added the <code>wt</code> and <code>mpg</code> data and point colors based on the <code>cyl</code> variable, and so on. If I wanted the regression line from <code>geom_smooth</code> to appear beneath the points rather than on top of them, I could’ve just reordered the function calls. This will also help you troubleshoot if you have issues outputting graphs; just comment out individual plot objects, being careful not to leave any dangling plus signs, and rerun to find the problem.</p>
 <p>This functionality also means that you can save several layers in a list to apply them easily to multiple graphs. This can save you time and effort when you want to have a consistent look across different graphs; just update a particular parameter in your list once, and then it’ll apply across your graphs.</p>
 <p>Some functions, like <code>labs</code>, support this layering very well by allowing multiple calls to the same function. Others, like <code>scale_y_continuous</code>, will override previous calls in the same graph (you’ll get a warning message when this happens). You’ll notice that I have to put commas in between each function in the list rather than plus signs. I also have to save these in a <code>list</code>(rather than with <code>c</code>).</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="supplement.html#cb48-1"></a><span class="co"># Create list of specifications</span></span>
-<span id="cb48-2"><a href="supplement.html#cb48-2"></a>format_list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>)),</span>
-<span id="cb48-3"><a href="supplement.html#cb48-3"></a>                    <span class="kw">scale_x_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">35</span>)),</span>
-<span id="cb48-4"><a href="supplement.html#cb48-4"></a>                    <span class="kw">scale_color_brewer</span>(<span class="dt">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Paired&quot;</span>),</span>
-<span id="cb48-5"><a href="supplement.html#cb48-5"></a>                    <span class="kw">theme_classic</span>(),</span>
-<span id="cb48-6"><a href="supplement.html#cb48-6"></a>                    <span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Vehicle weight (1000 lbs)&quot;</span>,</span>
-<span id="cb48-7"><a href="supplement.html#cb48-7"></a>                         <span class="dt">x =</span> <span class="st">&quot;Miles per gallon&quot;</span>,</span>
-<span id="cb48-8"><a href="supplement.html#cb48-8"></a>                         <span class="dt">color =</span> <span class="st">&quot;Cylinders&quot;</span>))</span>
-<span id="cb48-9"><a href="supplement.html#cb48-9"></a></span>
-<span id="cb48-10"><a href="supplement.html#cb48-10"></a><span class="co"># Create scatter plot</span></span>
-<span id="cb48-11"><a href="supplement.html#cb48-11"></a>  <span class="co"># Move legend to the bottom</span></span>
-<span id="cb48-12"><a href="supplement.html#cb48-12"></a>mtcars_scatter &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mtcars) <span class="op">+</span></span>
-<span id="cb48-13"><a href="supplement.html#cb48-13"></a><span class="st">  </span><span class="kw">geom_jitter</span>(<span class="kw">aes</span>(mpg, wt, <span class="dt">color =</span> cyl)) <span class="op">+</span></span>
-<span id="cb48-14"><a href="supplement.html#cb48-14"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(mpg, wt), <span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> <span class="ot">TRUE</span>, <span class="dt">level =</span> <span class="fl">0.95</span>, </span>
-<span id="cb48-15"><a href="supplement.html#cb48-15"></a>              <span class="dt">fill =</span> <span class="st">&quot;#d7d8db&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
-<span id="cb48-16"><a href="supplement.html#cb48-16"></a><span class="st">  </span>format_list <span class="op">+</span></span>
-<span id="cb48-17"><a href="supplement.html#cb48-17"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
-<span id="cb48-18"><a href="supplement.html#cb48-18"></a></span>
-<span id="cb48-19"><a href="supplement.html#cb48-19"></a><span class="co"># Output scatter plot with new legend position</span></span>
-<span id="cb48-20"><a href="supplement.html#cb48-20"></a>mtcars_scatter</span></code></pre></div>
-<p><img src="rmarkdown-guide_files/figure-html/content_graph_3-1.png" width="672" /></p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="supplement.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create list of specifications</span></span>
+<span id="cb49-2"><a href="supplement.html#cb49-2" aria-hidden="true" tabindex="-1"></a>format_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">6</span>)),</span>
+<span id="cb49-3"><a href="supplement.html#cb49-3" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">35</span>)),</span>
+<span id="cb49-4"><a href="supplement.html#cb49-4" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">scale_color_brewer</span>(<span class="at">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Paired&quot;</span>),</span>
+<span id="cb49-5"><a href="supplement.html#cb49-5" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">theme_classic</span>(),</span>
+<span id="cb49-6"><a href="supplement.html#cb49-6" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Vehicle weight (1000 lbs)&quot;</span>,</span>
+<span id="cb49-7"><a href="supplement.html#cb49-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">x =</span> <span class="st">&quot;Miles per gallon&quot;</span>,</span>
+<span id="cb49-8"><a href="supplement.html#cb49-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">color =</span> <span class="st">&quot;Cylinders&quot;</span>))</span>
+<span id="cb49-9"><a href="supplement.html#cb49-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-10"><a href="supplement.html#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot</span></span>
+<span id="cb49-11"><a href="supplement.html#cb49-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Move legend to the bottom</span></span>
+<span id="cb49-12"><a href="supplement.html#cb49-12" aria-hidden="true" tabindex="-1"></a>mtcars_scatter <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
+<span id="cb49-13"><a href="supplement.html#cb49-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(mpg, wt, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
+<span id="cb49-14"><a href="supplement.html#cb49-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(mpg, wt), <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">level =</span> <span class="fl">0.95</span>, </span>
+<span id="cb49-15"><a href="supplement.html#cb49-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">&quot;#d7d8db&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb49-16"><a href="supplement.html#cb49-16" aria-hidden="true" tabindex="-1"></a>  format_list <span class="sc">+</span></span>
+<span id="cb49-17"><a href="supplement.html#cb49-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
+<span id="cb49-18"><a href="supplement.html#cb49-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-19"><a href="supplement.html#cb49-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Output scatter plot with new legend position</span></span>
+<span id="cb49-20"><a href="supplement.html#cb49-20" aria-hidden="true" tabindex="-1"></a>mtcars_scatter</span></code></pre></div>
+<p><img src="rmarkdown-guide_files/figure-html/content_graph_3-1.png" width="\textwidth" /></p>
 <p>You’ll want to be familiar with the <a href="https://colorbrewer2.org/">color brewer palettes</a> that I used here. The website I’ve linked allows you to play with the different options and choose ones with particular characteristics, like color blind-friendly palettes. You can use the <code>scale_color/fill_brewer</code> functions with <code>ggplot</code> to apply these color palettes.</p>
 <p>Relatedly, there’s a difference between setting <code>fill</code> and <code>color</code> options in <code>ggplot</code>. Generally, scatter plots get <code>color</code> settings, while bar plots get <code>fill</code> settings. If I’d set <code>fill = cyl</code> in <code>geom_jitter</code>, I would’ve gotten a legend with the three cylinder types, but the colors of the points wouldn’t have changed. Similarly, if I’d used <code>scale_fill_brewer</code> rather than <code>scale_color_brewer</code>, the colors of the points would still have been the R defaults (or you would get an error, depending on the data type).</p>
 <p>Lastly on formatting, you’ll want to become familiar with the <code>theme</code> function as your graphs increase in complexity. The description for this function says it best: “Themes are a powerful way to customize the non-data components of your plots: i.e. titles, labels, fonts, background, gridlines, and legends.” I typically layer <code>theme_classic</code> with several <code>theme</code> specifications. Search <code>?theme</code> in your R console or Help window for the full list of parameters.</p>
 </div>
-<div id="visualizing" class="section level3">
+<div id="visualizing" class="section level3" number="9.3.2">
 <h3><span class="header-section-number">9.3.2</span> Visualizing</h3>
 <p>I often need to make bar graphs to present data. I also tend to want to include error bars on these bar graphs. There are different error bars you can calculate, but I tend to have error bars that represent 95% confident intervals around my means. You’ll first need to install the <code>Rmisc</code> package to do this, then transform your data into a long format. I also turned the categorical variables that I cared about into factors. This allows you to control the exact label text and order in your graph. Then, I used the <code>summarySE</code> function to create a table with the means and confidence intervals.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="supplement.html#cb49-1"></a><span class="co"># Create long-form data for creating error table</span></span>
-<span id="cb49-2"><a href="supplement.html#cb49-2"></a>  <span class="co"># Mutate columns to create factors with particular labels</span></span>
-<span id="cb49-3"><a href="supplement.html#cb49-3"></a>  <span class="co"># This is harder to change once you&#39;re at ggplot stage</span></span>
-<span id="cb49-4"><a href="supplement.html#cb49-4"></a>mtcars_long &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb49-5"><a href="supplement.html#cb49-5"></a><span class="st">  </span><span class="kw">select</span>(mpg, wt, cyl) <span class="op">%&gt;%</span></span>
-<span id="cb49-6"><a href="supplement.html#cb49-6"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">-</span>cyl, <span class="dt">names_to =</span> <span class="st">&quot;variables&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;measures&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb49-7"><a href="supplement.html#cb49-7"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">cyl =</span> <span class="kw">factor</span>(cyl, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>), </span>
-<span id="cb49-8"><a href="supplement.html#cb49-8"></a>                      <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;4-cylinder&quot;</span>, <span class="st">&quot;6-cylinder&quot;</span>, <span class="st">&quot;8-cylinder&quot;</span>)),</span>
-<span id="cb49-9"><a href="supplement.html#cb49-9"></a>         <span class="dt">variables =</span> <span class="kw">factor</span>(variables, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="st">&quot;wt&quot;</span>), </span>
-<span id="cb49-10"><a href="supplement.html#cb49-10"></a>                            <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Miles per gallon&quot;</span>, <span class="st">&quot;Vehicle weight (1000 lbs)&quot;</span>)))</span>
-<span id="cb49-11"><a href="supplement.html#cb49-11"></a></span>
-<span id="cb49-12"><a href="supplement.html#cb49-12"></a><span class="co"># Make error table</span></span>
-<span id="cb49-13"><a href="supplement.html#cb49-13"></a>mtcars_error &lt;-<span class="st"> </span><span class="kw">summarySE</span>(mtcars_long, <span class="dt">measurevar =</span> <span class="st">&quot;measures&quot;</span>, <span class="dt">groupvars =</span> <span class="kw">c</span>(<span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;variables&quot;</span>))</span>
-<span id="cb49-14"><a href="supplement.html#cb49-14"></a></span>
-<span id="cb49-15"><a href="supplement.html#cb49-15"></a><span class="co"># Output error table</span></span>
-<span id="cb49-16"><a href="supplement.html#cb49-16"></a>mtcars_error</span></code></pre></div>
-<pre><code>##          cyl                 variables  N  measures        sd        se
-## 1 4-cylinder          Miles per gallon 11 26.663636 4.5098277 1.3597642
-## 2 4-cylinder Vehicle weight (1000 lbs) 11  2.285727 0.5695637 0.1717299
-## 3 6-cylinder          Miles per gallon  7 19.742857 1.4535670 0.5493967
-## 4 6-cylinder Vehicle weight (1000 lbs)  7  3.117143 0.3563455 0.1346860
-## 5 8-cylinder          Miles per gallon 14 15.100000 2.5600481 0.6842016
-## 6 8-cylinder Vehicle weight (1000 lbs) 14  3.999214 0.7594047 0.2029595
-##          ci
-## 1 3.0297434
-## 2 0.3826381
-## 3 1.3443253
-## 4 0.3295647
-## 5 1.4781278
-## 6 0.4384672</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="supplement.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create long-form data for creating error table</span></span>
+<span id="cb50-2"><a href="supplement.html#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Mutate columns to create factors with particular labels</span></span>
+<span id="cb50-3"><a href="supplement.html#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This is harder to change once you&#39;re at ggplot stage</span></span>
+<span id="cb50-4"><a href="supplement.html#cb50-4" aria-hidden="true" tabindex="-1"></a>mtcars_long <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb50-5"><a href="supplement.html#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(mpg, wt, cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb50-6"><a href="supplement.html#cb50-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>cyl, <span class="at">names_to =</span> <span class="st">&quot;variables&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;measures&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb50-7"><a href="supplement.html#cb50-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cyl =</span> <span class="fu">factor</span>(cyl, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>), </span>
+<span id="cb50-8"><a href="supplement.html#cb50-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;4-cylinder&quot;</span>, <span class="st">&quot;6-cylinder&quot;</span>, <span class="st">&quot;8-cylinder&quot;</span>)),</span>
+<span id="cb50-9"><a href="supplement.html#cb50-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">variables =</span> <span class="fu">factor</span>(variables, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="st">&quot;wt&quot;</span>), </span>
+<span id="cb50-10"><a href="supplement.html#cb50-10" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Miles per gallon&quot;</span>, <span class="st">&quot;Vehicle weight (1000 lbs)&quot;</span>)))</span>
+<span id="cb50-11"><a href="supplement.html#cb50-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-12"><a href="supplement.html#cb50-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Make error table</span></span>
+<span id="cb50-13"><a href="supplement.html#cb50-13" aria-hidden="true" tabindex="-1"></a>mtcars_error <span class="ot">&lt;-</span> <span class="fu">summarySE</span>(mtcars_long, <span class="at">measurevar =</span> <span class="st">&quot;measures&quot;</span>, <span class="at">groupvars =</span> <span class="fu">c</span>(<span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;variables&quot;</span>))</span>
+<span id="cb50-14"><a href="supplement.html#cb50-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-15"><a href="supplement.html#cb50-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Output error table</span></span>
+<span id="cb50-16"><a href="supplement.html#cb50-16" aria-hidden="true" tabindex="-1"></a>mtcars_error</span></code></pre></div>
+<pre><code>##          cyl                 variables  N  measures        sd        se        ci
+## 1 4-cylinder          Miles per gallon 11 26.663636 4.5098277 1.3597642 3.0297434
+## 2 4-cylinder Vehicle weight (1000 lbs) 11  2.285727 0.5695637 0.1717299 0.3826381
+## 3 6-cylinder          Miles per gallon  7 19.742857 1.4535670 0.5493967 1.3443253
+## 4 6-cylinder Vehicle weight (1000 lbs)  7  3.117143 0.3563455 0.1346860 0.3295647
+## 5 8-cylinder          Miles per gallon 14 15.100000 2.5600481 0.6842016 1.4781278
+## 6 8-cylinder Vehicle weight (1000 lbs) 14  3.999214 0.7594047 0.2029595 0.4384672</code></pre>
 <p>Now I can make a bar graph with this error table. My main <code>ggplot</code> object uses the <code>cyl</code> column and plots the means, while the <code>geom_errorbar</code> object uses the confidence interval (<code>ci</code>) column to create the error bars. You’ll also notice that I changed the width of the error bars and their position, so that they were centered over the bars.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="supplement.html#cb51-1"></a><span class="co"># Create bar graph</span></span>
-<span id="cb51-2"><a href="supplement.html#cb51-2"></a>mtcars_bar &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mtcars_error, <span class="kw">aes</span>(cyl, measures, <span class="dt">fill =</span> cyl)) <span class="op">+</span></span>
-<span id="cb51-3"><a href="supplement.html#cb51-3"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position=</span><span class="st">&quot;dodge&quot;</span>, <span class="dt">stat=</span><span class="st">&quot;identity&quot;</span>) <span class="op">+</span></span>
-<span id="cb51-4"><a href="supplement.html#cb51-4"></a><span class="st">  </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">ymin =</span> measures <span class="op">-</span><span class="st"> </span>ci, <span class="dt">ymax =</span> measures <span class="op">+</span><span class="st"> </span>ci), </span>
-<span id="cb51-5"><a href="supplement.html#cb51-5"></a>                <span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(<span class="fl">0.9</span>)) <span class="op">+</span></span>
-<span id="cb51-6"><a href="supplement.html#cb51-6"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
-<span id="cb51-7"><a href="supplement.html#cb51-7"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">expand_scale</span>(<span class="dt">mult =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">.2</span>))) <span class="op">+</span></span>
-<span id="cb51-8"><a href="supplement.html#cb51-8"></a><span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Paired&quot;</span>) <span class="op">+</span></span>
-<span id="cb51-9"><a href="supplement.html#cb51-9"></a><span class="st">  </span><span class="kw">theme_classic</span>() <span class="op">+</span></span>
-<span id="cb51-10"><a href="supplement.html#cb51-10"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>variables, <span class="dt">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="op">+</span></span>
-<span id="cb51-11"><a href="supplement.html#cb51-11"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Measures&quot;</span>,</span>
-<span id="cb51-12"><a href="supplement.html#cb51-12"></a>       <span class="dt">x =</span> <span class="st">&quot;Cylinders&quot;</span>,</span>
-<span id="cb51-13"><a href="supplement.html#cb51-13"></a>       <span class="dt">fill =</span> <span class="st">&quot;Cylinders&quot;</span>) <span class="op">+</span></span>
-<span id="cb51-14"><a href="supplement.html#cb51-14"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.ticks.y =</span> <span class="kw">element_blank</span>(),</span>
-<span id="cb51-15"><a href="supplement.html#cb51-15"></a>        <span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>,</span>
-<span id="cb51-16"><a href="supplement.html#cb51-16"></a>        <span class="dt">panel.spacing.x =</span> <span class="kw">unit</span>(<span class="fl">1.5</span>, <span class="st">&quot;lines&quot;</span>),</span>
-<span id="cb51-17"><a href="supplement.html#cb51-17"></a>        <span class="dt">axis.text.y =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">hjust =</span> <span class="fl">0.5</span>))</span>
-<span id="cb51-18"><a href="supplement.html#cb51-18"></a></span>
-<span id="cb51-19"><a href="supplement.html#cb51-19"></a><span class="co"># Output bar graph</span></span>
-<span id="cb51-20"><a href="supplement.html#cb51-20"></a>mtcars_bar</span></code></pre></div>
-<p><img src="rmarkdown-guide_files/figure-html/content_graph_5-1.png" width="672" /></p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="supplement.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create bar graph</span></span>
+<span id="cb52-2"><a href="supplement.html#cb52-2" aria-hidden="true" tabindex="-1"></a>mtcars_bar <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars_error, <span class="fu">aes</span>(cyl, measures, <span class="at">fill =</span> cyl)) <span class="sc">+</span></span>
+<span id="cb52-3"><a href="supplement.html#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">&quot;dodge&quot;</span>, <span class="at">stat=</span><span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb52-4"><a href="supplement.html#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> measures <span class="sc">-</span> ci, <span class="at">ymax =</span> measures <span class="sc">+</span> ci), </span>
+<span id="cb52-5"><a href="supplement.html#cb52-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.9</span>)) <span class="sc">+</span></span>
+<span id="cb52-6"><a href="supplement.html#cb52-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb52-7"><a href="supplement.html#cb52-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expand_scale</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, .<span class="dv">2</span>))) <span class="sc">+</span></span>
+<span id="cb52-8"><a href="supplement.html#cb52-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Paired&quot;</span>) <span class="sc">+</span></span>
+<span id="cb52-9"><a href="supplement.html#cb52-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb52-10"><a href="supplement.html#cb52-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> variables, <span class="at">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="sc">+</span></span>
+<span id="cb52-11"><a href="supplement.html#cb52-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Measures&quot;</span>,</span>
+<span id="cb52-12"><a href="supplement.html#cb52-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Cylinders&quot;</span>,</span>
+<span id="cb52-13"><a href="supplement.html#cb52-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;Cylinders&quot;</span>) <span class="sc">+</span></span>
+<span id="cb52-14"><a href="supplement.html#cb52-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb52-15"><a href="supplement.html#cb52-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,</span>
+<span id="cb52-16"><a href="supplement.html#cb52-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.spacing.x =</span> <span class="fu">unit</span>(<span class="fl">1.5</span>, <span class="st">&quot;lines&quot;</span>),</span>
+<span id="cb52-17"><a href="supplement.html#cb52-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb52-18"><a href="supplement.html#cb52-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-19"><a href="supplement.html#cb52-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Output bar graph</span></span>
+<span id="cb52-20"><a href="supplement.html#cb52-20" aria-hidden="true" tabindex="-1"></a>mtcars_bar</span></code></pre></div>
+<p><img src="rmarkdown-guide_files/figure-html/content_graph_5-1.png" width="\textwidth" /></p>
 <p>Sometimes, you’ll want to output multiple graphs with a particular layout. The <code>patchwork</code> package allows you to do this easily. The syntax is very similar to <code>ggplot</code> syntax, in that you add plots together with a plus sign. You can also add a <code>plot_layout</code> object to change aspects of the plots, like their widths.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="supplement.html#cb52-1"></a> mtcars_bar <span class="op">+</span><span class="st"> </span>mtcars_scatter <span class="op">+</span><span class="st"> </span><span class="kw">plot_layout</span>(<span class="dt">widths =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))</span></code></pre></div>
-<p><img src="rmarkdown-guide_files/figure-html/content_graph_6-1.png" width="672" /></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="supplement.html#cb53-1" aria-hidden="true" tabindex="-1"></a> mtcars_bar <span class="sc">+</span> mtcars_scatter <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">widths =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))</span></code></pre></div>
+<p><img src="rmarkdown-guide_files/figure-html/content_graph_6-1.png" width="\textwidth" /></p>
 </div>
 </div>
-<div id="practice-materials" class="section level2">
+<div id="practice-materials" class="section level2" number="9.4">
 <h2><span class="header-section-number">9.4</span> Practice materials</h2>
 <p>You can find practice materials for R Markdown and R <a href="https://github.com/hollzzar/markdown-tutorial">here</a>. You’ll want to clone this repository or download the following documents/folders:</p>
 <ul>
