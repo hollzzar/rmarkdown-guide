@@ -1,3 +1,20 @@
+# Holly,
+# 
+# 1. I really do think you should consider talking to a publisher about this book. 
+# Obviously, you should get Janet's blessing.
+# 
+# 2. To give the project a higher profile, you might want to create an organization on GitHub. 
+# Then, your book would have a URL that looks like "https://rmarkdown-4-psych.github.io/" or something like that.
+# 
+# 3. Dan Albohn (dna5021@psu.edu) in the social area wrote his dissertation in R Markdown. You might want to share your draft with Dan. 
+# Actually, I think he might be interested in being a full co-author--if you wanted one. 
+# Separately, if you are comfortable doing so, I think Chapter 7 on Organization might benefit from a link to the repo with the full thesis.
+# 
+# 4. One other tip I learned from a developer (and from some LaTex experts): Put each sentence on a separate line.
+# Git's version control is based on lines, and so this makes it easy to see what you've changed.
+# 
+# Great work! Keep it up!
+
 # [R Markdown for Psychology Graduate Students](https://hollzzar.github.io/rmarkdown-guide/)
 
 This guide started as a [tutorial](https://github.com/hollzzar/markdown-tutorial) that I developed for my fellow cognitive psychology graduate students at Penn State. 
