@@ -30,4 +30,9 @@ You have to open the `child` document in RStudio and run all of the chunks manua
 ## Sourcing code {#source}
 
 You can use the `source` function to import all of the code from an R script like you would for a `child` document.
-I have an example of this in my [ERP analysis scripts](https://github.com/hollzzar/erp-data-scripts/blob/main/1a_group_analysis.R) for my Master's thesis.
+
+```
+source("path/script.R")
+```
+
+I also have an example of this in my [ERP analysis scripts](https://github.com/hollzzar/erp-data-scripts/blob/main/1a_group_analysis.R) for my Master's thesis.

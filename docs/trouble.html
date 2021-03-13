@@ -323,13 +323,13 @@ When you render your document, it ignores your R environment.
 <code>knitr</code> runs all of the chunks in order and knits them into the markdown text.</p>
 <p>If you’re getting an error message that says a particular variable or package doesn’t exist when it’s loaded in your R environment, it’s usually because you haven’t included it in a previous chunk.</p>
 <p><img src="images/environment_console.png" width="\textwidth" /><img src="images/environment_var.png" width="\textwidth" /></p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="trouble.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define new variable y</span></span>
-<span id="cb37-2"><a href="trouble.html#cb37-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb37-3"><a href="trouble.html#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-4"><a href="trouble.html#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># When I run this chunk, I get the expected output (150),</span></span>
-<span id="cb37-5"><a href="trouble.html#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># but it fails when I try to knit the document</span></span>
-<span id="cb37-6"><a href="trouble.html#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co"># I&#39;ve set eval=FALSE for this chunk, so it doesn&#39;t try to run and prevent my document from knitting</span></span>
-<span id="cb37-7"><a href="trouble.html#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x <span class="sc">+</span> y)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="trouble.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define new variable y</span></span>
+<span id="cb38-2"><a href="trouble.html#cb38-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb38-3"><a href="trouble.html#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="trouble.html#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># When I run this chunk, I get the expected output (150),</span></span>
+<span id="cb38-5"><a href="trouble.html#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># but it fails when I try to knit the document</span></span>
+<span id="cb38-6"><a href="trouble.html#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="co"># I&#39;ve set eval=FALSE for this chunk, so it doesn&#39;t try to run and prevent my document from knitting</span></span>
+<span id="cb38-7"><a href="trouble.html#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x <span class="sc">+</span> y)</span></code></pre></div>
 </div>
 <div id="package-issues" class="section level2" number="8.3">
 <h2><span class="header-section-number">8.3</span> Package issues</h2>
