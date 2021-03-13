@@ -1,8 +1,8 @@
 # Templates {#template}
 
 1. Built-in templates
-2. Templates from R packages
-3. User-defined templates
+1. Templates from R packages
+1. User-defined templates
 
 ## Built-in templates
 

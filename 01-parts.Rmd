@@ -67,7 +67,7 @@ pacman::p_load(pkg_list, character.only = TRUE)
 
 There are multiple ways to run code chunks to test them in RStudio before creating your output. 
 You can run code like you would in R by highlighting the relevant lines of code and hitting CTRL/command + enter. 
-You can also hit the green "play" button in the upper right-hand corner of the chunk. 
+You can also hit the green play button in the upper right-hand corner of the chunk. 
 
 Each chunk is an island, so if you haven't run a previous chunk that contains some variable you need in the chunk you want to run, it'll throw an error. 
 At the top right of your open .Rmd document in RStudio, you'll also see a **Run** dropdown menu. 

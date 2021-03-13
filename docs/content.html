@@ -180,7 +180,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i><b>5</b> Content</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="content.html"><a href="content.html#markdown-overview"><i class="fa fa-check"></i><b>5.1</b> Markdown overview</a></li>
+<li class="chapter" data-level="5.1" data-path="content.html"><a href="content.html#markdown-overview"><i class="fa fa-check"></i><b>5.1</b> Markdown overview</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="content.html"><a href="content.html#type-setting"><i class="fa fa-check"></i><b>5.1.1</b> Type-setting</a></li>
+<li class="chapter" data-level="5.1.2" data-path="content.html"><a href="content.html#spacing"><i class="fa fa-check"></i><b>5.1.2</b> Spacing</a></li>
+<li class="chapter" data-level="5.1.3" data-path="content.html"><a href="content.html#working-with-github"><i class="fa fa-check"></i><b>5.1.3</b> Working with GitHub</a></li>
+</ul></li>
 <li class="chapter" data-level="5.2" data-path="content.html"><a href="content.html#special-characters"><i class="fa fa-check"></i><b>5.2</b> Special characters</a></li>
 <li class="chapter" data-level="5.3" data-path="content.html"><a href="content.html#chunk-output"><i class="fa fa-check"></i><b>5.3</b> Chunk output</a>
 <ul>
@@ -291,16 +296,29 @@ Code chunks can output data, graphs, tables, and images.
 You can also reference variables from code chunks in markdown text.</p>
 <div id="markdown-overview" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Markdown overview</h2>
+<div id="type-setting" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Type-setting</h3>
 <p><a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">R Markdown: The Definitive Guide</a> and this <a href="https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R Markdown cheatsheet</a> provide comprehensive information on the typesetting capabilities of R Markdown.
 In general, R Markdown typesetting options include <code>*italics*</code>, <code>**bold**</code>, and <code>~~strike-through~~</code>.
 These are achieved by wrapping text in a certain number of asterisks or tildes.
 There are also <code>(parentheses)</code>, <code>[square brackets]</code>, and <code>"quotation marks"</code> that can have special functions in markdown, like creating hyperlinks: <code>[text](link)</code>.</p>
 <p>With many of these typesetting characters, if you highlight the text you want to format (by clicking and dragging your cursor), you can just hit the character once to wrap the text automatically.
 This way, you don’t have to go to the beginning and end of the text and place the characters individually.</p>
+</div>
+<div id="spacing" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Spacing</h3>
 <p>Another note about R Markdown is that line spacing matters.
 For example, if I wanted to include bullet points after this sentence, they wouldn’t render properly if I didn’t hit enter twice before starting them.
 In other words, I need to have a full line of white space before bullet points and numbered lists.
 If you’re having issues with your document rendering correctly, make sure you have line breaks between lists, paragraphs, and headers.</p>
+</div>
+<div id="working-with-github" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Working with GitHub</h3>
+<p>One of my coding/open science mentors at Penn State, <a href="https://github.com/rogilmore">Rick Gilmore</a>, pointed out this useful piece of information to me.
+<code>Git</code>’s version control goes line-by-line, so it’s best to put each sentence of markdown on its own line.
+Otherwise, if you change one word in a sentence, the whole paragraph will appear to have changed, rather than just the one sentence.
+This will help with editing later.</p>
+</div>
 </div>
 <div id="special-characters" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Special characters</h2>

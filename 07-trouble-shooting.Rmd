@@ -1,9 +1,9 @@
 # Troubleshooting {#trouble}
 
 1. Warnings vs. errors
-2. RStudio vs. R Markdown environments
-3. Package issues
-4. Strategies for troubleshooting issues
+1. RStudio vs. R Markdown environments
+1. Package issues
+1. Strategies for troubleshooting issues
 
 ## Warnings vs. errors
 

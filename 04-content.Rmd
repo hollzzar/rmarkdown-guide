@@ -6,6 +6,8 @@ You can also reference variables from code chunks in markdown text.
 
 ## Markdown overview
 
+### Type-setting
+
 [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) and this [R Markdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) provide comprehensive information on the typesetting capabilities of R Markdown. 
 In general, R Markdown typesetting options include `*italics*`, `**bold**`, and `~~strike-through~~`. 
 These are achieved by wrapping text in a certain number of asterisks or tildes. 
@@ -14,10 +16,19 @@ There are also `(parentheses)`, `[square brackets]`, and `"quotation marks"` tha
 With many of these typesetting characters, if you highlight the text you want to format (by clicking and dragging your cursor), you can just hit the character once to wrap the text automatically. 
 This way, you don't have to go to the beginning and end of the text and place the characters individually.
 
+### Spacing
+
 Another note about R Markdown is that line spacing matters. 
 For example, if I wanted to include bullet points after this sentence, they wouldn't render properly if I didn't hit enter twice before starting them. 
 In other words, I need to have a full line of white space before bullet points and numbered lists. 
 If you're having issues with your document rendering correctly, make sure you have line breaks between lists, paragraphs, and headers.
+
+### Working with GitHub
+
+One of my coding/open science mentors at Penn State, [Rick Gilmore](https://github.com/rogilmore), pointed out this useful piece of information to me. 
+`Git`'s version control goes line-by-line, so it's best to put each sentence of markdown on its own line.
+Otherwise, if you change one word in a sentence, the whole paragraph will appear to have changed, rather than just the one sentence.
+This will help with editing later.
 
 ## Special characters
 

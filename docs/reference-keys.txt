@@ -24,6 +24,9 @@ pdf
 word
 content
 markdown-overview
+type-setting
+spacing
+working-with-github
 special-characters
 chunk-output
 dat
