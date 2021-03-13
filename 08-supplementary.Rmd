@@ -272,11 +272,18 @@ Recall the scatter plot from Section \@ref(graph). If you're playing around with
 mtcars_scatter
 ```
 
-A major aspect of `ggplot` that you should be aware of is that the plots are built in sequence. In the graph above (the code also appears below), `ggplot(mtcars)` came first, which just set up a blank graph, then there's `geom_jitter`, which added the `wt` and `mpg` data and point colors based on the `cyl` variable, and so on. If I wanted the regression line from `geom_smooth` to appear beneath the points rather than on top of them, I could've just reordered the function calls. This will also help you troubleshoot if you have issues outputting graphs; just comment out individual plot objects, being careful not to leave any dangling plus signs, and rerun to find the problem.
+A major aspect of `ggplot` that you should be aware of is that the plots are built in sequence. 
+In the graph above (the code also appears below), `ggplot(mtcars)` came first, which just set up a blank graph, then there's `geom_jitter`, which added the `wt` and `mpg` data and point colors based on the `cyl` variable, and so on. 
+If I wanted the regression line from `geom_smooth` to appear beneath the points rather than on top of them, I could've just reordered the function calls. 
+This will also help you troubleshoot if you have issues outputting graphs; just comment out individual plot objects, being careful not to leave any dangling plus signs, and rerun to find the problem.
 
-This functionality also means that you can save several layers in a list to apply them easily to multiple graphs. This can save you time and effort when you want to have a consistent look across different graphs; just update a particular parameter in your list once, and then it'll apply across your graphs. 
+This functionality also means that you can save several layers in a list to apply them easily to multiple graphs. 
+This can save you time and effort when you want to have a consistent look across different graphs; just update a particular parameter in your list once, and then it'll apply across your graphs. 
 
-Some functions, like `labs`, support this layering very well by allowing multiple calls to the same function. Others, like `scale_y_continuous`, will override previous calls in the same graph (you'll get a warning message when this happens). You'll notice that I have to put commas in between each function in the list rather than plus signs. I also have to save these in a `list`(rather than with `c`).
+Some functions, like `labs`, support this layering very well by allowing multiple calls to the same function. 
+Others, like `scale_y_continuous`, will override previous calls in the same graph (you'll get a warning message when this happens). 
+You'll notice that I have to put commas in between each function in the list rather than plus signs. 
+I also have to save these in a `list`(rather than with `c`).
 
 ```{r content_graph_3}
 # Create list of specifications
@@ -301,15 +308,29 @@ mtcars_scatter <- ggplot(mtcars) +
 mtcars_scatter
 ```
 
-You'll want to be familiar with the [color brewer palettes](https://colorbrewer2.org/) that I used here. The website I've linked allows you to play with the different options and choose ones with particular characteristics, like color blind-friendly palettes. You can use the `scale_color/fill_brewer` functions with `ggplot` to apply these color palettes.
+You'll want to be familiar with the [color brewer palettes](https://colorbrewer2.org/) that I used here.
+The website I've linked allows you to play with the different options and choose ones with particular characteristics, like color blind-friendly palettes.
+You can use the `scale_color/fill_brewer` functions with `ggplot` to apply these color palettes.
 
-Relatedly, there's a difference between setting `fill` and `color` options in `ggplot`. Generally, scatter plots get `color` settings, while bar plots get `fill` settings. If I'd set `fill = cyl` in `geom_jitter`, I would've gotten a legend with the three cylinder types, but the colors of the points wouldn't have changed. Similarly, if I'd used `scale_fill_brewer` rather than `scale_color_brewer`, the colors of the points would still have been the R defaults (or you would get an error, depending on the data type).
+Relatedly, there's a difference between setting `fill` and `color` options in `ggplot`.
+Generally, scatter plots get `color` settings, while bar plots get `fill` settings.
+If I'd set `fill = cyl` in `geom_jitter`, I would've gotten a legend with the three cylinder types, but the colors of the points wouldn't have changed. 
+Similarly, if I'd used `scale_fill_brewer` rather than `scale_color_brewer`, the colors of the points would still have been the R defaults (or you would get an error, depending on the data type).
 
-Lastly on formatting, you'll want to become familiar with the `theme` function as your graphs increase in complexity. The description for this function says it best: "Themes are a powerful way to customize the non-data components of your plots: i.e. titles, labels, fonts, background, gridlines, and legends." I typically layer `theme_classic` with several `theme` specifications. Search `?theme` in your R console or Help window for the full list of parameters.
+Lastly on formatting, you'll want to become familiar with the `theme` function as your graphs increase in complexity. 
+The description for this function says it best: "Themes are a powerful way to customize the non-data components of your plots: i.e. titles, labels, fonts, background, gridlines, and legends." 
+I typically layer `theme_classic` with several `theme` specifications. 
+Search `?theme` in your R console or Help window for the full list of parameters.
 
 ### Visualizing
 
-I often need to make bar graphs to present data. I also tend to want to include error bars on these bar graphs. There are different error bars you can calculate, but I tend to have error bars that represent 95% confident intervals around my means. You'll first need to install the `Rmisc` package to do this, then transform your data into a long format. I also turned the categorical variables that I cared about into factors. This allows you to control the exact label text and order in your graph. Then, I used the `summarySE` function to create a table with the means and confidence intervals.
+I often need to make bar graphs to present data. 
+I also tend to want to include error bars on these bar graphs. 
+There are different error bars you can calculate, but I tend to have error bars that represent 95% confident intervals around my means. 
+You'll first need to install the `Rmisc` package to do this, then transform your data into a long format. 
+I also turned the categorical variables that I cared about into factors. 
+This allows you to control the exact label text and order in your graph. 
+Then, I used the `summarySE` function to create a table with the means and confidence intervals.
 
 ```{r content_graph_4}
 # Create long-form data for creating error table
@@ -330,7 +351,9 @@ mtcars_error <- summarySE(mtcars_long, measurevar = "measures", groupvars = c("c
 mtcars_error
 ```
 
-Now I can make a bar graph with this error table. My main `ggplot` object uses the `cyl` column and plots the means, while the `geom_errorbar` object uses the confidence interval (`ci`) column to create the error bars. You'll also notice that I changed the width of the error bars and their position, so that they were centered over the bars.
+Now I can make a bar graph with this error table. 
+My main `ggplot` object uses the `cyl` column and plots the means, while the `geom_errorbar` object uses the confidence interval (`ci`) column to create the error bars. 
+You'll also notice that I changed the width of the error bars and their position, so that they were centered over the bars.
 
 ```{r content_graph_5}
 # Create bar graph
@@ -355,7 +378,10 @@ mtcars_bar <- ggplot(mtcars_error, aes(cyl, measures, fill = cyl)) +
 mtcars_bar
 ```
 
-Sometimes, you'll want to output multiple graphs with a particular layout. The `patchwork` package allows you to do this easily. The syntax is very similar to `ggplot` syntax, in that you add plots together with a plus sign. You can also add a `plot_layout` object to change aspects of the plots, like their widths.
+Sometimes, you'll want to output multiple graphs with a particular layout. 
+The `patchwork` package allows you to do this easily. 
+The syntax is very similar to `ggplot` syntax, in that you add plots together with a plus sign. 
+You can also add a `plot_layout` object to change aspects of the plots, like their widths.
 
 ```{r content_graph_6}
  mtcars_bar + mtcars_scatter + plot_layout(widths = c(2, 1))
@@ -363,7 +389,8 @@ Sometimes, you'll want to output multiple graphs with a particular layout. The `
 
 ## Practice materials
 
-You can find practice materials for R Markdown and R [here](https://github.com/hollzzar/markdown-tutorial). You'll want to clone this repository or download the following documents/folders:
+You can find practice materials for R Markdown and R [here](https://github.com/hollzzar/markdown-tutorial). 
+You'll want to clone this repository or download the following documents/folders:
 
 - brownbag_activity.Rmd
 - data_cleaning.R

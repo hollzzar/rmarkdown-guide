@@ -24,7 +24,7 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2021-03-12" />
+<meta name="date" content="2021-03-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -301,7 +301,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="errors" class="section level3" number="8.1.2">
 <h3><span class="header-section-number">8.1.2</span> Errors</h3>
-<p>There are different kinds of errors that you can encounter. In general, you can distinguish chunk errors from R Markdown errors by their appearance. Errors will usually tell you which line of the document they’re in, but the line numbers can be misleading or inaccurate, so try to understand the error message first before going to look for the source. As always, Google and Stack Overflow are your friends!</p>
+<p>There are different kinds of errors that you can encounter.</p>
+<p>In general, you can distinguish chunk errors from R Markdown errors by their appearance.
+Errors will usually tell you which line of the document they’re in, but the line numbers can be misleading or inaccurate, so try to understand the error message first before going to look for the source.
+As always, Google and Stack Overflow are your friends!</p>
 <p>Chunk error:</p>
 <p><img src="images/error_example.png" width="\textwidth" /></p>
 <p>R Markdown error:</p>
@@ -310,33 +313,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="environments" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Environments</h2>
-<p>Running a chunk executes the code in the console and adds the output to your R environment; however, your R environment is separate from the environment created when knitting a document. When you render your document, it ignores your R environment. <code>knitr</code> runs all of the chunks in order and knits them into the markdown text.</p>
+<p>Running a chunk executes the code in the console and adds the output to your R environment; however, your R environment is separate from the environment created when knitting a document.
+When you render your document, it ignores your R environment.
+<code>knitr</code> runs all of the chunks in order and knits them into the markdown text.</p>
 <p>If you’re getting an error message that says a particular variable or package doesn’t exist when it’s loaded in your R environment, it’s usually because you haven’t included it in a previous chunk.</p>
 <p><img src="images/environment_console.png" width="\textwidth" /><img src="images/environment_var.png" width="\textwidth" /></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="trouble.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define new variable y</span></span>
-<span id="cb24-2"><a href="trouble.html#cb24-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb24-3"><a href="trouble.html#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="trouble.html#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># When I run this chunk, I get the expected output (150),</span></span>
-<span id="cb24-5"><a href="trouble.html#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># but it fails when I try to knit the document</span></span>
-<span id="cb24-6"><a href="trouble.html#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># I&#39;ve set eval=FALSE for this chunk, so it doesn&#39;t try to run and prevent my document from knitting</span></span>
-<span id="cb24-7"><a href="trouble.html#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x <span class="sc">+</span> y)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="trouble.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define new variable y</span></span>
+<span id="cb37-2"><a href="trouble.html#cb37-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb37-3"><a href="trouble.html#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="trouble.html#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># When I run this chunk, I get the expected output (150),</span></span>
+<span id="cb37-5"><a href="trouble.html#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># but it fails when I try to knit the document</span></span>
+<span id="cb37-6"><a href="trouble.html#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co"># I&#39;ve set eval=FALSE for this chunk, so it doesn&#39;t try to run and prevent my document from knitting</span></span>
+<span id="cb37-7"><a href="trouble.html#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x <span class="sc">+</span> y)</span></code></pre></div>
 </div>
 <div id="package-issues" class="section level2" number="8.3">
 <h2><span class="header-section-number">8.3</span> Package issues</h2>
 <div id="package-specification" class="section level3" number="8.3.1">
 <h3><span class="header-section-number">8.3.1</span> Package specification</h3>
-<p>If a function you want to use isn’t included in <code>base</code> R, you need to load the package that it’s in. The most basic way to do this is to run <code>library(package)</code> for each individual package. As you saw in my “setup” chunk example in Section <a href="intro.html#chunkex">2.3</a>, my preferred way is to set a list of packages and then load them with the <code>p_load</code> function from the <code>pacman</code> package. This way, you can easily load multiple packages at once.</p>
-<p>If you don’t want to load a whole package, you can use this notation: <code>package::function</code>. This tells R which package to look in. You especially want to do this if there are what are called “namespace conflicts,” where multiple packages have the same function name. I often run into this issue with the <code>filter</code> function from <code>dplyr</code>, so I always specify <code>dplyr::filter</code> even if I’ve already loaded <code>dplyr</code>.</p>
+<p>If a function you want to use isn’t included in <code>base</code> R, you need to load the package that it’s in. The most basic way to do this is to run <code>library(package)</code> for each individual package.
+As you saw in my <code>setup</code> chunk example in Section <a href="intro.html#chunkex">2.3</a>, my preferred way is to set a list of packages and then load them with the <code>p_load</code> function from the <code>pacman</code> package.
+This way, you can easily load multiple packages at once.</p>
+<p>If you don’t want to load a whole package, you can use this notation: <code>package::function</code>. This tells R which package to look in.
+You especially want to do this if there are what are called <em>namespace conflicts</em>, where multiple packages have the same function name.
+I often run into this issue with the <code>filter</code> function from <code>dplyr</code>, so I always specify <code>dplyr::filter</code> even if I’ve already loaded <code>dplyr</code>.</p>
 </div>
 <div id="updates" class="section level3" number="8.3.2">
 <h3><span class="header-section-number">8.3.2</span> Updates</h3>
-<p>You may get warnings or errors related to packages being out of date or certain functions being “deprecated.” You may need to update packages and software that interact with R and R Markdown to get your code to run and documents to knit. Depending on the feature that is out of date, there are different strategies for updating.</p>
+<p>You may get warnings related to packages being out of date or certain functions being <em>deprecated</em>.
+You may need to update packages and software that interact with R and R Markdown to get your code to run and documents to knit.
+Depending on the feature that is out of date, there are different strategies for updating.</p>
 <ul>
 <li><a href="https://tex.stackexchange.com/questions/55437/how-do-i-update-my-tex-distribution">Update your TeX distribution</a> from the command line</li>
 <li>Update all packages (including <code>rmarkdown</code>) in library with <code>update.packages(path)</code></li>
 <li>Update individual packages by reinstalling with <code>install.packages("package")</code></li>
 <li>Update R in the console with the <code>updateR</code> package</li>
-<li>Redownload RStudio to update</li>
+<li>Re-download RStudio to update</li>
 </ul>
 </div>
 </div>

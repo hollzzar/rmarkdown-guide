@@ -24,7 +24,7 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2021-03-12" />
+<meta name="date" content="2021-03-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -287,24 +287,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="organization" class="section level1" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Organization</h1>
 <p>If you’re working on a large R Markdown project, like a thesis, it’s inevitable that you will have several code chunks to perform pieces of one process (e.g., reformatting data for plotting and then creating the plots), and you will have lots of chapters/sections of markdown.</p>
-<p>At a minimum, you want to keep your chunks small and name them for easy troubleshooting and use headers at multiple levels. One thing to note is that you cannot have the same chunk names anywhere in your document or sub-documents; this will throw an error. If you go to the bottom left-hand corner of your .Rmd file in RStudio, you’ll see a small drop-down menu. There, you can jump to specific headers and code chunks.</p>
-<p>As your documents grow, however, even these sections will become difficult to keep straight. This is when you want to use what are called <em>child</em> documents. This just means that you have separate R Markdown documents that you reference in your main R Markdown document. These are also great if you need to include the same code or text in multiple documents.</p>
+<p>At a minimum, you want to keep your chunks small and name them for easy troubleshooting.
+Also, use headers at multiple levels, which makes it easier to navigate your document.</p>
+<p>One thing to note is that you cannot have the same chunk names anywhere in your document or sub-documents; this will throw an error.
+If you go to the bottom left-hand corner of your .Rmd file in RStudio, you’ll see a small drop-down menu.
+There, you can jump to specific headers and code chunks.</p>
+<p>As your documents grow, even these sections will become difficult to keep straight.
+This is when you want to use <em>child</em> documents.
+This just means that you have separate R Markdown documents that you reference in your main R Markdown document.
+These are also great if you need to include the same code or text in multiple documents.</p>
 <div id="child-documents" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> <code>child</code> documents</h2>
-<p>The screenshot below shows some code from my main Master’s thesis R Markdown document. In this example, I referenced another R Markdown document called <em>Load</em>, as well as one called <em>chapter1</em>. All you have to do is make a code chunk in which you set the <code>child</code> parameter equal to the file that you want to reference (and file path if it’s in a subfolder, as I have here). The chunk itself must be empty.</p>
-<p><img src="images/content_child_call.png" width="\textwidth" /></p>
-<p>The <em>Load</em> document contained several code chunks for loading and processing my data and analyses for presentation. I’ve included a screenshot of the top of this document below. You can see that I just gave it a <strong>pagetitle</strong> in the YAML header, and then included the code chunks that I wanted. This helped keep the main document uncluttered.</p>
-<p>One thing to note is that when you’re running your code chunks to work on your document, if you just run the code chunk referencing the <code>child</code> document, nothing will happen. You have to open that R Markdown document and run it to evaluate those chunks.</p>
-<p><img src="images/content_child_setup.png" width="\textwidth" /></p>
-<p>You also saw that I loaded the <em>chapter1</em> <code>child</code> document. This allowed me to separate out each of the sections of my thesis into different documents, in addition to separating out the analyses as with the <em>Load</em> document. I organized these documents into subfolders to keep everything clean. I’ve included a screenshot of the organizational structure below.</p>
-<p>At the top level, I had the main R Markdown document and necessary reference documents (see Section <a href="format.html#yamlref">6.2</a> for more information on including reference documents in the YAML header). In the first subfolder, I had the documents for each section of the thesis (e.g., <em>chapter1</em> is the introduction). In the lower subfolder, I had documents that only contained code chunks (e.g., running statistical analyses and formatting the values for referencing).</p>
-<p><img src="images/content_organization.png" width="\textwidth" /></p>
+<p>All you have to do is make a code chunk in which you set the <code>child</code> parameter equal to the file that you want to reference (and file path if it’s in a subfolder).
+The chunk itself must be empty, as shown in the example below.</p>
+<pre><code>```{r child = &#39;path/child_doc.Rmd&#39;}
+```</code></pre>
+<p>One thing to note when you’re testing your code (that is, not rendering the whole document): if you run a code chunk that references a <code>child</code> document, it will not run the code in the referenced document.
+You have to open the <code>child</code> document in RStudio and run all of the chunks manually before continuing with the rest of the chunks in the main document.</p>
 </div>
 <div id="source" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Sourcing code</h2>
-<p>I also use a similar decentralized organizational structure for my actual R processing scripts. You can use <code>source</code> to import all of the code from one script into another, similarly to using <code>child</code> documents in R Markdown. The <em>Load</em> document above actually uses code chunks to load data from external R scripts into the thesis document.</p>
-<p>I’ve included a screenshot of the folder with all of my R scripts for preparing my thesis data. The data themselves are in the <em>behavioral</em> and <em>erp</em> subfolders. The <em>DM_global_vars</em> file contains variables, like the custom formatting functions I described in Section <a href="format.html#help">6.5</a>, that I used across the scripts. I recommend having such a file that you <code>child</code> at the lowest level of the importing hierarchy. That way, if you need to change something, you can make that change in just one place.</p>
-<p><img src="images/content_organization_scripts.png" width="\textwidth" /></p>
+<p>You can use the <code>source</code> function to import all of the code from an R script like you would for a <code>child</code> document.
+I have an example of this in my <a href="https://github.com/hollzzar/erp-data-scripts/blob/main/1a_group_analysis.R">ERP analysis scripts</a> for my Master’s thesis.</p>
 
 </div>
 </div>

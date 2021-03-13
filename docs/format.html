@@ -24,7 +24,7 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2021-03-12" />
+<meta name="date" content="2021-03-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -286,17 +286,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="format" class="section level1" number="6">
 <h1><span class="header-section-number">Chapter 6</span> Formatting</h1>
-<p>There are many ways to customize the formatting of an R Markdown document. In the YAML header, you can specify different parameter options or reference external documents. You can also edit templates directly in certain cases. For local formatting, you can include inline code in the markdown sections.</p>
+<p>There are many ways to customize the formatting of an R Markdown document.
+In the YAML header, you can specify different parameter options or reference external documents.
+You can also edit templates directly in certain cases.
+For local formatting, you can include inline code in the markdown sections.</p>
 <div id="yaml-parameters" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> YAML parameters</h2>
-<p>There are several <a href="https://ymlthis.r-lib.org/articles/yaml-fieldguide.html">general YAML options</a> that you can include in the YAML header to format your documents. You can also add <strong>params</strong> to the YAML header that you can specify when you render your document and call in your code chunks to make <a href="https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F">parameterized reports</a>. Some YAML options require quotation marks, while others don’t. In general, if the YAML option is a string of text that you’re specifying, like the title or your name, then it should be in quotes. If you’re setting a programmatic option, like the output type, then it shouldn’t be in quotes.</p>
-<p>For the string options, there’s some custom formatting you can do. The first example below shows how you can center a title and force a line break. The second shows how you can automatically pull the date and time when you knit your document and format it in a particular way. This is actually R code that is embedded in a string by putting the function call between backticks with a lowercase r. You can use the same principle to put R code and functions in the text of an R Markdown document, as described in Section <a href="content.html#rintext">5.4</a>.</p>
-<p><img src="images/formatting_title.png" width="\textwidth" /><img src="images/formatting_date.png" width="\textwidth" /></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="format.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show date formatting code</span></span>
-<span id="cb19-2"><a href="format.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># You can run ?Sys.time in the console for more information </span></span>
-<span id="cb19-3"><a href="format.html#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># on the options you can pass to format</span></span>
-<span id="cb19-4"><a href="format.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(), <span class="st">&#39;%B %d, %Y&#39;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;March 12, 2021&quot;</code></pre>
+<p>There are several <a href="https://ymlthis.r-lib.org/articles/yaml-fieldguide.html">general YAML options</a> that you can include in the YAML header to format your documents.
+You can also add <strong>params</strong> to the YAML header that you can specify when you render your document and call in your code chunks to make <a href="https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F">parameterized reports</a>.
+Some YAML options require quotation marks, while others don’t.
+In general, if the YAML option is a string of text that you’re specifying, like the title or your name, then it should be in quotes.
+If you’re setting a programmatic option, like the output type, then it shouldn’t be in quotes.</p>
+<p>For the string options, there’s some custom formatting you can do.
+The example below shows how you can center the document title and force a line break in a particular place.</p>
+<pre><code>---
+title: |
+  &lt;center&gt; A very impressive title: &lt;/center&gt;
+  &lt;center&gt; An equally impressive subtitle &lt;/center&gt;
+---</code></pre>
+<p>This example shows how you can automatically pull the date and time when you knit your document and format it in a particular way.
+This is actually R code that is embedded in a string by putting the function call between backticks with a lowercase r.
+You can use the same principle to put R code and functions in the text of an R Markdown document, as described in Section <a href="content.html#rintext">5.4</a>.</p>
+<pre><code>---
+date: &quot;March 13, 2021&quot;
+---</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="format.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show output from date formatting code</span></span>
+<span id="cb21-2"><a href="format.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># You can run ?Sys.time in the console for more information </span></span>
+<span id="cb21-3"><a href="format.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># on the options you can pass to format</span></span>
+<span id="cb21-4"><a href="format.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(), <span class="st">&#39;%B %d, %Y&#39;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;March 13, 2021&quot;</code></pre>
 <p>There are also template-specific parameters, but you’ll need to look at the specific package documentation to know what these are.</p>
 </div>
 <div id="yamlref" class="section level2" number="6.2">
@@ -304,56 +322,115 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In your YAML header, you can reference other documents for formatting and content.</p>
 <div id="bib" class="section level3" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> .bib</h3>
-<p>To cite references, you need to set the <em>bibliography</em> option in the YAML header. I use <a href="https://bibdesk.sourceforge.io/">BibDesk</a> for my reference manager, which creates a .bib file, or you can create a .bib file directly in LaTeX. You can also construct a <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html">.bib file</a> through R. See Section <a href="supplement.html#scholarex">9.1.5</a> or the <a href="https://github.com/hollzzar/zaharchuk-cv/blob/master/Zaharchuk_CV.Rmd">.Rmd file for my CV</a> for examples with the <code>scholar</code> package.</p>
-<p>By default, if you reference a .bib file, the references will appear at the very end of the document. This is usually fine, but sometimes you may want to control the placement of the references, as with a CV. In this case, you can use a .lua filter as described in Section <a href="format.html#luaex">6.2.4</a> to place your references in a particular spot.</p>
-<p>To create in-text citations, you’ll use the cite key from your .bib file with the @ symbol. Full information on citing syntax can be found <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#citation_syntax">here</a>. When you cite something from your .bib file, it will appear in your references section when you knit your document. If you want to include all of the references from your .bib file in your reference section, regardless of whether you’ve cited them or not in the document, set the <strong>nocite</strong> option in the YAML header to <strong>“@*”</strong>.</p>
+<p>To cite references, you need to set the <em>bibliography</em> option in the YAML header.
+I use <a href="https://bibdesk.sourceforge.io/">BibDesk</a> for my reference manager, which creates a .bib file, or you can create a .bib file directly in LaTeX.
+You can also construct a <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html">.bib file</a> through R.
+See Section <a href="supplement.html#scholarex">9.1.5</a> for examples with the <code>scholar</code> package.</p>
+<pre><code>---
+bibliography: packages.bib
+---</code></pre>
+<p>By default, if you reference a .bib file, the references will appear at the very end of the document.
+This is usually fine, but sometimes you may want to control the placement of the references, as with a CV.
+In this case, you can use a .lua filter as described in Section <a href="format.html#luaex">6.2.4</a> to place your references in a particular spot.</p>
+<p>To create in-text citations, you’ll use the cite key from your .bib file with the @ symbol.
+Full information on citing syntax can be found <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#citation_syntax">here</a>.
+When you cite something from your .bib file, it will appear in your references section when you knit your document.
+If you want to include all of the references from your .bib file in your reference section, regardless of whether you’ve cited them or not in the document, set the <strong>nocite</strong> option in the YAML header to <strong>“@*”</strong>.</p>
+<pre><code>---
+nocite: &quot;@*&quot;
+---</code></pre>
 </div>
 <div id="csl" class="section level3" number="6.2.2">
 <h3><span class="header-section-number">6.2.2</span> .csl</h3>
-<p>To determine the type of formatting for your references, you can include a citation style language or <a href="https://github.com/citation-style-language/styles">.csl file</a>. There are other ways to set the format of bibliographies, but a .csl file allows fine-grained control over citations that you can also customize. My <a href="https://github.com/hollzzar/zaharchuk-cv">CV</a> repository has a customized APA 6 .csl file for arranging references in descending order by date. My <a href="https://github.com/hollzzar/psychonomics-poster">Psychonomics poster</a> repository also has a customized APA 6 .csl to fix some small bugs.</p>
+<p>To determine the type of formatting for your references, you can include a citation style language or <a href="https://github.com/citation-style-language/styles">.csl file</a>.
+There are other ways to set the format of bibliographies, but a .csl file allows fine-grained control over citations that you can also customize.
+My <a href="https://github.com/hollzzar/zaharchuk-cv">CV</a> repository has a customized APA .csl file for arranging references in descending order by date.</p>
+<pre><code>---
+csl: apa.csl
+---</code></pre>
 </div>
 <div id="cls-and-.css" class="section level3" number="6.2.3">
 <h3><span class="header-section-number">6.2.3</span> .cls and .css</h3>
-<p>You can include .cls files (not to be confused with the .csl files above) for LaTeX styling or .css files for HTML styling. You can see an example of the .cls file that formats my <a href="https://github.com/hollzzar/zaharchuk-cv">CV</a> in Section <a href="format.html#clsex">6.3.1</a>. This guide itself uses .css files that you can find <a href="https://github.com/hollzzar/rmarkdown-guide">here</a> to control the formatting.</p>
+<p>You can include .cls files (not to be confused with the .csl files above) for LaTeX styling or .css files for HTML styling.
+You can see an example of the .cls file that formats my CV <a href="https://github.com/hollzzar/zaharchuk-cv">here</a>, which in this case is automatically generated by the package when rendering the document.
+This guide itself uses .css files that you can see <a href="https://github.com/hollzzar/rmarkdown-guide">here</a> to control the formatting.</p>
 </div>
 <div id="luaex" class="section level3" number="6.2.4">
 <h3><span class="header-section-number">6.2.4</span> .lua</h3>
-<p>Sometimes, you need to interact with pandoc directly in order to achieve a particular formatting outcome. To do this, you need to use a .lua filter.</p>
-<p>The <a href="https://github.com/pandoc/lua-filters/tree/master/multiple-bibliographies">multiple-bibliographies.lua file</a> is incredibly useful. It allows you to use multiple bibliographies in one document, as I do in my <a href="https://github.com/hollzzar/zaharchuk-cv">CV</a> (one for publications, another for conference presentations). Even if you don’t have multiple bibliographies, using this .lua filter will allow you to place your reference section in a particular part of your document.</p>
-<p>The <a href="https://github.com/hollzzar/zaharchuk-cv/blob/master/Zaharchuk_CV.Rmd">.Rmd file for my CV</a> shows how to use multiple bibliographies in R Markdown. First, you need to add a name to each bibliography in the YAML header with an underscore. You can also see how I’ve referenced this .lua file in the <strong>pandoc_args</strong> option in the YAML header. For this document to knit properly, the .lua file needs to be in the same place as my .Rmd file.</p>
-<p><img src="images/references_example.png" width="\textwidth" /></p>
-<p>Then, you can place the reference section for each bibliography in the appropriate place. This example also shows how you can alter the formatting locally for just the reference section with LaTeX commands.</p>
-<p><img src="images/references_placement.png" width="\textwidth" /></p>
-<p>Another very useful .lua file handles in-text APA citations. By default, pandoc uses “&amp;” for in-text citations where APA would require “and,” even if you’re using a .csl file for APA formatting. Rather than downloading a file like <em>multiple-bibliographies.lua</em>, this file is already stored with pandoc: you just need to reference it. Follow <a href="https://cran.rstudio.com/web/packages/rmdfiltr/vignettes/replace_ampersands.html">these instructions</a> to access and reference this .lua filter The example below from my Master’s thesis shows how you can reference multiple .lua filters in one document.</p>
-<p><img src="images/lua_example.png" width="\textwidth" /></p>
+<p>Sometimes, you need to interact with Pandoc directly in order to achieve a particular formatting outcome.
+To do this, you need to use a .lua filter.</p>
+<p>The <a href="https://github.com/pandoc/lua-filters/tree/master/multiple-bibliographies">multiple-bibliographies.lua file</a> is incredibly useful.
+It allows you to use multiple bibliographies in one document, as I do in my <a href="https://github.com/hollzzar/zaharchuk-cv">CV</a> (one for publications, another for conference presentations).
+Even if you don’t have multiple bibliographies, using this .lua filter will allow you to place your reference section in a particular part of your document.</p>
+<pre><code>---
+output: 
+  vitae::awesomecv:
+    pandoc_args: [&quot;--lua-filter&quot;, &quot;/path/multiple-bibliographies.lua&quot;]
+---</code></pre>
+<p>First, you need to add a name to each bibliography in the YAML header with an underscore.</p>
+<pre><code>---
+bibliography_main: my_cv.bib
+bibliography_present: my_presentations.bib
+---</code></pre>
+<p>Then, you can place the reference section for each bibliography in the appropriate place.
+This example also shows how you can alter the formatting locally for just the reference section with LaTeX commands.</p>
+<pre><code># Publications
+
+\setlength{\parindent}{-0.2in}
+\setlength{\leftskip}{0.2in}
+\noindent
+
+::: {#refs-main}
+:::</code></pre>
+<p>Another very useful .lua file handles in-text APA citations.
+By default, Pandoc uses “&amp;” for in-text citations where APA would require “and,” even if you’re using a .csl file for APA formatting.
+Rather than downloading a file like <em>multiple-bibliographies.lua</em>, the file shown below is already stored with Pandoc; you just need to reference it.
+Follow <a href="https://cran.rstudio.com/web/packages/rmdfiltr/vignettes/replace_ampersands.html">these instructions</a> to access and reference this .lua filter</p>
+<p>The example below from my Master’s thesis shows how you can reference multiple .lua filters in one document.</p>
+<pre><code>---
+output:
+  bookdown::word_document2:
+    pandoc_args: [
+      &quot;--lua-filter&quot;, &quot;/path/multiple-bibliographies.lua&quot;,
+      &quot;--lua-filter&quot;, &quot;/path/replace_ampersands.lua&quot;]
+---</code></pre>
 </div>
 </div>
 <div id="editing-templates" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Editing templates</h2>
-<p>To make extremely custom edits to templates, sometimes you have to edit the template documents directly. If the template generates a style document (e.g., .cls) in the directory with your .Rmd file, you can usually edit that without going to the package. Otherwise, you have to find out where your computer stores your R packages and edit the template there.</p>
+<p>To make extremely custom edits to templates, sometimes you have to edit the template documents directly.
+If the template generates a style document (e.g., .cls) in the directory with your .Rmd file, you can usually edit that without going to the package.
+Otherwise, you have to find out where your computer stores your R packages and edit the template there.</p>
 <div id="clsex" class="section level3" number="6.3.1">
 <h3><span class="header-section-number">6.3.1</span> Directory documents</h3>
-<p>Some templates output formatting documents in your working directory. These are easier to access and edit. For example, knitting the <code>vitae::awesomecv</code> template created a .cls file that I could edit to change font sizes/colors.</p>
+<p>Some templates output formatting documents in your working directory.
+These are easier to access and edit.
+For example, knitting the <code>vitae::awesomecv</code> template created a .cls file that I could edit to change font sizes/colors.</p>
 <p><img src="images/template_dir.png" width="\textwidth" /></p>
 </div>
 <div id="package-documents" class="section level3" number="6.3.2">
 <h3><span class="header-section-number">6.3.2</span> Package documents</h3>
-<p>To find out where your packages “live,” you can call <code>installed.packages</code>. When you leave the parentheses blank (i.e., if you don’t provide any arguments), as I’ve done below, the function will return all of the packages you have installed. I’ve stored them as a dataframe, and then filtered for an example. Here, I’m looking at the <code>posterdown</code> package.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="format.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make dataframe with installed packages</span></span>
-<span id="cb21-2"><a href="format.html#cb21-2" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">installed.packages</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb21-3"><a href="format.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
-<span id="cb21-4"><a href="format.html#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-5"><a href="format.html#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull posterdown package </span></span>
-<span id="cb21-6"><a href="format.html#cb21-6" aria-hidden="true" tabindex="-1"></a>pstr <span class="ot">&lt;-</span> pkgs <span class="sc">%&gt;%</span> </span>
-<span id="cb21-7"><a href="format.html#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Package, LibPath, Version, Depends, Imports) <span class="sc">%&gt;%</span></span>
-<span id="cb21-8"><a href="format.html#cb21-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Package <span class="sc">==</span> <span class="st">&quot;posterdown&quot;</span>)</span>
-<span id="cb21-9"><a href="format.html#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-10"><a href="format.html#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Make table</span></span>
-<span id="cb21-11"><a href="format.html#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(pstr) <span class="sc">%&gt;%</span></span>
-<span id="cb21-12"><a href="format.html#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;condensed&quot;</span>, <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">font_size =</span> <span class="dv">12</span>)</span></code></pre></div>
+<p>To find out where your packages “live,” you can call <code>installed.packages</code>.
+When you leave the parentheses blank (i.e., if you don’t provide any arguments), as I’ve done below, the function will return all of the packages you have installed.
+I’ve stored them as a dataframe, and then filtered for an example.
+Here, I’m looking at the <code>posterdown</code> package.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="format.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make dataframe with installed packages</span></span>
+<span id="cb30-2"><a href="format.html#cb30-2" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">installed.packages</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb30-3"><a href="format.html#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
+<span id="cb30-4"><a href="format.html#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="format.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull posterdown package </span></span>
+<span id="cb30-6"><a href="format.html#cb30-6" aria-hidden="true" tabindex="-1"></a>pstr <span class="ot">&lt;-</span> pkgs <span class="sc">%&gt;%</span> </span>
+<span id="cb30-7"><a href="format.html#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Package, LibPath, Version, Depends, Imports) <span class="sc">%&gt;%</span></span>
+<span id="cb30-8"><a href="format.html#cb30-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Package <span class="sc">==</span> <span class="st">&quot;posterdown&quot;</span>)</span>
+<span id="cb30-9"><a href="format.html#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-10"><a href="format.html#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Make table</span></span>
+<span id="cb30-11"><a href="format.html#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(pstr) <span class="sc">%&gt;%</span></span>
+<span id="cb30-12"><a href="format.html#cb30-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;condensed&quot;</span>, <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">font_size =</span> <span class="dv">12</span>)</span></code></pre></div>
 <table class="table table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
+<th style="text-align:left;">
+</th>
 <th style="text-align:left;">
 Package
 </th>
@@ -373,10 +450,29 @@ Imports
 </thead>
 <tbody>
 <tr>
+<td style="text-align:left;">
+posterdown
+</td>
+<td style="text-align:left;">
+posterdown
+</td>
+<td style="text-align:left;">
+/Library/Frameworks/R.framework/Versions/4.0/Resources/library
+</td>
+<td style="text-align:left;">
+1.0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+pagedown, rmarkdown, yaml
+</td>
 </tr>
 </tbody>
 </table>
-<p>To edit package documents once you’ve located them, you should proceed with caution. Be sure to:</p>
+<p>To edit package documents once you’ve located them, you should proceed with caution.
+Be sure to:</p>
 <ul>
 <li>Save the original template and move it to a different location (in the example below, I made the “original” folder and put the original template there)</li>
 <li>Make one change at a time, and then re-knit the document to see what changed</li>
@@ -390,84 +486,112 @@ Imports
 <p>R Markdown supports inline code for custom formatting.</p>
 <div id="latexpacks" class="section level3" number="6.4.1">
 <h3><span class="header-section-number">6.4.1</span> LaTeX</h3>
-<p>In PDFs, you can use code, typesetting commands (e.g., \vspace{12pt}), and specific packages from LaTeX. There are useful lists of symbols <a href="https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf">here</a> and <a href="https://www.tug.org/tugboat/tb17-2/tb51rei.pdf">here</a>. Check out <a href="https://www.rosannavanhespen.nl/thesis_in_rmarkdown/">Writing Your Thesis with R Markdown</a> and Section <a href="format.html#latexpacks">6.4.1</a> below for examples using LaTeX packages and typesetting commands.</p>
-<p>I’ve included examples of calling packages in the YAML header and using inline functions from my statistics homework below.</p>
-<p><img src="images/latex_packages.png" width="\textwidth" /><img src="images/latex_calls.png" width="\textwidth" /></p>
+<p>In PDFs, you can use code, typesetting commands (e.g., \vspace{12pt}), and specific packages from LaTeX.
+There are useful lists of symbols <a href="https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf">here</a> and <a href="https://www.tug.org/tugboat/tb17-2/tb51rei.pdf">here</a>.
+Check out <a href="https://www.rosannavanhespen.nl/thesis-in-rmarkdown/">Writing Your Thesis with R Markdown</a> and Section <a href="format.html#latexpacks">6.4.1</a> below for examples using LaTeX packages and typesetting commands.</p>
+<p>Below, I’ve included an example from my statistics homework.</p>
+<pre><code>---
+output: pdf_document
+header-includes:
+- \usepackage{fancyhdr}
+---
+
+\pagestyle{fancy}
+\fancyhead[LE,RO]{Holly Zaharchuk}
+\fancyhead[LO,RE]{PSY 508}
+
+# Problem Set 12</code></pre>
 <p><img src="images/latex_example.png" width="\textwidth" /></p>
 </div>
 <div id="csshtml" class="section level3" number="6.4.2">
 <h3><span class="header-section-number">6.4.2</span> CSS/HTML</h3>
-<p>In HTML documents, you can include <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> commands. I have some examples in <a href="https://github.com/hollzzar/markdown-tutorial/blob/master/brownbag_slides.Rmd">these <code>revealjs</code> slides</a>, where I wanted to left-align slide text while keeping titles centered.</p>
-<p>Here are some examples of using CSS from my <a href="https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.Rmd">Psychonomics poster</a>. The first example includes custom CSS in a <code>knitr::kable</code> table to add borders of a particular color between some rows. The second example changes the font size of the references section at the end of the poster.</p>
-<p><img src="images/css_example.png" width="\textwidth" /></p>
-<p><img src="images/html_example.png" width="\textwidth" /></p>
+<p>In HTML documents, you can include <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> commands.
+I have some examples in <a href="https://github.com/hollzzar/markdown-tutorial/blob/master/brownbag_slides.Rmd">these <code>revealjs</code> slides</a>, where I wanted to left-align slide text while keeping titles centered.</p>
+<p>Here are some examples of using CSS from my <a href="https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.Rmd">Psychonomics poster</a>.
+This first example includes custom CSS in a <code>knitr::kable</code> table to add borders of a particular color between some rows.</p>
+<pre><code>#Knit table
+
+knitr::kable(stim_table) %&gt;%
+  kableExtra::kable_styling(font_size=35) %&gt;%
+  collapse_rows(columns = 1:6, valign = &quot;middle&quot;) %&gt;%
+  row_spec(4, extra_css=&quot;border-top: 5px solid #d7d8db; border-bottom: 5px solid #d7d8db&quot;) %&gt;%
+  row_spec(3, extra_css=&quot;border-top: 5px solid #d7d8db&quot;) %&gt;%
+  footnote(general=&quot;ERP time-locked to second modal (could or should) in double modal sentences to compare to standard single modal&quot;,
+           general_title=&quot;&quot;)</code></pre>
+<p>The example below changes the font size of the references section at the end of the poster.</p>
+<pre><code># References and acknowledgements
+
+&lt;font size=3&gt;&lt;div id=&quot;refs&quot;&gt;&lt;/div&gt;&lt;/font&gt;</code></pre>
 </div>
 </div>
 <div id="help" class="section level2" number="6.5">
 <h2><span class="header-section-number">6.5</span> Custom functions</h2>
 <p>If you’re fairly comfortable with R, you can write formatting functions for yourself to make your life easier when you’re referencing variables in your text.</p>
-<p>When I was working on my Master’s thesis, I wrote some custom functions for statistical values that I had to report over and over. This was particularly useful when I had to switch from referring to any <em>p</em> values over .05 as <em>p</em> &gt; .05 to <em>p</em> = the exact value. I just had to change the one function by commenting out a couple lines and re-knit my document. The function is included below; this was the most complicated of the ones I wrote, which included degrees of freedom, <em>t</em> and <em>F</em> values, reaction times, and percentages.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="format.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make number formatting function for p values</span></span>
-<span id="cb22-2"><a href="format.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># val is the p value I want to format</span></span>
-<span id="cb22-3"><a href="format.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># format_code specifies whether I want to include the symbol or not</span></span>
-<span id="cb22-4"><a href="format.html#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># format_code defaults to including the symbol</span></span>
-<span id="cb22-5"><a href="format.html#cb22-5" aria-hidden="true" tabindex="-1"></a>p_formatting <span class="ot">&lt;-</span> <span class="cf">function</span>(val, <span class="at">format_code =</span> <span class="dv">1</span>) {</span>
-<span id="cb22-6"><a href="format.html#cb22-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb22-7"><a href="format.html#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If I want to include the symbol (when I&#39;m calling this variable in text)</span></span>
-<span id="cb22-8"><a href="format.html#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (format_code <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb22-9"><a href="format.html#cb22-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-10"><a href="format.html#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the p value is less than .001, get the less than symbol</span></span>
-<span id="cb22-11"><a href="format.html#cb22-11" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Otherwise, get the equals symbol</span></span>
-<span id="cb22-12"><a href="format.html#cb22-12" aria-hidden="true" tabindex="-1"></a>      <span class="co"># The next line, which I commented out for my thesis,</span></span>
-<span id="cb22-13"><a href="format.html#cb22-13" aria-hidden="true" tabindex="-1"></a>      <span class="co"># looks to see if the value was greater than .05</span></span>
-<span id="cb22-14"><a href="format.html#cb22-14" aria-hidden="true" tabindex="-1"></a>    sign_type <span class="ot">&lt;-</span> <span class="fu">if_else</span>(val <span class="sc">&lt;</span> <span class="fl">0.001</span>, <span class="st">&quot;&lt;&quot;</span>, <span class="st">&quot;=&quot;</span>)</span>
-<span id="cb22-15"><a href="format.html#cb22-15" aria-hidden="true" tabindex="-1"></a>    sign_type <span class="ot">&lt;-</span> <span class="fu">if_else</span>(val <span class="sc">&gt;</span> <span class="fl">0.05</span>, <span class="st">&quot;&gt;&quot;</span>, sign_type)</span>
-<span id="cb22-16"><a href="format.html#cb22-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-17"><a href="format.html#cb22-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the p value is less than .001, set the value equal to .001</span></span>
-<span id="cb22-18"><a href="format.html#cb22-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (sign_type <span class="sc">==</span> <span class="st">&quot;&lt;&quot;</span>) {</span>
-<span id="cb22-19"><a href="format.html#cb22-19" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="st">&quot;.001&quot;</span></span>
-<span id="cb22-20"><a href="format.html#cb22-20" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb22-21"><a href="format.html#cb22-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the p value is greater than .05, set the value equal to .05 </span></span>
-<span id="cb22-22"><a href="format.html#cb22-22" aria-hidden="true" tabindex="-1"></a>      <span class="co"># I commented out these next two lines for my thesis</span></span>
-<span id="cb22-23"><a href="format.html#cb22-23" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (sign_type <span class="sc">==</span> <span class="st">&quot;&gt;&quot;</span>) {</span>
-<span id="cb22-24"><a href="format.html#cb22-24" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="st">&quot;.05&quot;</span></span>
-<span id="cb22-25"><a href="format.html#cb22-25" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb22-26"><a href="format.html#cb22-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Otherwise, get the actual p value,</span></span>
-<span id="cb22-27"><a href="format.html#cb22-27" aria-hidden="true" tabindex="-1"></a>      <span class="co"># round it to three decimal places, and</span></span>
-<span id="cb22-28"><a href="format.html#cb22-28" aria-hidden="true" tabindex="-1"></a>      <span class="co"># remove the leading zero</span></span>
-<span id="cb22-29"><a href="format.html#cb22-29" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb22-30"><a href="format.html#cb22-30" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
-<span id="cb22-31"><a href="format.html#cb22-31" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="fu">substring</span>(val, <span class="dv">2</span>)</span>
-<span id="cb22-32"><a href="format.html#cb22-32" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb22-33"><a href="format.html#cb22-33" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-34"><a href="format.html#cb22-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Combine the new/formatted p value with &gt;, &lt;, or =,</span></span>
-<span id="cb22-35"><a href="format.html#cb22-35" aria-hidden="true" tabindex="-1"></a>      <span class="co"># depending on the p value</span></span>
-<span id="cb22-36"><a href="format.html#cb22-36" aria-hidden="true" tabindex="-1"></a>    val_string <span class="ot">&lt;-</span> <span class="fu">paste</span>(sign_type, val, <span class="at">sep =</span> <span class="st">&quot; &quot;</span>)</span>
-<span id="cb22-37"><a href="format.html#cb22-37" aria-hidden="true" tabindex="-1"></a>    val_string</span>
-<span id="cb22-38"><a href="format.html#cb22-38" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb22-39"><a href="format.html#cb22-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If I don&#39;t want the symbol (as in a table),</span></span>
-<span id="cb22-40"><a href="format.html#cb22-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># just round the value to three decimal places</span></span>
-<span id="cb22-41"><a href="format.html#cb22-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># and remove the leading zero</span></span>
-<span id="cb22-42"><a href="format.html#cb22-42" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (format_code <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb22-43"><a href="format.html#cb22-43" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-44"><a href="format.html#cb22-44" aria-hidden="true" tabindex="-1"></a>    val <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
-<span id="cb22-45"><a href="format.html#cb22-45" aria-hidden="true" tabindex="-1"></a>    val_string <span class="ot">&lt;-</span> <span class="fu">substring</span>(val, <span class="dv">2</span>)</span>
-<span id="cb22-46"><a href="format.html#cb22-46" aria-hidden="true" tabindex="-1"></a>    val_string</span>
-<span id="cb22-47"><a href="format.html#cb22-47" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-48"><a href="format.html#cb22-48" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb22-49"><a href="format.html#cb22-49" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb22-50"><a href="format.html#cb22-50" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>When I was working on my Master’s thesis, I wrote some custom functions for statistical values that I had to report over and over.
+This was particularly useful when I had to switch from referring to any <em>p</em> values over .05 as <em>p</em> &gt; .05 to <em>p</em> = the exact value.
+I just had to change the one function by commenting out a couple lines and re-knit my document.
+The function is included below; this was the most complicated of the ones I wrote, which included degrees of freedom, <em>t</em> and <em>F</em> values, reaction times, and percentages.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="format.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make number formatting function for p values</span></span>
+<span id="cb34-2"><a href="format.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># val is the p value I want to format</span></span>
+<span id="cb34-3"><a href="format.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># format_code specifies whether I want to include the symbol or not</span></span>
+<span id="cb34-4"><a href="format.html#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># format_code defaults to including the symbol</span></span>
+<span id="cb34-5"><a href="format.html#cb34-5" aria-hidden="true" tabindex="-1"></a>p_formatting <span class="ot">&lt;-</span> <span class="cf">function</span>(val, <span class="at">format_code =</span> <span class="dv">1</span>) {</span>
+<span id="cb34-6"><a href="format.html#cb34-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-7"><a href="format.html#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If I want to include the symbol (when I&#39;m calling this variable in text)</span></span>
+<span id="cb34-8"><a href="format.html#cb34-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (format_code <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb34-9"><a href="format.html#cb34-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-10"><a href="format.html#cb34-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the p value is less than .001, get the less than symbol</span></span>
+<span id="cb34-11"><a href="format.html#cb34-11" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Otherwise, get the equals symbol</span></span>
+<span id="cb34-12"><a href="format.html#cb34-12" aria-hidden="true" tabindex="-1"></a>      <span class="co"># The next line, which I commented out for my thesis,</span></span>
+<span id="cb34-13"><a href="format.html#cb34-13" aria-hidden="true" tabindex="-1"></a>      <span class="co"># looks to see if the value was greater than .05</span></span>
+<span id="cb34-14"><a href="format.html#cb34-14" aria-hidden="true" tabindex="-1"></a>    sign_type <span class="ot">&lt;-</span> <span class="fu">if_else</span>(val <span class="sc">&lt;</span> <span class="fl">0.001</span>, <span class="st">&quot;&lt;&quot;</span>, <span class="st">&quot;=&quot;</span>)</span>
+<span id="cb34-15"><a href="format.html#cb34-15" aria-hidden="true" tabindex="-1"></a>    sign_type <span class="ot">&lt;-</span> <span class="fu">if_else</span>(val <span class="sc">&gt;</span> <span class="fl">0.05</span>, <span class="st">&quot;&gt;&quot;</span>, sign_type)</span>
+<span id="cb34-16"><a href="format.html#cb34-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-17"><a href="format.html#cb34-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the p value is less than .001, set the value equal to .001</span></span>
+<span id="cb34-18"><a href="format.html#cb34-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (sign_type <span class="sc">==</span> <span class="st">&quot;&lt;&quot;</span>) {</span>
+<span id="cb34-19"><a href="format.html#cb34-19" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="st">&quot;.001&quot;</span></span>
+<span id="cb34-20"><a href="format.html#cb34-20" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb34-21"><a href="format.html#cb34-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the p value is greater than .05, set the value equal to .05 </span></span>
+<span id="cb34-22"><a href="format.html#cb34-22" aria-hidden="true" tabindex="-1"></a>      <span class="co"># I commented out these next two lines for my thesis</span></span>
+<span id="cb34-23"><a href="format.html#cb34-23" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (sign_type <span class="sc">==</span> <span class="st">&quot;&gt;&quot;</span>) {</span>
+<span id="cb34-24"><a href="format.html#cb34-24" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="st">&quot;.05&quot;</span></span>
+<span id="cb34-25"><a href="format.html#cb34-25" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb34-26"><a href="format.html#cb34-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Otherwise, get the actual p value,</span></span>
+<span id="cb34-27"><a href="format.html#cb34-27" aria-hidden="true" tabindex="-1"></a>      <span class="co"># round it to three decimal places, and</span></span>
+<span id="cb34-28"><a href="format.html#cb34-28" aria-hidden="true" tabindex="-1"></a>      <span class="co"># remove the leading zero</span></span>
+<span id="cb34-29"><a href="format.html#cb34-29" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb34-30"><a href="format.html#cb34-30" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
+<span id="cb34-31"><a href="format.html#cb34-31" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="fu">substring</span>(val, <span class="dv">2</span>)</span>
+<span id="cb34-32"><a href="format.html#cb34-32" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb34-33"><a href="format.html#cb34-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-34"><a href="format.html#cb34-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Combine the new/formatted p value with &gt;, &lt;, or =,</span></span>
+<span id="cb34-35"><a href="format.html#cb34-35" aria-hidden="true" tabindex="-1"></a>      <span class="co"># depending on the p value</span></span>
+<span id="cb34-36"><a href="format.html#cb34-36" aria-hidden="true" tabindex="-1"></a>    val_string <span class="ot">&lt;-</span> <span class="fu">paste</span>(sign_type, val, <span class="at">sep =</span> <span class="st">&quot; &quot;</span>)</span>
+<span id="cb34-37"><a href="format.html#cb34-37" aria-hidden="true" tabindex="-1"></a>    val_string</span>
+<span id="cb34-38"><a href="format.html#cb34-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-39"><a href="format.html#cb34-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If I don&#39;t want the symbol (as in a table),</span></span>
+<span id="cb34-40"><a href="format.html#cb34-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># just round the value to three decimal places</span></span>
+<span id="cb34-41"><a href="format.html#cb34-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># and remove the leading zero</span></span>
+<span id="cb34-42"><a href="format.html#cb34-42" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (format_code <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb34-43"><a href="format.html#cb34-43" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-44"><a href="format.html#cb34-44" aria-hidden="true" tabindex="-1"></a>    val <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
+<span id="cb34-45"><a href="format.html#cb34-45" aria-hidden="true" tabindex="-1"></a>    val_string <span class="ot">&lt;-</span> <span class="fu">substring</span>(val, <span class="dv">2</span>)</span>
+<span id="cb34-46"><a href="format.html#cb34-46" aria-hidden="true" tabindex="-1"></a>    val_string</span>
+<span id="cb34-47"><a href="format.html#cb34-47" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-48"><a href="format.html#cb34-48" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb34-49"><a href="format.html#cb34-49" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-50"><a href="format.html#cb34-50" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>I’ve included an example with this function below to demonstrate how you can really streamline your analysis-to-presentation pipeline with a simple function.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="format.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create arbitrary p value</span></span>
-<span id="cb23-2"><a href="format.html#cb23-2" aria-hidden="true" tabindex="-1"></a>p_value <span class="ot">&lt;-</span> <span class="fl">0.0123</span></span>
-<span id="cb23-3"><a href="format.html#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="format.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Format p value including symbol</span></span>
-<span id="cb23-5"><a href="format.html#cb23-5" aria-hidden="true" tabindex="-1"></a>p_value_1 <span class="ot">&lt;-</span> <span class="fu">p_formatting</span>(p_value)</span>
-<span id="cb23-6"><a href="format.html#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="format.html#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Format p value not including symbol</span></span>
-<span id="cb23-8"><a href="format.html#cb23-8" aria-hidden="true" tabindex="-1"></a>p_value_0 <span class="ot">&lt;-</span> <span class="fu">p_formatting</span>(p_value, <span class="at">format_code =</span> <span class="dv">0</span>)</span></code></pre></div>
-<p>Here is the original <em>p</em> value: 0.0123. I can write <em>p</em> = .012 to reference the variable that already has the symbol, or I can reference the variable without the symbol: .012. I’ve included an image of these lines below to give you a sense of how this looks in markdown.</p>
-<p><img src="images/content_intext.png" width="\textwidth" /></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="format.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create arbitrary p value</span></span>
+<span id="cb35-2"><a href="format.html#cb35-2" aria-hidden="true" tabindex="-1"></a>p_value <span class="ot">&lt;-</span> <span class="fl">0.0123</span></span>
+<span id="cb35-3"><a href="format.html#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="format.html#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Format p value including symbol</span></span>
+<span id="cb35-5"><a href="format.html#cb35-5" aria-hidden="true" tabindex="-1"></a>p_value_1 <span class="ot">&lt;-</span> <span class="fu">p_formatting</span>(p_value)</span>
+<span id="cb35-6"><a href="format.html#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="format.html#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Format p value not including symbol</span></span>
+<span id="cb35-8"><a href="format.html#cb35-8" aria-hidden="true" tabindex="-1"></a>p_value_0 <span class="ot">&lt;-</span> <span class="fu">p_formatting</span>(p_value, <span class="at">format_code =</span> <span class="dv">0</span>)</span></code></pre></div>
+<p>Here is the original <em>p</em> value: 0.0123. I can write <code>*p* `r p_value_1`</code> to reference the variable that already has the symbol: <em>p</em> = .012.
+Or I can reference the variable without the symbol, like so <code>`r p_value_0`</code>: .012.</p>
 
 </div>
 </div>

@@ -186,8 +186,6 @@ print(species_count)
 ```
 
 I can call `species` and `species_count` in the markdown text to reference these variables dynamically. 
-Just as in a code chunk, I have to specify that I'm working with R code by including a lower-case r in the backticks with the variable. 
+I have to specify that I'm working with R code by including a lower-case r between single backticks with the variable of interest.
 
-So if I include `r knitr::inline_expr('species_count')` in the text, I can report that there are `r species_count` species without writing out the number itself.
-
-I can reference the variable with the exact species names---`r knitr::inline_expr('species_count')`---in the same way: `r species`.
+So if I put `` `r knitr::inline_expr('species_count')` `` in the text, I can report that there are `r species_count` species without writing out the number itself. I can also reference the variable with the exact species names---`` `r knitr::inline_expr('species')` ``---in the same way: `r species`.

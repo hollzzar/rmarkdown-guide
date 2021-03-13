@@ -24,7 +24,7 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2021-03-12" />
+<meta name="date" content="2021-03-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -521,9 +521,8 @@ For example, let’s say I want to report on the names of the flower species in 
 <span id="cb17-5"><a href="content.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(species_count)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p>I can call <code>species</code> and <code>species_count</code> in the markdown text to reference these variables dynamically.
-Just as in a code chunk, I have to specify that I’m working with R code by including a lower-case r in the backticks with the variable.</p>
-<p>So if I include <code>r species_count</code> in the text, I can report that there are 3 species without writing out the number itself.</p>
-<p>I can reference the variable with the exact species names—<code>r species_count</code>—in the same way: setosa, versicolor, virginica.</p>
+I have to specify that I’m working with R code by including a lower-case r between single backticks with the variable of interest.</p>
+<p>So if I put <code>`r species_count`</code> in the text, I can report that there are 3 species without writing out the number itself. I can also reference the variable with the exact species names—<code>`r species`</code>—in the same way: setosa, versicolor, virginica.</p>
 
 </div>
 </div>
