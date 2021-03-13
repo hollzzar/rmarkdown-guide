@@ -1,16 +1,14 @@
 # Parts of a document {#intro}
 
 1. YAML header
-2. Markdown
-3. Code chunks
+1. Markdown
+1. Code chunks
 
 ## YAML header
 
 The first part of your document is called the YAML (which cheekily stands for *YAML Ain't Markup Language*) header. 
-
-The YAML header goes at the very top of your document, and is where you set the global options for the output and formatting. 
-
-This header is set apart from the rest of the document by three dashes/hyphens, as shown in the example below.
+The YAML header goes at the very top of your document, and is where you set global options for output type and formatting. 
+This header is set apart from the rest of the document by three dashes, as shown in the example below.
 
 ```
 ---
@@ -24,25 +22,55 @@ Section \@ref(yamlref) has more information on setting YAML formatting parameter
 
 ## Markdown {#markintro}
 
-The plain text-formatting syntax of R Markdown allows for conversion to multiple document types. The image below shows an example of the basic syntax. The \# denotes a header, while the numbered list behaves like you would expect one to in Word. However, unlike Word, the actual numbers don't matter; I could've put all 1's here, and R Markdown would've formatted them for me. Go to Chapter \@ref(content) for more information on markdown syntax.
+The plain text-formatting syntax of R Markdown allows for conversion to different document types. 
+In the example below, the \# denotes a header, while the numbered list behaves like you would expect one to in Word. 
+However, unlike Word, the actual numbers don't matter; as you can see, I've included all 1's here, but it will render as an appropriately-numbered list.
 
-```{r parts_example_markdown, echo=FALSE}
-knitr::include_graphics("images/example_markdown.png")
 ```
+# Parts of a document
+
+1. YAML header
+1. Markdown
+1. Code chunks
+```
+
+Go to Chapter \@ref(content) for more information on markdown syntax.
 
 ## Code chunks {#chunkex}
 
-Code chunks are one of the core features of R Markdown. Code chunks are set apart from markdown by three backticks at the beginning and end. In curly brackets after the first set of backticks, you specify the coding language you want to use (here, it's R, with a lowercase r). 
+Code chunks are one of the core features of R Markdown. 
+Code chunks are set apart from markdown by three backticks at the beginning and end. 
 
-You can also add other arguments, like a name for the chunk (here, it's `setup`), and specific chunk options. The example I've provided below is the first chunk in my R Markdown document. It establishes the default chunk options with `knitr::opts_chunk$set`. You can see that while I've set `echo = TRUE` globally, so that all of my code chunks appear in the document by default, I set `echo = FALSE` for this specific chunk. A full list of chunk options can be found [here](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
+In curly brackets after the first set of backticks, you specify the coding language you want to use (here, it's R, with a lowercase r). 
+You can also add other arguments in the curly brackets, like a name for the chunk (here, it's `setup`), and specific chunk options. 
 
-```{r parts_example_chunk}
-# This is a chunk of R code that adds an image
-knitr::include_graphics("images/example_chunk.png")
+The example I've provided below would be the first chunk in an R Markdown document. 
+It establishes the default chunk options with `knitr::opts_chunk$set`. 
+You can see that while I've set `echo = TRUE` globally, so that all of my code chunks appear in the document by default, I set `echo = FALSE` for this specific chunk. A full list of chunk options can be found [here](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
+
+````
+`r ''````{r setup, echo = FALSE}
+## Set-up ##
+
+knitr::opts_chunk$set(echo = TRUE)
+
+## Load packages ##
+
+# Package list
+pkg_list <- c("plyr","tidyverse", "data.table", "ggplot2", "kableExtra", 
+              "psych", "Rmisc", "patchwork")
+
+# Load packages
+pacman::p_load(pkg_list, character.only = TRUE)
 ```
+````
 
-There are multiple ways to run code chunks to test them in RStudio before creating your output. You can run code like you would in R by highlighting the relevant lines of code and hitting CTRL/command + enter. You can also hit the green "play" button in the upper right-hand corner of the chunk. 
+There are multiple ways to run code chunks to test them in RStudio before creating your output. 
+You can run code like you would in R by highlighting the relevant lines of code and hitting CTRL/command + enter. 
+You can also hit the green "play" button in the upper right-hand corner of the chunk. 
 
-Each chunk is an island, so if you haven't run a previous chunk that contains some variable you need in the chunk you want to run, it'll throw an error. At the top right of your open .Rmd document in RStudio, you'll also see a **Run** dropdown menu. There, you can choose different options for running certain code chunks.
+Each chunk is an island, so if you haven't run a previous chunk that contains some variable you need in the chunk you want to run, it'll throw an error. 
+At the top right of your open .Rmd document in RStudio, you'll also see a **Run** dropdown menu. 
+There, you can choose different options for running certain code chunks.
 
-Tip: you can use the chunk option "cache = TRUE" for very time-consuming chunks, but there are some catches as described [here](https://bookdown.org/yihui/rmarkdown-cookbook/cache.html).
+Tip: you can use the chunk option `cache = TRUE` for very time-consuming chunks, but there are some caveats as described [here](https://bookdown.org/yihui/rmarkdown-cookbook/cache.html).

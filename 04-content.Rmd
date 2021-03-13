@@ -1,22 +1,36 @@
 # Content {#content}
 
-The content of an R Markdown document includes the markdown text itself, as well as output from code chunks. Code chunks can output data, graphs, tables, and images. You can also reference variables from code chunks in markdown text.
+The content of an R Markdown document includes the markdown text itself, as well as output from code chunks. 
+Code chunks can output data, graphs, tables, and images. 
+You can also reference variables from code chunks in markdown text.
 
 ## Markdown overview
 
-[R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) and this [R Markdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) provide comprehensive information on the typesetting capabilities of R Markdown. In general, R Markdown typesetting options include `*italics*`, `**bold**`, and `~~strike-through~~`. These are achieved by wrapping text in a certain number of asterisks or tildes. There are also `(parentheses)`, `[square brackets]`, and `"quotation marks"` that can have special functions in markdown, like creating hyperlinks: `[text](link)`.
+[R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) and this [R Markdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) provide comprehensive information on the typesetting capabilities of R Markdown. 
+In general, R Markdown typesetting options include `*italics*`, `**bold**`, and `~~strike-through~~`. 
+These are achieved by wrapping text in a certain number of asterisks or tildes. 
+There are also `(parentheses)`, `[square brackets]`, and `"quotation marks"` that can have special functions in markdown, like creating hyperlinks: `[text](link)`.
 
-With many of these typesetting characters, if you highlight the text you want to format (by clicking and dragging your cursor), you can just hit the character once to wrap the text automatically. This way, you don't have to go to the beginning and end of the text and place the characters individually.
+With many of these typesetting characters, if you highlight the text you want to format (by clicking and dragging your cursor), you can just hit the character once to wrap the text automatically. 
+This way, you don't have to go to the beginning and end of the text and place the characters individually.
 
-Another note about R Markdown is that line spacing matters. For example, if I wanted to include bullet points after this sentence, they wouldn't render properly if I didn't hit enter twice before starting them. In other words, I need to have a full line of white space before bullet points and numbered lists. If you're having issues with your document rendering correctly, make sure you have line breaks between lists, paragraphs, and headers.
+Another note about R Markdown is that line spacing matters. 
+For example, if I wanted to include bullet points after this sentence, they wouldn't render properly if I didn't hit enter twice before starting them. 
+In other words, I need to have a full line of white space before bullet points and numbered lists. 
+If you're having issues with your document rendering correctly, make sure you have line breaks between lists, paragraphs, and headers.
 
 ## Special characters
 
-If you want any special characters in R Markdown, LaTeX, or pandoc to appear as text, rather than having them perform some function, you need to "escape" them with a backslash. For example, pound signs/hashtags, backslashes, and dollar signs need to be preceded by a backslash. 
+If you want any special characters in R Markdown, LaTeX, or pandoc to appear as text, rather than having them perform some function, you need to "escape" them with a backslash. 
+For example, pound signs/hashtags, backslashes, and dollar signs need to be preceded by a backslash. 
 
-This also applies to any chunk outputs that contain strings with special characters, as with `knitr::kable` tables with LaTeX functions or characters (e.g., Greek letters like $\eta$ to report partial eta-squared or functions like `\textit{p}` to italicize the text). Sometimes you even need multiple backslashes, so you may have to play around to troubleshoot if they're not rendering correctly. These kinds of rendering issues won't generally throw errors, so you'll have to check the output in the knitted document to make sure it looks the way you want.
+This also applies to any chunk outputs that contain strings with special characters, as with `knitr::kable` tables with LaTeX functions or characters (e.g., Greek letters like $\eta$ to report partial eta-squared or functions like `\textit{p}` to italicize the text). 
+Sometimes you even need multiple backslashes, so you may have to play around to troubleshoot if they're not rendering correctly. 
+These kinds of rendering issues won't generally throw errors, so you'll have to check the output in the knitted document to make sure it looks the way you want.
 
-Speaking of LaTeX, you can engage "math mode" by putting dollar signs around LaTeX math commands. This way, you can include [fractions and binomials](https://en.wikibooks.org/wiki/LaTeX/Mathematics#Fractions_and_Binomials), [math symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols), [International Phonetic Alphabet (IPA) symbols](https://www.tug.org/TUGboat/tb17-2/tb51rei.pdf), and the like in R Markdown (even if you're not outputting to a PDF). For example, I can write $e = mc^2$ in a sentence like this just by wrapping the equation in a single set of dollar signs, or I can use two sets to center the equation: $$e = mc^2$$
+Speaking of LaTeX, you can engage *math mode* by putting dollar signs around LaTeX math commands. 
+This way, you can include [fractions and binomials](https://en.wikibooks.org/wiki/LaTeX/Mathematics#Fractions_and_Binomials), [math symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols), [International Phonetic Alphabet (IPA) symbols](https://www.tug.org/TUGboat/tb17-2/tb51rei.pdf), and the like in R Markdown (even if you're not outputting to a PDF). 
+For example, I can write $e = mc^2$ in a sentence like this just by wrapping the equation in a single set of dollar signs `$e = mc^2$`, or I can use two sets to center the equation `$$e = mc^2$$`: $$e = mc^2$$
 
 ## Chunk output
 
@@ -24,11 +38,18 @@ Depending on the kind of content you're creating with R Markdown, whether it's a
 
 ### Data {#dat}
 
-When I'm working on a project and checking in with my advisor on my progress, I display my raw data and analyses in R Markdown. My usual work-flow includes data pre-processing in MATLAB for EEG data and R for the ERP analyses and behavioral data. I get everything clean and ready to go in these scripts.
+When I'm working on a project and checking in with my adviser on my progress, I display my raw data and analyses in R Markdown. 
+My usual work-flow includes data pre-processing in MATLAB for EEG data---you can find my scripts for this [here](https://github.com/hollzzar/eeg-data-scripts)---and R for the ERP analyses, shown [here](https://github.com/hollzzar/erp-data-scripts).
 
-As I describe in Section \@ref(source), I keep separate scripts for each piece of the data analysis. I `source` them into one another, with a *global* script at the base with any general variables (like file names, HEX color codes for graphs, etc.) and custom functions. Once I've built out this processing pipeline with R scripts, that's when I'll `source` them into my R Markdown documents for statistical analysis and presentation. Once you've got your data loaded into R Markdown, you just use R code to run analyses and output them in your document as you would in a regular R script.
+As I describe in Section \@ref(source), I keep separate scripts for each piece of the data analysis. 
+I `source` them into one another, with a *global* script at the base with any general variables (like file names, HEX color codes for graphs, etc.) and custom functions. 
+Once I've built out this processing pipeline with R scripts, that's when I'll `source` them into my R Markdown documents for statistical analysis and presentation. 
+You can see an example of this for my ERP analyses [here](https://github.com/hollzzar/erp-data-scripts/blob/main/1a_group_analysis.R).
+Once you've got your data loaded into R Markdown, you just use R code to run analyses and output them in your document as you would in a regular R script.
 
-If I'm running regressions with `lm` from the `stats` package for example, I'll wrap the `summary` function around the output. I tend to save this as a variable, since I typically want to grab individual values from the variable later (e.g., *p* values). You can put the new variable name on its own line or `print` it if you prefer; otherwise, you can just have a line with `summary(model)`, and it'll output the table in your document.
+If I'm running regressions with `lm` from the `stats` package for example, I'll wrap the `summary` function around the output. 
+I tend to save this as a variable, since I typically want to grab individual values from the variable later (e.g., *p* values). 
+You can put the new variable name on its own line or `print` it if you prefer; otherwise, you can just have a line with `summary(model)`, and it'll output the table in your document.
 
 ```{r content_data_example, warning=FALSE, message=FALSE}
 # Show first five rows of mtcars dataset
@@ -52,9 +73,13 @@ mpg_summary
 
 ### Graphs {#graph}
 
-I could've written an entire book on `ggplot`; in fact, [someone already has](https://ggplot2-book.org/). I'm focusing on the R Markdown piece here, but I've included a lot of information on `ggplot` itself in Section \@ref(ggplotinfo).
+I could've written an entire book on `ggplot`; in fact, [someone already has](https://ggplot2-book.org/). 
+I'm focusing on the R Markdown piece here, but I've included a lot of information on `ggplot` itself in Section \@ref(ggplotinfo).
 
-Let's start with a basic scatterplot of the miles per gallon and weight data from the `mtcars` dataset. There are few ways to get the graph from your code chunk into your document. I can just make the graph without saving it as a variable, so it automatically outputs from the chunk, or save it and put the variable name on a new line. This is what I tend to do, as I usually create my graphs in an R script before importing them into my R Markdown document.
+Let's start with a basic scatterplot of the miles per gallon and weight data from the `mtcars` dataset. 
+There are few ways to get the graph from your code chunk into your document. 
+I can just make the graph without saving it as a variable, so it automatically outputs from the chunk, or save it and put the variable name on a new line. 
+This is what I tend to do, as I usually create my graphs in an R script before importing them into my R Markdown document.
 
 ```{r content_graph_1}
 # Save number of cylinders (cyl) as factor
@@ -65,7 +90,7 @@ mtcars <- mtcars %>%
 # Create scatter plot
 mtcars_scatter <- ggplot(mtcars) +
   geom_jitter(aes(mpg, wt, color = cyl)) +
-  geom_smooth(aes(mpg, wt), method = "lm", se = TRUE, level = 0.95, 
+  geom_smooth(formula = y ~ x, aes(mpg, wt), method = "lm", se = TRUE, level = 0.95, 
               fill = "#d7d8db", color = "black", size = 0.5) +
   scale_y_continuous(expand = c(0,0), limits = c(0,6)) +
   scale_x_continuous(expand = c(0,0), limits = c(10,35)) +
@@ -80,18 +105,35 @@ mtcars_scatter <- ggplot(mtcars) +
 mtcars_scatter
 ```
 
-You can use the chunk options to control how this graph appears in the document. The ones I typically use for outputting graphs are dots per inch (`dpi`) to control the image quality, `out.width` and `out.height` with either specific units or a percentage, and `fig.align` to change the alignment of the output. In the graph below, I've set `dpi` equal to 300, the `out.width` at 50%, and `fig.align` to center. You can also add a figure caption in the chunk header if you'd like. These all go in the curly brackets at the top of the chunk and are separated by commas.
+You can use the chunk options to control how this graph appears in the document. 
+The ones I typically use for outputting graphs are dots per inch (`dpi`) to control the image quality, `out.width` and `out.height` with either specific units or a percentage, and `fig.align` to change the alignment of the output. 
+In the graph below, I've set `dpi` equal to 300, the `out.width` at 50%, and `fig.align` to center. 
+You can also add a figure caption in the chunk header if you'd like. 
+These all go in the curly brackets at the top of the chunk and are separated by commas.
 
-```{r content_graph_2, dpi=300, out.width="50%", fig.align="center"}
+````
+`r ''````{r content_graph_2, dpi=300, out.width="50%", fig.align="center"}
+# Output plot with new chunk options
+mtcars_scatter
+```
+````
+
+```{r content_graph_2, dpi=300, out.width="50%", fig.align="center", echo=FALSE}
 # Output plot with new chunk options
 mtcars_scatter
 ```
 
-As a note, the values for `out.width` and `fig.align` need to be in quotation marks, while the value for the `dpi` setting doesn't. Pay attention to which values have quotes around them in the column with the default values in the chunk options section of the [reference guide](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf). You'll get an error when you try to render the document if you don't have appropriate quotation marks.
+As a note, the values for `out.width` and `fig.align` need to be in quotation marks, while the value for the `dpi` setting doesn't. 
+Pay attention to which values have quotes around them in the column with the default values in the chunk options section of the [reference guide](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
+You'll get an error when you try to render the document if you don't have appropriate quotation marks.
 
 ### Tables
 
-There are many ways to create tables in R. My preferred way is with `knitr::kable` and `kableExtra`. Together these allow you to create "complex tables and manipulate table styles" as the [documentation](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) says. You use the pipe operator `%>%` from `magrittr` the way you use the plus sign for `ggplot` to add layers of formatting. If you don't specify the output format, `knitr` will automatically create an HTML table for you unless you're rendering to a PDF when it will use LaTeX. You can override this locally in `kable` or globally with `knitr::options`.
+There are many ways to create tables in R. My preferred way is with `knitr::kable` and `kableExtra`. 
+Together these allow you to create "complex tables and manipulate table styles" as the [documentation](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) says. 
+You use the pipe operator `%>%` from `magrittr` the way you use the plus sign for `ggplot` to add layers of formatting. 
+If you don't specify the output format, `knitr` will automatically create an HTML table for you unless you're rendering to a PDF when it will use LaTeX. 
+You can override this locally in `kable` or globally with `knitr::options`.
 
 ```{r content_table_ex}
 # Get coefficients table from mpg_summary
@@ -104,19 +146,26 @@ mpg_coefs %>%
   kable_styling()
 ```
 
-This is obviously a very minimal table. The documentation for HTML and LaTeX tables is great, so if you're looking for something in particular it will be relatively easy for you to find. I have a more complex example in Section \@ref(csshtml), to which I added custom CSS code, among other things. You can see what the output of that code would look like in my [Psychonomics poster](https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.pdf).
+This is obviously a very minimal table. 
+The documentation for HTML and LaTeX tables is great, so if you're looking for something in particular it will be relatively easy for you to find. 
+I have a more complex example in Section \@ref(csshtml), to which I added custom CSS code, among other things. 
+You can see what the output of that code would look like in my [Psychonomics poster](https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.pdf).
 
 ### Images
 
-It's very easy to embed images. You've already seen this in Section \@ref(chunkex). Just use the `knitr::include_graphics` function, and you can control the output as you would for a graph by specifying the chunk options. You can also use CSS or `![caption](file/path)` notation, but I find the chunk approach to be more straight-forward.
-
+It's very easy to embed images. 
+Just use the `knitr::include_graphics` function, and you can control the output as you would for a graph by specifying the chunk options. 
+You can also use CSS or `![caption](file/path)` notation, but I find the chunk approach to be more straight-forward.
 When I have very complex graphs that take a long time to render, or graphs that don't play very nicely with R Markdown (like those from `corrplot`), I'll save them as images and include them this way. 
 
-I also save graphs as images first when I need to crop them to maintain the correct aspect ratio. This is true of the participant maps I created for my [Psychonomics](https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.pdf) and [CNS](https://github.com/hollzzar/CNS-2020-poster/blob/master/CNS_2020.pdf) posters. Instead of using `knitr::include_graphics`, I use `image_read` from the `magick` package to load the image, followed by the `image_trim` function (you can't go straight from a `ggplot` graph to these functions).
+I also save graphs as images first when I need to crop them to maintain the correct aspect ratio. 
+This is true of the participant maps I created for my [Psychonomics](https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.pdf) and [CNS](https://github.com/hollzzar/CNS-2020-poster/blob/master/CNS_2020.pdf) posters. 
+Instead of using `knitr::include_graphics`, I use `image_read` from the `magick` package to load the image, followed by the `image_trim` function (you can't go straight from a `ggplot` graph to these functions).
 
 ## Inline R {#rintext}
 
-A very useful aspect of R Markdown is that you can call R objects and functions in markdown or the YAML header by sandwiching them between backticks. For example, let's say I want to report on the names of the flower species in the [`iris` dataset](https://archive.ics.uci.edu/ml/datasets/iris).
+A very useful aspect of R Markdown is that you can call R objects and functions in markdown or the YAML header by sandwiching them between backticks. 
+For example, let's say I want to report on the names of the flower species in the [`iris` dataset](https://archive.ics.uci.edu/ml/datasets/iris).
 
 ```{r iris_example_1, message=FALSE, warning=FALSE}
 # Pull species column from iris and get unique values in column
@@ -136,12 +185,9 @@ species_count <- length(species)
 print(species_count)
 ```
 
-I can call `species` and `species_count` in the markdown text to reference these variables dynamically. Just as in a code chunk, I have to specify that I'm working with R code by including a lower-case r in the backticks with the variable. 
+I can call `species` and `species_count` in the markdown text to reference these variables dynamically. 
+Just as in a code chunk, I have to specify that I'm working with R code by including a lower-case r in the backticks with the variable. 
 
-So if I put "r species_count" between backticks, I can report that there are `r species_count` species without typing out the number itself. Or I can reference the variable with the exact species names: `r species`. You can see what the markdown looks like in the screenshot below.
+So if I include `r knitr::inline_expr('species_count')` in the text, I can report that there are `r species_count` species without writing out the number itself.
 
-```{r content_intext_iris, echo=FALSE}
-knitr::include_graphics("images/content_intext_iris.png")
-```
-
-You'll also note that `knitr` automatically put commas between the species names. To be honest, this is an aspect of R Markdown that I don't explore very much. I tend to format the variables exactly how I want them to appear in the text before referencing them with inline code. If I find a good explanation of this behavior, I'll link to it here.
+I can reference the variable with the exact species names---`r knitr::inline_expr('species_count')`---in the same way: `r species`.

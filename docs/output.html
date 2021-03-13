@@ -51,76 +51,8 @@
 
 
 
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -143,7 +75,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#tips"><i class="fa fa-check"></i><b>1.2.1</b> Tips</a></li>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#general-tips"><i class="fa fa-check"></i><b>1.2.1</b> General tips</a></li>
 <li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#general-reference-documents"><i class="fa fa-check"></i><b>1.2.2</b> General reference documents</a></li>
 </ul></li>
 </ul></li>
@@ -286,41 +218,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="output" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Outputs</h1>
-<p>R Markdown can transform plain text and code into several different document formats. There are also multiple ways to <strong>Knit</strong> or <code>render</code> the output.</p>
+<p>R Markdown can transform plain text and code into several different document formats.
+There are also multiple ways to <strong>Knit</strong> or <code>render</code> the output.</p>
 <div id="output-options" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Output options</h2>
 <div id="html_document" class="section level3" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> html_document</h3>
-<p>HTML is overall the most flexible. It supports the types of content we’re interested in creating as graduate students—tables, graphs, and the like—and you can easily transform your HTML output to a PDF with <code>pagedown::chrome_print(file)</code> if you have Google Chrome. The <a href="https://github.com/brentthorne/posterdown">poster template</a> I use follows this process.</p>
+<p>HTML is overall the most flexible.
+It supports the types of content we’re interested in creating as graduate students—tables, graphs, and the like—and you can easily transform your HTML output to a PDF with <code>pagedown::chrome_print(file)</code> if you have Google Chrome.
+The <a href="https://github.com/brentthorne/posterdown">academic poster template</a> that I like to use follows this process.</p>
 </div>
 <div id="pdf_document" class="section level3" number="3.1.2">
 <h3><span class="header-section-number">3.1.2</span> pdf_document</h3>
-<p>If you’re familiar with LaTeX, you may be inclined to output directly to a PDF, since you can include inline LaTeX code in your documents (more on this in Chapter <a href="format.html#format">6</a>). The <a href="https://github.com/mitchelloharawild/vitae">CV</a> and <a href="https://github.com/rosannav/thesis_in_rmarkdown/tree/master/example_thesis">manuscript</a> templates that I use rely on the fine-grained typsetting capabilities of LaTeX. To create a PDF, you need to have LaTeX installed locally. If you don’t already, you can install a <a href="https://yihui.org/tinytex/"><code>tinytex</code></a> distribution through the R console.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="output.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tinytex&quot;</span>)</span></code></pre></div>
+<p>If you’re familiar with LaTeX, you may be inclined to output directly to a PDF, since you can include inline LaTeX code in your documents (more on this in Chapter <a href="format.html#format">6</a>).
+The <a href="https://github.com/mitchelloharawild/vitae">CV</a> and <a href="https://github.com/rosannav/thesis_in_rmarkdown/tree/master/example_thesis">manuscript</a> templates that I use rely on the fine-grained typesetting capabilities of LaTeX.
+To create a PDF, you need to have LaTeX installed locally.
+You should also install the <a href="https://yihui.org/tinytex/"><code>tinytex</code></a> distribution through the R console.</p>
 </div>
 <div id="word_document" class="section level3" number="3.1.3">
 <h3><span class="header-section-number">3.1.3</span> word_document</h3>
-<p>You can also output to Microsoft Word and Powerpoint. I often work with colleagues who prefer to edit in Word, so sometimes I need to do this. I prefer not to if I can help it though, because you lose several important functions. For example, chunk options for aligning and setting the size of graphs and other images don’t work, and <code>kable</code> tables tend not to appear correctly.</p>
+<p>You can also output to Microsoft Word and PowerPoint.
+I often work with colleagues who prefer to edit in Word, so sometimes I need to do this.
+I prefer not to if I can help it, because you lose several important functions; for example, chunk options for aligning and setting the size of graphs and other images don’t work, and <code>kable</code> tables tend not to appear correctly.</p>
 </div>
 </div>
 <div id="rendering-options" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Rendering options</h2>
 <div id="knit" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Knit</h3>
-<p>You can specify a particular output type in the YAML header with the <strong>output</strong> option. Then, you can press the <strong>Knit</strong> button or CTRL/command + shift + K to create or “knit” the document.</p>
-<p>Be sure to pay attention to indentation and colon placement in your YAML header, especially as you start to specify options for particular output types. As a rule of thumb, if you have anything more than <strong>output: output_format</strong>, you need to indent every new line, and have a colon at the end of the previous line. See Section <a href="template.html#usedef">4.3</a> for an example of this.</p>
+<p>You can specify a particular output type in the YAML header with the <strong>output</strong> option.
+Then, you can press the <strong>Knit</strong> button or CTRL/command + shift + K to create or “knit” the document.</p>
+<p>Be sure to pay attention to indentation and colon placement in your YAML header, especially as you start to specify options for particular output types.
+As a rule of thumb, if you have anything more than <strong>output: output_format</strong>, you need to indent every new line, and have a colon at the end of the previous line.
+See Section <a href="template.html#usedef">4.3</a> for an example of this.</p>
 </div>
 <div id="rmarkdownrender" class="section level3" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> <code>rmarkdown::render</code></h3>
-<p>Instead of knitting, you can also render files in the console with <code>rmarkdown::render(file, output_format)</code>. This is essentially what <strong>Knit</strong> is doing. This approach allows you to create multiple output types quickly and easily. I’m usually customizing my output very specifically for one output type by adding inline CSS or LaTeX code, so I really only use <code>render</code> when I’m making <a href="https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F">parameterized reports</a>.</p>
+<p>Instead of knitting, you can also render files in the console with <code>rmarkdown::render(file, output_format)</code>.
+This is essentially what <strong>Knit</strong> is doing.
+This approach allows you to create multiple output types quickly and easily.
+I usually customize my output very specifically for one output type by adding inline CSS or LaTeX code, so I really only use <code>render</code> when I’m making <a href="https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F">parameterized reports</a>.</p>
 </div>
 </div>
 <div id="rendering-process" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Rendering process</h2>
-<p>When you <strong>Knit</strong> or <code>render</code> your document, there’s a particular sequence of events that happens under the hood. Your R Markdown document is piped through to pandoc by the <code>knitr</code> package, which runs your code chunks and knits them together with the plain text you’ve included. Pandoc ultimately handles the conversion to a particular output format. Understanding this process can help you troubleshoot when you run into issues. You can find more on troubleshooting in Chapter <a href="trouble.html#trouble">8</a>.</p>
+<p>When you <strong>Knit</strong> or <code>render</code> your document, there’s a particular sequence of events that happens under the hood.
+Your R Markdown document is piped through to pandoc by the <code>knitr</code> package, which runs your code chunks and knits them together with the plain text you’ve included.
+Pandoc ultimately handles the conversion to a particular output format. Understanding this process can help you troubleshoot when you run into issues.
+You can find more on troubleshooting in Chapter <a href="trouble.html#trouble">8</a>.</p>
 <div class="figure">
 <img src="https://rosannavanhespenresearch.files.wordpress.com/2016/03/pandoc1.png" alt="" />
-<p class="caption">Knitting process from <a href="https://www.rosannavanhespen.nl/thesis_in_rmarkdown/">Writing Your Thesis with R Markdown</a></p>
+<p class="caption">Knitting process from <a href="https://rosannavanhespen.nl/thesis-in-rmarkdown/">Writing Your Thesis with R Markdown</a></p>
 </div>
 
 </div>
@@ -381,20 +329,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

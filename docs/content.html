@@ -143,7 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#tips"><i class="fa fa-check"></i><b>1.2.1</b> Tips</a></li>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#general-tips"><i class="fa fa-check"></i><b>1.2.1</b> General tips</a></li>
 <li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#general-reference-documents"><i class="fa fa-check"></i><b>1.2.2</b> General reference documents</a></li>
 </ul></li>
 </ul></li>
@@ -286,51 +286,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="content" class="section level1" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Content</h1>
-<p>The content of an R Markdown document includes the markdown text itself, as well as output from code chunks. Code chunks can output data, graphs, tables, and images. You can also reference variables from code chunks in markdown text.</p>
+<p>The content of an R Markdown document includes the markdown text itself, as well as output from code chunks.
+Code chunks can output data, graphs, tables, and images.
+You can also reference variables from code chunks in markdown text.</p>
 <div id="markdown-overview" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Markdown overview</h2>
-<p><a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">R Markdown: The Definitive Guide</a> and this <a href="https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R Markdown cheatsheet</a> provide comprehensive information on the typesetting capabilities of R Markdown. In general, R Markdown typesetting options include <code>*italics*</code>, <code>**bold**</code>, and <code>~~strike-through~~</code>. These are achieved by wrapping text in a certain number of asterisks or tildes. There are also <code>(parentheses)</code>, <code>[square brackets]</code>, and <code>"quotation marks"</code> that can have special functions in markdown, like creating hyperlinks: <code>[text](link)</code>.</p>
-<p>With many of these typesetting characters, if you highlight the text you want to format (by clicking and dragging your cursor), you can just hit the character once to wrap the text automatically. This way, you don’t have to go to the beginning and end of the text and place the characters individually.</p>
-<p>Another note about R Markdown is that line spacing matters. For example, if I wanted to include bullet points after this sentence, they wouldn’t render properly if I didn’t hit enter twice before starting them. In other words, I need to have a full line of white space before bullet points and numbered lists. If you’re having issues with your document rendering correctly, make sure you have line breaks between lists, paragraphs, and headers.</p>
+<p><a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">R Markdown: The Definitive Guide</a> and this <a href="https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R Markdown cheatsheet</a> provide comprehensive information on the typesetting capabilities of R Markdown.
+In general, R Markdown typesetting options include <code>*italics*</code>, <code>**bold**</code>, and <code>~~strike-through~~</code>.
+These are achieved by wrapping text in a certain number of asterisks or tildes.
+There are also <code>(parentheses)</code>, <code>[square brackets]</code>, and <code>"quotation marks"</code> that can have special functions in markdown, like creating hyperlinks: <code>[text](link)</code>.</p>
+<p>With many of these typesetting characters, if you highlight the text you want to format (by clicking and dragging your cursor), you can just hit the character once to wrap the text automatically.
+This way, you don’t have to go to the beginning and end of the text and place the characters individually.</p>
+<p>Another note about R Markdown is that line spacing matters.
+For example, if I wanted to include bullet points after this sentence, they wouldn’t render properly if I didn’t hit enter twice before starting them.
+In other words, I need to have a full line of white space before bullet points and numbered lists.
+If you’re having issues with your document rendering correctly, make sure you have line breaks between lists, paragraphs, and headers.</p>
 </div>
 <div id="special-characters" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Special characters</h2>
-<p>If you want any special characters in R Markdown, LaTeX, or pandoc to appear as text, rather than having them perform some function, you need to “escape” them with a backslash. For example, pound signs/hashtags, backslashes, and dollar signs need to be preceded by a backslash.</p>
-<p>This also applies to any chunk outputs that contain strings with special characters, as with <code>knitr::kable</code> tables with LaTeX functions or characters (e.g., Greek letters like <span class="math inline">\(\eta\)</span> to report partial eta-squared or functions like <code>\textit{p}</code> to italicize the text). Sometimes you even need multiple backslashes, so you may have to play around to troubleshoot if they’re not rendering correctly. These kinds of rendering issues won’t generally throw errors, so you’ll have to check the output in the knitted document to make sure it looks the way you want.</p>
-<p>Speaking of LaTeX, you can engage “math mode” by putting dollar signs around LaTeX math commands. This way, you can include <a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics#Fractions_and_Binomials">fractions and binomials</a>, <a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">math symbols</a>, <a href="https://www.tug.org/TUGboat/tb17-2/tb51rei.pdf">International Phonetic Alphabet (IPA) symbols</a>, and the like in R Markdown (even if you’re not outputting to a PDF). For example, I can write <span class="math inline">\(e = mc^2\)</span> in a sentence like this just by wrapping the equation in a single set of dollar signs, or I can use two sets to center the equation: <span class="math display">\[e = mc^2\]</span></p>
+<p>If you want any special characters in R Markdown, LaTeX, or pandoc to appear as text, rather than having them perform some function, you need to “escape” them with a backslash.
+For example, pound signs/hashtags, backslashes, and dollar signs need to be preceded by a backslash.</p>
+<p>This also applies to any chunk outputs that contain strings with special characters, as with <code>knitr::kable</code> tables with LaTeX functions or characters (e.g., Greek letters like <span class="math inline">\(\eta\)</span> to report partial eta-squared or functions like <code>\textit{p}</code> to italicize the text).
+Sometimes you even need multiple backslashes, so you may have to play around to troubleshoot if they’re not rendering correctly.
+These kinds of rendering issues won’t generally throw errors, so you’ll have to check the output in the knitted document to make sure it looks the way you want.</p>
+<p>Speaking of LaTeX, you can engage <em>math mode</em> by putting dollar signs around LaTeX math commands.
+This way, you can include <a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics#Fractions_and_Binomials">fractions and binomials</a>, <a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">math symbols</a>, <a href="https://www.tug.org/TUGboat/tb17-2/tb51rei.pdf">International Phonetic Alphabet (IPA) symbols</a>, and the like in R Markdown (even if you’re not outputting to a PDF).
+For example, I can write <span class="math inline">\(e = mc^2\)</span> in a sentence like this just by wrapping the equation in a single set of dollar signs <code>$e = mc^2$</code>, or I can use two sets to center the equation <code>$$e = mc^2$$</code>: <span class="math display">\[e = mc^2\]</span></p>
 </div>
 <div id="chunk-output" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Chunk output</h2>
 <p>Depending on the kind of content you’re creating with R Markdown, whether it’s a poster, manuscript, or internal lab document, there are several ways you can take code chunks and turn them into content.</p>
 <div id="dat" class="section level3" number="5.3.1">
 <h3><span class="header-section-number">5.3.1</span> Data</h3>
-<p>When I’m working on a project and checking in with my advisor on my progress, I display my raw data and analyses in R Markdown. My usual work-flow includes data pre-processing in MATLAB for EEG data and R for the ERP analyses and behavioral data. I get everything clean and ready to go in these scripts.</p>
-<p>As I describe in Section <a href="organization.html#source">7.2</a>, I keep separate scripts for each piece of the data analysis. I <code>source</code> them into one another, with a <em>global</em> script at the base with any general variables (like file names, HEX color codes for graphs, etc.) and custom functions. Once I’ve built out this processing pipeline with R scripts, that’s when I’ll <code>source</code> them into my R Markdown documents for statistical analysis and presentation. Once you’ve got your data loaded into R Markdown, you just use R code to run analyses and output them in your document as you would in a regular R script.</p>
-<p>If I’m running regressions with <code>lm</code> from the <code>stats</code> package for example, I’ll wrap the <code>summary</code> function around the output. I tend to save this as a variable, since I typically want to grab individual values from the variable later (e.g., <em>p</em> values). You can put the new variable name on its own line or <code>print</code> it if you prefer; otherwise, you can just have a line with <code>summary(model)</code>, and it’ll output the table in your document.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="content.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show first five rows of mtcars dataset</span></span>
-<span id="cb5-2"><a href="content.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars, <span class="dv">5</span>)</span></code></pre></div>
+<p>When I’m working on a project and checking in with my adviser on my progress, I display my raw data and analyses in R Markdown.
+My usual work-flow includes data pre-processing in MATLAB for EEG data—you can find my scripts for this <a href="https://github.com/hollzzar/eeg-data-scripts">here</a>—and R for the ERP analyses, shown <a href="https://github.com/hollzzar/erp-data-scripts">here</a>.</p>
+<p>As I describe in Section <a href="organization.html#source">7.2</a>, I keep separate scripts for each piece of the data analysis.
+I <code>source</code> them into one another, with a <em>global</em> script at the base with any general variables (like file names, HEX color codes for graphs, etc.) and custom functions.
+Once I’ve built out this processing pipeline with R scripts, that’s when I’ll <code>source</code> them into my R Markdown documents for statistical analysis and presentation.
+You can see an example of this for my ERP analyses <a href="https://github.com/hollzzar/erp-data-scripts/blob/main/1a_group_analysis.R">here</a>.
+Once you’ve got your data loaded into R Markdown, you just use R code to run analyses and output them in your document as you would in a regular R script.</p>
+<p>If I’m running regressions with <code>lm</code> from the <code>stats</code> package for example, I’ll wrap the <code>summary</code> function around the output.
+I tend to save this as a variable, since I typically want to grab individual values from the variable later (e.g., <em>p</em> values).
+You can put the new variable name on its own line or <code>print</code> it if you prefer; otherwise, you can just have a line with <code>summary(model)</code>, and it’ll output the table in your document.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="content.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show first five rows of mtcars dataset</span></span>
+<span id="cb1-2"><a href="content.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars, <span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
 ## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
 ## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
 ## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
 ## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
 ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="content.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide summary statistics for miles per gallon (mpg) and weight (wt)</span></span>
-<span id="cb7-2"><a href="content.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># select is from dplyr</span></span>
-<span id="cb7-3"><a href="content.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># describe is from the psych package</span></span>
-<span id="cb7-4"><a href="content.html#cb7-4" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">select</span>(mpg, wt) <span class="sc">%&gt;%</span> <span class="fu">describe</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="content.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide summary statistics for miles per gallon (mpg) and weight (wt)</span></span>
+<span id="cb3-2"><a href="content.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># select is from dplyr</span></span>
+<span id="cb3-3"><a href="content.html#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># describe is from the psych package</span></span>
+<span id="cb3-4"><a href="content.html#cb3-4" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">select</span>(mpg, wt) <span class="sc">%&gt;%</span> <span class="fu">describe</span>()</span></code></pre></div>
 <pre><code>##     vars  n  mean   sd median trimmed  mad   min   max range skew kurtosis   se
 ## mpg    1 32 20.09 6.03  19.20   19.70 5.41 10.40 33.90 23.50 0.61    -0.37 1.07
 ## wt     2 32  3.22 0.98   3.33    3.15 0.77  1.51  5.42  3.91 0.42    -0.02 0.17</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="content.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Are car weight and miles per gallon correlated?</span></span>
-<span id="cb9-2"><a href="content.html#cb9-2" aria-hidden="true" tabindex="-1"></a>mpg_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, mtcars)</span>
-<span id="cb9-3"><a href="content.html#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="content.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Save summary of model</span></span>
-<span id="cb9-5"><a href="content.html#cb9-5" aria-hidden="true" tabindex="-1"></a>mpg_summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(mpg_model)</span>
-<span id="cb9-6"><a href="content.html#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="content.html#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Output results</span></span>
-<span id="cb9-8"><a href="content.html#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># I could have put summary(mpg_model) or print(mpg_summary) instead if I preferred</span></span>
-<span id="cb9-9"><a href="content.html#cb9-9" aria-hidden="true" tabindex="-1"></a>mpg_summary</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="content.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Are car weight and miles per gallon correlated?</span></span>
+<span id="cb5-2"><a href="content.html#cb5-2" aria-hidden="true" tabindex="-1"></a>mpg_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, mtcars)</span>
+<span id="cb5-3"><a href="content.html#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="content.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Save summary of model</span></span>
+<span id="cb5-5"><a href="content.html#cb5-5" aria-hidden="true" tabindex="-1"></a>mpg_summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(mpg_model)</span>
+<span id="cb5-6"><a href="content.html#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="content.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Output results</span></span>
+<span id="cb5-8"><a href="content.html#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># I could have put summary(mpg_model) or print(mpg_summary) instead if I preferred</span></span>
+<span id="cb5-9"><a href="content.html#cb5-9" aria-hidden="true" tabindex="-1"></a>mpg_summary</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = mpg ~ wt, data = mtcars)
@@ -352,47 +373,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="graph" class="section level3" number="5.3.2">
 <h3><span class="header-section-number">5.3.2</span> Graphs</h3>
-<p>I could’ve written an entire book on <code>ggplot</code>; in fact, <a href="https://ggplot2-book.org/">someone already has</a>. I’m focusing on the R Markdown piece here, but I’ve included a lot of information on <code>ggplot</code> itself in Section <a href="supplement.html#ggplotinfo">9.3</a>.</p>
-<p>Let’s start with a basic scatterplot of the miles per gallon and weight data from the <code>mtcars</code> dataset. There are few ways to get the graph from your code chunk into your document. I can just make the graph without saving it as a variable, so it automatically outputs from the chunk, or save it and put the variable name on a new line. This is what I tend to do, as I usually create my graphs in an R script before importing them into my R Markdown document.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="content.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save number of cylinders (cyl) as factor</span></span>
-<span id="cb11-2"><a href="content.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Otherwise, ggplot will treat it as a continuous variable</span></span>
-<span id="cb11-3"><a href="content.html#cb11-3" aria-hidden="true" tabindex="-1"></a>mtcars <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb11-4"><a href="content.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cyl =</span> <span class="fu">as.factor</span>(cyl))</span>
-<span id="cb11-5"><a href="content.html#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="content.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot</span></span>
-<span id="cb11-7"><a href="content.html#cb11-7" aria-hidden="true" tabindex="-1"></a>mtcars_scatter <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
-<span id="cb11-8"><a href="content.html#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(mpg, wt, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
-<span id="cb11-9"><a href="content.html#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(mpg, wt), <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">level =</span> <span class="fl">0.95</span>, </span>
-<span id="cb11-10"><a href="content.html#cb11-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">&quot;#d7d8db&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb11-11"><a href="content.html#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">6</span>)) <span class="sc">+</span></span>
-<span id="cb11-12"><a href="content.html#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">35</span>)) <span class="sc">+</span></span>
-<span id="cb11-13"><a href="content.html#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Paired&quot;</span>) <span class="sc">+</span></span>
-<span id="cb11-14"><a href="content.html#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb11-15"><a href="content.html#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Miles per gallon and vehicle weight are negatively correlated&quot;</span>,</span>
-<span id="cb11-16"><a href="content.html#cb11-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Vehicle weight (1000 lbs)&quot;</span>,</span>
-<span id="cb11-17"><a href="content.html#cb11-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Miles per gallon&quot;</span>,</span>
-<span id="cb11-18"><a href="content.html#cb11-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Cylinders&quot;</span>)</span>
-<span id="cb11-19"><a href="content.html#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-20"><a href="content.html#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Output plot</span></span>
-<span id="cb11-21"><a href="content.html#cb11-21" aria-hidden="true" tabindex="-1"></a>mtcars_scatter</span></code></pre></div>
-<p><img src="rmarkdown-guide_files/figure-html/content_graph_1-1.png" width="\textwidth" /></p>
-<p>You can use the chunk options to control how this graph appears in the document. The ones I typically use for outputting graphs are dots per inch (<code>dpi</code>) to control the image quality, <code>out.width</code> and <code>out.height</code> with either specific units or a percentage, and <code>fig.align</code> to change the alignment of the output. In the graph below, I’ve set <code>dpi</code> equal to 300, the <code>out.width</code> at 50%, and <code>fig.align</code> to center. You can also add a figure caption in the chunk header if you’d like. These all go in the curly brackets at the top of the chunk and are separated by commas.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="content.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Output plot with new chunk options</span></span>
-<span id="cb12-2"><a href="content.html#cb12-2" aria-hidden="true" tabindex="-1"></a>mtcars_scatter</span></code></pre></div>
+<p>I could’ve written an entire book on <code>ggplot</code>; in fact, <a href="https://ggplot2-book.org/">someone already has</a>.
+I’m focusing on the R Markdown piece here, but I’ve included a lot of information on <code>ggplot</code> itself in Section <a href="supplement.html#ggplotinfo">9.3</a>.</p>
+<p>Let’s start with a basic scatterplot of the miles per gallon and weight data from the <code>mtcars</code> dataset.
+There are few ways to get the graph from your code chunk into your document.
+I can just make the graph without saving it as a variable, so it automatically outputs from the chunk, or save it and put the variable name on a new line.
+This is what I tend to do, as I usually create my graphs in an R script before importing them into my R Markdown document.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="content.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save number of cylinders (cyl) as factor</span></span>
+<span id="cb7-2"><a href="content.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Otherwise, ggplot will treat it as a continuous variable</span></span>
+<span id="cb7-3"><a href="content.html#cb7-3" aria-hidden="true" tabindex="-1"></a>mtcars <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="content.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cyl =</span> <span class="fu">as.factor</span>(cyl))</span>
+<span id="cb7-5"><a href="content.html#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="content.html#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot</span></span>
+<span id="cb7-7"><a href="content.html#cb7-7" aria-hidden="true" tabindex="-1"></a>mtcars_scatter <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="content.html#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(mpg, wt, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="content.html#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="fu">aes</span>(mpg, wt), <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">level =</span> <span class="fl">0.95</span>, </span>
+<span id="cb7-10"><a href="content.html#cb7-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">&quot;#d7d8db&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="content.html#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">6</span>)) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="content.html#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">35</span>)) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="content.html#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Paired&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="content.html#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb7-15"><a href="content.html#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Miles per gallon and vehicle weight are negatively correlated&quot;</span>,</span>
+<span id="cb7-16"><a href="content.html#cb7-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Vehicle weight (1000 lbs)&quot;</span>,</span>
+<span id="cb7-17"><a href="content.html#cb7-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Miles per gallon&quot;</span>,</span>
+<span id="cb7-18"><a href="content.html#cb7-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Cylinders&quot;</span>)</span>
+<span id="cb7-19"><a href="content.html#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="content.html#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Output plot</span></span>
+<span id="cb7-21"><a href="content.html#cb7-21" aria-hidden="true" tabindex="-1"></a>mtcars_scatter</span></code></pre></div>
+<p><img src="rmarkdown-guide_files/figure-html/content_graph_1-1.png" width="672" /></p>
+<p>You can use the chunk options to control how this graph appears in the document.
+The ones I typically use for outputting graphs are dots per inch (<code>dpi</code>) to control the image quality, <code>out.width</code> and <code>out.height</code> with either specific units or a percentage, and <code>fig.align</code> to change the alignment of the output.
+In the graph below, I’ve set <code>dpi</code> equal to 300, the <code>out.width</code> at 50%, and <code>fig.align</code> to center.
+You can also add a figure caption in the chunk header if you’d like.
+These all go in the curly brackets at the top of the chunk and are separated by commas.</p>
+<pre><code>```{r content_graph_2, dpi=300, out.width=&quot;50%&quot;, fig.align=&quot;center&quot;}
+# Output plot with new chunk options
+mtcars_scatter
+```</code></pre>
 <p><img src="rmarkdown-guide_files/figure-html/content_graph_2-1.png" width="50%" style="display: block; margin: auto;" /></p>
-<p>As a note, the values for <code>out.width</code> and <code>fig.align</code> need to be in quotation marks, while the value for the <code>dpi</code> setting doesn’t. Pay attention to which values have quotes around them in the column with the default values in the chunk options section of the <a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">reference guide</a>. You’ll get an error when you try to render the document if you don’t have appropriate quotation marks.</p>
+<p>As a note, the values for <code>out.width</code> and <code>fig.align</code> need to be in quotation marks, while the value for the <code>dpi</code> setting doesn’t.
+Pay attention to which values have quotes around them in the column with the default values in the chunk options section of the <a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">reference guide</a>.
+You’ll get an error when you try to render the document if you don’t have appropriate quotation marks.</p>
 </div>
 <div id="tables" class="section level3" number="5.3.3">
 <h3><span class="header-section-number">5.3.3</span> Tables</h3>
-<p>There are many ways to create tables in R. My preferred way is with <code>knitr::kable</code> and <code>kableExtra</code>. Together these allow you to create “complex tables and manipulate table styles” as the <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">documentation</a> says. You use the pipe operator <code>%&gt;%</code> from <code>magrittr</code> the way you use the plus sign for <code>ggplot</code> to add layers of formatting. If you don’t specify the output format, <code>knitr</code> will automatically create an HTML table for you unless you’re rendering to a PDF when it will use LaTeX. You can override this locally in <code>kable</code> or globally with <code>knitr::options</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="content.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get coefficients table from mpg_summary</span></span>
-<span id="cb13-2"><a href="content.html#cb13-2" aria-hidden="true" tabindex="-1"></a>mpg_coefs <span class="ot">&lt;-</span> mpg_summary<span class="sc">$</span>coefficients</span>
-<span id="cb13-3"><a href="content.html#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="content.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create minimal table</span></span>
-<span id="cb13-5"><a href="content.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Pass table to kable, then format with kable_styling</span></span>
-<span id="cb13-6"><a href="content.html#cb13-6" aria-hidden="true" tabindex="-1"></a>mpg_coefs <span class="sc">%&gt;%</span></span>
-<span id="cb13-7"><a href="content.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb13-8"><a href="content.html#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<p>There are many ways to create tables in R. My preferred way is with <code>knitr::kable</code> and <code>kableExtra</code>.
+Together these allow you to create “complex tables and manipulate table styles” as the <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">documentation</a> says.
+You use the pipe operator <code>%&gt;%</code> from <code>magrittr</code> the way you use the plus sign for <code>ggplot</code> to add layers of formatting.
+If you don’t specify the output format, <code>knitr</code> will automatically create an HTML table for you unless you’re rendering to a PDF when it will use LaTeX.
+You can override this locally in <code>kable</code> or globally with <code>knitr::options</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="content.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get coefficients table from mpg_summary</span></span>
+<span id="cb9-2"><a href="content.html#cb9-2" aria-hidden="true" tabindex="-1"></a>mpg_coefs <span class="ot">&lt;-</span> mpg_summary<span class="sc">$</span>coefficients</span>
+<span id="cb9-3"><a href="content.html#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="content.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create minimal table</span></span>
+<span id="cb9-5"><a href="content.html#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Pass table to kable, then format with kable_styling</span></span>
+<span id="cb9-6"><a href="content.html#cb9-6" aria-hidden="true" tabindex="-1"></a>mpg_coefs <span class="sc">%&gt;%</span></span>
+<span id="cb9-7"><a href="content.html#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="content.html#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -449,36 +486,46 @@ wt
 </tr>
 </tbody>
 </table>
-<p>This is obviously a very minimal table. The documentation for HTML and LaTeX tables is great, so if you’re looking for something in particular it will be relatively easy for you to find. I have a more complex example in Section <a href="format.html#csshtml">6.4.2</a>, to which I added custom CSS code, among other things. You can see what the output of that code would look like in my <a href="https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.pdf">Psychonomics poster</a>.</p>
+<p>This is obviously a very minimal table.
+The documentation for HTML and LaTeX tables is great, so if you’re looking for something in particular it will be relatively easy for you to find.
+I have a more complex example in Section <a href="format.html#csshtml">6.4.2</a>, to which I added custom CSS code, among other things.
+You can see what the output of that code would look like in my <a href="https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.pdf">Psychonomics poster</a>.</p>
 </div>
 <div id="images" class="section level3" number="5.3.4">
 <h3><span class="header-section-number">5.3.4</span> Images</h3>
-<p>It’s very easy to embed images. You’ve already seen this in Section <a href="intro.html#chunkex">2.3</a>. Just use the <code>knitr::include_graphics</code> function, and you can control the output as you would for a graph by specifying the chunk options. You can also use CSS or <code>![caption](file/path)</code> notation, but I find the chunk approach to be more straight-forward.</p>
-<p>When I have very complex graphs that take a long time to render, or graphs that don’t play very nicely with R Markdown (like those from <code>corrplot</code>), I’ll save them as images and include them this way.</p>
-<p>I also save graphs as images first when I need to crop them to maintain the correct aspect ratio. This is true of the participant maps I created for my <a href="https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.pdf">Psychonomics</a> and <a href="https://github.com/hollzzar/CNS-2020-poster/blob/master/CNS_2020.pdf">CNS</a> posters. Instead of using <code>knitr::include_graphics</code>, I use <code>image_read</code> from the <code>magick</code> package to load the image, followed by the <code>image_trim</code> function (you can’t go straight from a <code>ggplot</code> graph to these functions).</p>
+<p>It’s very easy to embed images.
+Just use the <code>knitr::include_graphics</code> function, and you can control the output as you would for a graph by specifying the chunk options.
+You can also use CSS or <code>![caption](file/path)</code> notation, but I find the chunk approach to be more straight-forward.
+When I have very complex graphs that take a long time to render, or graphs that don’t play very nicely with R Markdown (like those from <code>corrplot</code>), I’ll save them as images and include them this way.</p>
+<p>I also save graphs as images first when I need to crop them to maintain the correct aspect ratio.
+This is true of the participant maps I created for my <a href="https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.pdf">Psychonomics</a> and <a href="https://github.com/hollzzar/CNS-2020-poster/blob/master/CNS_2020.pdf">CNS</a> posters.
+Instead of using <code>knitr::include_graphics</code>, I use <code>image_read</code> from the <code>magick</code> package to load the image, followed by the <code>image_trim</code> function (you can’t go straight from a <code>ggplot</code> graph to these functions).</p>
 </div>
 </div>
 <div id="rintext" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Inline R</h2>
-<p>A very useful aspect of R Markdown is that you can call R objects and functions in markdown or the YAML header by sandwiching them between backticks. For example, let’s say I want to report on the names of the flower species in the <a href="https://archive.ics.uci.edu/ml/datasets/iris"><code>iris</code> dataset</a>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="content.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull species column from iris and get unique values in column</span></span>
-<span id="cb14-2"><a href="content.html#cb14-2" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">pull</span>(Species) <span class="sc">%&gt;%</span> <span class="fu">unique</span>()</span>
-<span id="cb14-3"><a href="content.html#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="content.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print species variable</span></span>
-<span id="cb14-5"><a href="content.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(species)</span></code></pre></div>
+<p>A very useful aspect of R Markdown is that you can call R objects and functions in markdown or the YAML header by sandwiching them between backticks.
+For example, let’s say I want to report on the names of the flower species in the <a href="https://archive.ics.uci.edu/ml/datasets/iris"><code>iris</code> dataset</a>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="content.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull species column from iris and get unique values in column</span></span>
+<span id="cb10-2"><a href="content.html#cb10-2" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">pull</span>(Species) <span class="sc">%&gt;%</span> <span class="fu">unique</span>()</span>
+<span id="cb10-3"><a href="content.html#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="content.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print species variable</span></span>
+<span id="cb10-5"><a href="content.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(species)</span></code></pre></div>
 <pre><code>## [1] setosa     versicolor virginica 
 ## Levels: setosa versicolor virginica</code></pre>
 <p>Maybe I also want to save a variable with the number of species in this list.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="content.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get number of unique species</span></span>
-<span id="cb16-2"><a href="content.html#cb16-2" aria-hidden="true" tabindex="-1"></a>species_count <span class="ot">&lt;-</span> <span class="fu">length</span>(species)</span>
-<span id="cb16-3"><a href="content.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="content.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print number of species</span></span>
-<span id="cb16-5"><a href="content.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(species_count)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="content.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get number of unique species</span></span>
+<span id="cb12-2"><a href="content.html#cb12-2" aria-hidden="true" tabindex="-1"></a>species_count <span class="ot">&lt;-</span> <span class="fu">length</span>(species)</span>
+<span id="cb12-3"><a href="content.html#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="content.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print number of species</span></span>
+<span id="cb12-5"><a href="content.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(species_count)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<p>I can call <code>species</code> and <code>species_count</code> in the markdown text to reference these variables dynamically. Just as in a code chunk, I have to specify that I’m working with R code by including a lower-case r in the backticks with the variable.</p>
-<p>So if I put “r species_count” between backticks, I can report that there are 3 species without typing out the number itself. Or I can reference the variable with the exact species names: setosa, versicolor, virginica. You can see what the markdown looks like in the screenshot below.</p>
-<p><img src="images/content_intext_iris.png" width="\textwidth" /></p>
-<p>You’ll also note that <code>knitr</code> automatically put commas between the species names. To be honest, this is an aspect of R Markdown that I don’t explore very much. I tend to format the variables exactly how I want them to appear in the text before referencing them with inline code. If I find a good explanation of this behavior, I’ll link to it here.</p>
+<p>I can call <code>species</code> and <code>species_count</code> in the markdown text to reference these variables dynamically.
+Just as in a code chunk, I have to specify that I’m working with R code by including a lower-case r in the backticks with the variable.</p>
+<p>So if I put <code>r species_count</code> between backticks, I can report that there are 3 species without typing out the number itself. Or I can reference the variable with the exact species names: setosa, versicolor, virginica.</p>
+<p>You’ll also note that <code>knitr</code> automatically put commas between the species names.
+To be honest, this is an aspect of R Markdown that I don’t explore very much.
+I tend to format the variables exactly how I want them to appear in the text before referencing them with inline code.</p>
 
 </div>
 </div>

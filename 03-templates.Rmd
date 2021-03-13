@@ -6,7 +6,8 @@
 
 ## Built-in templates
 
-R Markdown has several output templates built in, and you just have to specify them with the YAML **output** parameter. These include:
+R Markdown has several built-in output templates that you just have to specify them with the YAML **output** option. 
+These include:
 
 - [Presentations](https://rmarkdown.rstudio.com/lesson-11.html)
   - ioslides and Slidy for HTML
@@ -15,7 +16,9 @@ R Markdown has several output templates built in, and you just have to specify t
 
 ## Templates from R packages {#packages}
 
-You can also download specific templates from CRAN and GitHub. You use them the same way as the built-in templates by specifying them in the YAML header. A few that I've used or played with include:
+You can also download specific templates from CRAN or GitHub. 
+You use them the same way as the built-in templates by specifying them in the YAML header. 
+A few that I've used or played with include:
 
 - Presentations: [`revealjs`](https://cran.r-project.org/web/packages/revealjs/index.html)
 - CVs: [`vitae`](https://github.com/mitchelloharawild/vitae)
@@ -30,17 +33,28 @@ There are also ways to include templates for other output types in the YAML head
 
 ### PDF
 
-For PDFs, you can include LaTeX templates, but you need to pay attention to the use of \$. The PLOS template shown in the image below failed to compile when I first downloaded it, because \$ are special characters for pandoc. After I added a second \$ throughout the document (you just use find and replace for this), it worked. See Section \@ref(latexpacks) for calling specific LaTeX packages in R Markdown.
+For PDFs, you can include LaTeX templates, but you need to pay attention to the use of \$. 
+The PLOS template referenced in the example below failed to compile when I first downloaded it, because \$ are special characters for pandoc. 
+After I added a second \$ throughout the document (just using *find and replace*), it worked.
 
-```{r template_latex, echo=FALSE}
-knitr::include_graphics("images/template_latex.png")
 ```
+---
+output:
+  pdf_document:
+    template: plos_latex_template.tex
+---
+```
+
+See Section \@ref(latexpacks) for calling specific LaTeX packages in R Markdown.
 
 ### Word
 
-You can also set up Word templates. To do this, you need to use the Styles Pane in the Word Document you want to use as a template. Highlight the text you want to format, make the desired changes, then find the style that applies to that section, and find "Update to Match Selection" in the dropdown menu. 
+You can also set up Word templates. 
+To do this, you need to use the *Styles Pane* in the Word Document you want to use as a template. 
+Highlight the text you want to format, make the desired changes, then find the style that applies to that section, and find *Update to Match Selection* in the dropdown menu.
 
-In the example below, you can see that I'm editing the "Title" format, so I need to update that particular entry in the Styles Pane. You have to do this for every text element in the document, but once you've set it up once this way, you can simply include it the same way as the LaTeX template shown above.
+In the example below, you can see that I'm editing the *Title* format, so I need to update that particular entry in the Styles Pane. 
+You have to do this for every text element in the document, but once you've set it up, you can simply include it the same way as the LaTeX template shown above.
 
 ```{r template_word, echo=FALSE}
 knitr::include_graphics("images/template_word.png")

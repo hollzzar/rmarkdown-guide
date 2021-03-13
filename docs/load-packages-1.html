@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Load packages | R Markdown for Psychology Graduate Students</title>
+  <meta name="description" content="Guide to using R Markdown" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Load packages | R Markdown for Psychology Graduate Students" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Guide to using R Markdown" />
+  <meta name="github-repo" content="hollzzar/rmarkdown-guide" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Load packages | R Markdown for Psychology Graduate Students" />
+  
+  <meta name="twitter:description" content="Guide to using R Markdown" />
+  
+
+<meta name="author" content="Holly Zaharchuk" />
+
+
+<meta name="date" content="2021-03-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="package-list.html"/>
+<link rel="next" href="output.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Markdown for Psychology Graduate Students</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#general-tips"><i class="fa fa-check"></i><b>1.2.1</b> General tips</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#general-reference-documents"><i class="fa fa-check"></i><b>1.2.2</b> General reference documents</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Parts of a document</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#yaml-header"><i class="fa fa-check"></i><b>2.1</b> YAML header</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#markintro"><i class="fa fa-check"></i><b>2.2</b> Markdown</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#chunkex"><i class="fa fa-check"></i><b>2.3</b> Code chunks</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#load-packages"><i class="fa fa-check"></i><b>2.4</b> Load packages</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="package-list.html"><a href="package-list.html"><i class="fa fa-check"></i><b>3</b> Package list</a></li>
+<li class="chapter" data-level="4" data-path="load-packages-1.html"><a href="load-packages-1.html"><i class="fa fa-check"></i><b>4</b> Load packages</a></li>
+<li class="chapter" data-level="5" data-path="output.html"><a href="output.html"><i class="fa fa-check"></i><b>5</b> Outputs</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="output.html"><a href="output.html#output-options"><i class="fa fa-check"></i><b>5.1</b> Output options</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="output.html"><a href="output.html#html_document"><i class="fa fa-check"></i><b>5.1.1</b> html_document</a></li>
+<li class="chapter" data-level="5.1.2" data-path="output.html"><a href="output.html#pdf_document"><i class="fa fa-check"></i><b>5.1.2</b> pdf_document</a></li>
+<li class="chapter" data-level="5.1.3" data-path="output.html"><a href="output.html#word_document"><i class="fa fa-check"></i><b>5.1.3</b> word_document</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="output.html"><a href="output.html#rendering-options"><i class="fa fa-check"></i><b>5.2</b> Rendering options</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="output.html"><a href="output.html#knit"><i class="fa fa-check"></i><b>5.2.1</b> Knit</a></li>
+<li class="chapter" data-level="5.2.2" data-path="output.html"><a href="output.html#rmarkdownrender"><i class="fa fa-check"></i><b>5.2.2</b> <code>rmarkdown::render</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="output.html"><a href="output.html#rendering-process"><i class="fa fa-check"></i><b>5.3</b> Rendering process</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>6</b> Templates</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="template.html"><a href="template.html#built-in-templates"><i class="fa fa-check"></i><b>6.1</b> Built-in templates</a></li>
+<li class="chapter" data-level="6.2" data-path="template.html"><a href="template.html#packages"><i class="fa fa-check"></i><b>6.2</b> Templates from R packages</a></li>
+<li class="chapter" data-level="6.3" data-path="template.html"><a href="template.html#usedef"><i class="fa fa-check"></i><b>6.3</b> User-defined templates</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="template.html"><a href="template.html#pdf"><i class="fa fa-check"></i><b>6.3.1</b> PDF</a></li>
+<li class="chapter" data-level="6.3.2" data-path="template.html"><a href="template.html#word"><i class="fa fa-check"></i><b>6.3.2</b> Word</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i><b>7</b> Content</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="content.html"><a href="content.html#markdown-overview"><i class="fa fa-check"></i><b>7.1</b> Markdown overview</a></li>
+<li class="chapter" data-level="7.2" data-path="content.html"><a href="content.html#special-characters"><i class="fa fa-check"></i><b>7.2</b> Special characters</a></li>
+<li class="chapter" data-level="7.3" data-path="content.html"><a href="content.html#chunk-output"><i class="fa fa-check"></i><b>7.3</b> Chunk output</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="content.html"><a href="content.html#dat"><i class="fa fa-check"></i><b>7.3.1</b> Data</a></li>
+<li class="chapter" data-level="7.3.2" data-path="content.html"><a href="content.html#graph"><i class="fa fa-check"></i><b>7.3.2</b> Graphs</a></li>
+<li class="chapter" data-level="7.3.3" data-path="content.html"><a href="content.html#tables"><i class="fa fa-check"></i><b>7.3.3</b> Tables</a></li>
+<li class="chapter" data-level="7.3.4" data-path="content.html"><a href="content.html#images"><i class="fa fa-check"></i><b>7.3.4</b> Images</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="content.html"><a href="content.html#rintext"><i class="fa fa-check"></i><b>7.4</b> Inline R</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="format.html"><a href="format.html"><i class="fa fa-check"></i><b>8</b> Formatting</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="format.html"><a href="format.html#yaml-parameters"><i class="fa fa-check"></i><b>8.1</b> YAML parameters</a></li>
+<li class="chapter" data-level="8.2" data-path="format.html"><a href="format.html#yamlref"><i class="fa fa-check"></i><b>8.2</b> YAML references</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="format.html"><a href="format.html#bib"><i class="fa fa-check"></i><b>8.2.1</b> .bib</a></li>
+<li class="chapter" data-level="8.2.2" data-path="format.html"><a href="format.html#csl"><i class="fa fa-check"></i><b>8.2.2</b> .csl</a></li>
+<li class="chapter" data-level="8.2.3" data-path="format.html"><a href="format.html#cls-and-.css"><i class="fa fa-check"></i><b>8.2.3</b> .cls and .css</a></li>
+<li class="chapter" data-level="8.2.4" data-path="format.html"><a href="format.html#luaex"><i class="fa fa-check"></i><b>8.2.4</b> .lua</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="format.html"><a href="format.html#editing-templates"><i class="fa fa-check"></i><b>8.3</b> Editing templates</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="format.html"><a href="format.html#clsex"><i class="fa fa-check"></i><b>8.3.1</b> Directory documents</a></li>
+<li class="chapter" data-level="8.3.2" data-path="format.html"><a href="format.html#package-documents"><i class="fa fa-check"></i><b>8.3.2</b> Package documents</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="format.html"><a href="format.html#inline-code"><i class="fa fa-check"></i><b>8.4</b> Inline code</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="format.html"><a href="format.html#latexpacks"><i class="fa fa-check"></i><b>8.4.1</b> LaTeX</a></li>
+<li class="chapter" data-level="8.4.2" data-path="format.html"><a href="format.html#csshtml"><i class="fa fa-check"></i><b>8.4.2</b> CSS/HTML</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="format.html"><a href="format.html#help"><i class="fa fa-check"></i><b>8.5</b> Custom functions</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>9</b> Organization</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="organization.html"><a href="organization.html#child-documents"><i class="fa fa-check"></i><b>9.1</b> <code>child</code> documents</a></li>
+<li class="chapter" data-level="9.2" data-path="organization.html"><a href="organization.html#source"><i class="fa fa-check"></i><b>9.2</b> Sourcing code</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="trouble.html"><a href="trouble.html"><i class="fa fa-check"></i><b>10</b> Troubleshooting</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="trouble.html"><a href="trouble.html#warnings-vs.-errors"><i class="fa fa-check"></i><b>10.1</b> Warnings vs. errors</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="trouble.html"><a href="trouble.html#warnings"><i class="fa fa-check"></i><b>10.1.1</b> Warnings</a></li>
+<li class="chapter" data-level="10.1.2" data-path="trouble.html"><a href="trouble.html#errors"><i class="fa fa-check"></i><b>10.1.2</b> Errors</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="trouble.html"><a href="trouble.html#environments"><i class="fa fa-check"></i><b>10.2</b> Environments</a></li>
+<li class="chapter" data-level="10.3" data-path="trouble.html"><a href="trouble.html#package-issues"><i class="fa fa-check"></i><b>10.3</b> Package issues</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="trouble.html"><a href="trouble.html#package-specification"><i class="fa fa-check"></i><b>10.3.1</b> Package specification</a></li>
+<li class="chapter" data-level="10.3.2" data-path="trouble.html"><a href="trouble.html#updates"><i class="fa fa-check"></i><b>10.3.2</b> Updates</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="trouble.html"><a href="trouble.html#strategies"><i class="fa fa-check"></i><b>10.4</b> Strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="supplement.html"><a href="supplement.html"><i class="fa fa-check"></i><b>11</b> Supplementary materials</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="supplement.html"><a href="supplement.html#beginner-r"><i class="fa fa-check"></i><b>11.1</b> Beginner R</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="supplement.html"><a href="supplement.html#basic-r-functionality"><i class="fa fa-check"></i><b>11.1.1</b> Basic R functionality</a></li>
+<li class="chapter" data-level="11.1.2" data-path="supplement.html"><a href="supplement.html#variables"><i class="fa fa-check"></i><b>11.1.2</b> Variables</a></li>
+<li class="chapter" data-level="11.1.3" data-path="supplement.html"><a href="supplement.html#functions"><i class="fa fa-check"></i><b>11.1.3</b> Functions</a></li>
+<li class="chapter" data-level="11.1.4" data-path="supplement.html"><a href="supplement.html#base-r"><i class="fa fa-check"></i><b>11.1.4</b> <code>base</code> R</a></li>
+<li class="chapter" data-level="11.1.5" data-path="supplement.html"><a href="supplement.html#scholarex"><i class="fa fa-check"></i><b>11.1.5</b> Packages</a></li>
+<li class="chapter" data-level="11.1.6" data-path="supplement.html"><a href="supplement.html#operators"><i class="fa fa-check"></i><b>11.1.6</b> Operators</a></li>
+<li class="chapter" data-level="11.1.7" data-path="supplement.html"><a href="supplement.html#reading-in-data"><i class="fa fa-check"></i><b>11.1.7</b> Reading in data</a></li>
+<li class="chapter" data-level="11.1.8" data-path="supplement.html"><a href="supplement.html#tidy-r-philosophy"><i class="fa fa-check"></i><b>11.1.8</b> Tidy R philosophy</a></li>
+<li class="chapter" data-level="11.1.9" data-path="supplement.html"><a href="supplement.html#manipulating-data-with-tidyr"><i class="fa fa-check"></i><b>11.1.9</b> Manipulating data with <code>tidyr</code></a></li>
+<li class="chapter" data-level="11.1.10" data-path="supplement.html"><a href="supplement.html#other-helpful-tidyr-functions"><i class="fa fa-check"></i><b>11.1.10</b> Other helpful <code>tidyr</code> functions</a></li>
+<li class="chapter" data-level="11.1.11" data-path="supplement.html"><a href="supplement.html#helpful-base-r-functions"><i class="fa fa-check"></i><b>11.1.11</b> Helpful <code>base</code> R functions</a></li>
+<li class="chapter" data-level="11.1.12" data-path="supplement.html"><a href="supplement.html#other-packages-and-functions"><i class="fa fa-check"></i><b>11.1.12</b> Other packages and functions</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="supplement.html"><a href="supplement.html#intermediate-r"><i class="fa fa-check"></i><b>11.2</b> Intermediate R</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="supplement.html"><a href="supplement.html#free-response-text"><i class="fa fa-check"></i><b>11.2.1</b> Free-response text</a></li>
+<li class="chapter" data-level="11.2.2" data-path="supplement.html"><a href="supplement.html#dynamic-variables"><i class="fa fa-check"></i><b>11.2.2</b> Dynamic variables</a></li>
+<li class="chapter" data-level="11.2.3" data-path="supplement.html"><a href="supplement.html#helpful-functions"><i class="fa fa-check"></i><b>11.2.3</b> Helpful functions</a></li>
+<li class="chapter" data-level="11.2.4" data-path="supplement.html"><a href="supplement.html#other-tips"><i class="fa fa-check"></i><b>11.2.4</b> Other tips</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="supplement.html"><a href="supplement.html#ggplotinfo"><i class="fa fa-check"></i><b>11.3</b> Graphing with <code>ggplot</code></a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="supplement.html"><a href="supplement.html#formatting"><i class="fa fa-check"></i><b>11.3.1</b> Formatting</a></li>
+<li class="chapter" data-level="11.3.2" data-path="supplement.html"><a href="supplement.html#visualizing"><i class="fa fa-check"></i><b>11.3.2</b> Visualizing</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="supplement.html"><a href="supplement.html#practice-materials"><i class="fa fa-check"></i><b>11.4</b> Practice materials</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/hollzzar/rmarkdown-guide" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Markdown for Psychology Graduate Students</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="load-packages-1" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Load packages</h1>
+<p>pacman::p_load(pkg_list, character.only = TRUE)
+```</p>
+<p>There are multiple ways to run code chunks to test them in RStudio before creating your output. You can run code like you would in R by highlighting the relevant lines of code and hitting CTRL/command + enter. You can also hit the green “play” button in the upper right-hand corner of the chunk.</p>
+<p>Each chunk is an island, so if you haven’t run a previous chunk that contains some variable you need in the chunk you want to run, it’ll throw an error. At the top right of your open .Rmd document in RStudio, you’ll also see a <strong>Run</strong> dropdown menu. There, you can choose different options for running certain code chunks.</p>
+<p>Tip: you can use the chunk option “cache = TRUE” for very time-consuming chunks, but there are some catches as described <a href="https://bookdown.org/yihui/rmarkdown-cookbook/cache.html">here</a>.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="package-list.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="output.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/hollzzar/rmarkdown-guide/edit/master/01-parts.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["rmarkdown-guide.pdf", "rmarkdown-guide.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
