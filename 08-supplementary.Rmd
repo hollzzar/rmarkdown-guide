@@ -259,7 +259,7 @@ Now for some general tips on using `ggplot`. I'll go over the following topics:
   - Color palettes
   - `color` vs. `fill`
   - Using the `theme` function
-- Visualizing
+- Visualization
   - Using `Rmisc` for error bars
   - Using `patchwork` to combine multiple plots
   
@@ -299,7 +299,7 @@ format_list <- list(scale_y_continuous(expand = c(0,0), limits = c(0,6)),
   # Move legend to the bottom
 mtcars_scatter <- ggplot(mtcars) +
   geom_jitter(aes(mpg, wt, color = cyl)) +
-  geom_smooth(aes(mpg, wt), method = "lm", se = TRUE, level = 0.95, 
+  geom_smooth(formula = y ~ x, aes(mpg, wt), method = "lm", se = TRUE, level = 0.95, 
               fill = "#d7d8db", color = "black", size = 0.5) +
   format_list +
   theme(legend.position = "bottom")
@@ -322,7 +322,7 @@ The description for this function says it best: "Themes are a powerful way to cu
 I typically layer `theme_classic` with several `theme` specifications. 
 Search `?theme` in your R console or Help window for the full list of parameters.
 
-### Visualizing
+### Visualization
 
 I often need to make bar graphs to present data. 
 I also tend to want to include error bars on these bar graphs. 
@@ -345,7 +345,9 @@ mtcars_long <- mtcars %>%
                             labels = c("Miles per gallon", "Vehicle weight (1000 lbs)")))
 
 # Make error table
-mtcars_error <- summarySE(mtcars_long, measurevar = "measures", groupvars = c("cyl", "variables"))
+mtcars_error <- summarySE(mtcars_long, 
+                          measurevar = "measures", 
+                          groupvars = c("cyl", "variables"))
 
 # Output error table
 mtcars_error
@@ -362,7 +364,7 @@ mtcars_bar <- ggplot(mtcars_error, aes(cyl, measures, fill = cyl)) +
   geom_errorbar(aes(ymin = measures - ci, ymax = measures + ci), 
                 width = 0.1, position = position_dodge(0.9)) +
   coord_flip() +
-  scale_y_continuous(expand = expand_scale(mult = c(0, .2))) +
+  scale_y_continuous(expand = expansion(mult = c(0, .2))) +
   scale_fill_brewer(type = "qual", palette = "Paired") +
   theme_classic() +
   facet_wrap(~ variables, scales = "free_x") +

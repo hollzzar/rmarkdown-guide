@@ -160,11 +160,7 @@ Otherwise, you have to find out where your computer stores your R packages and e
 
 Some templates output formatting documents in your working directory. 
 These are easier to access and edit. 
-For example, knitting the `vitae::awesomecv` template created a .cls file that I could edit to change font sizes/colors.
-
-```{r format_template_dir, echo=FALSE}
-knitr::include_graphics("images/template_dir.png")
-```
+For example, knitting the `vitae::awesomecv` template creates a .cls file that can be edited to change font sizes/colors.
 
 ### Package documents
 
@@ -191,7 +187,7 @@ kable(pstr) %>%
 To edit package documents once you've located them, you should proceed with caution. 
 Be sure to:
 
-- Save the original template and move it to a different location (in the example below, I made the "original" folder and put the original template there)
+- Save the original template and move it to a different location (in the example below, I made the *original* folder and put the original template there)
 - Make one change at a time, and then re-knit the document to see what changed
 - Name the updated template with the same name in the same place as the original (here, in the "resources" folder)
 
@@ -238,8 +234,7 @@ Here are some examples of using CSS from my [Psychonomics poster](https://github
 This first example includes custom CSS in a `knitr::kable` table to add borders of a particular color between some rows.
 
 ```
-#Knit table
-
+# Knit table
 knitr::kable(stim_table) %>%
   kableExtra::kable_styling(font_size=35) %>%
   collapse_rows(columns = 1:6, valign = "middle") %>%

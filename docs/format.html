@@ -260,7 +260,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="supplement.html"><a href="supplement.html#ggplotinfo"><i class="fa fa-check"></i><b>9.3</b> Graphing with <code>ggplot</code></a>
 <ul>
 <li class="chapter" data-level="9.3.1" data-path="supplement.html"><a href="supplement.html#formatting"><i class="fa fa-check"></i><b>9.3.1</b> Formatting</a></li>
-<li class="chapter" data-level="9.3.2" data-path="supplement.html"><a href="supplement.html#visualizing"><i class="fa fa-check"></i><b>9.3.2</b> Visualizing</a></li>
+<li class="chapter" data-level="9.3.2" data-path="supplement.html"><a href="supplement.html#visualization"><i class="fa fa-check"></i><b>9.3.2</b> Visualization</a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="supplement.html"><a href="supplement.html#practice-materials"><i class="fa fa-check"></i><b>9.4</b> Practice materials</a></li>
 </ul></li>
@@ -405,8 +405,7 @@ Otherwise, you have to find out where your computer stores your R packages and e
 <h3><span class="header-section-number">6.3.1</span> Directory documents</h3>
 <p>Some templates output formatting documents in your working directory.
 These are easier to access and edit.
-For example, knitting the <code>vitae::awesomecv</code> template created a .cls file that I could edit to change font sizes/colors.</p>
-<p><img src="images/template_dir.png" width="\textwidth" /></p>
+For example, knitting the <code>vitae::awesomecv</code> template creates a .cls file that can be edited to change font sizes/colors.</p>
 </div>
 <div id="package-documents" class="section level3" number="6.3.2">
 <h3><span class="header-section-number">6.3.2</span> Package documents</h3>
@@ -474,7 +473,7 @@ pagedown, rmarkdown, yaml
 <p>To edit package documents once you’ve located them, you should proceed with caution.
 Be sure to:</p>
 <ul>
-<li>Save the original template and move it to a different location (in the example below, I made the “original” folder and put the original template there)</li>
+<li>Save the original template and move it to a different location (in the example below, I made the <em>original</em> folder and put the original template there)</li>
 <li>Make one change at a time, and then re-knit the document to see what changed</li>
 <li>Name the updated template with the same name in the same place as the original (here, in the “resources” folder)</li>
 </ul>
@@ -509,8 +508,7 @@ header-includes:
 I have some examples in <a href="https://github.com/hollzzar/markdown-tutorial/blob/master/brownbag_slides.Rmd">these <code>revealjs</code> slides</a>, where I wanted to left-align slide text while keeping titles centered.</p>
 <p>Here are some examples of using CSS from my <a href="https://github.com/hollzzar/psychonomics-poster/blob/master/Psychonomics.Rmd">Psychonomics poster</a>.
 This first example includes custom CSS in a <code>knitr::kable</code> table to add borders of a particular color between some rows.</p>
-<pre><code>#Knit table
-
+<pre><code># Knit table
 knitr::kable(stim_table) %&gt;%
   kableExtra::kable_styling(font_size=35) %&gt;%
   collapse_rows(columns = 1:6, valign = &quot;middle&quot;) %&gt;%

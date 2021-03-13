@@ -78,5 +78,5 @@ helpful-functions
 other-tips
 ggplotinfo
 formatting
-visualizing
+visualization
 practice-materials

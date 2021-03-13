@@ -260,7 +260,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="supplement.html"><a href="supplement.html#ggplotinfo"><i class="fa fa-check"></i><b>9.3</b> Graphing with <code>ggplot</code></a>
 <ul>
 <li class="chapter" data-level="9.3.1" data-path="supplement.html"><a href="supplement.html#formatting"><i class="fa fa-check"></i><b>9.3.1</b> Formatting</a></li>
-<li class="chapter" data-level="9.3.2" data-path="supplement.html"><a href="supplement.html#visualizing"><i class="fa fa-check"></i><b>9.3.2</b> Visualizing</a></li>
+<li class="chapter" data-level="9.3.2" data-path="supplement.html"><a href="supplement.html#visualization"><i class="fa fa-check"></i><b>9.3.2</b> Visualization</a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="supplement.html"><a href="supplement.html#practice-materials"><i class="fa fa-check"></i><b>9.4</b> Practice materials</a></li>
 </ul></li>
@@ -591,7 +591,7 @@ Curie
 <li><code>color</code> vs. <code>fill</code></li>
 <li>Using the <code>theme</code> function</li>
 </ul></li>
-<li>Visualizing
+<li>Visualization
 <ul>
 <li>Using <code>Rmisc</code> for error bars</li>
 <li>Using <code>patchwork</code> to combine multiple plots</li>
@@ -626,7 +626,7 @@ I also have to save these in a <code>list</code>(rather than with <code>c</code>
 <span id="cb63-11"><a href="supplement.html#cb63-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Move legend to the bottom</span></span>
 <span id="cb63-12"><a href="supplement.html#cb63-12" aria-hidden="true" tabindex="-1"></a>mtcars_scatter <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
 <span id="cb63-13"><a href="supplement.html#cb63-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(mpg, wt, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
-<span id="cb63-14"><a href="supplement.html#cb63-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(mpg, wt), <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">level =</span> <span class="fl">0.95</span>, </span>
+<span id="cb63-14"><a href="supplement.html#cb63-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="fu">aes</span>(mpg, wt), <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">level =</span> <span class="fl">0.95</span>, </span>
 <span id="cb63-15"><a href="supplement.html#cb63-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">&quot;#d7d8db&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb63-16"><a href="supplement.html#cb63-16" aria-hidden="true" tabindex="-1"></a>  format_list <span class="sc">+</span></span>
 <span id="cb63-17"><a href="supplement.html#cb63-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
@@ -646,8 +646,8 @@ The description for this function says it best: “Themes are a powerful way to 
 I typically layer <code>theme_classic</code> with several <code>theme</code> specifications.
 Search <code>?theme</code> in your R console or Help window for the full list of parameters.</p>
 </div>
-<div id="visualizing" class="section level3" number="9.3.2">
-<h3><span class="header-section-number">9.3.2</span> Visualizing</h3>
+<div id="visualization" class="section level3" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> Visualization</h3>
 <p>I often need to make bar graphs to present data.
 I also tend to want to include error bars on these bar graphs.
 There are different error bars you can calculate, but I tend to have error bars that represent 95% confident intervals around my means.
@@ -667,10 +667,12 @@ Then, I used the <code>summarySE</code> function to create a table with the mean
 <span id="cb64-10"><a href="supplement.html#cb64-10" aria-hidden="true" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Miles per gallon&quot;</span>, <span class="st">&quot;Vehicle weight (1000 lbs)&quot;</span>)))</span>
 <span id="cb64-11"><a href="supplement.html#cb64-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb64-12"><a href="supplement.html#cb64-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Make error table</span></span>
-<span id="cb64-13"><a href="supplement.html#cb64-13" aria-hidden="true" tabindex="-1"></a>mtcars_error <span class="ot">&lt;-</span> <span class="fu">summarySE</span>(mtcars_long, <span class="at">measurevar =</span> <span class="st">&quot;measures&quot;</span>, <span class="at">groupvars =</span> <span class="fu">c</span>(<span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;variables&quot;</span>))</span>
-<span id="cb64-14"><a href="supplement.html#cb64-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-15"><a href="supplement.html#cb64-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Output error table</span></span>
-<span id="cb64-16"><a href="supplement.html#cb64-16" aria-hidden="true" tabindex="-1"></a>mtcars_error</span></code></pre></div>
+<span id="cb64-13"><a href="supplement.html#cb64-13" aria-hidden="true" tabindex="-1"></a>mtcars_error <span class="ot">&lt;-</span> <span class="fu">summarySE</span>(mtcars_long, </span>
+<span id="cb64-14"><a href="supplement.html#cb64-14" aria-hidden="true" tabindex="-1"></a>                          <span class="at">measurevar =</span> <span class="st">&quot;measures&quot;</span>, </span>
+<span id="cb64-15"><a href="supplement.html#cb64-15" aria-hidden="true" tabindex="-1"></a>                          <span class="at">groupvars =</span> <span class="fu">c</span>(<span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;variables&quot;</span>))</span>
+<span id="cb64-16"><a href="supplement.html#cb64-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-17"><a href="supplement.html#cb64-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Output error table</span></span>
+<span id="cb64-18"><a href="supplement.html#cb64-18" aria-hidden="true" tabindex="-1"></a>mtcars_error</span></code></pre></div>
 <pre><code>##          cyl                 variables  N  measures        sd        se        ci
 ## 1 4-cylinder          Miles per gallon 11 26.663636 4.5098277 1.3597642 3.0297434
 ## 2 4-cylinder Vehicle weight (1000 lbs) 11  2.285727 0.5695637 0.1717299 0.3826381
@@ -687,7 +689,7 @@ You’ll also notice that I changed the width of the error bars and their positi
 <span id="cb66-4"><a href="supplement.html#cb66-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> measures <span class="sc">-</span> ci, <span class="at">ymax =</span> measures <span class="sc">+</span> ci), </span>
 <span id="cb66-5"><a href="supplement.html#cb66-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.9</span>)) <span class="sc">+</span></span>
 <span id="cb66-6"><a href="supplement.html#cb66-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb66-7"><a href="supplement.html#cb66-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expand_scale</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, .<span class="dv">2</span>))) <span class="sc">+</span></span>
+<span id="cb66-7"><a href="supplement.html#cb66-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, .<span class="dv">2</span>))) <span class="sc">+</span></span>
 <span id="cb66-8"><a href="supplement.html#cb66-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Paired&quot;</span>) <span class="sc">+</span></span>
 <span id="cb66-9"><a href="supplement.html#cb66-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
 <span id="cb66-10"><a href="supplement.html#cb66-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> variables, <span class="at">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="sc">+</span></span>

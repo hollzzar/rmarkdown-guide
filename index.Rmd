@@ -31,15 +31,12 @@ pacman::p_load(pkg_list, character.only = TRUE)
 I designed this guide to be a resource for psychology graduate students looking to streamline their research pipelines. 
 
 With R Markdown, you can load, clean, manipulate, analyze, and present your data in one environment. 
-
 This guide focuses on the presentation piece, with information on creating slides, posters, manuscripts, CVs, and reports in several formats, including HTML, PDF, and Microsoft Word.
 
 ## Background
 
 This guide assumes a basic level of familiarity with [R](https://www.r-project.org/) and [RStudio](https://rstudio.com/products/rstudio/download/). 
-
 If you don't know how to use either of these, there are several [beginner tutorials](https://education.rstudio.com/learn/beginner/) you should check out first. 
-
 I have also created primers for Beginner and Intermediate R in Chapter \@ref(supplement).
 
 ## Getting started
@@ -49,9 +46,7 @@ What is R Markdown?
 [Markdown](https://en.wikipedia.org/wiki/Markdown) is a specific [markup language](https://en.wikipedia.org/wiki/Markup_language) with plain text-formatting syntax, of which [R Markdown](https://cran.r-project.org/web/packages/stationery/vignettes/Rmarkdown.pdf) is a specific variety.
 
 R Markdown and R are not the same thing!
-
 R Markdown combines R code (or code from other programming languages) and markdown in the RStudio integrated development environment (IDE). 
-
 This allows you to embed code and text in the same document.
 
 You can install the `rmarkdown` package from CRAN or GitHub:
