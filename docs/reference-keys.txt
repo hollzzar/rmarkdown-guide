@@ -1,7 +1,7 @@
 welcome
 background
 getting-started
-tips
+general-tips
 general-reference-documents
 intro
 yaml-header
@@ -80,7 +80,3 @@ ggplotinfo
 formatting
 visualizing
 practice-materials
-general-tips
-load-packages
-package-list
-load-packages-1

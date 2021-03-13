@@ -143,7 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#tips"><i class="fa fa-check"></i><b>1.2.1</b> Tips</a></li>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#general-tips"><i class="fa fa-check"></i><b>1.2.1</b> General tips</a></li>
 <li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#general-reference-documents"><i class="fa fa-check"></i><b>1.2.2</b> General reference documents</a></li>
 </ul></li>
 </ul></li>
@@ -292,10 +292,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There are several <a href="https://ymlthis.r-lib.org/articles/yaml-fieldguide.html">general YAML options</a> that you can include in the YAML header to format your documents. You can also add <strong>params</strong> to the YAML header that you can specify when you render your document and call in your code chunks to make <a href="https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F">parameterized reports</a>. Some YAML options require quotation marks, while others don’t. In general, if the YAML option is a string of text that you’re specifying, like the title or your name, then it should be in quotes. If you’re setting a programmatic option, like the output type, then it shouldn’t be in quotes.</p>
 <p>For the string options, there’s some custom formatting you can do. The first example below shows how you can center a title and force a line break. The second shows how you can automatically pull the date and time when you knit your document and format it in a particular way. This is actually R code that is embedded in a string by putting the function call between backticks with a lowercase r. You can use the same principle to put R code and functions in the text of an R Markdown document, as described in Section <a href="content.html#rintext">5.4</a>.</p>
 <p><img src="images/formatting_title.png" width="\textwidth" /><img src="images/formatting_date.png" width="\textwidth" /></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="format.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show date formatting code</span></span>
-<span id="cb18-2"><a href="format.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># You can run ?Sys.time in the console for more information </span></span>
-<span id="cb18-3"><a href="format.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># on the options you can pass to format</span></span>
-<span id="cb18-4"><a href="format.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(), <span class="st">&#39;%B %d, %Y&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="format.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show date formatting code</span></span>
+<span id="cb19-2"><a href="format.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># You can run ?Sys.time in the console for more information </span></span>
+<span id="cb19-3"><a href="format.html#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># on the options you can pass to format</span></span>
+<span id="cb19-4"><a href="format.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(), <span class="st">&#39;%B %d, %Y&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;March 12, 2021&quot;</code></pre>
 <p>There are also template-specific parameters, but you’ll need to look at the specific package documentation to know what these are.</p>
 </div>
@@ -339,18 +339,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="package-documents" class="section level3" number="6.3.2">
 <h3><span class="header-section-number">6.3.2</span> Package documents</h3>
 <p>To find out where your packages “live,” you can call <code>installed.packages</code>. When you leave the parentheses blank (i.e., if you don’t provide any arguments), as I’ve done below, the function will return all of the packages you have installed. I’ve stored them as a dataframe, and then filtered for an example. Here, I’m looking at the <code>posterdown</code> package.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="format.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make dataframe with installed packages</span></span>
-<span id="cb20-2"><a href="format.html#cb20-2" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">installed.packages</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb20-3"><a href="format.html#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
-<span id="cb20-4"><a href="format.html#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="format.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull posterdown package </span></span>
-<span id="cb20-6"><a href="format.html#cb20-6" aria-hidden="true" tabindex="-1"></a>pstr <span class="ot">&lt;-</span> pkgs <span class="sc">%&gt;%</span> </span>
-<span id="cb20-7"><a href="format.html#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Package, LibPath, Version, Depends, Imports) <span class="sc">%&gt;%</span></span>
-<span id="cb20-8"><a href="format.html#cb20-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Package <span class="sc">==</span> <span class="st">&quot;posterdown&quot;</span>)</span>
-<span id="cb20-9"><a href="format.html#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-10"><a href="format.html#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Make table</span></span>
-<span id="cb20-11"><a href="format.html#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(pstr) <span class="sc">%&gt;%</span></span>
-<span id="cb20-12"><a href="format.html#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;condensed&quot;</span>, <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">font_size =</span> <span class="dv">12</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="format.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make dataframe with installed packages</span></span>
+<span id="cb21-2"><a href="format.html#cb21-2" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">installed.packages</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="format.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
+<span id="cb21-4"><a href="format.html#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="format.html#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull posterdown package </span></span>
+<span id="cb21-6"><a href="format.html#cb21-6" aria-hidden="true" tabindex="-1"></a>pstr <span class="ot">&lt;-</span> pkgs <span class="sc">%&gt;%</span> </span>
+<span id="cb21-7"><a href="format.html#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Package, LibPath, Version, Depends, Imports) <span class="sc">%&gt;%</span></span>
+<span id="cb21-8"><a href="format.html#cb21-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Package <span class="sc">==</span> <span class="st">&quot;posterdown&quot;</span>)</span>
+<span id="cb21-9"><a href="format.html#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="format.html#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Make table</span></span>
+<span id="cb21-11"><a href="format.html#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(pstr) <span class="sc">%&gt;%</span></span>
+<span id="cb21-12"><a href="format.html#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;condensed&quot;</span>, <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">font_size =</span> <span class="dv">12</span>)</span></code></pre></div>
 <table class="table table-condensed" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -407,65 +407,65 @@ Imports
 <h2><span class="header-section-number">6.5</span> Custom functions</h2>
 <p>If you’re fairly comfortable with R, you can write formatting functions for yourself to make your life easier when you’re referencing variables in your text.</p>
 <p>When I was working on my Master’s thesis, I wrote some custom functions for statistical values that I had to report over and over. This was particularly useful when I had to switch from referring to any <em>p</em> values over .05 as <em>p</em> &gt; .05 to <em>p</em> = the exact value. I just had to change the one function by commenting out a couple lines and re-knit my document. The function is included below; this was the most complicated of the ones I wrote, which included degrees of freedom, <em>t</em> and <em>F</em> values, reaction times, and percentages.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="format.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make number formatting function for p values</span></span>
-<span id="cb21-2"><a href="format.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># val is the p value I want to format</span></span>
-<span id="cb21-3"><a href="format.html#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># format_code specifies whether I want to include the symbol or not</span></span>
-<span id="cb21-4"><a href="format.html#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># format_code defaults to including the symbol</span></span>
-<span id="cb21-5"><a href="format.html#cb21-5" aria-hidden="true" tabindex="-1"></a>p_formatting <span class="ot">&lt;-</span> <span class="cf">function</span>(val, <span class="at">format_code =</span> <span class="dv">1</span>) {</span>
-<span id="cb21-6"><a href="format.html#cb21-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-7"><a href="format.html#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If I want to include the symbol (when I&#39;m calling this variable in text)</span></span>
-<span id="cb21-8"><a href="format.html#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (format_code <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb21-9"><a href="format.html#cb21-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-10"><a href="format.html#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the p value is less than .001, get the less than symbol</span></span>
-<span id="cb21-11"><a href="format.html#cb21-11" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Otherwise, get the equals symbol</span></span>
-<span id="cb21-12"><a href="format.html#cb21-12" aria-hidden="true" tabindex="-1"></a>      <span class="co"># The next line, which I commented out for my thesis,</span></span>
-<span id="cb21-13"><a href="format.html#cb21-13" aria-hidden="true" tabindex="-1"></a>      <span class="co"># looks to see if the value was greater than .05</span></span>
-<span id="cb21-14"><a href="format.html#cb21-14" aria-hidden="true" tabindex="-1"></a>    sign_type <span class="ot">&lt;-</span> <span class="fu">if_else</span>(val <span class="sc">&lt;</span> <span class="fl">0.001</span>, <span class="st">&quot;&lt;&quot;</span>, <span class="st">&quot;=&quot;</span>)</span>
-<span id="cb21-15"><a href="format.html#cb21-15" aria-hidden="true" tabindex="-1"></a>    sign_type <span class="ot">&lt;-</span> <span class="fu">if_else</span>(val <span class="sc">&gt;</span> <span class="fl">0.05</span>, <span class="st">&quot;&gt;&quot;</span>, sign_type)</span>
-<span id="cb21-16"><a href="format.html#cb21-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-17"><a href="format.html#cb21-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the p value is less than .001, set the value equal to .001</span></span>
-<span id="cb21-18"><a href="format.html#cb21-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (sign_type <span class="sc">==</span> <span class="st">&quot;&lt;&quot;</span>) {</span>
-<span id="cb21-19"><a href="format.html#cb21-19" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="st">&quot;.001&quot;</span></span>
-<span id="cb21-20"><a href="format.html#cb21-20" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb21-21"><a href="format.html#cb21-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the p value is greater than .05, set the value equal to .05 </span></span>
-<span id="cb21-22"><a href="format.html#cb21-22" aria-hidden="true" tabindex="-1"></a>      <span class="co"># I commented out these next two lines for my thesis</span></span>
-<span id="cb21-23"><a href="format.html#cb21-23" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (sign_type <span class="sc">==</span> <span class="st">&quot;&gt;&quot;</span>) {</span>
-<span id="cb21-24"><a href="format.html#cb21-24" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="st">&quot;.05&quot;</span></span>
-<span id="cb21-25"><a href="format.html#cb21-25" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb21-26"><a href="format.html#cb21-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Otherwise, get the actual p value,</span></span>
-<span id="cb21-27"><a href="format.html#cb21-27" aria-hidden="true" tabindex="-1"></a>      <span class="co"># round it to three decimal places, and</span></span>
-<span id="cb21-28"><a href="format.html#cb21-28" aria-hidden="true" tabindex="-1"></a>      <span class="co"># remove the leading zero</span></span>
-<span id="cb21-29"><a href="format.html#cb21-29" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb21-30"><a href="format.html#cb21-30" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
-<span id="cb21-31"><a href="format.html#cb21-31" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="fu">substring</span>(val, <span class="dv">2</span>)</span>
-<span id="cb21-32"><a href="format.html#cb21-32" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb21-33"><a href="format.html#cb21-33" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-34"><a href="format.html#cb21-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Combine the new/formatted p value with &gt;, &lt;, or =,</span></span>
-<span id="cb21-35"><a href="format.html#cb21-35" aria-hidden="true" tabindex="-1"></a>      <span class="co"># depending on the p value</span></span>
-<span id="cb21-36"><a href="format.html#cb21-36" aria-hidden="true" tabindex="-1"></a>    val_string <span class="ot">&lt;-</span> <span class="fu">paste</span>(sign_type, val, <span class="at">sep =</span> <span class="st">&quot; &quot;</span>)</span>
-<span id="cb21-37"><a href="format.html#cb21-37" aria-hidden="true" tabindex="-1"></a>    val_string</span>
-<span id="cb21-38"><a href="format.html#cb21-38" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-39"><a href="format.html#cb21-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If I don&#39;t want the symbol (as in a table),</span></span>
-<span id="cb21-40"><a href="format.html#cb21-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># just round the value to three decimal places</span></span>
-<span id="cb21-41"><a href="format.html#cb21-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># and remove the leading zero</span></span>
-<span id="cb21-42"><a href="format.html#cb21-42" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (format_code <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb21-43"><a href="format.html#cb21-43" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-44"><a href="format.html#cb21-44" aria-hidden="true" tabindex="-1"></a>    val <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
-<span id="cb21-45"><a href="format.html#cb21-45" aria-hidden="true" tabindex="-1"></a>    val_string <span class="ot">&lt;-</span> <span class="fu">substring</span>(val, <span class="dv">2</span>)</span>
-<span id="cb21-46"><a href="format.html#cb21-46" aria-hidden="true" tabindex="-1"></a>    val_string</span>
-<span id="cb21-47"><a href="format.html#cb21-47" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-48"><a href="format.html#cb21-48" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb21-49"><a href="format.html#cb21-49" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-50"><a href="format.html#cb21-50" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="format.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make number formatting function for p values</span></span>
+<span id="cb22-2"><a href="format.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># val is the p value I want to format</span></span>
+<span id="cb22-3"><a href="format.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># format_code specifies whether I want to include the symbol or not</span></span>
+<span id="cb22-4"><a href="format.html#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># format_code defaults to including the symbol</span></span>
+<span id="cb22-5"><a href="format.html#cb22-5" aria-hidden="true" tabindex="-1"></a>p_formatting <span class="ot">&lt;-</span> <span class="cf">function</span>(val, <span class="at">format_code =</span> <span class="dv">1</span>) {</span>
+<span id="cb22-6"><a href="format.html#cb22-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-7"><a href="format.html#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If I want to include the symbol (when I&#39;m calling this variable in text)</span></span>
+<span id="cb22-8"><a href="format.html#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (format_code <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb22-9"><a href="format.html#cb22-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-10"><a href="format.html#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the p value is less than .001, get the less than symbol</span></span>
+<span id="cb22-11"><a href="format.html#cb22-11" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Otherwise, get the equals symbol</span></span>
+<span id="cb22-12"><a href="format.html#cb22-12" aria-hidden="true" tabindex="-1"></a>      <span class="co"># The next line, which I commented out for my thesis,</span></span>
+<span id="cb22-13"><a href="format.html#cb22-13" aria-hidden="true" tabindex="-1"></a>      <span class="co"># looks to see if the value was greater than .05</span></span>
+<span id="cb22-14"><a href="format.html#cb22-14" aria-hidden="true" tabindex="-1"></a>    sign_type <span class="ot">&lt;-</span> <span class="fu">if_else</span>(val <span class="sc">&lt;</span> <span class="fl">0.001</span>, <span class="st">&quot;&lt;&quot;</span>, <span class="st">&quot;=&quot;</span>)</span>
+<span id="cb22-15"><a href="format.html#cb22-15" aria-hidden="true" tabindex="-1"></a>    sign_type <span class="ot">&lt;-</span> <span class="fu">if_else</span>(val <span class="sc">&gt;</span> <span class="fl">0.05</span>, <span class="st">&quot;&gt;&quot;</span>, sign_type)</span>
+<span id="cb22-16"><a href="format.html#cb22-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-17"><a href="format.html#cb22-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the p value is less than .001, set the value equal to .001</span></span>
+<span id="cb22-18"><a href="format.html#cb22-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (sign_type <span class="sc">==</span> <span class="st">&quot;&lt;&quot;</span>) {</span>
+<span id="cb22-19"><a href="format.html#cb22-19" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="st">&quot;.001&quot;</span></span>
+<span id="cb22-20"><a href="format.html#cb22-20" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb22-21"><a href="format.html#cb22-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the p value is greater than .05, set the value equal to .05 </span></span>
+<span id="cb22-22"><a href="format.html#cb22-22" aria-hidden="true" tabindex="-1"></a>      <span class="co"># I commented out these next two lines for my thesis</span></span>
+<span id="cb22-23"><a href="format.html#cb22-23" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (sign_type <span class="sc">==</span> <span class="st">&quot;&gt;&quot;</span>) {</span>
+<span id="cb22-24"><a href="format.html#cb22-24" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="st">&quot;.05&quot;</span></span>
+<span id="cb22-25"><a href="format.html#cb22-25" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb22-26"><a href="format.html#cb22-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Otherwise, get the actual p value,</span></span>
+<span id="cb22-27"><a href="format.html#cb22-27" aria-hidden="true" tabindex="-1"></a>      <span class="co"># round it to three decimal places, and</span></span>
+<span id="cb22-28"><a href="format.html#cb22-28" aria-hidden="true" tabindex="-1"></a>      <span class="co"># remove the leading zero</span></span>
+<span id="cb22-29"><a href="format.html#cb22-29" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb22-30"><a href="format.html#cb22-30" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
+<span id="cb22-31"><a href="format.html#cb22-31" aria-hidden="true" tabindex="-1"></a>      val <span class="ot">&lt;-</span> <span class="fu">substring</span>(val, <span class="dv">2</span>)</span>
+<span id="cb22-32"><a href="format.html#cb22-32" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb22-33"><a href="format.html#cb22-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-34"><a href="format.html#cb22-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Combine the new/formatted p value with &gt;, &lt;, or =,</span></span>
+<span id="cb22-35"><a href="format.html#cb22-35" aria-hidden="true" tabindex="-1"></a>      <span class="co"># depending on the p value</span></span>
+<span id="cb22-36"><a href="format.html#cb22-36" aria-hidden="true" tabindex="-1"></a>    val_string <span class="ot">&lt;-</span> <span class="fu">paste</span>(sign_type, val, <span class="at">sep =</span> <span class="st">&quot; &quot;</span>)</span>
+<span id="cb22-37"><a href="format.html#cb22-37" aria-hidden="true" tabindex="-1"></a>    val_string</span>
+<span id="cb22-38"><a href="format.html#cb22-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-39"><a href="format.html#cb22-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If I don&#39;t want the symbol (as in a table),</span></span>
+<span id="cb22-40"><a href="format.html#cb22-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># just round the value to three decimal places</span></span>
+<span id="cb22-41"><a href="format.html#cb22-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># and remove the leading zero</span></span>
+<span id="cb22-42"><a href="format.html#cb22-42" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (format_code <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb22-43"><a href="format.html#cb22-43" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-44"><a href="format.html#cb22-44" aria-hidden="true" tabindex="-1"></a>    val <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;%.3f&quot;</span>, val)</span>
+<span id="cb22-45"><a href="format.html#cb22-45" aria-hidden="true" tabindex="-1"></a>    val_string <span class="ot">&lt;-</span> <span class="fu">substring</span>(val, <span class="dv">2</span>)</span>
+<span id="cb22-46"><a href="format.html#cb22-46" aria-hidden="true" tabindex="-1"></a>    val_string</span>
+<span id="cb22-47"><a href="format.html#cb22-47" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-48"><a href="format.html#cb22-48" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb22-49"><a href="format.html#cb22-49" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-50"><a href="format.html#cb22-50" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>I’ve included an example with this function below to demonstrate how you can really streamline your analysis-to-presentation pipeline with a simple function.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="format.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create arbitrary p value</span></span>
-<span id="cb22-2"><a href="format.html#cb22-2" aria-hidden="true" tabindex="-1"></a>p_value <span class="ot">&lt;-</span> <span class="fl">0.0123</span></span>
-<span id="cb22-3"><a href="format.html#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="format.html#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Format p value including symbol</span></span>
-<span id="cb22-5"><a href="format.html#cb22-5" aria-hidden="true" tabindex="-1"></a>p_value_1 <span class="ot">&lt;-</span> <span class="fu">p_formatting</span>(p_value)</span>
-<span id="cb22-6"><a href="format.html#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="format.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Format p value not including symbol</span></span>
-<span id="cb22-8"><a href="format.html#cb22-8" aria-hidden="true" tabindex="-1"></a>p_value_0 <span class="ot">&lt;-</span> <span class="fu">p_formatting</span>(p_value, <span class="at">format_code =</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="format.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create arbitrary p value</span></span>
+<span id="cb23-2"><a href="format.html#cb23-2" aria-hidden="true" tabindex="-1"></a>p_value <span class="ot">&lt;-</span> <span class="fl">0.0123</span></span>
+<span id="cb23-3"><a href="format.html#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="format.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Format p value including symbol</span></span>
+<span id="cb23-5"><a href="format.html#cb23-5" aria-hidden="true" tabindex="-1"></a>p_value_1 <span class="ot">&lt;-</span> <span class="fu">p_formatting</span>(p_value)</span>
+<span id="cb23-6"><a href="format.html#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="format.html#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Format p value not including symbol</span></span>
+<span id="cb23-8"><a href="format.html#cb23-8" aria-hidden="true" tabindex="-1"></a>p_value_0 <span class="ot">&lt;-</span> <span class="fu">p_formatting</span>(p_value, <span class="at">format_code =</span> <span class="dv">0</span>)</span></code></pre></div>
 <p>Here is the original <em>p</em> value: 0.0123. I can write <em>p</em> = .012 to reference the variable that already has the symbol, or I can reference the variable without the symbol: .012. I’ve included an image of these lines below to give you a sense of how this looks in markdown.</p>
 <p><img src="images/content_intext.png" width="\textwidth" /></p>
 

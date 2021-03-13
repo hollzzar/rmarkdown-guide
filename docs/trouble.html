@@ -143,7 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.2</b> Getting started</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#tips"><i class="fa fa-check"></i><b>1.2.1</b> Tips</a></li>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#general-tips"><i class="fa fa-check"></i><b>1.2.1</b> General tips</a></li>
 <li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#general-reference-documents"><i class="fa fa-check"></i><b>1.2.2</b> General reference documents</a></li>
 </ul></li>
 </ul></li>
@@ -313,13 +313,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Running a chunk executes the code in the console and adds the output to your R environment; however, your R environment is separate from the environment created when knitting a document. When you render your document, it ignores your R environment. <code>knitr</code> runs all of the chunks in order and knits them into the markdown text.</p>
 <p>If you’re getting an error message that says a particular variable or package doesn’t exist when it’s loaded in your R environment, it’s usually because you haven’t included it in a previous chunk.</p>
 <p><img src="images/environment_console.png" width="\textwidth" /><img src="images/environment_var.png" width="\textwidth" /></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="trouble.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define new variable y</span></span>
-<span id="cb23-2"><a href="trouble.html#cb23-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb23-3"><a href="trouble.html#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="trouble.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># When I run this chunk, I get the expected output (150),</span></span>
-<span id="cb23-5"><a href="trouble.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># but it fails when I try to knit the document</span></span>
-<span id="cb23-6"><a href="trouble.html#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># I&#39;ve set eval=FALSE for this chunk, so it doesn&#39;t try to run and prevent my document from knitting</span></span>
-<span id="cb23-7"><a href="trouble.html#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x <span class="sc">+</span> y)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="trouble.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define new variable y</span></span>
+<span id="cb24-2"><a href="trouble.html#cb24-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb24-3"><a href="trouble.html#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="trouble.html#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># When I run this chunk, I get the expected output (150),</span></span>
+<span id="cb24-5"><a href="trouble.html#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># but it fails when I try to knit the document</span></span>
+<span id="cb24-6"><a href="trouble.html#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># I&#39;ve set eval=FALSE for this chunk, so it doesn&#39;t try to run and prevent my document from knitting</span></span>
+<span id="cb24-7"><a href="trouble.html#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x <span class="sc">+</span> y)</span></code></pre></div>
 </div>
 <div id="package-issues" class="section level2" number="8.3">
 <h2><span class="header-section-number">8.3</span> Package issues</h2>
