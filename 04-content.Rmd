@@ -28,7 +28,6 @@ If you're having issues with your document rendering correctly, make sure you ha
 One of my coding/open science mentors at Penn State, [Rick Gilmore](https://github.com/rogilmore), pointed out this useful piece of information to me. 
 `Git`'s version control goes line-by-line, so it's best to put each sentence of markdown on its own line.
 Otherwise, if you change one word in a sentence, the whole paragraph will appear to have changed, rather than just the one sentence.
-This will help with editing later.
 
 ## Special characters
 
