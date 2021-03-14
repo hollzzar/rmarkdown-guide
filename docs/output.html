@@ -157,9 +157,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.1" data-path="output.html"><a href="output.html#output-options"><i class="fa fa-check"></i><b>3.1</b> Output options</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="output.html"><a href="output.html#html_document"><i class="fa fa-check"></i><b>3.1.1</b> html_document</a></li>
-<li class="chapter" data-level="3.1.2" data-path="output.html"><a href="output.html#pdf_document"><i class="fa fa-check"></i><b>3.1.2</b> pdf_document</a></li>
-<li class="chapter" data-level="3.1.3" data-path="output.html"><a href="output.html#word_document"><i class="fa fa-check"></i><b>3.1.3</b> word_document</a></li>
+<li class="chapter" data-level="3.1.1" data-path="output.html"><a href="output.html#html"><i class="fa fa-check"></i><b>3.1.1</b> HTML</a></li>
+<li class="chapter" data-level="3.1.2" data-path="output.html"><a href="output.html#pdf"><i class="fa fa-check"></i><b>3.1.2</b> PDF</a></li>
+<li class="chapter" data-level="3.1.3" data-path="output.html"><a href="output.html#word"><i class="fa fa-check"></i><b>3.1.3</b> Word</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="output.html"><a href="output.html#rendering-options"><i class="fa fa-check"></i><b>3.2</b> Rendering options</a>
 <ul>
@@ -170,12 +170,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> Templates</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#built-in-templates"><i class="fa fa-check"></i><b>4.1</b> Built-in templates</a></li>
+<li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#builtin"><i class="fa fa-check"></i><b>4.1</b> Built-in templates</a></li>
 <li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#packages"><i class="fa fa-check"></i><b>4.2</b> Templates from R packages</a></li>
 <li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#usedef"><i class="fa fa-check"></i><b>4.3</b> User-defined templates</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#pdf"><i class="fa fa-check"></i><b>4.3.1</b> PDF</a></li>
-<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#word"><i class="fa fa-check"></i><b>4.3.2</b> Word</a></li>
+<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#pdf-1"><i class="fa fa-check"></i><b>4.3.1</b> PDF</a></li>
+<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#word-1"><i class="fa fa-check"></i><b>4.3.2</b> Word</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i><b>5</b> Content</a>
@@ -295,34 +295,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 There are also multiple ways to <strong>Knit</strong> or <code>render</code> the output.</p>
 <div id="output-options" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Output options</h2>
-<div id="html_document" class="section level3" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> html_document</h3>
+<div id="html" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> HTML</h3>
 <p>HTML is overall the most flexible.
 It supports the types of content we’re interested in creating as graduate students—tables, graphs, and the like—and you can easily transform your HTML output to a PDF with <code>pagedown::chrome_print(file)</code> if you have Google Chrome.
 The <a href="https://github.com/brentthorne/posterdown">academic poster template</a> that I like to use follows this process.</p>
 </div>
-<div id="pdf_document" class="section level3" number="3.1.2">
-<h3><span class="header-section-number">3.1.2</span> pdf_document</h3>
+<div id="pdf" class="section level3" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> PDF</h3>
 <p>If you’re familiar with LaTeX, you may be inclined to output directly to a PDF, since you can include inline LaTeX code in your documents (more on this in Chapter <a href="format.html#format">6</a>).
 The <a href="https://github.com/mitchelloharawild/vitae">CV</a> and <a href="https://github.com/rosannav/thesis_in_rmarkdown/tree/master/example_thesis">manuscript</a> templates that I use rely on the fine-grained typesetting capabilities of LaTeX.
 To create a PDF, you need to have LaTeX installed locally.
 You should also install the <a href="https://yihui.org/tinytex/"><code>tinytex</code></a> distribution through the R console.</p>
 </div>
-<div id="word_document" class="section level3" number="3.1.3">
-<h3><span class="header-section-number">3.1.3</span> word_document</h3>
+<div id="word" class="section level3" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Word</h3>
 <p>You can also output to Microsoft Word and PowerPoint.
-I often work with colleagues who prefer to edit in Word, so sometimes I need to do this.
-I prefer not to if I can help it, because you lose several important functions; for example, chunk options for aligning and setting the size of graphs and other images don’t work, and <code>kable</code> tables tend not to appear correctly.</p>
+I prefer not to use this option if I can help it, because you lose several important functions; for example, chunk options for aligning and setting the size of graphs and other images don’t work, and <code>kable</code> tables don’t appear correctly.</p>
+<p>There are a few workarounds for these issues.
+Regarding images and graphs, I create them in a separate R script and save them in whatever size and format I need (e.g., .png).
+Then, I include them in my document using a code chunk.</p>
+<p>Regarding tables, the best solution I’ve found is to create them in a separate R Markdown document that knits to HTML, then copy and paste them into the finished Word Document or PowerPoint.
+Obviously, this is not ideal, but this method retains the exact formatting of the tables from the HTML file.
+You can save tables as images as well, but the copy-paste solution works best for journals requiring editable tables.</p>
 </div>
 </div>
 <div id="rendering-options" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Rendering options</h2>
 <div id="knit" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Knit</h3>
-<p>You can specify a particular output type in the YAML header with the <strong>output</strong> option.
+<p>You can specify a particular output type in the YAML header with <code>output: output_format</code>
 Then, you can press the <strong>Knit</strong> button or CTRL/command + shift + K to create or “knit” the document.</p>
 <p>Be sure to pay attention to indentation and colon placement in your YAML header, especially as you start to specify options for particular output types.
-As a rule of thumb, if you have anything more than <strong>output: output_format</strong>, you need to indent every new line, and have a colon at the end of the previous line.
+As a rule of thumb, if you have anything more than <code>output: output_format</code>, you need to indent every new line, and have a colon at the end of the previous line.
 See Section <a href="template.html#usedef">4.3</a> for an example of this.</p>
 </div>
 <div id="rmarkdownrender" class="section level3" number="3.2.2">

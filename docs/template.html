@@ -157,9 +157,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.1" data-path="output.html"><a href="output.html#output-options"><i class="fa fa-check"></i><b>3.1</b> Output options</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="output.html"><a href="output.html#html_document"><i class="fa fa-check"></i><b>3.1.1</b> html_document</a></li>
-<li class="chapter" data-level="3.1.2" data-path="output.html"><a href="output.html#pdf_document"><i class="fa fa-check"></i><b>3.1.2</b> pdf_document</a></li>
-<li class="chapter" data-level="3.1.3" data-path="output.html"><a href="output.html#word_document"><i class="fa fa-check"></i><b>3.1.3</b> word_document</a></li>
+<li class="chapter" data-level="3.1.1" data-path="output.html"><a href="output.html#html"><i class="fa fa-check"></i><b>3.1.1</b> HTML</a></li>
+<li class="chapter" data-level="3.1.2" data-path="output.html"><a href="output.html#pdf"><i class="fa fa-check"></i><b>3.1.2</b> PDF</a></li>
+<li class="chapter" data-level="3.1.3" data-path="output.html"><a href="output.html#word"><i class="fa fa-check"></i><b>3.1.3</b> Word</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="output.html"><a href="output.html#rendering-options"><i class="fa fa-check"></i><b>3.2</b> Rendering options</a>
 <ul>
@@ -170,12 +170,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="template.html"><a href="template.html"><i class="fa fa-check"></i><b>4</b> Templates</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#built-in-templates"><i class="fa fa-check"></i><b>4.1</b> Built-in templates</a></li>
+<li class="chapter" data-level="4.1" data-path="template.html"><a href="template.html#builtin"><i class="fa fa-check"></i><b>4.1</b> Built-in templates</a></li>
 <li class="chapter" data-level="4.2" data-path="template.html"><a href="template.html#packages"><i class="fa fa-check"></i><b>4.2</b> Templates from R packages</a></li>
 <li class="chapter" data-level="4.3" data-path="template.html"><a href="template.html#usedef"><i class="fa fa-check"></i><b>4.3</b> User-defined templates</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#pdf"><i class="fa fa-check"></i><b>4.3.1</b> PDF</a></li>
-<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#word"><i class="fa fa-check"></i><b>4.3.2</b> Word</a></li>
+<li class="chapter" data-level="4.3.1" data-path="template.html"><a href="template.html#pdf-1"><i class="fa fa-check"></i><b>4.3.1</b> PDF</a></li>
+<li class="chapter" data-level="4.3.2" data-path="template.html"><a href="template.html#word-1"><i class="fa fa-check"></i><b>4.3.2</b> Word</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i><b>5</b> Content</a>
@@ -296,15 +296,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Templates from R packages</li>
 <li>User-defined templates</li>
 </ol>
-<div id="built-in-templates" class="section level2" number="4.1">
+<div id="builtin" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Built-in templates</h2>
-<p>R Markdown has several built-in output templates that you just have to specify them with the YAML <strong>output</strong> option.
+<p>R Markdown has several built-in output templates that you just have to specify them with the YAML <code>output</code> option.
 These include:</p>
 <ul>
+<li>Documents
+<ul>
+<li><code>html_document</code></li>
+<li><code>pdf_document</code></li>
+<li><code>word_document</code></li>
+</ul></li>
 <li><a href="https://rmarkdown.rstudio.com/lesson-11.html">Presentations</a>
 <ul>
-<li>ioslides and Slidy for HTML</li>
-<li>Beamer for PDF</li>
+<li><code>ioslides_presentation</code> and <code>slidy_presentation</code> for HTML</li>
+<li><code>beamer_presentation</code> for PDF</li>
+<li><code>powerpoint_presentation</code></li>
 </ul></li>
 <li>Interactive <a href="https://bookdown.org/yihui/rmarkdown/shiny-documents.html">Shiny</a> documents and presentations</li>
 </ul>
@@ -318,15 +325,16 @@ A few that I’ve used or played with include:</p>
 <li>Presentations: <a href="https://cran.r-project.org/web/packages/revealjs/index.html"><code>revealjs</code></a></li>
 <li>CVs: <a href="https://github.com/mitchelloharawild/vitae"><code>vitae</code></a></li>
 <li>Academic posters: <a href="https://github.com/brentthorne/posterdown"><code>posterdown</code></a></li>
-<li>APA articles: <a href="https://github.com/crsh/papaja"><code>papaja</code></a></li>
+<li>APA-formatted articles: <a href="https://github.com/crsh/papaja"><code>papaja</code></a></li>
 <li>Journal templates: <a href="https://bookdown.org/yihui/rmarkdown/rticles-templates.html"><code>rticles</code></a></li>
 <li>HTML theme: <a href="https://github.com/yixuan/prettydoc"><code>prettydoc</code></a></li>
+<li>Manuscripts: <a href="https://bookdown.org/yihui/rmarkdown/bookdown-output.html#a-single-document">single document</a> output from <a href="https://bookdown.org/yihui/bookdown/"><code>bookdown</code></a></li>
 </ul>
 </div>
 <div id="usedef" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> User-defined templates</h2>
 <p>There are also ways to include templates for other output types in the YAML header.</p>
-<div id="pdf" class="section level3" number="4.3.1">
+<div id="pdf-1" class="section level3" number="4.3.1">
 <h3><span class="header-section-number">4.3.1</span> PDF</h3>
 <p>For PDFs, you can include LaTeX templates, but you need to pay attention to the use of $.
 The PLOS template referenced in the example below failed to compile when I first downloaded it, because $ are special characters for pandoc.
@@ -338,7 +346,7 @@ output:
 ---</code></pre>
 <p>See Section <a href="format.html#latexpacks">6.4.1</a> for calling specific LaTeX packages in R Markdown.</p>
 </div>
-<div id="word" class="section level3" number="4.3.2">
+<div id="word-1" class="section level3" number="4.3.2">
 <h3><span class="header-section-number">4.3.2</span> Word</h3>
 <p>You can also set up Word templates.
 To do this, you need to use the <em>Styles Pane</em> in the Word Document you want to use as a template.
