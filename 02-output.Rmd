@@ -5,34 +5,41 @@ There are also multiple ways to **Knit** or `render` the output.
 
 ## Output options
 
-### html_document
+### HTML
 
 HTML is overall the most flexible. 
-It supports the types of content we're interested in creating as graduate students---tables, graphs, and the like---and you can easily transform your HTML output to a PDF with `pagedown::chrome_print(file)` if you have Google Chrome. 
+It supports the types of content we're interested in creating as graduate students---tables, graphs, and the like---and you can easily transform your HTML output to a PDF with `pagedown::chrome_print(file)` if you have Google Chrome.
 The [academic poster template](https://github.com/brentthorne/posterdown) that I like to use follows this process.
 
-### pdf_document
+### PDF
 
 If you're familiar with LaTeX, you may be inclined to output directly to a PDF, since you can include inline LaTeX code in your documents (more on this in Chapter \@ref(format)). 
 The [CV](https://github.com/mitchelloharawild/vitae) and [manuscript](https://github.com/rosannav/thesis_in_rmarkdown/tree/master/example_thesis) templates that I use rely on the fine-grained typesetting capabilities of LaTeX. 
 To create a PDF, you need to have LaTeX installed locally. 
 You should also install the [`tinytex`](https://yihui.org/tinytex/) distribution through the R console.
 
-### word_document
+### Word
 
 You can also output to Microsoft Word and PowerPoint. 
-I often work with colleagues who prefer to edit in Word, so sometimes I need to do this. 
-I prefer not to if I can help it, because you lose several important functions; for example, chunk options for aligning and setting the size of graphs and other images don't work, and `kable` tables tend not to appear correctly.
+I prefer not to use this option if I can help it, because you lose several important functions; for example, chunk options for aligning and setting the size of graphs and other images don't work, and `kable` tables don't appear correctly.
+
+There are a few workarounds for these issues.
+Regarding images and graphs, I create them in a separate R script and save them in whatever size and format I need (e.g., .png).
+Then, I include them in my document using a code chunk.
+
+Regarding tables, the best solution I've found is to create them in a separate R Markdown document that knits to HTML, then copy and paste them into the finished Word Document or PowerPoint.
+Obviously, this is not ideal, but this method retains the exact formatting of the tables from the HTML file.
+You can save tables as images as well, but the copy-paste solution works best for journals requiring editable tables.
 
 ## Rendering options
 
 ### Knit
 
-You can specify a particular output type in the YAML header with the **output** option. 
+You can specify a particular output type in the YAML header with `output: output_format`
 Then, you can press the **Knit** button or CTRL/command + shift + K to create or "knit" the document. 
 
 Be sure to pay attention to indentation and colon placement in your YAML header, especially as you start to specify options for particular output types. 
-As a rule of thumb, if you have anything more than **output: output_format**, you need to indent every new line, and have a colon at the end of the previous line. 
+As a rule of thumb, if you have anything more than `output: output_format`, you need to indent every new line, and have a colon at the end of the previous line. 
 See Section \@ref(usedef) for an example of this.
 
 ### `rmarkdown::render`

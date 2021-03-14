@@ -4,14 +4,19 @@
 1. Templates from R packages
 1. User-defined templates
 
-## Built-in templates
+## Built-in templates {#builtin}
 
-R Markdown has several built-in output templates that you just have to specify them with the YAML **output** option. 
+R Markdown has several built-in output templates that you just have to specify them with the YAML `output` option. 
 These include:
 
+- Documents
+  - `html_document`
+  - `pdf_document`
+  - `word_document`
 - [Presentations](https://rmarkdown.rstudio.com/lesson-11.html)
-  - ioslides and Slidy for HTML
-  - Beamer for PDF
+  - `ioslides_presentation` and `slidy_presentation` for HTML
+  - `beamer_presentation` for PDF
+  - `powerpoint_presentation`
 - Interactive [Shiny](https://bookdown.org/yihui/rmarkdown/shiny-documents.html) documents and presentations
 
 ## Templates from R packages {#packages}
@@ -23,9 +28,10 @@ A few that I've used or played with include:
 - Presentations: [`revealjs`](https://cran.r-project.org/web/packages/revealjs/index.html)
 - CVs: [`vitae`](https://github.com/mitchelloharawild/vitae)
 - Academic posters: [`posterdown`](https://github.com/brentthorne/posterdown)
-- APA articles: [`papaja`](https://github.com/crsh/papaja)
+- APA-formatted articles: [`papaja`](https://github.com/crsh/papaja)
 - Journal templates: [`rticles`](https://bookdown.org/yihui/rmarkdown/rticles-templates.html)
 - HTML theme: [`prettydoc`](https://github.com/yixuan/prettydoc)
+- Manuscripts: [single document](https://bookdown.org/yihui/rmarkdown/bookdown-output.html#a-single-document) output from [`bookdown`](https://bookdown.org/yihui/bookdown/)
 
 ## User-defined templates {#usedef}
 
