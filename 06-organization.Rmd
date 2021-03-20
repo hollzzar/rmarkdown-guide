@@ -10,9 +10,9 @@ If you go to the bottom left-hand corner of your .Rmd file in RStudio, you'll se
 There, you can jump to specific headers and code chunks.
 
 As your documents grow, even these sections will become difficult to keep straight. 
-This is when you want to use *child* documents.
-This just means that you have separate R Markdown documents that you reference in your main R Markdown document.
-These are also great if you need to include the same code or text in multiple documents.
+This is when you want to use `child` documents and *source* scripts.
+
+I created an [R Markdown template for reproducible scientific manuscripts](https://github.com/hollzzar/manuscript-template) if you are interested in seeing this organizational structure in action.
 
 ## `child` documents
 
@@ -34,5 +34,3 @@ You can use the `source` function to import all of the code from an R script lik
 ```
 source("path/script.R")
 ```
-
-I also have an example of this in my [ERP analysis scripts](https://github.com/hollzzar/erp-data-scripts/blob/main/1a_group_analysis.R) for my Master's thesis.

@@ -24,7 +24,7 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2021-03-13" />
+<meta name="date" content="2021-03-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -351,9 +351,15 @@ output:
 <p>You can also set up Word templates.
 To do this, you need to use the <em>Styles Pane</em> in the Word Document you want to use as a template.
 Highlight the text you want to format, make the desired changes, then find the style that applies to that section, and find <em>Update to Match Selection</em> in the dropdown menu.</p>
-<p>In the example below, you can see that I’m editing the <em>Title</em> format, so I need to update that particular entry in the Styles Pane.
-You have to do this for every text element in the document, but once you’ve set it up, you can simply include it the same way as the LaTeX template shown above.</p>
+<p>In the example below, you can see that I’m editing the <em>Header 1</em> format, so I need to update that particular entry in the <em>Styles Pane</em>.
+I like to check the <em>Show styles guide</em> option at the bottom of the <em>Styles Pane</em>, which filters the list of styles to just the ones used in the document and marks them in the document.</p>
 <p><img src="images/template_word.png" width="\textwidth" /></p>
+<p>You have to go through this editing process for every text element in the document, but once you’ve set it up, you can simply include it in the YAML header.</p>
+<pre><code>---
+output:
+  word_document:
+    reference_docx: template.docx
+---</code></pre>
 
 </div>
 </div>

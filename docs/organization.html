@@ -24,7 +24,7 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2021-03-13" />
+<meta name="date" content="2021-03-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -298,9 +298,8 @@ Also, use headers at multiple levels, which makes it easier to navigate your doc
 If you go to the bottom left-hand corner of your .Rmd file in RStudio, you’ll see a small drop-down menu.
 There, you can jump to specific headers and code chunks.</p>
 <p>As your documents grow, even these sections will become difficult to keep straight.
-This is when you want to use <em>child</em> documents.
-This just means that you have separate R Markdown documents that you reference in your main R Markdown document.
-These are also great if you need to include the same code or text in multiple documents.</p>
+This is when you want to use <code>child</code> documents and <em>source</em> scripts.</p>
+<p>I created an <a href="https://github.com/hollzzar/manuscript-template">R Markdown template for reproducible scientific manuscripts</a> if you are interested in seeing this organizational structure in action.</p>
 <div id="child-documents" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> <code>child</code> documents</h2>
 <p>All you have to do is make a code chunk in which you set the <code>child</code> parameter equal to the file that you want to reference (and file path if it’s in a subfolder).
@@ -314,7 +313,6 @@ You have to open the <code>child</code> document in RStudio and run all of the c
 <h2><span class="header-section-number">7.2</span> Sourcing code</h2>
 <p>You can use the <code>source</code> function to import all of the code from an R script like you would for a <code>child</code> document.</p>
 <pre><code>source(&quot;path/script.R&quot;)</code></pre>
-<p>I also have an example of this in my <a href="https://github.com/hollzzar/erp-data-scripts/blob/main/1a_group_analysis.R">ERP analysis scripts</a> for my Master’s thesis.</p>
 
 </div>
 </div>

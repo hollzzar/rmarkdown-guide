@@ -59,9 +59,19 @@ You can also set up Word templates.
 To do this, you need to use the *Styles Pane* in the Word Document you want to use as a template. 
 Highlight the text you want to format, make the desired changes, then find the style that applies to that section, and find *Update to Match Selection* in the dropdown menu.
 
-In the example below, you can see that I'm editing the *Title* format, so I need to update that particular entry in the Styles Pane. 
-You have to do this for every text element in the document, but once you've set it up, you can simply include it the same way as the LaTeX template shown above.
+In the example below, you can see that I'm editing the *Header 1* format, so I need to update that particular entry in the *Styles Pane*. 
+I like to check the *Show styles guide* option at the bottom of the *Styles Pane*, which filters the list of styles to just the ones used in the document and marks them in the document.
 
 ```{r template_word, echo=FALSE}
 knitr::include_graphics("images/template_word.png")
+```
+
+You have to go through this editing process for every text element in the document, but once you've set it up, you can simply include it in the YAML header.
+
+```
+---
+output:
+  word_document:
+    reference_docx: template.docx
+---
 ```

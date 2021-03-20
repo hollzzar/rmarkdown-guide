@@ -24,7 +24,7 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2021-03-13" />
+<meta name="date" content="2021-03-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -345,30 +345,30 @@ Once you’ve got your data loaded into R Markdown, you just use R code to run a
 <p>If I’m running regressions with <code>lm</code> from the <code>stats</code> package for example, I’ll wrap the <code>summary</code> function around the output.
 I tend to save this as a variable, since I typically want to grab individual values from the variable later (e.g., <em>p</em> values).
 You can put the new variable name on its own line or <code>print</code> it if you prefer; otherwise, you can just have a line with <code>summary(model)</code>, and it’ll output the table in your document.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="content.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show first five rows of mtcars dataset</span></span>
-<span id="cb6-2"><a href="content.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars, <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="content.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show first five rows of mtcars dataset</span></span>
+<span id="cb7-2"><a href="content.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars, <span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
 ## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
 ## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
 ## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
 ## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
 ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="content.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide summary statistics for miles per gallon (mpg) and weight (wt)</span></span>
-<span id="cb8-2"><a href="content.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># select is from dplyr</span></span>
-<span id="cb8-3"><a href="content.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># describe is from the psych package</span></span>
-<span id="cb8-4"><a href="content.html#cb8-4" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">select</span>(mpg, wt) <span class="sc">%&gt;%</span> <span class="fu">describe</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="content.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide summary statistics for miles per gallon (mpg) and weight (wt)</span></span>
+<span id="cb9-2"><a href="content.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># select is from dplyr</span></span>
+<span id="cb9-3"><a href="content.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># describe is from the psych package</span></span>
+<span id="cb9-4"><a href="content.html#cb9-4" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">select</span>(mpg, wt) <span class="sc">%&gt;%</span> <span class="fu">describe</span>()</span></code></pre></div>
 <pre><code>##     vars  n  mean   sd median trimmed  mad   min   max range skew kurtosis   se
 ## mpg    1 32 20.09 6.03  19.20   19.70 5.41 10.40 33.90 23.50 0.61    -0.37 1.07
 ## wt     2 32  3.22 0.98   3.33    3.15 0.77  1.51  5.42  3.91 0.42    -0.02 0.17</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="content.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Are car weight and miles per gallon correlated?</span></span>
-<span id="cb10-2"><a href="content.html#cb10-2" aria-hidden="true" tabindex="-1"></a>mpg_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, mtcars)</span>
-<span id="cb10-3"><a href="content.html#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="content.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Save summary of model</span></span>
-<span id="cb10-5"><a href="content.html#cb10-5" aria-hidden="true" tabindex="-1"></a>mpg_summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(mpg_model)</span>
-<span id="cb10-6"><a href="content.html#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="content.html#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Output results</span></span>
-<span id="cb10-8"><a href="content.html#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># I could have put summary(mpg_model) or print(mpg_summary) instead if I preferred</span></span>
-<span id="cb10-9"><a href="content.html#cb10-9" aria-hidden="true" tabindex="-1"></a>mpg_summary</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="content.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Are car weight and miles per gallon correlated?</span></span>
+<span id="cb11-2"><a href="content.html#cb11-2" aria-hidden="true" tabindex="-1"></a>mpg_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, mtcars)</span>
+<span id="cb11-3"><a href="content.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="content.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Save summary of model</span></span>
+<span id="cb11-5"><a href="content.html#cb11-5" aria-hidden="true" tabindex="-1"></a>mpg_summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(mpg_model)</span>
+<span id="cb11-6"><a href="content.html#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="content.html#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Output results</span></span>
+<span id="cb11-8"><a href="content.html#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># I could have put summary(mpg_model) or print(mpg_summary) instead if I preferred</span></span>
+<span id="cb11-9"><a href="content.html#cb11-9" aria-hidden="true" tabindex="-1"></a>mpg_summary</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = mpg ~ wt, data = mtcars)
@@ -396,27 +396,27 @@ I’m focusing on the R Markdown piece here, but I’ve included a lot of inform
 There are few ways to get the graph from your code chunk into your document.
 I can just make the graph without saving it as a variable, so it automatically outputs from the chunk, or save it and put the variable name on a new line.
 This is what I tend to do, as I usually create my graphs in an R script before importing them into my R Markdown document.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="content.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save number of cylinders (cyl) as factor</span></span>
-<span id="cb12-2"><a href="content.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Otherwise, ggplot will treat it as a continuous variable</span></span>
-<span id="cb12-3"><a href="content.html#cb12-3" aria-hidden="true" tabindex="-1"></a>mtcars <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb12-4"><a href="content.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cyl =</span> <span class="fu">as.factor</span>(cyl))</span>
-<span id="cb12-5"><a href="content.html#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="content.html#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot</span></span>
-<span id="cb12-7"><a href="content.html#cb12-7" aria-hidden="true" tabindex="-1"></a>mtcars_scatter <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
-<span id="cb12-8"><a href="content.html#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(mpg, wt, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
-<span id="cb12-9"><a href="content.html#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="fu">aes</span>(mpg, wt), <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">level =</span> <span class="fl">0.95</span>, </span>
-<span id="cb12-10"><a href="content.html#cb12-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">&quot;#d7d8db&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb12-11"><a href="content.html#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">6</span>)) <span class="sc">+</span></span>
-<span id="cb12-12"><a href="content.html#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">35</span>)) <span class="sc">+</span></span>
-<span id="cb12-13"><a href="content.html#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Paired&quot;</span>) <span class="sc">+</span></span>
-<span id="cb12-14"><a href="content.html#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb12-15"><a href="content.html#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Miles per gallon and vehicle weight are negatively correlated&quot;</span>,</span>
-<span id="cb12-16"><a href="content.html#cb12-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Vehicle weight (1000 lbs)&quot;</span>,</span>
-<span id="cb12-17"><a href="content.html#cb12-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Miles per gallon&quot;</span>,</span>
-<span id="cb12-18"><a href="content.html#cb12-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Cylinders&quot;</span>)</span>
-<span id="cb12-19"><a href="content.html#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-20"><a href="content.html#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Output plot</span></span>
-<span id="cb12-21"><a href="content.html#cb12-21" aria-hidden="true" tabindex="-1"></a>mtcars_scatter</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="content.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save number of cylinders (cyl) as factor</span></span>
+<span id="cb13-2"><a href="content.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Otherwise, ggplot will treat it as a continuous variable</span></span>
+<span id="cb13-3"><a href="content.html#cb13-3" aria-hidden="true" tabindex="-1"></a>mtcars <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb13-4"><a href="content.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cyl =</span> <span class="fu">as.factor</span>(cyl))</span>
+<span id="cb13-5"><a href="content.html#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="content.html#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot</span></span>
+<span id="cb13-7"><a href="content.html#cb13-7" aria-hidden="true" tabindex="-1"></a>mtcars_scatter <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="content.html#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(mpg, wt, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
+<span id="cb13-9"><a href="content.html#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="fu">aes</span>(mpg, wt), <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">level =</span> <span class="fl">0.95</span>, </span>
+<span id="cb13-10"><a href="content.html#cb13-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">&quot;#d7d8db&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb13-11"><a href="content.html#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">6</span>)) <span class="sc">+</span></span>
+<span id="cb13-12"><a href="content.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">35</span>)) <span class="sc">+</span></span>
+<span id="cb13-13"><a href="content.html#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Paired&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-14"><a href="content.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb13-15"><a href="content.html#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Miles per gallon and vehicle weight are negatively correlated&quot;</span>,</span>
+<span id="cb13-16"><a href="content.html#cb13-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Vehicle weight (1000 lbs)&quot;</span>,</span>
+<span id="cb13-17"><a href="content.html#cb13-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Miles per gallon&quot;</span>,</span>
+<span id="cb13-18"><a href="content.html#cb13-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Cylinders&quot;</span>)</span>
+<span id="cb13-19"><a href="content.html#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="content.html#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Output plot</span></span>
+<span id="cb13-21"><a href="content.html#cb13-21" aria-hidden="true" tabindex="-1"></a>mtcars_scatter</span></code></pre></div>
 <p><img src="rmarkdown-guide_files/figure-html/content_graph_1-1.png" width="\textwidth" /></p>
 <p>You can use the chunk options to control how this graph appears in the document.
 The ones I typically use for outputting graphs are dots per inch (<code>dpi</code>) to control the image quality, <code>out.width</code> and <code>out.height</code> with either specific units or a percentage, and <code>fig.align</code> to change the alignment of the output.
@@ -439,14 +439,14 @@ Together these allow you to create “complex tables and manipulate table styles
 You use the pipe operator <code>%&gt;%</code> from <code>magrittr</code> the way you use the plus sign for <code>ggplot</code> to add layers of formatting.
 If you don’t specify the output format, <code>knitr</code> will automatically create an HTML table for you unless you’re rendering to a PDF when it will use LaTeX.
 You can override this locally in <code>kable</code> or globally with <code>knitr::options</code>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="content.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get coefficients table from mpg_summary</span></span>
-<span id="cb14-2"><a href="content.html#cb14-2" aria-hidden="true" tabindex="-1"></a>mpg_coefs <span class="ot">&lt;-</span> mpg_summary<span class="sc">$</span>coefficients</span>
-<span id="cb14-3"><a href="content.html#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="content.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create minimal table</span></span>
-<span id="cb14-5"><a href="content.html#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Pass table to kable, then format with kable_styling</span></span>
-<span id="cb14-6"><a href="content.html#cb14-6" aria-hidden="true" tabindex="-1"></a>mpg_coefs <span class="sc">%&gt;%</span></span>
-<span id="cb14-7"><a href="content.html#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb14-8"><a href="content.html#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="content.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get coefficients table from mpg_summary</span></span>
+<span id="cb15-2"><a href="content.html#cb15-2" aria-hidden="true" tabindex="-1"></a>mpg_coefs <span class="ot">&lt;-</span> mpg_summary<span class="sc">$</span>coefficients</span>
+<span id="cb15-3"><a href="content.html#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="content.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create minimal table</span></span>
+<span id="cb15-5"><a href="content.html#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Pass table to kable, then format with kable_styling</span></span>
+<span id="cb15-6"><a href="content.html#cb15-6" aria-hidden="true" tabindex="-1"></a>mpg_coefs <span class="sc">%&gt;%</span></span>
+<span id="cb15-7"><a href="content.html#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-8"><a href="content.html#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -523,19 +523,19 @@ Instead of using <code>knitr::include_graphics</code>, I use <code>image_read</c
 <h2><span class="header-section-number">5.4</span> Inline R</h2>
 <p>A very useful aspect of R Markdown is that you can call R objects and functions in markdown or the YAML header by sandwiching them between backticks.
 For example, let’s say I want to report on the names of the flower species in the <a href="https://archive.ics.uci.edu/ml/datasets/iris"><code>iris</code> dataset</a>.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="content.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull species column from iris and get unique values in column</span></span>
-<span id="cb15-2"><a href="content.html#cb15-2" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">pull</span>(Species) <span class="sc">%&gt;%</span> <span class="fu">unique</span>()</span>
-<span id="cb15-3"><a href="content.html#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="content.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print species variable</span></span>
-<span id="cb15-5"><a href="content.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(species)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="content.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull species column from iris and get unique values in column</span></span>
+<span id="cb16-2"><a href="content.html#cb16-2" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">pull</span>(Species) <span class="sc">%&gt;%</span> <span class="fu">unique</span>()</span>
+<span id="cb16-3"><a href="content.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="content.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print species variable</span></span>
+<span id="cb16-5"><a href="content.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(species)</span></code></pre></div>
 <pre><code>## [1] setosa     versicolor virginica 
 ## Levels: setosa versicolor virginica</code></pre>
 <p>Maybe I also want to save a variable with the number of species in this list.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="content.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get number of unique species</span></span>
-<span id="cb17-2"><a href="content.html#cb17-2" aria-hidden="true" tabindex="-1"></a>species_count <span class="ot">&lt;-</span> <span class="fu">length</span>(species)</span>
-<span id="cb17-3"><a href="content.html#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="content.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print number of species</span></span>
-<span id="cb17-5"><a href="content.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(species_count)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="content.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get number of unique species</span></span>
+<span id="cb18-2"><a href="content.html#cb18-2" aria-hidden="true" tabindex="-1"></a>species_count <span class="ot">&lt;-</span> <span class="fu">length</span>(species)</span>
+<span id="cb18-3"><a href="content.html#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="content.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print number of species</span></span>
+<span id="cb18-5"><a href="content.html#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(species_count)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p>I can call <code>species</code> and <code>species_count</code> in the markdown text to reference these variables dynamically.
 I have to specify that I’m working with R code by including a lower-case r between single backticks with the variable of interest.</p>
