@@ -270,7 +270,7 @@ When I was working on my Master's thesis, I wrote some custom functions for stat
 This was particularly useful when I had to switch from referring to any *p* values over .05 as *p* > .05 to *p* = the exact value. 
 I just had to change the one function by commenting out a couple lines and re-knit my document. 
 
-You can find all of my convenience functions in the [scripts folder](https://github.com/hollzzar/manuscript-template/tree/main/sections/code/scripts) in my [reproducible scientific manuscripts template](https://github.com/hollzzar/manuscript-template).
+You can find all of my convenience functions in the [source script](https://github.com/hollzzar/manuscript-template/blob/main/sections/code/scripts/source_script.R) in my [reproducible scientific manuscripts template](https://github.com/hollzzar/manuscript-template).
 
 ```{r content_pval}
 # Make number formatting function for p values
