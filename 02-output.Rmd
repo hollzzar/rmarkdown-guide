@@ -10,6 +10,7 @@ There are also multiple ways to **Knit** or `render` the output.
 HTML is overall the most flexible. 
 It supports the types of content we're interested in creating as graduate students---tables, graphs, and the like---and you can easily transform your HTML output to a PDF with `pagedown::chrome_print(file)` if you have Google Chrome.
 The [academic poster template](https://github.com/brentthorne/posterdown) that I like to use follows this process.
+You can also use [this link](https://htmlpreview.github.io/) to preview or share HTML outputs.
 
 ### PDF
 
