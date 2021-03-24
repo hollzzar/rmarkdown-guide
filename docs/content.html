@@ -24,7 +24,7 @@
 <meta name="author" content="Holly Zaharchuk" />
 
 
-<meta name="date" content="2021-03-20" />
+<meta name="date" content="2021-03-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -404,19 +404,20 @@ This is what I tend to do, as I usually create my graphs in an R script before i
 <span id="cb13-6"><a href="content.html#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot</span></span>
 <span id="cb13-7"><a href="content.html#cb13-7" aria-hidden="true" tabindex="-1"></a>mtcars_scatter <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
 <span id="cb13-8"><a href="content.html#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(mpg, wt, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
-<span id="cb13-9"><a href="content.html#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="fu">aes</span>(mpg, wt), <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">level =</span> <span class="fl">0.95</span>, </span>
-<span id="cb13-10"><a href="content.html#cb13-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">&quot;#d7d8db&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb13-11"><a href="content.html#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">6</span>)) <span class="sc">+</span></span>
-<span id="cb13-12"><a href="content.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">35</span>)) <span class="sc">+</span></span>
-<span id="cb13-13"><a href="content.html#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Paired&quot;</span>) <span class="sc">+</span></span>
-<span id="cb13-14"><a href="content.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb13-15"><a href="content.html#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Miles per gallon and vehicle weight are negatively correlated&quot;</span>,</span>
-<span id="cb13-16"><a href="content.html#cb13-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Vehicle weight (1000 lbs)&quot;</span>,</span>
-<span id="cb13-17"><a href="content.html#cb13-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Miles per gallon&quot;</span>,</span>
-<span id="cb13-18"><a href="content.html#cb13-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Cylinders&quot;</span>)</span>
-<span id="cb13-19"><a href="content.html#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-20"><a href="content.html#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Output plot</span></span>
-<span id="cb13-21"><a href="content.html#cb13-21" aria-hidden="true" tabindex="-1"></a>mtcars_scatter</span></code></pre></div>
+<span id="cb13-9"><a href="content.html#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="fu">aes</span>(mpg, wt), </span>
+<span id="cb13-10"><a href="content.html#cb13-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">level =</span> <span class="fl">0.95</span>, </span>
+<span id="cb13-11"><a href="content.html#cb13-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">&quot;#d7d8db&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb13-12"><a href="content.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">6</span>)) <span class="sc">+</span></span>
+<span id="cb13-13"><a href="content.html#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">35</span>)) <span class="sc">+</span></span>
+<span id="cb13-14"><a href="content.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Paired&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-15"><a href="content.html#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb13-16"><a href="content.html#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Miles per gallon and vehicle weight are negatively correlated&quot;</span>,</span>
+<span id="cb13-17"><a href="content.html#cb13-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Vehicle weight (1000 lbs)&quot;</span>,</span>
+<span id="cb13-18"><a href="content.html#cb13-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Miles per gallon&quot;</span>,</span>
+<span id="cb13-19"><a href="content.html#cb13-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Cylinders&quot;</span>)</span>
+<span id="cb13-20"><a href="content.html#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="content.html#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Output plot</span></span>
+<span id="cb13-22"><a href="content.html#cb13-22" aria-hidden="true" tabindex="-1"></a>mtcars_scatter</span></code></pre></div>
 <p><img src="rmarkdown-guide_files/figure-html/content_graph_1-1.png" width="\textwidth" /></p>
 <p>You can use the chunk options to control how this graph appears in the document.
 The ones I typically use for outputting graphs are dots per inch (<code>dpi</code>) to control the image quality, <code>out.width</code> and <code>out.height</code> with either specific units or a percentage, and <code>fig.align</code> to change the alignment of the output.

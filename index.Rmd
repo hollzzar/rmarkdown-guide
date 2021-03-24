@@ -1,7 +1,7 @@
 --- 
 title: "R Markdown for Psychology Graduate Students"
 author: "Holly Zaharchuk"
-date: "`r Sys.Date()`"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book

@@ -238,10 +238,16 @@ This first example includes custom CSS in a `knitr::kable` table to add borders 
 knitr::kable(stim_table) %>%
   kableExtra::kable_styling(font_size=35) %>%
   collapse_rows(columns = 1:6, valign = "middle") %>%
-  row_spec(4, extra_css="border-top: 5px solid #d7d8db; border-bottom: 5px solid #d7d8db") %>%
+  row_spec(4, extra_css="border-top: 5px solid #d7d8db; 
+                         border-bottom: 5px solid #d7d8db") %>%
   row_spec(3, extra_css="border-top: 5px solid #d7d8db") %>%
-  footnote(general="ERP time-locked to second modal (could or should) in double modal sentences to compare to standard single modal",
+  footnote(general="ERP time-locked to second modal (could or should) 
+                    in double modal sentences to compare to standard single modal",
            general_title="")
+```
+
+```{r format_example_table, echo=FALSE}
+knitr::include_graphics("images/formatting_example_1.png")
 ```
 
 The example below changes the font size of the references section at the end of the poster.
@@ -252,6 +258,10 @@ The example below changes the font size of the references section at the end of 
 <font size=3><div id="refs"></div></font>
 ```
 
+```{r format_example_refs, echo=FALSE}
+knitr::include_graphics("images/formatting_example_2.png")
+```
+
 ## Custom functions {#help}
 
 If you're fairly comfortable with R, you can write formatting functions for yourself to make your life easier when you're referencing variables in your text.
@@ -259,7 +269,8 @@ If you're fairly comfortable with R, you can write formatting functions for your
 When I was working on my Master's thesis, I wrote some custom functions for statistical values that I had to report over and over. 
 This was particularly useful when I had to switch from referring to any *p* values over .05 as *p* > .05 to *p* = the exact value. 
 I just had to change the one function by commenting out a couple lines and re-knit my document. 
-The function is included below; this was the most complicated of the ones I wrote, which included degrees of freedom, *t* and *F* values, reaction times, and percentages.
+
+You can find all of my convenience functions in the [scripts folder](https://github.com/hollzzar/manuscript-template/tree/main/sections/code/scripts) in my [reproducible scientific manuscripts template](https://github.com/hollzzar/manuscript-template).
 
 ```{r content_pval}
 # Make number formatting function for p values
